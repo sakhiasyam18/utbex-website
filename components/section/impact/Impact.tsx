@@ -7,7 +7,7 @@ import { ImpactVisual } from './components/ImpactVisual';
 export default function Impact() {
     return (
         <section
-            className="relative w-full py-24 lg:py-32 overflow-hidden bg-white selection:bg-utbex-maroon/20 selection:text-utbex-maroon"
+            className="relative w-full py-24 lg:py-32 overflow-hidden bg-white"
             aria-label="UTBEX Indonesia Impact and Statistics"
         >
             <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">

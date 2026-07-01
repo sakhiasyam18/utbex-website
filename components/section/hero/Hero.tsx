@@ -7,7 +7,7 @@ import { BackgroundEffects } from './components/BackgroundEffects';
 export default function Hero() {
     return (
         <section
-            className="relative min-h-[90vh] w-full flex items-center overflow-hidden bg-white selection:bg-utbex-maroon/20 selection:text-utbex-maroon"
+            className="relative min-h-[90vh] w-full flex items-center overflow-hidden bg-white"
             aria-label="Introduction to UTBEX Indonesia"
         >
             <BackgroundEffects />

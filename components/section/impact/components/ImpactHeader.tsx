@@ -23,7 +23,7 @@ export function ImpactHeader() {
 
             <motion.p
                 variants={fadeInUp}
-                className="text-lg text-neutral-500 leading-relaxed text-balance lg:pb-2"
+                className="text-lg text-utbex-text-secondary leading-relaxed text-balance lg:pb-2"
             >
                 {impactContent.story}
             </motion.p>

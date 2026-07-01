@@ -17,7 +17,7 @@ export function ImpactVisual() {
         >
             <motion.div
                 variants={scaleReveal}
-                className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden bg-neutral-100 transform-gpu shadow-2xl shadow-neutral-900/5 ring-1 ring-black/5"
+                className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-2xl overflow-hidden bg-utbex-light transform-gpu shadow-2xl shadow-utbex-dark/5 ring-1 ring-black/5"
             >
                 <Image
                     src={impactContent.image.src}
@@ -36,7 +36,7 @@ export function ImpactVisual() {
                 <blockquote className="text-xl md:text-2xl font-medium text-utbex-dark leading-snug mb-4">
                     "{impactContent.quote.text}"
                 </blockquote>
-                <cite className="text-sm font-semibold text-neutral-400 not-italic uppercase tracking-wider">
+                <cite className="text-sm font-semibold text-utbex-text-secondary/70 not-italic uppercase tracking-wider">
                     — {impactContent.quote.author}
                 </cite>
             </motion.div>

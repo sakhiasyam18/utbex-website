@@ -30,7 +30,7 @@ export default function AboutContent({ content }: AboutContentProps) {
       <motion.h2
         id="about-headline"
         variants={fadeUp}
-        className="text-4xl font-semibold leading-[1.15] tracking-tight text-neutral-900 sm:text-5xl"
+        className="text-4xl font-semibold leading-[1.15] tracking-tight text-utbex-dark sm:text-5xl"
       >
         {content.headline}
       </motion.h2>
@@ -39,7 +39,7 @@ export default function AboutContent({ content }: AboutContentProps) {
         {content.story.map((paragraph, index) => (
           <p
             key={index}
-            className="max-w-[65ch] text-base leading-relaxed text-neutral-600 sm:text-lg"
+            className="max-w-[65ch] text-base leading-relaxed text-utbex-text-secondary sm:text-lg"
           >
             {paragraph}
           </p>
@@ -51,7 +51,7 @@ export default function AboutContent({ content }: AboutContentProps) {
       <motion.a
         variants={fadeUp}
         href={content.cta.href}
-        className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-neutral-900 transition-colors hover:text-utbex-maroon"
+        className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-utbex-dark transition-colors hover:text-utbex-maroon"
       >
         {content.cta.label}
         <ArrowRight

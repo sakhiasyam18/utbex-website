@@ -30,7 +30,7 @@ export function HeroContent() {
                 </span>
             </motion.h1>
 
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-neutral-600 leading-relaxed mb-10 max-w-[600px]">
+            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-utbex-text-secondary leading-relaxed mb-10 max-w-[600px]">
                 {heroContent.description}
             </motion.p>
 
