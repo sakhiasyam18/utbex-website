@@ -2,6 +2,7 @@
 import Hero from "../components/section/hero/Hero";
 import { About } from "../components/section/about";
 import { Portfolio } from "../components/section/portfolio";
+import { Footer } from "../components/section/footer";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <About />
       <Portfolio />
+      <Footer />
     </div>
   );
 }
