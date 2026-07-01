@@ -1,30 +1,33 @@
 // src/sections/about/About.tsx
+// Entry point only. No hardcoded content. No business logic[cite: 4].
 
 import { AboutContent } from './components/AboutContent';
 import { AboutVisual } from './components/AboutVisual';
+import { BackgroundEffects } from './components/BackgroundEffects';
+import { aboutContent } from './data/aboutContent';
+import { aboutGallery } from './data/aboutGallery';
 
-export default function About() {
+export const About = () => {
     return (
         <section
-            className="relative w-full py-24 lg:py-32 overflow-hidden bg-neutral-50/50 selection:bg-utbex-maroon/20 selection:text-utbex-maroon"
-            aria-label="About UTBEX Indonesia"
+            id="about"
+            className="relative w-full min-h-screen py-24 md:py-32 lg:py-40 px-6 md:px-12 lg:px-24 overflow-hidden"
+            aria-label="Tentang UTBEX"
         >
-            <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent"></div>
-                <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-utbex-maroon/5 rounded-full blur-[120px] transform-gpu"></div>
-            </div>
+            <BackgroundEffects />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                    {/* Visual on the left for asymmetrical balance against the Hero section */}
-                    <div className="order-2 lg:order-1">
-                        <AboutVisual />
+            <div className="max-w-[1440px] mx-auto w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+
+                    <div className="lg:col-span-5 order-1 lg:order-1">
+                        <AboutVisual images={aboutGallery} />
                     </div>
-                    <div className="order-1 lg:order-2">
-                        <AboutContent />
+
+                    <div className="lg:col-span-7 order-2 lg:order-2">
+                        <AboutContent data={aboutContent} />
                     </div>
                 </div>
             </div>
         </section>
     );
-}
+};

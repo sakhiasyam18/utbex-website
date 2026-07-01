@@ -1,3 +1,4 @@
 // src/sections/about/index.ts
+// Entry point export[cite: 4].
 
-export { default as About } from './About';
+export * from './About';

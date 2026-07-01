@@ -1,29 +1,20 @@
 // src/sections/about/data/aboutContent.ts
+// Content structure strictly follows the storytelling formula[cite: 6].
+// Language implemented in Indonesian as requested by the user prompt.
 
 import { AboutContentData } from '../types/about';
 
 export const aboutContent: AboutContentData = {
-    headline: "Building Opportunities For Those Who Need Them Most.",
+    label: 'TUJUAN KAMI',
+    headline: 'Membangun Masa Depan Bersama.',
     story: [
-        {
-            id: "p1-problem",
-            text: "Millions of young minds in rural areas possess extraordinary potential, yet remain constrained by limited access to mentorship, modern technology, and market opportunities."
-        },
-        {
-            id: "p2-hope",
-            text: "The reality is that innovation should not be limited by geography. When communities are equipped with the right tools, knowledge, and support, they can transform local resources into sustainable economic powerhouses."
-        },
-        {
-            id: "p3-utbex",
-            text: "That is why UTBEX exists. We quietly bridge the gap between rural potential and global standards through targeted education, creative branding, and collaborative social enterprise."
-        }
+        'Banyak komunitas memiliki potensi besar namun seringkali menghadapi tantangan dalam mendapatkan bimbingan dan akses yang tepat untuk berkembang secara optimal.',
+        'UTBEX hadir sebagai jembatan yang menghubungkan inovasi dengan kebutuhan nyata di lapangan, memberdayakan UMKM, pelajar, dan para pembuat perubahan di tingkat lokal.',
+        'Melalui kolaborasi nyata dan pendampingan yang berkelanjutan, kami menciptakan ruang di mana setiap ide memiliki kesempatan untuk tumbuh dan memberikan dampak positif yang nyata.'
     ],
     quote: {
-        text: "We believe meaningful change begins by empowering people.",
-        author: "UTBEX Foundation"
+        text: 'Keberhasilan sejati tidak diukur dari seberapa besar kita tumbuh, melainkan dari seberapa banyak komunitas yang tumbuh bersama kita.',
+        source: 'Mitra Komunitas'
     },
-    image: {
-        src: "/images/about/community-mentoring.jpg",
-        alt: "UTBEX mentoring session with local community entrepreneurs"
-    }
+    ctaText: 'Pelajari Perjalanan Kami'
 };
