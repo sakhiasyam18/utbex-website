@@ -20,15 +20,11 @@ import { aboutGallery } from "./data/aboutGallery";
  */
 export default function About() {
   return (
-    // bg-utbex-light removed — continuous global atmosphere flows through here
-    // About BackgroundEffects provides section-specific maroon ambient glow on top
     <section
       id="about"
       aria-labelledby="about-headline"
       className="relative overflow-hidden py-24 sm:py-32 w-full"
     >
-      <BackgroundEffects />
-
       {/* Match Hero width and padding seamlessly */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-start">

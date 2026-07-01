@@ -38,7 +38,6 @@ export default function Footer() {
       aria-label="UTBEX Footer — Contact and Navigation"
       className="relative overflow-hidden w-full"
     >
-      <BackgroundGradient />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 

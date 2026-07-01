@@ -1,5 +1,4 @@
 // components/section/portfolio/Portfolio.tsx
-import BackgroundLighting from "./components/BackgroundLighting";
 import PortfolioHeader from "./components/PortfolioHeader";
 import FeaturedStory from "./components/FeaturedStory";
 import ProjectMosaic from "./components/ProjectMosaic";
@@ -31,7 +30,6 @@ export default function Portfolio() {
       aria-label="Portfolio and Transformation Evidence"
       className="relative overflow-hidden w-full py-20 sm:py-24"
     >
-      <BackgroundLighting />
       
       <div className="relative z-10 w-full">
         <PortfolioHeader content={portfolioContent} />
