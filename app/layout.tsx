@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Navigation } from "../components/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" className="scroll-smooth">
       <body className={`${inter.className} bg-utbex-light flex flex-col min-h-screen selection:bg-utbex-maroon/20 selection:text-utbex-maroon`}>
+        <Navigation />
         <main className="flex-grow">
           {children}
         </main>
