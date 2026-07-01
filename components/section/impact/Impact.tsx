@@ -6,8 +6,9 @@ import { ImpactVisual } from './components/ImpactVisual';
 
 export default function Impact() {
     return (
+        // bg-white removed — continuous global atmosphere creates "slight optimism" (DS 02) through here
         <section
-            className="relative w-full py-24 lg:py-32 overflow-hidden bg-white"
+            className="relative w-full py-24 lg:py-32 overflow-hidden"
             aria-label="UTBEX Indonesia Impact and Statistics"
         >
             <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">

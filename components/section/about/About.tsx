@@ -20,10 +20,12 @@ import { aboutGallery } from "./data/aboutGallery";
  */
 export default function About() {
   return (
+    // bg-utbex-light removed — continuous global atmosphere flows through here
+    // About BackgroundEffects provides section-specific maroon ambient glow on top
     <section
       id="about"
       aria-labelledby="about-headline"
-      className="relative overflow-hidden py-24 sm:py-32 w-full bg-utbex-light"
+      className="relative overflow-hidden py-24 sm:py-32 w-full"
     >
       <BackgroundEffects />
 

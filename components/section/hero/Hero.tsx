@@ -7,7 +7,9 @@ import { BackgroundEffects } from './components/BackgroundEffects';
 export default function Hero() {
     return (
         <section
-            className="relative min-h-[90vh] w-full flex items-center overflow-hidden bg-white"
+            // bg-white removed — global atmosphere provides the warm canvas (GlobalAtmosphere)
+            // Hero BackgroundEffects layered on top for section-specific warmth
+            className="relative min-h-[90vh] w-full flex items-center overflow-hidden"
             aria-label="Introduction to UTBEX Indonesia"
         >
             <BackgroundEffects />

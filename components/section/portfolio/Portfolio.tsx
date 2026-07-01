@@ -25,10 +25,11 @@ export default function Portfolio() {
   const mosaicProjects = portfolioProjects.filter(p => p.id !== featured?.id);
 
   return (
+    // bg-utbex-light removed — global atmosphere connects Portfolio seamlessly to About and Impact
     <section
       id="portfolio"
       aria-label="Portfolio and Transformation Evidence"
-      className="relative overflow-hidden w-full bg-utbex-light py-20 sm:py-24"
+      className="relative overflow-hidden w-full py-20 sm:py-24"
     >
       <BackgroundLighting />
       

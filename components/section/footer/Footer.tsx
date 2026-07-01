@@ -36,7 +36,7 @@ export default function Footer() {
     <footer
       id="contact"
       aria-label="UTBEX Footer — Contact and Navigation"
-      className="relative overflow-hidden w-full bg-utbex-light"
+      className="relative overflow-hidden w-full"
     >
       <BackgroundGradient />
 
