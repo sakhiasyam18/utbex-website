@@ -1,21 +1,24 @@
-// src/sections/about/components/SectionLabel.tsx
-// Small, uppercase, brand accent, wide letter spacing[cite: 3, 6].
+//app/sections/about/components/SectionLabel.tsx
+"use client";
 
-'use client';
-
-import { motion } from 'framer-motion';
-import { fadeUpVariant } from '../motion/aboutMotion';
+import { motion } from "framer-motion";
+import { fade } from "../motion/aboutMotion";
 
 interface SectionLabelProps {
-    text: string;
+  children: string;
 }
 
-export const SectionLabel = ({ text }: SectionLabelProps) => {
-    return (
-        <motion.div variants={fadeUpVariant} className="mb-6">
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500">
-                {text}
-            </span>
-        </motion.div>
-    );
-};
+/**
+ * Small, uppercase, wide-tracked label per 02_ABOUT_VISUAL_SYSTEM.md
+ * ("Label — Small. Uppercase. Brand accent. Wide letter spacing.")
+ */
+export default function SectionLabel({ children }: SectionLabelProps) {
+  return (
+    <motion.p
+      variants={fade}
+      className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--utbex-maroon,#7A1F2B)]"
+    >
+      {children}
+    </motion.p>
+  );
+}

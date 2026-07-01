@@ -1,9 +1,26 @@
-// src/sections/about/utils/aboutHelpers.ts
-// Utility functions maintaining single responsibility[cite: 4, 7].
+"use client";
+
+import { useEffect, useState } from "react";
 
 /**
- * Combines multiple class names gracefully.
+ * Detects the visitor's `prefers-reduced-motion` preference.
+ * Per 04_ABOUT_MOTION_SYSTEM.md, parallax, floating, and continuous
+ * movement must be disabled when this is true — keep only fade.
  */
-export function cn(...classes: (string | undefined | null | false)[]): string {
-    return classes.filter(Boolean).join(' ');
+export function usePrefersReducedMotion(): boolean {
+  const [prefersReduced, setPrefersReduced] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReduced(query.matches);
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      setPrefersReduced(event.matches);
+    };
+
+    query.addEventListener("change", handleChange);
+    return () => query.removeEventListener("change", handleChange);
+  }, []);
+
+  return prefersReduced;
 }

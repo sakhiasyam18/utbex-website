@@ -1,4 +1,3 @@
-// src/sections/about/index.ts
-// Entry point export[cite: 4].
-
-export * from './About';
+//app/src/components/sections/about/index.ts
+export { default as About } from "./About";
+export { default } from "./About";

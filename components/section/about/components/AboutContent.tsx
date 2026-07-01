@@ -1,49 +1,64 @@
-// src/sections/about/components/AboutContent.tsx
-// Headline, Story, Description, CTA, Quote[cite: 4].
+//app/sections/about/components/AboutContent.tsx
+"use client";
 
-'use client';
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { fadeUp, staggerContainer } from "../motion/aboutMotion";
+import SectionLabel from "./SectionLabel";
+import QuoteBlock from "./QuoteBlock";
+import { AboutContentData } from "../types/about";
 
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import { AboutContentData } from '../types/about';
-import { SectionLabel } from './SectionLabel';
-import { QuoteBlock } from './QuoteBlock';
-import { staggerContainer, fadeUpVariant } from '../motion/aboutMotion';
+interface AboutContentProps {
+  content: AboutContentData;
+}
 
-export const AboutContent = ({ data }: { data: AboutContentData }) => {
-    return (
-        <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-col justify-center max-w-2xl"
-        >
-            <SectionLabel text={data.label} />
+/**
+ * Headline, story, quote, and CTA. Sequenced, never simultaneous, per
+ * 04_ABOUT_MOTION_SYSTEM.md typography animation rules.
+ */
+export default function AboutContent({ content }: AboutContentProps) {
+  return (
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      className="flex max-w-xl flex-col gap-6"
+    >
+      <SectionLabel>{content.label}</SectionLabel>
 
-            <motion.h2
-                variants={fadeUpVariant}
-                className="text-4xl md:text-5xl font-light tracking-tight text-neutral-900 leading-[1.1] mb-8"
-            >
-                {data.headline}
-            </motion.h2>
+      <motion.h2
+        id="about-headline"
+        variants={fadeUp}
+        className="text-4xl font-semibold leading-[1.15] tracking-tight text-neutral-900 sm:text-5xl"
+      >
+        {content.headline}
+      </motion.h2>
 
-            <div className="space-y-6 text-lg text-neutral-600 leading-relaxed font-light">
-                {data.story.map((paragraph, index) => (
-                    <motion.p key={index} variants={fadeUpVariant}>
-                        {paragraph}
-                    </motion.p>
-                ))}
-            </div>
+      <motion.div variants={fadeUp} className="flex flex-col gap-4">
+        {content.story.map((paragraph, index) => (
+          <p
+            key={index}
+            className="max-w-[65ch] text-base leading-relaxed text-neutral-600 sm:text-lg"
+          >
+            {paragraph}
+          </p>
+        ))}
+      </motion.div>
 
-            <QuoteBlock data={data.quote} />
+      <QuoteBlock quote={content.quote} />
 
-            <motion.div variants={fadeUpVariant} className="mt-12">
-                <button className="group flex items-center gap-3 text-neutral-900 font-medium pb-2 border-b border-transparent hover:border-neutral-900 transition-colors duration-300">
-                    {data.ctaText}
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
-            </motion.div>
-        </motion.div>
-    );
-};
+      <motion.a
+        variants={fadeUp}
+        href={content.cta.href}
+        className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-neutral-900 transition-colors hover:text-[color:var(--utbex-maroon,#7A1F2B)]"
+      >
+        {content.cta.label}
+        <ArrowRight
+          aria-hidden="true"
+          className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+        />
+      </motion.a>
+    </motion.div>
+  );
+}

@@ -1,24 +1,31 @@
-// src/sections/about/components/QuoteBlock.tsx
-// Single quote, minimal, elegant[cite: 4, 6].
+//app/sections/about/components/QuoteBlock.tsx
+"use client";
 
-'use client';
+import { motion } from "framer-motion";
+import { fade } from "../motion/aboutMotion";
+import { AboutQuote } from "../types/about";
 
-import { motion } from 'framer-motion';
-import { fadeUpVariant } from '../motion/aboutMotion';
-import { QuoteData } from '../types/about';
+interface QuoteBlockProps {
+  quote: AboutQuote;
+}
 
-export const QuoteBlock = ({ data }: { data: QuoteData }) => {
-    return (
-        <motion.blockquote
-            variants={fadeUpVariant}
-            className="mt-12 border-l-2 border-neutral-300 pl-6"
-        >
-            <p className="text-xl font-medium leading-relaxed text-neutral-800 italic">
-                "{data.text}"
-            </p>
-            <footer className="mt-4 text-sm font-medium text-neutral-500">
-                &mdash; {data.source}
-            </footer>
-        </motion.blockquote>
-    );
-};
+/**
+ * A single, minimal quote. Per spec this must never dominate the layout —
+ * it stays visually quiet: a thin left rule, restrained size, no ornamentation.
+ */
+export default function QuoteBlock({ quote }: QuoteBlockProps) {
+  return (
+    <motion.blockquote
+      variants={fade}
+      className="border-l-2 border-[color:var(--utbex-maroon,#7A1F2B)]/30 pl-5 py-1"
+    >
+      <p className="text-lg leading-relaxed text-neutral-700 italic">
+        &ldquo;{quote.text}&rdquo;
+      </p>
+      <footer className="mt-2 text-sm text-neutral-500 not-italic">
+        {quote.source}
+        {quote.affiliation ? `, ${quote.affiliation}` : ""}
+      </footer>
+    </motion.blockquote>
+  );
+}
