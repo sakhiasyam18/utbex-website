@@ -1,6 +1,7 @@
 //app/page.tsx
 import Hero from "../components/section/hero/Hero";
 import { About } from "../components/section/about";
+import { Impact } from "../components/section/impact";
 import { Portfolio } from "../components/section/portfolio";
 import { Footer } from "../components/section/footer";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <About />
       <Portfolio />
+      <Impact />
       <Footer />
     </div>
   );

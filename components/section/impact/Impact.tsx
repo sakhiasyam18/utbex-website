@@ -1,0 +1,24 @@
+// src/sections/impact/Impact.tsx
+
+import { ImpactHeader } from './components/ImpactHeader';
+import { ImpactStats } from './components/ImpactStats';
+import { ImpactVisual } from './components/ImpactVisual';
+
+export default function Impact() {
+    return (
+        <section
+            className="relative w-full py-24 lg:py-32 overflow-hidden bg-white selection:bg-utbex-maroon/20 selection:text-utbex-maroon"
+            aria-label="UTBEX Indonesia Impact and Statistics"
+        >
+            <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+                <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-utbex-maroon/5 rounded-full blur-[120px] transform-gpu"></div>
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">
+                <ImpactHeader />
+                <ImpactStats />
+                <ImpactVisual />
+            </div>
+        </section>
+    );
+}
