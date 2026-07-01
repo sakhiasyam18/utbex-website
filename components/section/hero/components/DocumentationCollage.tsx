@@ -17,13 +17,13 @@ interface CollageImage {
 const collageData: CollageImage[] = [
     {
         id: "doc-1",
-        src: "/images/hero/documentation-1.jpg",
+        src: "/images/IMG-20260620-WA0011.jpg",
         alt: "UTBEX Community Workshop Session",
         className: "w-48 aspect-square -top-8 -right-10 rotate-[4deg] z-10",
     },
     {
         id: "doc-2",
-        src: "/images/hero/documentation-2.jpg",
+        src: "/images/IMG-20260620-WA0012.jpg",
         alt: "Government Collaboration Mentoring",
         className: "w-56 aspect-[4/3] -bottom-10 -left-8 -rotate-[3deg] z-10",
     },

@@ -18,12 +18,12 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "120 Farmers Participated",
     isFeatured: true,
     primaryImage: {
-      src: "/images/portofolio/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0018.jpg",
       alt: "Coffee farmers discussing their harvest around a wooden table",
     },
     secondaryImages: [
       {
-        src: "/images/portofolio/gallery-1.avif",
+        src: "/images/IMG-20260620-WA0019.jpg",
         alt: "Close up of hands sorting coffee beans",
       },
     ],
@@ -38,7 +38,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "3 Artisan Villages Reached",
     isFeatured: false,
     primaryImage: {
-      src: "/images/portofolio/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0020.jpg",
       alt: "An artisan carefully drawing batik patterns on fabric",
     },
   },
@@ -53,7 +53,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "500+ Students Mentored",
     isFeatured: false,
     primaryImage: {
-      src: "/images/portofolio/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0021.jpg",
       alt: "Students collaborating around a laptop in a classroom",
     },
   },
@@ -67,7 +67,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "Reduced Daily Plastic by 40%",
     isFeatured: false,
     primaryImage: {
-      src: "/images/portofolio/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0022.jpg",
       alt: "A vendor discussing packaging alternatives with community leaders",
     },
   },
@@ -81,7 +81,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "Six Months Mentoring",
     isFeatured: false,
     primaryImage: {
-      src: "/images/portofolio/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0023.jpg",
       alt: "Women entrepreneurs during a workshop discussion",
     },
   },
@@ -95,7 +95,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "Government Partnership",
     isFeatured: false,
     primaryImage: {
-      src: "/images/portofolio/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0024.jpg",
       alt: "Fishermen examining their morning catch at the market",
     },
   },

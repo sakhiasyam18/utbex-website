@@ -13,7 +13,7 @@ export function HeroVisual() {
                 <DocumentationCollage />
 
                 <BrowserMockup
-                    imageSrc="/images/hero/hero-dashboard.jpg"
+                    imageSrc="/images/IMG-20260620-WA0010.jpg"
                     alt="UTBEX Digital Ecosystem Dashboard"
                 />
 

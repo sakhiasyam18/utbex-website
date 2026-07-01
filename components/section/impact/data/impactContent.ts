@@ -30,7 +30,7 @@ export const impactContent: ImpactContentData = {
         author: "MSME Partner, Bantul"
     },
     image: {
-        src: "/images/impact/village-workshop.jpg",
+        src: "/images/IMG-20260620-WA0025.jpg",
         alt: "UTBEX workshop documentation with MSME partners"
     }
 };

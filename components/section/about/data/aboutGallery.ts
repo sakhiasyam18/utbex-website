@@ -13,7 +13,7 @@ import { AboutGalleryData } from "../types/about";
 export const aboutGallery: AboutGalleryData = {
   primary: {
     id: "primary-mentoring",
-    src: "/images/about/gallery-1.avif",
+    src: "/images/IMG-20260620-WA0013.jpg",
     alt: "A UTBEX mentor sitting with a small group of village entrepreneurs, reviewing notes together in natural light.",
     width: 1200,
     height: 1500,
@@ -27,7 +27,7 @@ export const aboutGallery: AboutGalleryData = {
   supporting: [
     {
       id: "support-discussion-circle",
-      src: "/images/about/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0014.jpg",
       alt: "A discussion circle with community members during a village empowerment session.",
       width: 800,
       height: 1000,
@@ -39,7 +39,7 @@ export const aboutGallery: AboutGalleryData = {
     },
     {
       id: "support-umkm-training",
-      src: "/images/about/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0015.jpg",
       alt: "A local MSME owner practicing a new skill during a hands-on training session.",
       width: 800,
       height: 1000,
@@ -51,7 +51,7 @@ export const aboutGallery: AboutGalleryData = {
     },
     {
       id: "support-youth-innovation",
-      src: "/images/about/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0016.jpg",
       alt: "Students collaborating during a youth innovation workshop.",
       width: 800,
       height: 600,
@@ -63,7 +63,7 @@ export const aboutGallery: AboutGalleryData = {
     },
     {
       id: "support-government-collab",
-      src: "/images/about/gallery-1.avif",
+      src: "/images/IMG-20260620-WA0017.jpg",
       alt: "UTBEX team members in discussion with local government partners.",
       width: 800,
       height: 600,
