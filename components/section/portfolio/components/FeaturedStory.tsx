@@ -91,7 +91,7 @@ export default function FeaturedStory({ project }: FeaturedStoryProps) {
           {project.secondaryImages && project.secondaryImages.length > 0 && (
             <motion.div
               variants={imageReveal}
-              className="hidden lg:block absolute -bottom-8 -left-10 w-[38%] aspect-[4/3] overflow-hidden rounded-lg shadow-[0_8px_32px_rgb(0,0,0,0.12)] border-[3px] border-white z-10"
+              className="hidden lg:block absolute -bottom-8 -left-10 w-[38%] aspect-[4/3] overflow-hidden rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.07)] border-[3px] border-white z-10"
             >
               <Image
                 src={project.secondaryImages[0].src}

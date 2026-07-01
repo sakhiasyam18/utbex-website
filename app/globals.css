@@ -1,16 +1,42 @@
 /* //app/globals.css */
+/* ─────────────────────────────────────────────────────────────
+   UTBEX Design System — Global Design Tokens
+   Source of truth: /docs/design-system/02_COLOR_SYSTEM.md
+   Status: LOCKED — never modify without DS approval
+───────────────────────────────────────────────────────────── */
 @import "tailwindcss";
 
 @source "../components";
 
 @theme {
+  /* ── Brand Identity ── */
+  /* Maroon is the singular identity accent (DS 02: "Maroon represents identity") */
   --color-utbex-maroon: #8B0000;
-  --color-utbex-red: #C62828;
-  --color-utbex-dark: #171717;
-  --color-utbex-light: #F9FAFB;
-  
-  /* Missing typography colors for portfolio */
-  --color-utbex-text-primary: #171717;
-  --color-utbex-text-secondary: #4B5563;
-  --color-utbex-accent: #C62828;
+  /* Red is available for gradient stops only — never as a primary accent */
+  --color-utbex-red: #B71C1C;
+
+  /* ── Canvas System ── */
+  /* DS: "White remains dominant. Avoid cold blue whites." */
+  /* Primary canvas — warm white, never cold */
+  --color-utbex-canvas: #FDFCFB;
+  /* Elevated surface — warm off-white for section backgrounds */
+  --color-utbex-light: #FAF9F7;
+  /* Off-white alias used by atmospheric BackgroundEffects components */
+  --color-utbex-off-white: #FAF9F7;
+
+  /* ── Near Black — DS: "Primary Text — Near Black" ── */
+  /* Warm near-black, not pure #000 which reads too harsh */
+  --color-utbex-dark: #1A1A1A;
+
+  /* ── Typography Colors ── */
+  /* DS 03: "Primary — Near Black. Secondary — Warm Gray." */
+  /* Primary text: warm near-black for headings and body */
+  --color-utbex-text-primary: #1A1A1A;
+  /* Secondary text: warm gray, not cold blue-gray */
+  --color-utbex-text-secondary: #6B6560;
+
+  /* ── Identity Accent ── */
+  /* DS 02: "Use [maroon] only for CTA, active navigation, important keywords, interaction feedback" */
+  /* Accent resolves to maroon — the singular brand identity color */
+  --color-utbex-accent: #8B0000;
 }

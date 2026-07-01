@@ -23,9 +23,10 @@ export function HeroContent() {
                 </span>
             </motion.div>
 
-            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-utbex-dark leading-[1.15] tracking-tight mb-6">
+            {/* DS 03: Bold — never ExtraBold. DS 02: no strong linear gradients — solid maroon accent only. */}
+            <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold text-utbex-dark leading-[1.15] tracking-tight mb-6">
                 {heroContent.headlineStart}{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-utbex-maroon to-utbex-red">
+                <span className="text-utbex-maroon">
                     {heroContent.headlineHighlight}
                 </span>
             </motion.h1>
@@ -42,7 +43,8 @@ export function HeroContent() {
                         className={cx(
                             "group relative flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300 w-full sm:w-auto",
                             button.variant === 'primary'
-                                ? "bg-utbex-maroon hover:bg-[#6A0000] text-white shadow-[0_8px_20px_rgb(139,0,0,0.25)]"
+                                /* DS 06: Large blur, low opacity shadow. 0.12 reads as natural elevation. */
+                                ? "bg-utbex-maroon hover:bg-[#6A0000] text-white shadow-[0_8px_32px_rgba(139,0,0,0.12)]"
                                 : "bg-transparent border-2 border-utbex-dark/10 hover:border-utbex-dark/20 text-utbex-dark"
                         )}
                         aria-label={button.label}

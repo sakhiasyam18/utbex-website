@@ -16,7 +16,7 @@ export function ImpactHeader() {
         >
             <motion.h2
                 variants={fadeInUp}
-                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-utbex-dark leading-[1.15] tracking-tight text-balance"
+                className="text-3xl md:text-4xl lg:text-5xl font-semibold text-utbex-dark leading-[1.15] tracking-tight text-balance"
             >
                 {impactContent.headline}
             </motion.h2>
