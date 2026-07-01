@@ -19,17 +19,13 @@ export const linkHoverVariants: Variants = {
 
 export const ctaHoverVariants: Variants = {
     idle: {
-        y: 0,
-        scale: 1,
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.05)",
+        opacity: 0.95,
     },
     hover: {
-        y: -2,
-        scale: 1.02,
-        boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",
+        opacity: 1,
         transition: {
-            duration: 0.3,
-            ease: "easeOut"
+            duration: 0.5,
+            ease: [0.25, 0.1, 0.25, 1]
         }
     }
 };

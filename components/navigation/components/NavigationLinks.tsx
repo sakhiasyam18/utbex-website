@@ -10,7 +10,7 @@ interface NavigationLinksProps {
 
 export function NavigationLinks({ activeSection }: NavigationLinksProps) {
     return (
-        <div className="hidden md:flex items-center space-x-8 font-medium z-10 relative">
+        <div className="hidden md:flex items-center space-x-10 font-medium z-10 relative">
             {navigationLinks.map((link) => {
                 const isActive = activeSection === link.id;
                 
@@ -24,8 +24,8 @@ export function NavigationLinks({ activeSection }: NavigationLinksProps) {
                     >
                         <Link 
                             href={link.href} 
-                            className={`text-sm tracking-wide transition-colors duration-300 ${
-                                isActive ? 'text-utbex-dark font-semibold' : 'text-utbex-text-secondary hover:text-utbex-dark'
+                            className={`text-sm tracking-wide antialiased transition-all duration-500 ease-out ${
+                                isActive ? 'text-utbex-dark font-semibold' : 'text-utbex-text-secondary/80 hover:text-utbex-dark hover:opacity-100 opacity-90'
                             }`}
                         >
                             {link.label}

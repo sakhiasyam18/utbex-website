@@ -13,7 +13,7 @@ export function NavigationCTA() {
         >
             <Link 
                 href={navigationContent.cta.href}
-                className="bg-white/60 border border-utbex-maroon/10 text-utbex-maroon px-6 py-2.5 rounded-full text-sm font-medium transition-colors hover:bg-white/90"
+                className="bg-white/40 border-[0.5px] border-utbex-maroon/10 backdrop-blur-md shadow-[0_2px_10px_rgba(139,0,0,0.02)] text-utbex-maroon px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-500 ease-out hover:bg-white/60 hover:shadow-[0_4px_16px_rgba(139,0,0,0.04)]"
             >
                 {navigationContent.cta.label}
             </Link>
