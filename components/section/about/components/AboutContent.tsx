@@ -51,7 +51,7 @@ export default function AboutContent({ content }: AboutContentProps) {
       <motion.a
         variants={fadeUp}
         href={content.cta.href}
-        className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-neutral-900 transition-colors hover:text-[color:var(--utbex-maroon,#7A1F2B)]"
+        className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-neutral-900 transition-colors hover:text-utbex-maroon"
       >
         {content.cta.label}
         <ArrowRight

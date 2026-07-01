@@ -18,6 +18,11 @@ export const aboutGallery: AboutGalleryData = {
     width: 1200,
     height: 1500,
     isPrimary: true,
+    annotation: {
+      title: "Community Mentoring",
+      location: "Banyuwangi",
+      detail: "2024",
+    },
   },
   supporting: [
     {
@@ -26,6 +31,11 @@ export const aboutGallery: AboutGalleryData = {
       alt: "A discussion circle with community members during a village empowerment session.",
       width: 800,
       height: 1000,
+      annotation: {
+        title: "Discussion Circle",
+        location: "Village Empowerment",
+        detail: "12 Participants",
+      },
     },
     {
       id: "support-umkm-training",
@@ -33,6 +43,11 @@ export const aboutGallery: AboutGalleryData = {
       alt: "A local MSME owner practicing a new skill during a hands-on training session.",
       width: 800,
       height: 1000,
+      annotation: {
+        title: "MSME Mentoring",
+        location: "Malang",
+        detail: "27 Participants",
+      },
     },
     {
       id: "support-youth-innovation",
@@ -40,6 +55,11 @@ export const aboutGallery: AboutGalleryData = {
       alt: "Students collaborating during a youth innovation workshop.",
       width: 800,
       height: 600,
+      annotation: {
+        title: "Youth Innovation",
+        location: "Surabaya",
+        detail: "Creative Workshop",
+      },
     },
     {
       id: "support-government-collab",
@@ -47,6 +67,11 @@ export const aboutGallery: AboutGalleryData = {
       alt: "UTBEX team members in discussion with local government partners.",
       width: 800,
       height: 600,
+      annotation: {
+        title: "Government Collaboration",
+        location: "East Java",
+        detail: "Official Program",
+      },
     },
   ],
 };

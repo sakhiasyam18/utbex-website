@@ -23,17 +23,20 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-headline"
-      className="relative overflow-hidden py-24 sm:py-32"
+      className="relative overflow-hidden py-24 sm:py-32 w-full bg-utbex-light"
     >
       <BackgroundEffects />
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 sm:px-8 lg:grid-cols-2 lg:gap-16">
-        <div className="order-1">
-          <AboutVisual gallery={aboutGallery} />
-        </div>
+      {/* Match Hero width and padding seamlessly */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 items-start">
+          <div className="order-1">
+            <AboutVisual gallery={aboutGallery} />
+          </div>
 
-        <div className="order-2">
-          <AboutContent content={aboutContent} />
+          <div className="order-2 lg:sticky lg:top-32 lg:pt-8">
+            <AboutContent content={aboutContent} />
+          </div>
         </div>
       </div>
     </section>

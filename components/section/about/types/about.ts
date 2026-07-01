@@ -29,6 +29,12 @@ export interface AboutContentData {
   };
 }
 
+export interface GalleryImageAnnotation {
+  title: string;
+  location: string;
+  detail: string;
+}
+
 export interface GalleryImage {
   id: string;
   src: string;
@@ -38,6 +44,8 @@ export interface GalleryImage {
   height: number;
   /** Marks the single dominant "Primary Image" described in the visual system */
   isPrimary?: boolean;
+  /** Documentary evidence annotation shown as caption */
+  annotation?: GalleryImageAnnotation;
 }
 
 export interface AboutGalleryData {

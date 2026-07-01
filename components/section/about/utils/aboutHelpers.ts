@@ -8,11 +8,13 @@ import { useEffect, useState } from "react";
  * movement must be disabled when this is true — keep only fade.
  */
 export function usePrefersReducedMotion(): boolean {
-  const [prefersReduced, setPrefersReduced] = useState(false);
+  const [prefersReduced, setPrefersReduced] = useState(() => 
+    typeof window !== "undefined" ? window.matchMedia("(prefers-reduced-motion: reduce)").matches : false
+  );
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReduced(query.matches);
+
 
     const handleChange = (event: MediaQueryListEvent) => {
       setPrefersReduced(event.matches);

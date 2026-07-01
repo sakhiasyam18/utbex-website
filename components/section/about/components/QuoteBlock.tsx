@@ -17,7 +17,7 @@ export default function QuoteBlock({ quote }: QuoteBlockProps) {
   return (
     <motion.blockquote
       variants={fade}
-      className="border-l-2 border-[color:var(--utbex-maroon,#7A1F2B)]/30 pl-5 py-1"
+      className="border-l-2 border-utbex-maroon/30 pl-5 py-1"
     >
       <p className="text-lg leading-relaxed text-neutral-700 italic">
         &ldquo;{quote.text}&rdquo;

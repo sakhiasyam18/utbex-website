@@ -1,9 +1,16 @@
 /* //app/globals.css */
 @import "tailwindcss";
 
+@source "../components";
+
 @theme {
   --color-utbex-maroon: #8B0000;
   --color-utbex-red: #C62828;
   --color-utbex-dark: #171717;
   --color-utbex-light: #F9FAFB;
+  
+  /* Missing typography colors for portfolio */
+  --color-utbex-text-primary: #171717;
+  --color-utbex-text-secondary: #4B5563;
+  --color-utbex-accent: #C62828;
 }

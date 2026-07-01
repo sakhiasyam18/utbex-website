@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={`${inter.className} bg-utbex-light flex flex-col min-h-screen`}>
+      <body className={`${inter.className} bg-utbex-light flex flex-col min-h-screen selection:bg-utbex-maroon/20 selection:text-utbex-maroon`}>
         <main className="flex-grow">
           {children}
         </main>
