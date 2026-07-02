@@ -67,7 +67,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "Reduced Daily Plastic by 40%",
     isFeatured: false,
     primaryImage: {
-      src: "/images/mockup-utbex-baleho-besar2.avif",
+      src: "/images/foto-bersama-arif-dwi-asmara-utbex.avif",
       alt: "A vendor discussing packaging alternatives with community leaders",
     },
   },

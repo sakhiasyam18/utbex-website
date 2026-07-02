@@ -5,6 +5,7 @@ import { Impact } from "../components/section/impact";
 import { Portfolio } from "../components/section/portfolio";
 import { Footer } from "../components/section/footer";
 import { GlobalAtmosphere } from "../components/atmosphere/GlobalAtmosphere";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,7 +15,29 @@ export default function Home() {
       <GlobalAtmosphere />
       <Hero />
       <About />
+      
+      {/* Cinematic Chapter Divider 01 */}
+      <div className="relative w-full aspect-[21/9] lg:aspect-[24/9] overflow-hidden my-12">
+        <Image 
+          src="/images/pelatihan-digital-marketing-dan-packaging-utbex-dengan-arif-dwi-asmara.avif" 
+          alt="Documentary transition: Community Workshop" 
+          fill 
+          className="object-cover"
+        />
+      </div>
+
       <Portfolio />
+
+      {/* Cinematic Chapter Divider 02 */}
+      <div className="relative w-full aspect-[21/9] lg:aspect-[24/9] overflow-hidden my-12">
+        <Image 
+          src="/images/utbex-foto-bersama-pemerintah-arif-dwi-asmara.avif" 
+          alt="Documentary transition: Government Collaboration" 
+          fill 
+          className="object-cover"
+        />
+      </div>
+
       <Impact />
       <Footer />
     </div>

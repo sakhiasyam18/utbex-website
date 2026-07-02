@@ -23,8 +23,8 @@ const collageData: CollageImage[] = [
     },
     {
         id: "doc-2",
-        src: "/images/foto-bersama-arik-dwi-asmara-utbex-dengan-pemerintah.avif",
-        alt: "Government Collaboration Mentoring",
+        src: "/images/utbex-pelatihan-manajemen-umkm-dengan-arik-dwi-asmara.avif",
+        alt: "Community Mentoring and Workshop",
         className: "w-56 aspect-[4/3] -bottom-10 -left-8 -rotate-[3deg] z-10",
     },
 ];
