@@ -13,7 +13,7 @@ import { AboutGalleryData } from "../types/about";
 export const aboutGallery: AboutGalleryData = {
   primary: {
     id: "primary-mentoring",
-    src: "/images/IMG-20260620-WA0013.jpg",
+    src: "/images/foto-bersama-arif-dwi-asmara-utbex.avif",
     alt: "A UTBEX mentor sitting with a small group of village entrepreneurs, reviewing notes together in natural light.",
     width: 1200,
     height: 1500,
@@ -27,7 +27,7 @@ export const aboutGallery: AboutGalleryData = {
   supporting: [
     {
       id: "support-discussion-circle",
-      src: "/images/IMG-20260620-WA0014.jpg",
+      src: "/images/pelatihan-digital-marketing-dan-packaging-utbex.avif",
       alt: "A discussion circle with community members during a village empowerment session.",
       width: 800,
       height: 1000,
@@ -39,7 +39,7 @@ export const aboutGallery: AboutGalleryData = {
     },
     {
       id: "support-umkm-training",
-      src: "/images/IMG-20260620-WA0015.jpg",
+      src: "/images/pemateri-arik-dwi-asmara-meyerahkan-gift-dengan-peserta-seminar-umkm.avif",
       alt: "A local MSME owner practicing a new skill during a hands-on training session.",
       width: 800,
       height: 1000,
@@ -51,7 +51,7 @@ export const aboutGallery: AboutGalleryData = {
     },
     {
       id: "support-youth-innovation",
-      src: "/images/IMG-20260620-WA0016.jpg",
+      src: "/images/penyerahan-arik-dwi-asmara-dengan-pemerintahan.avif",
       alt: "Students collaborating during a youth innovation workshop.",
       width: 800,
       height: 600,
@@ -63,7 +63,7 @@ export const aboutGallery: AboutGalleryData = {
     },
     {
       id: "support-government-collab",
-      src: "/images/IMG-20260620-WA0017.jpg",
+      src: "/images/utbex-foto-bersama-pemerintah-arif-dwi-asmara.avif",
       alt: "UTBEX team members in discussion with local government partners.",
       width: 800,
       height: 600,

@@ -30,7 +30,7 @@ export const impactContent: ImpactContentData = {
         author: "MSME Partner, Bantul"
     },
     image: {
-        src: "/images/IMG-20260620-WA0025.jpg",
+        src: "/images/arik-dwi-asmara-utbex-menyampaikan-materi.avif",
         alt: "UTBEX workshop documentation with MSME partners"
     }
 };

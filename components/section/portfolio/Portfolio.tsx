@@ -44,7 +44,7 @@ export default function Portfolio() {
         <PartnerEcosystem partners={portfolioPartners} />
         
         {/* Chapter 06: Continue Story CTA */}
-        <PortfolioCTA content={portfolioContent} />
+        {/* <PortfolioCTA content={portfolioContent} /> */}
       </div>
     </section>
   );

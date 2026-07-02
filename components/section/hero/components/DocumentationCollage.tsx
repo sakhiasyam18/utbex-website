@@ -17,13 +17,13 @@ interface CollageImage {
 const collageData: CollageImage[] = [
     {
         id: "doc-1",
-        src: "/images/IMG-20260620-WA0011.jpg",
+        src: "/images/postingan-utbex-news-saat-seminar-penyampaian-materi-dengan-umkm-lokal-arik-dwi-asmara.avif",
         alt: "UTBEX Community Workshop Session",
         className: "w-48 aspect-square -top-8 -right-10 rotate-[4deg] z-10",
     },
     {
         id: "doc-2",
-        src: "/images/IMG-20260620-WA0012.jpg",
+        src: "/images/foto-bersama-arik-dwi-asmara-utbex-dengan-pemerintah.avif",
         alt: "Government Collaboration Mentoring",
         className: "w-56 aspect-[4/3] -bottom-10 -left-8 -rotate-[3deg] z-10",
     },

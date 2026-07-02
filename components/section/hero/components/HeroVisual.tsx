@@ -13,7 +13,7 @@ export function HeroVisual() {
                 <DocumentationCollage />
 
                 <BrowserMockup
-                    imageSrc="/images/IMG-20260620-WA0010.jpg"
+                    imageSrc="/images/mockup-utbex-papan-poster-ekslusif.avif"
                     alt="UTBEX Digital Ecosystem Dashboard"
                 />
 

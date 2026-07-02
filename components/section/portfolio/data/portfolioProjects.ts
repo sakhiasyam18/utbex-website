@@ -18,12 +18,12 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "120 Farmers Participated",
     isFeatured: true,
     primaryImage: {
-      src: "/images/IMG-20260620-WA0018.jpg",
+      src: "/images/pelatihan-utbex-digital-marketing-di-umkm.avif",
       alt: "Coffee farmers discussing their harvest around a wooden table",
     },
     secondaryImages: [
       {
-        src: "/images/IMG-20260620-WA0019.jpg",
+        src: "/images/foto-bersama-arik-dwi-asmara-di-pammeran-utbex.avif",
         alt: "Close up of hands sorting coffee beans",
       },
     ],
@@ -38,7 +38,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "3 Artisan Villages Reached",
     isFeatured: false,
     primaryImage: {
-      src: "/images/IMG-20260620-WA0020.jpg",
+      src: "/images/pelatihan-digital-marketing-dan-packaging-utbex-dengan-arif-dwi-asmara.avif",
       alt: "An artisan carefully drawing batik patterns on fabric",
     },
   },
@@ -53,7 +53,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "500+ Students Mentored",
     isFeatured: false,
     primaryImage: {
-      src: "/images/IMG-20260620-WA0021.jpg",
+      src: "/images/arik-dwi-asmara-penyampaian-materi-utbex.avif",
       alt: "Students collaborating around a laptop in a classroom",
     },
   },
@@ -67,7 +67,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "Reduced Daily Plastic by 40%",
     isFeatured: false,
     primaryImage: {
-      src: "/images/IMG-20260620-WA0022.jpg",
+      src: "/images/mockup-utbex-baleho-besar2.avif",
       alt: "A vendor discussing packaging alternatives with community leaders",
     },
   },
@@ -81,7 +81,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "Six Months Mentoring",
     isFeatured: false,
     primaryImage: {
-      src: "/images/IMG-20260620-WA0023.jpg",
+      src: "/images/utbex-pelatihan-manajemen-umkm-dengan-arik-dwi-asmara.avif",
       alt: "Women entrepreneurs during a workshop discussion",
     },
   },
@@ -95,7 +95,7 @@ export const portfolioProjects: PortfolioProject[] = [
     evidence: "Government Partnership",
     isFeatured: false,
     primaryImage: {
-      src: "/images/IMG-20260620-WA0024.jpg",
+      src: "/images/awarding-inotek-award-ceremony-2023-utbex.avif",
       alt: "Fishermen examining their morning catch at the market",
     },
   },
