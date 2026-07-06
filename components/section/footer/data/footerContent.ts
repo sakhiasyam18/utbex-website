@@ -14,27 +14,27 @@ import { FooterContent } from "../types/footer";
  */
 export const footerContent: FooterContent = {
   closing: {
-    label: "THE CONVERSATION BEGINS",
+    label: "KOLABORASI BERIKUTNYA",
 
-    headline: "Every meaningful collaboration\nbegins with a conversation.",
+    headline: "Membangun perubahan tidak pernah\nmenjadi perjalanan satu pihak.",
 
     description:
-      "We are ready when you are. Reach out and let us explore what is possible together.",
+      "Setiap langkah selalu dimulai dari orang-orang yang percaya bahwa masa depan dapat dibentuk bersama. Jika Anda memiliki visi yang sama untuk menciptakan perubahan yang berkelanjutan, kami akan senang memulai percakapan bersama Anda.",
   },
 
   contact: {
     items: [
       {
-        label: "Email address",
+        label: "Alamat Email",
         value: "hello@utbex.id",
         href: "mailto:hello@utbex.id",
       },
       {
-        label: "Location",
+        label: "Lokasi",
         value: "Indonesia",
       },
     ],
   },
 
-  copyright: "© 2026 UTBEX Indonesia. All rights reserved.",
+  copyright: "© 2026 UTBEX Indonesia. Hak cipta dilindungi undang-undang.",
 };

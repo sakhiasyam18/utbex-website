@@ -5,7 +5,7 @@ import { EvidenceCardData } from '../types/hero';
 export const heroEvidence: EvidenceCardData[] = [
     {
         id: "evidence-premium",
-        title: "Premium Quality",
+        title: "Kualitas Premium",
         subtitle: "Inovasi & Kriya",
         iconName: "Award",
         positionClass: "top-[-30px] left-[-40px]"
@@ -19,14 +19,14 @@ export const heroEvidence: EvidenceCardData[] = [
     },
     {
         id: "evidence-education",
-        title: "SCoVil Education",
+        title: "Edukasi SCoVil",
         subtitle: "Pemberdayaan Desa",
         iconName: "Lightbulb",
         positionClass: "top-[60px] right-[-40px]"
     },
     {
         id: "evidence-social",
-        title: "Social Enterprise",
+        title: "Enterprise Sosial",
         subtitle: "Dampak Nasional",
         iconName: "TrendingUp",
         positionClass: "bottom-[-30px] right-[30px]"

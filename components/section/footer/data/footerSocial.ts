@@ -15,18 +15,18 @@ export const footerSocial: FooterSocialItem[] = [
     id: "social-instagram",
     platform: "Instagram",
     href: "https://instagram.com/utbex.id",
-    ariaLabel: "UTBEX on Instagram",
+    ariaLabel: "UTBEX di Instagram",
   },
   {
     id: "social-linkedin",
     platform: "LinkedIn",
     href: "https://linkedin.com/company/utbex",
-    ariaLabel: "UTBEX on LinkedIn",
+    ariaLabel: "UTBEX di LinkedIn",
   },
   {
     id: "social-youtube",
     platform: "YouTube",
     href: "https://youtube.com/@utbex",
-    ariaLabel: "UTBEX on YouTube",
+    ariaLabel: "UTBEX di YouTube",
   },
 ];

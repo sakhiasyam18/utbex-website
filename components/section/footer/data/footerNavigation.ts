@@ -12,22 +12,22 @@ import { FooterNavItem } from "../types/footer";
 export const footerNavigation: FooterNavItem[] = [
   {
     id: "nav-home",
-    label: "Home",
+    label: "Beranda",
     href: "#",
   },
   {
     id: "nav-about",
-    label: "About",
+    label: "Tentang Kami",
     href: "#about",
   },
   {
     id: "nav-portfolio",
-    label: "Portfolio",
+    label: "Jejak Kolaborasi",
     href: "#portfolio",
   },
   {
     id: "nav-contact",
-    label: "Contact",
+    label: "Mari Berdiskusi",
     href: "mailto:hello@utbex.id",
   },
 ];

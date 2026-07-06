@@ -2,7 +2,7 @@
 
 export const navigationContent = {
     cta: {
-        label: "Let's Talk",
+        label: "Mari Berdiskusi",
         href: "#footer"
     },
     logo: {

@@ -2,15 +2,15 @@
 import { PortfolioContent } from "../types/portfolio";
 
 export const portfolioContent: PortfolioContent = {
-  headline: "Evidence of Transformation",
+  headline: "Setiap Langkah Meninggalkan Cerita.",
   introduction:
-    "These stories belong to the communities, entrepreneurs, and students who experienced change. We simply worked alongside them.",
-  ctaText: "Start a Conversation",
+    "Setiap kolaborasi memiliki cerita yang berbeda. Ada yang dimulai dari sebuah diskusi sederhana. Ada yang tumbuh melalui proses belajar bersama. Ada pula yang berkembang menjadi perubahan yang terus dirasakan hingga hari ini. Inilah sebagian perjalanan yang telah kami lalui bersama berbagai komunitas dan mitra.",
+  ctaText: "Mari Berdiskusi",
   ctaHref: "#contact",
-  ctaLabel: "Chapter Three",
-  ctaHeadline: "Ready to Begin the Next Chapter?",
+  ctaLabel: "Perjalanan Berikutnya",
+  ctaHeadline: "Siap Memulai Cerita Baru?",
   ctaBody:
-    "Every transformation starts with one honest conversation. If you have a challenge, a community, or an idea that deserves to grow, we would like to hear it.",
-  ctaSecondaryText: "View Our Process",
+    "Setiap perubahan selalu dimulai dari satu percakapan sederhana. Jika Anda memiliki visi yang sama untuk menciptakan dampak yang berkelanjutan, kami akan senang mendengarnya.",
+  ctaSecondaryText: "Pelajari Cerita Kami",
   ctaSecondaryHref: "#about",
 };

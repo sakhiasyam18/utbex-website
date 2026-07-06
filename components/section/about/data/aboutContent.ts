@@ -12,27 +12,27 @@ import { AboutContentData } from "../types/about";
  * should need to change to support that.
  */
 export const aboutContent: AboutContentData = {
-  label: "WHY WE EXIST",
+  label: "Tentang UTBEX",
 
-  headline: "Growing Communities Through Innovation.",
+  headline: "Perubahan Besar Selalu Dimulai dari Langkah Kecil.",
 
   story: [
     // Reality
-    "In villages and small cities across Indonesia, good ideas often stay ideas. Talented people are missing the tools, mentors, and networks to turn them into something real.",
+    "UTBEX lahir dari keyakinan bahwa perubahan tidak harus selalu dimulai dari sesuatu yang besar.",
     // Opportunity + Action
-    "UTBEX exists to close that gap. We connect students, young entrepreneurs, and local innovators with mentoring, training, and the partners who can help them grow.",
+    "Bersama desa, UMKM, komunitas, dan berbagai mitra, kami membangun ruang untuk belajar, berkolaborasi, dan menciptakan solusi yang tumbuh dari kebutuhan nyata.",
     // Impact + Future
-    "Community by community, we are watching curiosity turn into capability, and small efforts grow into lasting change.",
+    "Bagi kami, keberhasilan bukan hanya tentang menyelesaikan sebuah program, tetapi tentang memastikan dampaknya terus dirasakan setelah perjalanan itu dimulai.",
   ],
 
   quote: {
-    text: "UTBEX did not just teach us how to run a business. They believed in us first.",
-    source: "Community Partner",
-    affiliation: "East Java",
+    text: "UTBEX tidak hanya mengajari kami cara menjalankan bisnis. Mereka lebih dulu percaya pada kami.",
+    source: "Mitra Komunitas",
+    affiliation: "Jawa Timur",
   },
 
   cta: {
-    label: "Discover Our Journey",
+    label: "Jelajahi Cerita Kami",
     href: "/journey",
   },
 };
