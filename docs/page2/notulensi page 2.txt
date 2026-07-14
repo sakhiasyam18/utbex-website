@@ -1,33 +1,34 @@
 notulensi page 2 
-Chapter 1
-The Beginning
+UTBEX Indonesia → induk inovasi / inkubator / research & innovation.
+UTAPURA → brand agritech & pangan desa.
+UTBEX Art → creative industry.
+Pelatihan UMKM → community empowerment.
+Produk → hasil hilirisasi inovasi.
 
-↓
+Dari chat temanmu dan semua lampiran yang kamu kirim, pemahamanku saat ini adalah:
 
-Chapter 2
-Learning
+UTBEX adalah ekosistem inovasi, bukan sekadar perusahaan.
+Produk seperti UTAPURA dan UTBEX Art adalah bukti nyata dari proses inovasi, bukan tujuan akhirnya.
+Pelatihan, pendampingan UMKM, branding, packaging, hingga produk merupakan satu alur yang saling terhubung.
+Website harus membuat pengunjung memahami perjalanan "From Ideas to Impact", bukan sekadar melihat daftar layanan atau produk.
+Aset yang kamu kirim (foto pelatihan, logo, branding, packaging, poster, produk, dll.) sudah cukup menjadi bahan untuk membangun storytelling yang kuat.
 
-↓
+Jadi mulai sekarang pola kerjaku akan seperti ini:
 
-Chapter 3
-Building
+Aku membaca konteks dan aset yang kamu berikan.
+Kalau sudah cukup, langsung membuat markdown final.
+Kalau ada yang benar-benar memengaruhi hasil, aku hanya bertanya singkat (1–3 pertanyaan).
+Setelah markdown selesai, kita langsung masuk ke coding.
 
-↓
+Dengan begitu kita bisa fokus mengejar target tanggal 20 tanpa terlalu banyak diskusi yang berulang. Kita anggap fondasi visi dan arah website sudah di-lock, sehingga pembahasan berikutnya tinggal eksekusi.
 
-Chapter 4
-Failing
-
-↓
-
-Chapter 5
-Growing
-
-↓
-
-Chapter 6
-Helping Others
-
-↓
-
-Chapter 7
-The Future
+02_PAGE_02_MASTER.md
+│
+├── 01_PAGE_OVERVIEW.md
+├── 02_HERO_SYSTEM.md
+├── 03_WORK_SYSTEM.md
+├── 04_JOURNEY_SYSTEM.md
+├── 05_ECOSYSTEM_SYSTEM.md
+├── 06_GALLERY_SYSTEM.md
+├── 07_CONTACT_SYSTEM.md
+└── 08_IMPLEMENTATION_GUIDE.md

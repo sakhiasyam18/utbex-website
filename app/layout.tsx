@@ -47,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="scroll-smooth">
+    <html lang="id" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className={`${inter.className} antialiased bg-utbex-canvas flex flex-col min-h-screen selection:bg-utbex-maroon/20 selection:text-utbex-maroon`}>
         <Navigation />
         <main className="flex-grow">
