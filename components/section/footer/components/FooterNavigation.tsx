@@ -23,6 +23,8 @@ interface FooterNavigationProps {
  * lower contrast. Navigation exists to be found — not to attract attention.
  */
 export default function FooterNavigation({ items }: FooterNavigationProps) {
+  if (!items || items.length === 0) return null;
+
   return (
     <motion.nav
       variants={staggerContainer}

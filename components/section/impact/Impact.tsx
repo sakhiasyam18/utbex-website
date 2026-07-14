@@ -8,6 +8,7 @@ export default function Impact() {
     return (
         // bg-white removed — continuous global atmosphere creates "slight optimism" (DS 02) through here
         <section
+            id="impact"
             className="relative w-full py-24 lg:py-32 overflow-hidden"
             aria-label="UTBEX Indonesia Impact and Statistics"
         >

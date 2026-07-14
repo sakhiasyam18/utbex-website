@@ -181,7 +181,7 @@ Avoid corporate language.
 
 # Recommended Subheadline
 
-Bersama desa, UMKM, dan komunitas, kami menghadirkan inovasi yang tumbuh dari kebutuhan nyata. Setiap program dirancang untuk menciptakan perubahan yang dapat dirasakan dan terus berkembang bersama masyarakat.
+Bersama desa, UMKM, dan komunitas, kami menghadirkan inovasi yang tumbuh dari kebutuhan. Setiap program dirancang untuk menciptakan perubahan yang dapat dirasakan dan terus berkembang bersama masyarakat.
 
 ---
 

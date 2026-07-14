@@ -20,7 +20,7 @@ export const aboutContent: AboutContentData = {
     // Reality
     "UTBEX lahir dari keyakinan bahwa perubahan tidak harus selalu dimulai dari sesuatu yang besar.",
     // Opportunity + Action
-    "Bersama desa, UMKM, komunitas, dan berbagai mitra, kami membangun ruang untuk belajar, berkolaborasi, dan menciptakan solusi yang tumbuh dari kebutuhan nyata.",
+    "Bersama desa, UMKM, komunitas, dan berbagai mitra, kami membangun ruang untuk belajar, berkolaborasi, dan menciptakan solusi yang tumbuh dari kebutuhan.",
     // Impact + Future
     "Bagi kami, keberhasilan bukan hanya tentang menyelesaikan sebuah program, tetapi tentang memastikan dampaknya terus dirasakan setelah perjalanan itu dimulai.",
   ],
