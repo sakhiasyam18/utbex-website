@@ -67,7 +67,7 @@ export default function ProjectMosaic({ projects }: ProjectMosaicProps) {
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 lg:mb-28"
     >
       {/* Mobile: single column. Desktop: documentary wall via 12-col grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-y-16 gap-x-8 lg:gap-x-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-y-10 sm:gap-y-16 gap-x-8 lg:gap-x-10">
         {projects.map((project, index) => {
           const slot = MOSAIC_SLOTS[index % MOSAIC_SLOTS.length];
           return (

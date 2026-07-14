@@ -34,8 +34,8 @@ export function FloatingEvidence({ data, index }: FloatingEvidenceProps) {
                 data.positionClass
             )}
         >
-            <div className="flex items-center gap-4 bg-white/90 backdrop-blur-2xl p-4 rounded-2xl shadow-xl shadow-neutral-900/5 border border-white/80 group hover:shadow-2xl hover:shadow-utbex-maroon/5 transition-all duration-300 hover:-translate-y-1 cursor-default ring-1 ring-black/5">
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-utbex-maroon/10 to-utbex-maroon/5 text-utbex-maroon group-hover:scale-105 group-hover:bg-utbex-maroon/15 transition-all duration-300">
+            <div className="flex items-center gap-4 bg-white/90 backdrop-blur-2xl p-4 rounded-2xl shadow-xl shadow-neutral-900/5 border border-white/80 cursor-default ring-1 ring-black/5">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-utbex-maroon/10 to-utbex-maroon/5 text-utbex-maroon">
                     <Icon className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
                 </div>
                 <div className="flex flex-col pr-2">

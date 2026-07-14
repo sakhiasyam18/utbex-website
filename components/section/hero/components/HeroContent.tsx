@@ -41,7 +41,7 @@ export function HeroContent() {
                         key={button.id}
                         href={button.href}
                         className={cx(
-                            "group relative flex items-center justify-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300 w-full sm:w-auto",
+                            "group relative flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 w-full sm:w-auto min-h-[48px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-utbex-maroon focus-visible:ring-offset-2",
                             button.variant === 'primary'
                                 /* DS 06: Large blur, low opacity shadow. 0.12 reads as natural elevation. */
                                 ? "bg-utbex-maroon hover:bg-[#6A0000] text-white shadow-[0_8px_32px_rgba(139,0,0,0.12)]"

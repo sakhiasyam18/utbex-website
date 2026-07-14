@@ -5,6 +5,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { PortfolioProject } from "../types/portfolio";
 import EvidenceAnnotation from "./EvidenceAnnotation";
 import { storyReveal } from "../motion/portfolioMotion";
@@ -29,8 +30,13 @@ export default function ProjectCard({
   return (
     <motion.div
       variants={storyReveal}
-      className={`group flex flex-col gap-5 ${className}`}
+      className={className}
     >
+      <Link 
+        href="#"
+        aria-label={`Read story about ${project.title}`}
+        className="group flex flex-col gap-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-utbex-maroon focus-visible:ring-offset-4 rounded-xl"
+      >
       {/* Image with evidence overlapping bottom edge */}
       <div className={`relative overflow-hidden rounded-xl shadow-[0_6px_24px_rgb(0,0,0,0.06)] ${aspectClass} w-full`}>
         <Image
@@ -77,6 +83,7 @@ export default function ProjectCard({
           </span>
         </div>
       </div>
+      </Link>
     </motion.div>
   );
 }

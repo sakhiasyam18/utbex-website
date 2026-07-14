@@ -38,7 +38,7 @@ export default function FooterNavigation({ items }: FooterNavigationProps) {
         <motion.div key={item.id} variants={fadeUp}>
           <Link
             href={item.href}
-            className="text-[11px] tracking-[0.12em] uppercase text-utbex-text-secondary/40 hover:text-utbex-text-secondary/70 transition-colors duration-500 py-1"
+            className="text-[11px] tracking-[0.12em] uppercase text-utbex-text-secondary/40 hover:text-utbex-text-secondary/70 transition-colors duration-500 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-utbex-maroon/50 focus-visible:ring-offset-2 rounded-sm px-1"
             aria-label={item.label}
           >
             {item.label}

@@ -30,7 +30,6 @@ export default function AboutVisual({ gallery, priority = true }: AboutVisualPro
       <div className="relative z-10 w-[95%] lg:w-[90%]">
         <motion.div
           variants={primaryImageReveal}
-          whileHover={imageHover}
           className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-sm bg-neutral-100"
         >
           <Image
@@ -39,7 +38,7 @@ export default function AboutVisual({ gallery, priority = true }: AboutVisualPro
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
-            priority={priority}
+            priority={false}
           />
           {gallery.primary.annotation && (
             <div className="absolute top-4 sm:top-6 left-4 sm:left-6 z-20">
@@ -52,7 +51,7 @@ export default function AboutVisual({ gallery, priority = true }: AboutVisualPro
         </motion.div>
       </div>
 
-      <div className="-mt-16 sm:-mt-24 z-20 w-full relative">
+      <div className="-mt-8 sm:-mt-24 z-20 w-full relative">
         <AboutGallery images={gallery.supporting} />
       </div>
     </motion.div>

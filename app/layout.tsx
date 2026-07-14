@@ -7,8 +7,36 @@ import { Navigation } from "../components/navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "UTBEX Indonesia | From Ideas To Impact",
-  description: "Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise",
+  title: {
+    default: "UTBEX Indonesia | From Ideas To Impact",
+    template: "%s | UTBEX Indonesia"
+  },
+  description: "Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise. Membantu UMKM dan komunitas lokal bertransformasi digital.",
+  metadataBase: new URL("https://utbex.id"),
+  openGraph: {
+    title: "UTBEX Indonesia | From Ideas To Impact",
+    description: "Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise.",
+    url: "https://utbex.id",
+    siteName: "UTBEX Indonesia",
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "UTBEX Indonesia | From Ideas To Impact",
+    description: "Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  }
 };
 
 import { Analytics } from "@vercel/analytics/next";

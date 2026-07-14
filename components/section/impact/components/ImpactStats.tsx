@@ -22,7 +22,7 @@ export function ImpactStats() {
                         value={stat.value}
                         suffix={stat.suffix}
                         /* DS 03: Bold (700) for large editorial numbers — never ExtraBold */
-                        className="text-5xl md:text-6xl font-bold text-utbex-dark mb-3"
+                        className="text-4xl sm:text-5xl md:text-6xl font-bold text-utbex-dark mb-3"
                     />
                     {/* DS 03: Secondary labels — quiet, warm gray, medium weight. Not uppercase-heavy. */}
                     <span className="text-sm md:text-base font-medium text-utbex-text-secondary tracking-wide">

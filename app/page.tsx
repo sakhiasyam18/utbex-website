@@ -29,10 +29,14 @@ export default function Home() {
       <Portfolio />
 
       {/* Cinematic Chapter Divider 02 */}
-      <div 
-        className="relative w-full aspect-[9/10] md:aspect-[21/9] lg:aspect-[24/9] overflow-hidden my-12 sm:my-20 bg-fixed bg-cover bg-[center_25%]"
-        style={{ backgroundImage: "url('/images/utbex-foto-bersama-pemerintah-arif-dwi-asmara.avif')" }}
-      >
+      <div className="relative w-full aspect-square sm:aspect-[9/10] md:aspect-[21/9] lg:aspect-[24/9] overflow-hidden my-12 sm:my-20">
+        <Image 
+          src="/images/utbex-foto-bersama-pemerintah-arif-dwi-asmara.avif" 
+          alt="Documentary transition: UTBEX Government Partnership" 
+          fill 
+          sizes="100vw"
+          className="object-cover object-[center_25%]"
+        />
       </div>
 
       <Impact />

@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* ── Closing Statement — visual anchor, maximum breathing room ── */}
-        <div className="pt-28 sm:pt-40 pb-20 sm:pb-28">
+        <div className="pt-20 sm:pt-40 pb-20 sm:pb-28">
           <FooterClosing content={footerContent.closing} />
         </div>
 
