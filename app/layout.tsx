@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: "Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise",
 };
 
+import { Analytics } from "@vercel/analytics/next";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +25,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   );
