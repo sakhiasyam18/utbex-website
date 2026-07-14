@@ -41,17 +41,15 @@ export default function AboutVisual({ gallery, priority = true }: AboutVisualPro
             className="object-cover"
             priority={priority}
           />
+          {gallery.primary.annotation && (
+            <div className="absolute top-4 sm:top-6 left-4 sm:left-6 z-20">
+              <div className="flex flex-col gap-0 text-[10px] sm:text-[11px] uppercase tracking-wider bg-white/85 backdrop-blur-md px-4 py-2 rounded-lg shadow-sm border border-black/5">
+                <span className="font-semibold text-neutral-900">{gallery.primary.annotation.title}</span>
+                <span className="text-neutral-600">{gallery.primary.annotation.location} — {gallery.primary.annotation.detail}</span>
+              </div>
+            </div>
+          )}
         </motion.div>
-
-        {gallery.primary.annotation && (
-          <motion.div 
-            variants={supportingImage} 
-            className="mt-3 ml-2 flex flex-col gap-0 text-[11px] uppercase tracking-wider text-neutral-400"
-          >
-            <span className="font-semibold text-neutral-800">{gallery.primary.annotation.title}</span>
-            <span>{gallery.primary.annotation.location} — {gallery.primary.annotation.detail}</span>
-          </motion.div>
-        )}
       </div>
 
       <div className="-mt-16 sm:-mt-24 z-20 w-full relative">

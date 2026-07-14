@@ -3,7 +3,7 @@
 export const navigationContent = {
     cta: {
         label: "Mari Berdiskusi",
-        href: "#footer"
+        href: "/layanan"
     },
     logo: {
         primary: "UTBEX",

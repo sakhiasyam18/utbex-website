@@ -43,7 +43,7 @@ export function DocumentationCollage() {
                     key={doc.id}
                     variants={fadeInUp}
                     className={cx(
-                        "absolute rounded-2xl overflow-hidden bg-white p-2 shadow-xl shadow-neutral-900/5 border border-white/80 ring-1 ring-black/5 transform-gpu transition-transform duration-500 hover:rotate-0 hover:scale-105",
+                        "absolute rounded-2xl overflow-hidden bg-white p-2 shadow-xl shadow-neutral-900/5 border border-white/80 ring-1 ring-black/5 transform-gpu transition-all duration-500 hover:rotate-0 hover:scale-105 hover:z-30 blur-[3px] hover:blur-none opacity-80 hover:opacity-100",
                         doc.className
                     )}
                 >

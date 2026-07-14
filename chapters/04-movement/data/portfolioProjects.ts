@@ -32,7 +32,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: "proj-2",
     category: "UMKM",
     title: "Merevitalisasi Produksi Batik Tradisional",
-    story: "Bersama dengan perajin lokal, kami menyempurnakan teknik produksi, membuka peluang menuju pasar fesyen internasional yang etis.",
+    story: "Bersama dengan perajin lokal, kami menyempurnakan teknik produksi, membuka peluang menuju pasar fesyen internasional yang.",
     location: "Yogyakarta",
     year: "2023",
     evidence: "Menjangkau 3 Desa Perajin",

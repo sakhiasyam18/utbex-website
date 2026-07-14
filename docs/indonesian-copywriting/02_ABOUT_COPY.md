@@ -217,7 +217,7 @@ The transition feels continuous.
 
 UTBEX lahir dari keyakinan bahwa perubahan tidak harus selalu dimulai dari sesuatu yang besar.
 
-Bersama desa, UMKM, komunitas, dan berbagai mitra, kami membangun ruang untuk belajar, berkolaborasi, dan menciptakan solusi yang tumbuh dari kebutuhan nyata.
+Bersama desa, UMKM, komunitas, dan berbagai mitra, kami membangun ruang untuk belajar, berkolaborasi, dan menciptakan solusi yang tumbuh dari kebutuhan.
 
 Bagi kami, keberhasilan bukan hanya tentang menyelesaikan sebuah program, tetapi tentang memastikan dampaknya terus dirasakan setelah perjalanan itu dimulai.
 
