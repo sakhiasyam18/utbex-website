@@ -39,4 +39,30 @@
   /* DS 02: "Use [maroon] only for CTA, active navigation, important keywords, interaction feedback" */
   /* Accent resolves to maroon — the singular brand identity color */
   --color-utbex-accent: #8B0000;
+
+  /* ── Page 2: Documentary Experience Colors ── */
+  --color-p2-primary: #FF3333;
+  --color-p2-dark-red: #8B0000;
+  --color-p2-soft-red: #FF9999;
+  --color-p2-orange: #FF6600;
+  --color-p2-purple: #9933CC;
+  --color-p2-pink: #FF6699;
+  --color-p2-blue: #3399FF;
+  --color-p2-gold: #FFD700;
+
+  /* ── Page 2: Custom Blurs and Shadows ── */
+  --blur-glass: 24px;
+  --blur-heavy: 40px;
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/15 backdrop-blur-[24px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.08)];
+  }
+  .glass-card-dark {
+    @apply bg-black/40 backdrop-blur-[40px] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)];
+  }
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-p2-primary to-p2-orange bg-clip-text text-transparent;
+  }
 }
