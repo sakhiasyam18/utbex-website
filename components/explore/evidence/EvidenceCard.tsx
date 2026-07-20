@@ -18,7 +18,7 @@
 import { motion } from "framer-motion";
 import { supportingChild } from "@/motion/explore/variants";
 import { hoverStaggerDelay, interactionDuration } from "@/motion/explore/tokens";
-import type { EvidenceItem, CardSize } from "@/data/explore/types";
+import type { EvidenceItem, CardSize, CardTransform } from "@/data/explore/types";
 
 // ─── Size → CSS mapping ──────────────────────────────────────
 const sizeStyles: Record<CardSize, string> = {
@@ -50,6 +50,8 @@ export interface EvidenceCardProps {
   size?: CardSize;
   /** CSS grid-area name for editorial layout placement */
   gridArea?: string;
+  /** Custom transforms for overlapping and floating (magazine layout) */
+  transform?: CardTransform;
   /** Whether interaction (hover/click) is enabled */
   isInteractive?: boolean;
   /** Click handler — opens drawer */
@@ -62,6 +64,7 @@ export function EvidenceCard({
   item,
   size,
   gridArea,
+  transform,
   isInteractive = true,
   onClick,
   children,
@@ -70,17 +73,28 @@ export function EvidenceCard({
   const gradient = typeGradients[item.type] ?? typeGradients.photo;
 
   return (
-    <motion.div
-      className={`
-        relative overflow-hidden rounded-xl
-        bg-gradient-to-br ${gradient}
-        border border-white/[0.06]
-        ${sizeStyles[cardSize]}
-        ${isInteractive ? "cursor-pointer" : ""}
-        group
-      `}
-      style={gridArea ? { gridArea } : undefined}
-      variants={supportingChild}
+    <div
+      className={`relative ${sizeStyles[cardSize]}`}
+      style={{
+        gridArea,
+        left: transform?.offsetX,
+        top: transform?.offsetY,
+        zIndex: transform?.zIndex,
+        transform: [
+          transform?.rotate ? `rotate(${transform.rotate})` : "",
+          transform?.scale ? `scale(${transform.scale})` : "",
+        ].filter(Boolean).join(" ") || undefined,
+      }}
+    >
+      <motion.div
+        className={`
+          w-full h-full relative overflow-hidden rounded-xl
+          bg-gradient-to-br ${gradient}
+          border border-white/[0.06]
+          ${isInteractive ? "cursor-pointer" : ""}
+          group
+        `}
+        variants={supportingChild}
       // Hover animation — scale + glow (per doc 10 §11)
       whileHover={
         isInteractive
@@ -256,5 +270,6 @@ export function EvidenceCard({
         }}
       />
     </motion.div>
+    </div>
   );
 }

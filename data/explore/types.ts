@@ -85,10 +85,27 @@ export interface ExperienceEvidenceGroup {
   deepDive: EvidenceItem[];
 }
 
+// ─── Card Transforms (Editorial Overrides) ──────────────────────
+// Used to break out of the rigid grid and create connected narratives.
+// Cards can float, overlap, or cluster tightly together.
+export interface CardTransform {
+  /** X offset (e.g. "20px", "-10%") */
+  offsetX?: string;
+  /** Y offset (e.g. "40px", "-5%") */
+  offsetY?: string;
+  /** Z-index for overlaps (e.g. 10) */
+  zIndex?: number;
+  /** Slight rotation for organic feel (e.g. "2deg") */
+  rotate?: string;
+  /** Scale tweak (e.g. 1.05) */
+  scale?: number;
+}
+
 // ─── Layout Composition ───────────────────────────────────────
 // Defines the editorial card arrangement for an experience.
 // Each experience gets a hand-crafted composition.
-// NOT a uniform grid — curated like a magazine layout.
+// The CSS grid acts as an invisible anchor, while transforms
+// create the final magazine-like layout.
 export interface ExperienceLayoutComposition {
   /** Experience ID this composition belongs to */
   experienceId: string;
@@ -102,4 +119,6 @@ export interface ExperienceLayoutComposition {
   cardAreaMap: Record<string, string>;
   /** Maps evidence ID → card size override */
   cardSizeMap: Record<string, CardSize>;
+  /** Maps evidence ID → custom transform for overlapping/floating */
+  cardTransformMap?: Record<string, CardTransform>;
 }

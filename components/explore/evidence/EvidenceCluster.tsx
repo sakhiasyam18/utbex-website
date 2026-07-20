@@ -47,12 +47,14 @@ function renderCard(
 ) {
   const gridArea = composition.cardAreaMap[item.id];
   const size = composition.cardSizeMap[item.id] ?? item.cardSize ?? "medium";
+  const transform = composition.cardTransformMap?.[item.id];
 
   const commonProps = {
     key: item.id,
     item,
     size,
     gridArea,
+    transform,
     isInteractive,
     onClick: onCardClick,
   } as const;

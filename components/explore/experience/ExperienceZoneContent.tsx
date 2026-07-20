@@ -53,16 +53,19 @@ interface ExperienceZoneContentProps {
  */
 function HeroCard({
   item,
+  transform,
   isInteractive,
   onClick,
 }: {
   item: EvidenceItem;
+  transform?: import("@/data/explore/types").CardTransform;
   isInteractive: boolean;
   onClick: (item: EvidenceItem) => void;
 }) {
   const commonProps = {
     item,
     size: "large" as const,
+    transform,
     isInteractive,
     onClick,
   };
@@ -140,6 +143,7 @@ export function ExperienceZoneContent({
             <motion.div variants={heroReveal}>
               <HeroCard
                 item={evidenceGroup.hero}
+                transform={composition.cardTransformMap?.[evidenceGroup.hero.id]}
                 isInteractive={isInteractionEnabled}
                 onClick={openDrawer}
               />

@@ -73,108 +73,110 @@ for (const id of experienceIds) {
 // The goal is storytelling flow, not symmetry.
 
 export const EXPERIENCE_COMPOSITIONS: Record<string, ExperienceLayoutComposition> = {
-  // Arrival — 4 cards, "Grand Opening" layout
-  // Hero spans full top, quote wide below, two smaller accents
+  // 1. Arrival — Cinematic Opening
+  // Hero: Quote. Floating, asymmetric.
   arrival: {
     experienceId: "arrival",
-    gridColumns: "1fr 1fr 1fr",
-    gridRows: "auto auto",
+    gridColumns: "repeat(3, 1fr)",
+    gridRows: "auto",
     gridAreas: `
-      "hero hero hero"
-      "quote quote video"
+      "photo . video"
     `,
     cardAreaMap: {
-      "arrival-hero": "hero",
-      "arrival-quote": "quote",
-      "arrival-photo-1": "video",
+      "arrival-photo-1": "photo",
       "arrival-video": "video",
     },
     cardSizeMap: {
-      "arrival-hero": "large",
-      "arrival-quote": "wide",
+      "arrival-hero": "medium",
       "arrival-photo-1": "medium",
       "arrival-video": "medium",
     },
+    cardTransformMap: {
+      "arrival-quote": { offsetY: "40px", zIndex: 10 },
+      "arrival-photo-1": { offsetX: "-20px", rotate: "-2deg" },
+      "arrival-video": { offsetX: "20px", rotate: "1deg" },
+    },
   },
 
-  // Origin — 6 cards, "Magazine Spread" layout
-  // Hero large left, timeline wide, story tall right, smaller accents below
+  // 2. Origin — The Historical Archive
+  // Hero: Timeline. Overlapping documents.
   origin: {
     experienceId: "origin",
-    gridColumns: "2fr 1fr 1fr",
-    gridRows: "auto auto auto",
+    gridColumns: "repeat(4, 1fr)",
+    gridRows: "auto",
     gridAreas: `
-      "hero hero story"
-      "timeline timeline story"
-      "photo1 photo2 quote"
+      "photo1 quote story story"
+      "photo2 . story story"
     `,
     cardAreaMap: {
-      "origin-hero": "hero",
-      "origin-timeline": "timeline",
-      "origin-photo-1": "photo1",
+      "origin-hero": "photo1",
+      "origin-quote": "quote",
       "origin-story": "story",
       "origin-photo-2": "photo2",
-      "origin-quote": "quote",
     },
     cardSizeMap: {
-      "origin-hero": "large",
-      "origin-timeline": "wide",
-      "origin-photo-1": "medium",
+      "origin-hero": "medium",
       "origin-story": "tall",
       "origin-photo-2": "small",
       "origin-quote": "small",
     },
+    cardTransformMap: {
+      "origin-timeline": { offsetY: "-30px", zIndex: 2 },
+      "origin-hero": { offsetX: "10px", offsetY: "-50px", rotate: "-3deg", zIndex: 5 },
+      "origin-story": { offsetY: "-80px", zIndex: 1 },
+      "origin-photo-2": { offsetX: "20px", offsetY: "-40px", rotate: "4deg", zIndex: 6 },
+    },
   },
 
-  // Movement — 8 cards, "Documentary Scatter" layout
-  // Hero dominates top-left, supporting fills organically
+  // 3. Movement — Energetic Scatter
+  // Hero: Workshop Photo. Dynamic masonry overlapping.
   movement: {
     experienceId: "movement",
-    gridColumns: "1fr 1fr 1fr",
-    gridRows: "auto auto auto",
+    gridColumns: "repeat(4, 1fr)",
+    gridRows: "auto auto",
     gridAreas: `
-      "hero hero photo1"
-      "video photo2 photo3"
-      "award pdf story"
+      "photo1 video video photo3"
+      "award story story pdf"
     `,
     cardAreaMap: {
-      "movement-hero": "hero",
       "movement-photo-1": "photo1",
       "movement-video": "video",
-      "movement-photo-2": "photo2",
       "movement-photo-3": "photo3",
       "movement-award": "award",
-      "movement-pdf": "pdf",
       "movement-story": "story",
+      "movement-pdf": "pdf",
     },
     cardSizeMap: {
-      "movement-hero": "large",
       "movement-photo-1": "medium",
-      "movement-video": "medium",
+      "movement-video": "wide",
       "movement-photo-2": "small",
       "movement-photo-3": "small",
       "movement-award": "small",
       "movement-pdf": "small",
-      "movement-story": "medium",
+      "movement-story": "wide",
+    },
+    cardTransformMap: {
+      "movement-hero": { offsetX: "10%", zIndex: 5, rotate: "-1deg" },
+      "movement-photo-1": { offsetX: "20px", offsetY: "-30px", rotate: "2deg" },
+      "movement-video": { offsetY: "-60px", zIndex: 1 },
+      "movement-pdf": { offsetX: "-30px", offsetY: "10px", rotate: "-4deg", zIndex: 10 },
+      "movement-award": { offsetX: "15px", offsetY: "-20px", rotate: "3deg", zIndex: 6 },
     },
   },
 
-  // Community — 6 cards, "Connected Network" layout
-  // Hero top, pairs of cards suggesting relationships
+  // 4. Community — Warm & Connected
+  // Hero: Story. Interlocking clusters.
   community: {
     experienceId: "community",
-    gridColumns: "1fr 1fr 1fr",
-    gridRows: "auto auto auto",
+    gridColumns: "repeat(5, 1fr)",
+    gridRows: "auto",
     gridAreas: `
-      "hero hero photo1"
-      "photo2 story story"
-      "quote video video"
+      "photo1 photo2 . video video"
+      "quote quote . video video"
     `,
     cardAreaMap: {
-      "community-hero": "hero",
       "community-photo-1": "photo1",
       "community-photo-2": "photo2",
-      "community-story": "story",
       "community-quote": "quote",
       "community-video": "video",
     },
@@ -182,152 +184,175 @@ export const EXPERIENCE_COMPOSITIONS: Record<string, ExperienceLayoutComposition
       "community-hero": "large",
       "community-photo-1": "medium",
       "community-photo-2": "medium",
-      "community-story": "wide",
-      "community-quote": "small",
-      "community-video": "wide",
+      "community-quote": "medium",
+      "community-video": "large",
+    },
+    cardTransformMap: {
+      "community-story": { zIndex: 1 },
+      "community-photo-1": { offsetX: "30px", offsetY: "-60px", zIndex: 5 },
+      "community-photo-2": { offsetX: "-10px", offsetY: "-40px", zIndex: 4 },
+      "community-video": { offsetX: "-40px", offsetY: "-80px", zIndex: 3 },
     },
   },
 
-  // Innovation — 7 cards, "Showcase" layout
-  // Product hero center-stage, creative assets surround it
+  // 5. Innovation — Premium Showcase
+  // Hero: Product. Bento box precise layering.
   innovation: {
     experienceId: "innovation",
-    gridColumns: "1fr 1fr 1fr",
-    gridRows: "auto auto auto",
+    gridColumns: "repeat(4, 1fr)",
+    gridRows: "auto auto",
     gridAreas: `
-      "hero hero brand"
-      "pack mockup mockup"
-      "video video catalog"
+      "brand pack mockup mockup"
+      "video video catalog award"
     `,
     cardAreaMap: {
-      "innovation-hero": "hero",
       "innovation-photo-1": "brand",
       "innovation-photo-2": "pack",
       "innovation-photo-3": "mockup",
       "innovation-video": "video",
       "innovation-pdf": "catalog",
-      "innovation-award": "catalog",
+      "innovation-award": "award",
     },
     cardSizeMap: {
-      "innovation-hero": "large",
       "innovation-photo-1": "medium",
       "innovation-photo-2": "medium",
       "innovation-photo-3": "wide",
       "innovation-video": "wide",
-      "innovation-pdf": "small",
-      "innovation-award": "small",
+      "innovation-pdf": "medium",
+      "innovation-award": "medium",
+    },
+    cardTransformMap: {
+      "innovation-hero": { zIndex: 10 },
+      "innovation-photo-1": { offsetY: "-40px", zIndex: 1 },
+      "innovation-photo-2": { offsetY: "-20px", offsetX: "-10px", zIndex: 2 },
+      "innovation-photo-3": { offsetY: "-30px", zIndex: 3 },
     },
   },
 
-  // Evidence — 8 cards, "Document Vault" layout
-  // Certificate hero, HKI and PDFs arranged like a filing system
-  evidence: {
-    experienceId: "evidence",
-    gridColumns: "1fr 1fr 1fr",
-    gridRows: "auto auto auto",
+  // 6. Recognition — The Trophy Room
+  // Hero: Key Award. Extreme whitespace and isolation.
+  recognition: {
+    experienceId: "recognition",
+    gridColumns: "repeat(5, 1fr)",
+    gridRows: "auto auto",
     gridAreas: `
-      "hero hero hki1"
-      "profile article cert2"
-      "hki2 photo media"
+      "award1 . . . award2"
+      ". ceremony ceremony story story"
     `,
     cardAreaMap: {
-      "evidence-hero": "hero",
+      "recognition-award-1": "award1",
+      "recognition-award-2": "award2",
+      "recognition-photo": "ceremony",
+      "recognition-story": "story",
+    },
+    cardSizeMap: {
+      "recognition-award-1": "small",
+      "recognition-award-2": "small",
+      "recognition-photo": "wide",
+      "recognition-story": "wide",
+    },
+    cardTransformMap: {
+      "recognition-hero": { scale: 1.1, zIndex: 5 },
+      "recognition-award-1": { offsetY: "-40px" },
+      "recognition-award-2": { offsetY: "30px" },
+      "recognition-story": { offsetX: "-20px" },
+    },
+  },
+
+  // 7. Evidence — Trustworthy Dossier
+  // Hero: Certificate. Strict cascaded file columns.
+  evidence: {
+    experienceId: "evidence",
+    gridColumns: "repeat(4, 1fr)",
+    gridRows: "auto auto",
+    gridAreas: `
+      "profile profile article article"
+      "hki1 cert2 hki2 media"
+    `,
+    cardAreaMap: {
       "evidence-hki-1": "hki1",
       "evidence-pdf-1": "profile",
       "evidence-pdf-2": "article",
       "evidence-cert-2": "cert2",
       "evidence-hki-2": "hki2",
-      "evidence-photo": "photo",
       "evidence-pdf-3": "media",
     },
     cardSizeMap: {
-      "evidence-hero": "large",
-      "evidence-hki-1": "medium",
-      "evidence-pdf-1": "tall",
-      "evidence-pdf-2": "medium",
+      "evidence-pdf-1": "wide",
+      "evidence-pdf-2": "wide",
+      "evidence-hki-1": "small",
       "evidence-cert-2": "small",
       "evidence-hki-2": "small",
       "evidence-photo": "small",
       "evidence-pdf-3": "small",
     },
-  },
-
-  // Recognition — 5 cards, "Breathable Gallery" layout
-  // Sparse — each award has room to breathe, emphasizing importance
-  recognition: {
-    experienceId: "recognition",
-    gridColumns: "1fr 1fr 1fr",
-    gridRows: "auto auto",
-    gridAreas: `
-      "hero hero award1"
-      "ceremony ceremony story"
-    `,
-    cardAreaMap: {
-      "recognition-hero": "hero",
-      "recognition-award-1": "award1",
-      "recognition-award-2": "award1",
-      "recognition-photo": "ceremony",
-      "recognition-story": "story",
-    },
-    cardSizeMap: {
-      "recognition-hero": "large",
-      "recognition-award-1": "medium",
-      "recognition-award-2": "medium",
-      "recognition-photo": "wide",
-      "recognition-story": "medium",
+    cardTransformMap: {
+      "evidence-hero": { offsetX: "5%", zIndex: 5 },
+      "evidence-pdf-1": { offsetY: "-30px", zIndex: 4 },
+      "evidence-pdf-2": { offsetX: "-20px", offsetY: "-10px", zIndex: 3 },
+      "evidence-cert-2": { offsetX: "-10px", zIndex: 6 },
     },
   },
 
-  // Impact Story — 6 cards, "Transformation" layout
-  // Before/After side by side, story tall, quote wide
+  // 8. Impact Story — Emotional Journey
+  // Hero: Story. Z-pattern forced flow.
   "impact-story": {
     experienceId: "impact-story",
-    gridColumns: "1fr 1fr 1fr",
-    gridRows: "auto auto auto",
+    gridColumns: "repeat(4, 1fr)",
+    gridRows: "auto auto",
     gridAreas: `
-      "hero hero hero"
-      "before after story"
-      "quote quote video"
+      "photo before after ."
+      ". quote quote quote"
+      ". . video video"
     `,
     cardAreaMap: {
-      "impact-hero": "hero",
+      "impact-hero": "photo",
       "impact-before": "before",
       "impact-after": "after",
-      "impact-story-card": "story",
       "impact-quote": "quote",
       "impact-video": "video",
     },
     cardSizeMap: {
-      "impact-hero": "large",
+      "impact-hero": "medium",
       "impact-before": "medium",
       "impact-after": "medium",
-      "impact-story-card": "tall",
       "impact-quote": "wide",
-      "impact-video": "medium",
+      "impact-video": "wide",
+    },
+    cardTransformMap: {
+      "impact-story-card": { zIndex: 1 },
+      "impact-hero": { offsetY: "-40px", zIndex: 5 },
+      "impact-before": { offsetX: "-10px", offsetY: "-40px", zIndex: 6 },
+      "impact-after": { offsetX: "-20px", offsetY: "-40px", zIndex: 7 },
+      "impact-quote": { offsetY: "-20px", zIndex: 8 },
     },
   },
 
-  // Future — 4 cards, "Open Horizon" layout
-  // Sparse, forward-looking, breathing room
+  // 9. Future — Minimal Visionary
+  // Hero: Story. Ascending steps.
   future: {
     experienceId: "future",
-    gridColumns: "1fr 1fr 1fr",
-    gridRows: "auto auto",
+    gridColumns: "repeat(4, 1fr)",
+    gridRows: "auto",
     gridAreas: `
-      "hero hero vision"
-      "roadmap roadmap collab"
+      . photo vision .
+      . . . collab
     `,
     cardAreaMap: {
-      "future-hero": "hero",
-      "future-story": "roadmap",
+      "future-hero": "photo",
       "future-quote": "vision",
       "future-photo-2": "collab",
     },
     cardSizeMap: {
-      "future-hero": "large",
-      "future-story": "wide",
+      "future-hero": "medium",
       "future-quote": "medium",
-      "future-photo-2": "medium",
+      "future-photo-2": "small",
+    },
+    cardTransformMap: {
+      "future-story": { zIndex: 1 },
+      "future-hero": { offsetY: "-20px" },
+      "future-quote": { offsetY: "-50px" },
+      "future-photo-2": { offsetY: "-80px" },
     },
   },
 };
