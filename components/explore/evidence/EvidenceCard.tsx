@@ -18,7 +18,7 @@
 import { motion } from "framer-motion";
 import { supportingChild } from "@/motion/explore/variants";
 import { hoverStaggerDelay, interactionDuration } from "@/motion/explore/tokens";
-import type { EvidenceItem, CardSize, CardTransform } from "@/data/explore/types";
+import type { EvidenceItem, CardSize, CardTransform } from "@/types/explore";
 
 // ─── Size → CSS mapping ──────────────────────────────────────
 const sizeStyles: Record<CardSize, string> = {

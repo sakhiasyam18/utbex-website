@@ -7,7 +7,7 @@
 // editorial grid compositions. Each experience has a unique
 // layout — NOT a repeated template.
 
-import type { EvidenceItem, ExperienceEvidenceGroup, ExperienceLayoutComposition } from "./types";
+import type { EvidenceItem, ExperienceEvidenceGroup, ExperienceLayoutComposition } from "@/types/explore";
 import { EVIDENCE_REGISTRY } from "./registry";
 
 // ─── Grouping Helpers ─────────────────────────────────────────

@@ -12,7 +12,7 @@
 //   Community: mid  | Innovation: many | Evidence: very many
 //   Recognition: mid | Impact: mid    | Future: few
 
-import type { EvidenceItem } from "./types";
+import type { EvidenceItem } from "@/types/explore";
 
 export const EVIDENCE_REGISTRY: EvidenceItem[] = [
   // ═══════════════════════════════════════════════════════════

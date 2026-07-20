@@ -24,7 +24,7 @@
 // NOTE: Position values are tuning placeholders.
 // They will be refined visually once content is added.
 
-import type { CameraWaypoint, ExperienceZone } from "@/components/explore/camera/types";
+import type { CameraWaypoint, ExperienceZone } from "@/types/explore";
 
 // ─── Total scroll height ──────────────────────────────────────
 // The scroll spacer height that drives the camera journey.

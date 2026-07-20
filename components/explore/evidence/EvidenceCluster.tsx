@@ -14,8 +14,8 @@
 
 import { motion } from "framer-motion";
 import { supportingStagger } from "@/motion/explore/variants";
-import type { EvidenceItem } from "@/data/explore/types";
-import type { ExperienceLayoutComposition } from "@/data/explore/types";
+import type { EvidenceItem } from "@/types/explore";
+import type { ExperienceLayoutComposition } from "@/types/explore";
 import { GalleryCard } from "./GalleryCard";
 import { VideoCard } from "./VideoCard";
 import { AwardCard } from "./AwardCard";

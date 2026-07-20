@@ -26,7 +26,7 @@ import {
   drawerContentStagger,
   drawerContentChild,
 } from "@/motion/explore/variants";
-import type { EvidenceItem } from "@/data/explore/types";
+import type { EvidenceItem } from "@/types/explore";
 import { getRelatedEvidence } from "@/data/explore/groups";
 
 interface DrawerProps {

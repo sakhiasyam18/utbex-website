@@ -26,8 +26,8 @@
 
 import { motion } from "framer-motion";
 import { WORLD_SCROLL_HEIGHT } from "@/data/explore/waypoints";
-import { useCamera } from "@/components/explore/camera/useCamera";
-import { useCurrentExperience } from "@/components/explore/camera/useCurrentExperience";
+import { useCamera } from "@/hooks/explore/useCamera";
+import { useCurrentExperience } from "@/hooks/explore/useCurrentExperience";
 import { BackgroundLayer } from "@/components/explore/layers/BackgroundLayer";
 import { GradientLayer } from "@/components/explore/layers/GradientLayer";
 import { DecorationLayer } from "@/components/explore/layers/DecorationLayer";

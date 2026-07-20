@@ -26,7 +26,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import type { ExperienceZone } from "@/components/explore/camera/types";
+import type { ExperienceZone } from "@/types/explore";
 import { heroReveal, experienceEntry } from "@/motion/explore/variants";
 import { EXPERIENCE_EVIDENCE_MAP, EXPERIENCE_COMPOSITIONS } from "@/data/explore/groups";
 import { EvidenceCluster } from "@/components/explore/evidence/EvidenceCluster";
@@ -39,9 +39,9 @@ import { StoryCard } from "@/components/explore/evidence/StoryCard";
 import { QuoteCard } from "@/components/explore/evidence/QuoteCard";
 import { TimelineCard } from "@/components/explore/evidence/TimelineCard";
 import { EvidenceCard } from "@/components/explore/evidence/EvidenceCard";
-import { useExperienceState } from "./useExperienceState";
-import { useDrawer } from "./useDrawer";
-import type { EvidenceItem } from "@/data/explore/types";
+import { useExperienceState } from "@/hooks/explore/useExperienceState";
+import { useDrawer } from "@/hooks/explore/useDrawer";
+import type { EvidenceItem } from "@/types/explore";
 
 interface ExperienceZoneContentProps {
   zone: ExperienceZone;
@@ -58,7 +58,7 @@ function HeroCard({
   onClick,
 }: {
   item: EvidenceItem;
-  transform?: import("@/data/explore/types").CardTransform;
+  transform?: import("@/types/explore").CardTransform;
   isInteractive: boolean;
   onClick: (item: EvidenceItem) => void;
 }) {

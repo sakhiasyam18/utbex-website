@@ -13,7 +13,7 @@
 
 "use client";
 
-import type { ExperienceZone } from "@/components/explore/camera/types";
+import type { ExperienceZone } from "@/types/explore";
 import { ExperienceZoneContent } from "./ExperienceZoneContent";
 
 interface ExperiencePlaceholderProps {

@@ -18,7 +18,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
-import type { EvidenceItem } from "@/data/explore/types";
+import type { EvidenceItem } from "@/types/explore";
 
 export interface UseDrawerReturn {
   /** Whether the drawer is currently open */
