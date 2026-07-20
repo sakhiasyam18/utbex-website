@@ -1,0 +1,1771 @@
+oke done, page 1 telah selesai kita fokus ke page 2 
+
+justru menggabungkan semuanya dalam satu alur cerita
+
+[11:41, 14/07/2026] Asyam Sakhi: hmmm
+
+[11:41, 14/07/2026] Asyam Sakhi: kalau begituu, gambarannya gini deh syam, niatnya mauu dijadiin page per page kan?
+
+[11:41, 14/07/2026] Asyam Sakhi: berarti 2 aja apa 3 syam??
+
+[11:41, 14/07/2026] Asyam Sakhi: Semisal Home-Tentang Kami-Kontak
+
+[11:42, 14/07/2026] Asyam Sakhi: soalnya si.. dia nih ga yang sebanyak itu wheheeh
+
+[11:42, 14/07/2026] Asyam Sakhi: umm
+
+[11:42, 14/07/2026] Asyam Sakhi: Gimana kalau yang di beranda itu yangg full pekerjaan si mas ariqnya, kalau yang dii tentang kami itu full bio nya mas ariq
+
+[11:42, 14/07/2026] Asyam Sakhi: terakhir sisa ini aja
+
+[11:42, 14/07/2026] Asyam Sakhi: Kontak
+
+[11:42, 14/07/2026] Asyam Sakhi: atau udah mentok 2 page aja dengan banyak tombol (hubungi kami)
+
+[11:42, 14/07/2026] Asyam Sakhi: nanti langsung ke WA nya mas ariq
+
+[11:42, 14/07/2026] Asyam Sakhi: jadi isinya tuh kaya gini, beranda:
+
+1.Kelas yang dibina pak arik
+
+2.Jasa Cetak banner
+
+3.Jasa jasa yang lain
+
+
+
+terus buat isi tentang kami:
+
+Sejarah utbex
+
+biografi pak ariq
+
+[11:42, 14/07/2026] Asyam Sakhi: nah gitu kali ya
+
+[11:42, 14/07/2026] Asyam Sakhi: Soalnya akuu sih kepikiran yang sekali scroll hehe 😇
+
+
+
+ini dari teman aku request nya 
+
+ya intinya bener deh gini 
+
+https://www.instagram.com/utbexindonesia.group/
+
+
+Canvas
+
+↓
+
+Area
+
+↓
+
+Module
+
+↓
+
+Card
+
+Jadi hirarkinya berubah.
+
+Misalnya
+
+Canvas
+
+└── Area A
+
+      ├── Card 1
+
+      ├── Card 2
+
+      ├── Badge
+
+      ├── Logo
+
+      ├── Glow
+
+      ├── Particle
+
+      ├── Background
+
+      └── Hover
+
+Lalu Area B
+
+Area B
+
+├── Award
+
+├── HKI
+
+├── Sertifikat
+
+├── Floating Text
+
+├── Shadow
+
+└── Lines
+
+Semuanya independent.
+
+
+Area A
+
+Hero Gallery
+
+Area B
+
+Award Gallery
+
+Area C
+
+Product Gallery
+
+Area D
+
+HKI Gallery
+
+Area E
+
+Seminar Gallery
+
+Area F
+
+Timeline Gallery
+
+Area G
+
+Documentary Gallery
+
+Area H
+
+Brand Gallery
+
+Semuanya independent.
+
+Opsi 3 — Area berdasarkan Experience ⭐⭐⭐⭐⭐⭐ (Favoritku)
+
+Ini menurutku paling unik.
+
+Pengunjung seperti masuk ke gedung pameran.
+
+Misalnya.
+
+Canvas
+
+↓
+
+Hall 1
+
+↓
+
+Hall 2
+
+↓
+
+Hall 3
+
+↓
+
+Hall 4
+
+↓
+
+Hall 5
+
+↓
+
+Hall 6
+
+Setiap Hall punya pengalaman sendiri.
+
+Contoh.
+
+Hall 1
+
+Banyak foto besar.
+
+Motion pelan.
+
+Hall 2
+
+Foto kecil.
+
+Berterbangan.
+
+Hover.
+
+Hall 3
+
+Award.
+
+Tapi seperti gallery museum.
+
+Hall 4
+
+Produk.
+
+Bukan katalog.
+
+Tetapi exhibition.
+
+Hall 5
+
+Seminar.
+
+Fullscreen.
+
+Hall 6
+
+Ending.
+
+Impact.
+
+CTA.
+
+Menurutku...
+
+Justru Area jangan diberi nama:
+
+Award
+
+HKI
+
+Seminar
+
+Karena nanti pikiran kita ikut terkunci.
+
+Aku lebih suka:
+
+Hall
+
+atau
+
+Scene
+
+atau
+
+Experience
+
+atau
+
+Chapter
+
+Misalnya.
+
+Canvas
+
+↓
+
+Scene 01
+
+↓
+
+Scene 02
+
+↓
+
+Scene 03
+
+↓
+
+Scene 04
+
+Di dalam Scene 03 boleh ada:
+
+Award
+
+HKI
+
+Seminar
+
+Produk
+
+Foto Pemerintah
+
+Logo
+
+Semuanya campur.
+
+CV = bukti perjalanan.
+
+Sertifikat = bukti legal.
+
+Award = bukti pengakuan.
+
+Seminar = bukti aktivitas.
+
+Produk = bukti inovasi.
+
+Mockup = bukti kreativitas.
+
+Foto UMKM = bukti dampak.
+
+Pilihan B ⭐⭐⭐⭐⭐ (pilihanku)
+
+Experience berdasarkan Evidence Journey.
+
+Contoh:
+
+Origin
+Movement
+Trust
+Creation
+Recognition
+Legacy
+
+Rule #1
+
+Tidak ada aset yang menjadi sampah.
+
+Artinya:
+
+53 foto → dipakai.
+CV → dipakai.
+Company Profile → dipakai.
+PDF → dipakai.
+Sertifikat → dipakai.
+HKI → dipakai.
+Mockup → dipakai.
+Produk UMKM → dipakai.
+Dokumentasi seminar → dipakai.
+Foto pemerintah → dipakai.
+Logo lama → dipakai.
+Logo baru → dipakai.
+
+Tidak ada yang hanya disimpan di folder.
+
+Rule #1
+
+Tidak ada aset yang menjadi sampah.
+
+Artinya:
+
+53 foto → dipakai.
+CV → dipakai.
+Company Profile → dipakai.
+PDF → dipakai.
+Sertifikat → dipakai.
+HKI → dipakai.
+Mockup → dipakai.
+Produk UMKM → dipakai.
+Dokumentasi seminar → dipakai.
+Foto pemerintah → dipakai.
+Logo lama → dipakai.
+Logo baru → dipakai.
+
+Tidak ada yang hanya disimpan di folder.
+
+Interactive Evidence Explorer.
+
+Artinya orang menjelajah, bukan hanya scroll.
+
+Layer 1 — Experience (Wajib)
+
+Ini adalah identitas setiap Hall.
+
+Misalnya:
+
+Hall 1
+→ Large Gallery
+
+Hall 2
+→ Floating Gallery
+
+Hall 3
+→ Museum Gallery
+
+Hall 4
+→ Product Exhibition
+
+Hall 5
+→ Documentary Wall
+
+Hall 6
+→ Impact Ending
+
+Ini tidak berubah.
+
+Layer 2 — Interaction (Dipilih sesuai Hall)
+
+Contohnya:
+
+Hall 1
+
+Hero Gallery
+
+Interaksi:
+
+Hover Zoom
+Tilt
+Shadow
+
+Selesai.
+
+Tidak usah ada drawer.
+
+Hall 2
+
+Floating Gallery
+
+Interaksi:
+
+Floating
+Magnetic
+Hover berhenti
+Scale
+Hall 3
+
+Museum Gallery
+
+Interaksi:
+
+Klik
+Drawer terbuka
+Isi 20 foto
+PDF
+Sertifikat
+Hall 4
+
+Product Exhibition
+
+Interaksi:
+
+3D Rotate
+Flip
+Showcase
+Hall 5
+
+Documentary
+
+Interaksi:
+
+Timeline
+Expand Story
+Video
+Slide
+Hall 6
+
+Impact
+
+Interaksi:
+
+Counter
+CTA
+Scroll Reveal
+Layer 3 — Evidence (Isi)
+
+Nah baru isi.
+
+Misalnya.
+
+Hall 3
+
+Award
+
+↓
+
+Klik
+
+↓
+
+Foto
+
+PDF
+
+HKI
+
+Media
+
+Artikel
+
+Video
+
+
+
+Contohnya seperti ini:
+
+Hall	Experience	Interaction
+Hall 1	Hero Gallery	Hover Zoom + Tilt
+Hall 2	Floating Gallery	Floating + Magnetic
+Hall 3	Museum Gallery	Click → Drawer
+Hall 4	Product Exhibition	3D Showcase
+Hall 5	Documentary	Timeline + Expand
+Hall 6	Impact	Counter + CTA
+
+Jadi setiap Hall punya "kepribadian" sendiri.
+Aku juga punya usulan terakhir yang menurutku akan menjadi pembeda UTBEX.
+
+Daripada kita menulis:
+
+Hall 1
+
+Hall 2
+
+Hall 3
+
+Aku ingin kita memberi nama berdasarkan pengalaman, misalnya:
+f
+Arrival
+↓
+Discovery
+↓
+Evidence
+↓
+Innovation
+↓
+Legacy
+↓
+Impact
+
+Nama ini tidak perlu tampil ke pengguna. Ini adalah bahasa internal kita saat mendesain.
+
+                [Award]
+
+
+
+      [Seminar]
+
+
+                         [Produk]
+
+
+              [HKI]
+
+
+
+                              [Media]
+
+
+       [Mockup]
+
+
+                    [UMKM]
+
+
+                              [Government]
+
+
+         [Branding]
+
+Lalu kamera bergerak.
+
+↓
+
+↓
+
+↓
+
+↓
+
+↓
+
+
+Saat scroll...
+
+Yang bergerak bukan halaman.
+
+Tetapi kamera.
+
+Misalnya.
+
+Camera
+
+↓
+
+bergerak
+
+↓
+
+melewati
+
+↓
+
+Award
+
+↓
+
+belok sedikit
+
+↓
+
+Masuk Seminar
+
+↓
+
+Zoom
+
+↓
+
+Keluar
+
+↓
+
+Masuk Produk
+
+↓
+
+Muter
+
+↓
+
+Masuk HKI
+
+
+Jadi...
+
+Orang merasa sedang menjelajah.
+
+Bukan scrolling.
+
+Misalnya...
+
+Award tidak berada tepat di bawah.
+
+Tetapi di kanan atas.
+
+          Award
+
+
+
+
+
+Produk
+
+
+
+
+
+HKI
+
+Saat kamera jalan.
+
+Dia belok.
+
+Masuk.
+
+Keluar.
+
+Lanjut.
+
+Masuk lagi.
+
+Persis seperti game.
+
+Terus...
+
+53 foto yang kamu punya.
+
+Aku justru ingin semuanya ditempel di Canvas.
+
+Misalnya.
+
+□□□□□□□□□□□□□□□□□□□□□□□□
+
+□□□□□■■■■■■■■■■□□□□□□□□□□
+
+□□□□□□□□□□□□■■■■■■■■□□□□□
+
+■■■■■■□□□□□□□□□□□□□□■■■■
+
+□□□□□□□□■■■■■■■■■■□□□□□□
+
+□□□□□□□□□□□□□□□■■■■■■■■■
+
+□□□□□□□□□□□□□□□□□□□□□□□□
+
+Itu semuanya foto.
+
+Tidak ada yang dibuang.
+
+Lalu saat kita mendekat.
+
+Foto besar.
+
+□□□□□□□□□□□□□□□□
+
+□□□□■■■■■■□□□□□□
+
+□□□□□□□□□□□□□□□
+
+
+Klik.
+
+Muncul.
+
+20 foto
+
+PDF
+
+Video
+
+Sertifikat
+
+HKI
+
+Artikel
+
+                                            [Award]
+                                                 │
+                             [HKI]───────────────┘
+
+
+START
+
+      █████ HERO █████
+
+             │
+
+             ▼
+
+        [Origin]
+
+   Foto Lama
+   CV
+   Awal Berdiri
+   Timeline Awal
+
+
+                ▼
+
+
+               [Movement]
+
+     Seminar
+     Workshop
+     Pelatihan
+     Dokumentasi
+
+
+                        ▼
+
+
+                [Community]
+
+       UMKM 1
+       UMKM 2
+       UMKM 3
+       Pemerintah
+       Masyarakat
+
+
+                               ▼
+
+
+                  [Innovation]
+
+        Branding
+        Packaging
+        Mockup
+        Logo
+        Produk
+
+
+                                   ▼
+
+
+                     [Evidence]
+
+      Sertifikat
+      PDF
+      HKI
+      Artikel
+      Media
+
+
+                                         ▼
+
+
+                   [Recognition]
+
+      Award
+      Inotek
+      Liputan
+      Kerjasama
+
+
+                              ▼
+
+
+                    [Impact Story]
+
+    Before → After
+
+    UMKM A
+
+    UMKM B
+
+    UMKM C
+
+
+                           ▼
+
+
+                       [Future]
+
+        Visi
+        Roadmap
+        Kolaborasi
+
+
+                          ▼
+
+
+                   Contact
+
+
+Sekarang kita tentukan isi setiap Area.
+1. Arrival
+
+Yang tampil:
+
+3–5 foto paling kuat
+Opening statement
+Scroll indicator
+
+Tidak banyak teks.
+
+2. Origin
+
+Isi:
+
+Foto awal
+Foto pendiri
+Timeline pendek
+Potongan CV
+Dokumentasi awal
+3. Movement
+
+Isi:
+
+Semua seminar
+Workshop
+Pelatihan
+Pengabdian
+Dokumentasi kegiatan
+
+Target sekitar 10–15 foto.
+
+4. Community
+
+Isi:
+
+Foto UMKM
+Foto masyarakat
+Pemerintah
+Pendampingan
+Kunjungan
+
+Target sekitar 10 foto.
+
+5. Innovation
+
+Isi:
+
+Semua hasil karya.
+
+Mockup
+Packaging
+Banner
+Branding
+Logo
+Produk
+
+Target sekitar 15–20 visual.
+
+6. Evidence
+
+Ini pusat arsip.
+
+Bukan timeline.
+
+Tetapi museum.
+
+Isi:
+
+Sertifikat
+HKI
+PDF
+Artikel
+Media
+
+Klik salah satu → drawer terbuka.
+
+7. Recognition
+
+Isi:
+
+Award
+Inotek
+Penghargaan
+Liputan
+Foto penyerahan
+8. Impact Story
+
+Menurutku ini jangan pakai counter.
+
+Lebih bagus seperti ini.
+
+UMKM A
+
+Foto Sebelum
+
+↓
+
+Foto Sesudah
+
+↓
+
+Branding
+
+↓
+
+Produk
+
+↓
+
+Testimoni
+
+Lalu lanjut.
+
+UMKM B.
+
+UMKM C.
+
+Ini lebih kuat daripada angka.
+
+9. Future
+
+Isi:
+
+Roadmap
+Visi
+Ajakan kolaborasi
+
+Tidak panjang.
+
+10. Contact
+
+Penutup.
+
+📁 00_MASTER
+00_MASTER_PROJECT.md
+
+Isinya hanya:
+
+Filosofi Page 2
+Tujuan
+Rules
+Experience Journey
+Camera Journey
+Naming Convention
+Tidak ada pembahasan UI detail.
+📁 01_CANVAS
+01_CANVAS_DUNIA_UTBEX.md
+
+Isinya:
+
+Ukuran Canvas
+World Layout
+Camera Path
+Safe Area
+Zona
+Grid
+Spacing
+World Coordinate
+
+Ini seperti blueprint dunia.
+
+📁 02_CAMERA
+02_CAMERA_SYSTEM.md
+
+Isi:
+
+Scroll Camera
+Zoom
+Pan
+Rotate (jika ada)
+Kecepatan
+Ease
+Transition
+Trigger
+
+Karena sekarang website kita sebenarnya adalah kamera.
+
+📁 03_VISUAL_SYSTEM
+03_VISUAL_SYSTEM.md
+
+Nah ini penting.
+
+Isinya:
+
+Color
+Primary
+Secondary
+Accent
+Background
+Blur
+Shadow
+Noise
+Grain
+Glow
+Border
+Radius
+Glass
+Layer
+Z-index
+Gradient
+
+Jadi nanti seluruh dunia memakai visual yang sama.
+
+📁 04_MOTION_SYSTEM
+04_MOTION_SYSTEM.md
+
+Isinya:
+
+Motion Bible.
+
+Misalnya
+
+Hover
+
+Reveal
+
+Fade
+
+Scale
+
+Tilt
+
+Floating
+
+Drawer
+
+Magnetic
+
+Parallax
+
+Scroll Animation
+
+Duration
+
+Easing
+
+Motion Rules
+
+Supaya semua animasi konsisten.
+
+📁 05_EXPERIENCE
+
+Nah baru kita pecah.
+
+05_ARRIVAL.md
+
+06_ORIGIN.md
+
+07_MOVEMENT.md
+
+08_COMMUNITY.md
+
+09_INNOVATION.md
+
+10_EVIDENCE.md
+
+11_RECOGNITION.md
+
+12_IMPACT_STORY.md
+
+13_FUTURE.md
+
+Setiap file isinya lengkap.
+
+Misalnya
+
+08_COMMUNITY.md
+
+berisi
+
+Tujuan Experience
+Story
+Camera
+Layout
+Interaction
+Motion
+Assets
+Image Rules
+Responsive
+Detail Komponen
+
+Semuanya hanya membahas Community.
+
+📁 06_COMPONENT
+
+Karena nanti banyak komponen dipakai ulang.
+
+20_IMAGE_CARD.md
+
+21_FLOATING_CARD.md
+
+22_DRAWER.md
+
+23_LIGHTBOX.md
+
+24_GALLERY_STACK.md
+
+25_EVIDENCE_CARD.md
+
+26_BADGE.md
+
+27_WORLD_LABEL.md
+📁 07_CONTENT
+30_COPYWRITING.md
+
+31_IMAGE_MAPPING.md
+
+32_VIDEO_MAPPING.md
+
+33_PDF_MAPPING.md
+
+34_AWARD_MAPPING.md
+
+35_HKI_MAPPING.md
+
+Nah ini menurutku akan menyelamatkan proyek.
+
+Karena nanti kita punya 53 foto.
+
+Semuanya dipetakan.
+
+Misalnya.
+
+Foto_01
+
+↓
+
+Movement
+
+↓
+
+Floating
+
+↓
+
+Size L
+
+↓
+
+Hover Zoom
+📁 08_IMPLEMENTASI
+40_FOLDER_STRUCTURE.md
+
+41_NEXTJS_STRUCTURE.md
+
+42_COMPONENT_TREE.md
+
+43_FILE_TREE.md
+
+44_PERFORMANCE.md
+
+45_SEO.md
+
+Ini baru bahas coding.
+
+Jadi total kira-kira seperti ini
+00_MASTER
+
+01_CANVAS
+
+02_CAMERA
+
+03_VISUAL_SYSTEM
+
+04_MOTION_SYSTEM
+
+05_EXPERIENCE
+
+06_COMPONENT
+
+07_CONTENT
+
+08_IMPLEMENTASI
+
+Menurutku ini jauh lebih rapi dibanding membuat 20 file yang bercampur.
+
+Sekarang kita cross-check yang sudah kita putuskan
+✅ Storytelling
+Bukan website biasa.
+Interactive Evidence Explorer.
+Kamera berjalan mengikuti scroll.
+Pengguna tidak perlu drag.
+
+✔ LOCK
+
+✅ Layout
+Bukan section.
+Bukan timeline panjang.
+World Layout.
+Camera Path sinematik.
+
+✔ LOCK
+
+✅ Konten
+Semua aset dipakai.
+53+ foto tidak ada yang dibuang.
+CV, PDF, HKI, Award, Mockup, UMKM semua mendapat tempat.
+
+✔ LOCK
+
+✅ Warna
+
+Dari diskusi sebelumnya, arahnya sudah cukup jelas dan menurutku masih sangat cocok:
+
+Background utama: Hitam pekat (#050505–#0A0A0A), bukan abu-abu.
+Surface/Card: Glass hitam transparan tipis.
+Accent: Merah UTBEX sebagai warna aksi (highlight, titik fokus, CTA kecil).
+Neutral: Putih, abu terang, abu sedang untuk hirarki teks.
+Gradient: Dipakai sebagai pencahayaan, bukan sebagai background penuh.
+Glow: Sangat halus, hanya untuk objek aktif.
+Noise/Grain: Ada, agar tidak terasa datar.
+
+Jadi palet warna belum perlu diubah. Yang nanti kita detailkan adalah token warna, intensitas glow, opacity glass, dan aturan kapan accent merah boleh muncul.
+
+✔ AMAN
+
+✅ Typography
+
+Masih sesuai dengan arah premium yang sudah kita bangun:
+
+Judul besar, tegas, banyak ruang kosong.
+Body ringkas.
+Teks hanya sebagai pendamping visual, bukan isi utama.
+
+✔ AMAN
+
+
+UTBEX WEBSITE
+
+│
+├── Page 1
+│
+│     Hero
+│     Showcase
+│     Portfolio
+│     About
+│     Footer
+│
+└── Page 2
+
+      World Canvas
+
+           │
+
+           ├── Arrival
+
+           ├── Origin
+
+           ├── Movement
+
+           ├── Community
+
+           ├── Innovation
+
+           ├── Evidence
+
+           ├── Recognition
+
+           ├── Impact Story
+
+           └── Future
+
+                    │
+
+                    ├── Module
+
+                    │      Gallery
+                    │      Timeline
+                    │      Stack
+                    │      Wall
+                    │      Drawer
+                    │
+                    └── Component
+
+                           Image Card
+                           Floating Card
+                           Lightbox
+                           Badge
+                           PDF Viewer
+                           Video Player
+
+src/
+
+├── app/
+│
+├── sections/
+│
+│     hero/
+│
+│     showcase/
+│
+│     portfolio/
+│
+│     about/
+│
+│     footer/
+│
+│     world/
+│
+│          arrival/
+│
+│          origin/
+│
+│          movement/
+│
+│          community/
+│
+│          innovation/
+│
+│          evidence/
+│
+│          recognition/
+│
+│          impact-story/
+│
+│          future/
+│
+├── components/
+│
+│     cards/
+│
+│     gallery/
+│
+│     motion/
+│
+│     drawer/
+│
+│     ui/
+│
+└── data/
+
+      images.ts
+
+      awards.ts
+
+      pdf.ts
+
+      videos.ts
+
+Yang dipatok oleh kita (tidak boleh diubah AI)
+Story
+
+World
+
+Experience
+
+Camera
+
+Visual System
+
+Motion Rules
+
+Folder Structure
+
+Naming
+
+Interaction Rules
+
+Ini adalah DNA proyek.
+
+Claude atau Gemini tidak boleh mengubahnya.
+
+Yang boleh dikembangkan oleh AI
+Layout detail
+
+Spacing
+
+Responsive
+
+Animasi teknis
+
+Optimasi
+
+Kode
+
+Accessibility
+
+Performance
+
+Refactor
+
+Artinya AI menjadi engineer, bukan creative director.
+
+Jadi menurutku kita sudah punya pembagian yang jelas.
+
+Kita menentukan:
+
+Cerita.
+Struktur.
+Pengalaman.
+Aturan.
+
+AI menerjemahkan aturan itu menjadi implementasi teknis yang rapi.
+
+UTBEX WEBSITE
+
+│
+├── app/
+│
+├── chapters/
+│
+│     01-first-impression/
+│     02-belief/
+│     03-human/
+│     04-movement/
+│     ...
+│
+├── world/
+│
+│     page-2/
+│
+│          arrival/
+│
+│          origin/
+│
+│          movement/
+│
+│          community/
+│
+│          innovation/
+│
+│          evidence/
+│
+│          recognition/
+│
+│          impact-story/
+│
+│          future/
+│
+├── components/
+│
+├── lib/
+│
+└── data/
+
+Untuk dokumentasi markdown
+
+Aku juga menyarankan dipisah.
+
+Misalnya nanti:
+
+docs/
+
+│
+├── PAGE_01/
+│
+│     HERO
+│     BELIEF
+│     HUMAN
+│     MOVEMENT
+│
+└── PAGE_02/
+
+      00_MASTER
+
+      01_CANVAS
+
+      02_CAMERA
+
+      03_VISUAL_SYSTEM
+
+      04_MOTION_SYSTEM
+
+      05_WORLD/
+
+            01_ARRIVAL.md
+
+            02_ORIGIN.md
+
+            03_MOVEMENT.md
+
+            ...
+
+      06_COMPONENT/
+
+      07_CONTENT/
+
+      08_IMPLEMENTATION/
+
+Jadi orang yang membuka folder langsung paham:
+
+"Ini dokumentasi Page 1."
+
+atau
+
+"Ini dokumentasi World Page 2."
+
+Yang menurutku tidak perlu diubah dari Page 1
+
+Aku tidak akan menyentuh:
+
+✅ Folder chapters/
+
+✅ Component Hero
+
+✅ Motion Hero
+
+✅ Struktur data Hero
+
+✅ Pola components/, data/, motion/, types/, utils/
+
+Karena itu sudah rapi dan bisa menjadi acuan.
+
+Yang akan kita buat baru untuk Page 2
+
+Aku ingin standar yang sama seperti Page 1.
+
+Misalnya satu Experience seperti community/ nanti juga punya struktur lengkap:
+
+community/
+
+│
+├── Community.tsx
+
+├── index.ts
+
+├── components/
+
+│     BackgroundEffects.tsx
+
+│     FloatingGallery.tsx
+
+│     StoryOverlay.tsx
+
+│     CameraAnchor.tsx
+
+│     ImageCluster.tsx
+
+│     Drawer.tsx
+
+│
+├── data/
+
+│     images.ts
+
+│     content.ts
+
+│
+├── motion/
+
+│     communityMotion.ts
+
+│
+├── types/
+
+│     community.ts
+
+│
+└── utils/
+
+      communityHelpers.ts
+
+
+Ada satu usulan kecil yang menurutku akan membuat proyek ini lebih kuat.
+
+Saat ini folder Page 1 memakai nama chapters. Aku tidak akan mengubahnya.
+
+Tetapi untuk Page 2, daripada memakai nama world, aku lebih suka memakai nama:
+
+expedition/
+
+atau
+
+explorer/
+
+atau
+
+evidence-world/
+
+Alasannya karena ini langsung menggambarkan fungsinya: pengunjung sedang memasuki dunia eksplorasi evidence, bukan sekadar halaman kedua. Folder itu juga tidak bentrok secara konsep dengan chapters, sehingga sejak melihat struktur proyek saja orang sudah tahu bahwa Page 1 = Story, sedangkan Page 2 = Exploration. Menurutku pemisahan ini akan sangat membantu saat nanti Claude atau Gemini ikut mengembangkan proyek tanpa mencampur dua filosofi yang berbeda.
+
+Yang perlu di-update dari notulen
+1. ❌ "Hall" → ✅ "Experience"
+
+Di awal notulen masih banyak memakai istilah:
+
+Hall 1
+Hall 2
+Hall 3
+
+Padahal keputusan terakhir kita sudah berubah.
+
+Sekarang yang dipakai adalah:
+
+World Canvas
+
+↓
+
+Arrival
+
+↓
+
+Origin
+
+↓
+
+Movement
+
+↓
+
+Community
+
+↓
+
+Innovation
+
+↓
+
+Evidence
+
+↓
+
+Recognition
+
+↓
+
+Impact Story
+
+↓
+
+Future
+
+Istilah "Hall" cukup dianggap sebagai jejak diskusi awal.
+
+2. ❌ Impact memakai Counter + CTA
+
+Di awal notulen masih ada:
+
+Impact
+
+Counter
+
+CTA
+
+Ini sudah kita ganti.
+
+Sekarang menjadi:
+
+Impact Story
+
+Before
+
+↓
+
+After
+
+↓
+
+Branding
+
+↓
+
+Produk
+
+↓
+
+Testimoni
+
+Lebih documentary.
+
+Lebih evidence.
+
+3. ❌ Contact
+
+Di notulen masih ada Contact.
+
+Keputusan terakhir:
+
+Dihapus.
+
+Karena:
+
+Footer Page 1 sudah menjadi penutup website.
+
+Jadi Future langsung menuju Footer.
+
+4. ❌ Hall Experience
+
+Masih ada:
+
+Hero Gallery
+
+Floating Gallery
+
+Museum Gallery
+
+Product Exhibition
+
+Documentary
+
+Impact
+
+Menurutku ini sekarang berubah menjadi Experience.
+
+Misalnya:
+
+Arrival
+
+Origin
+
+Movement
+
+Community
+
+Innovation
+
+Evidence
+
+Recognition
+
+Impact Story
+
+Future
+
+Sedangkan Hero Gallery dll cukup menjadi karakter internal pada masing-masing Experience.
+
+5. Struktur Folder
+
+Di akhir diskusi kita juga sudah sepakat.
+
+Untuk source code kita tidak mengubah arsitektur Page 1.
+
+Page 2 dibuat terpisah mengikuti filosofi eksplorasi.
+
+Sedangkan dokumentasi markdown juga dipisahkan menjadi PAGE_01 dan PAGE_02.
+
+Jadi bagian ini menurutku sudah benar.
+
+Yang menurutku sudah LOCK
+
+Ini menurutku sudah tidak perlu diperdebatkan lagi kecuali nanti memang ada perubahan besar.
+
+✅ Page 1 selesai.
+✅ Page 2 memakai Interactive Evidence Explorer.
+✅ Scroll menggerakkan kamera.
+✅ Tidak memakai drag.
+✅ Semua aset wajib dipakai.
+✅ Dunia dibangun sebagai World Canvas.
+✅ Experience: Arrival → Future.
+✅ Banyak visual, sedikit teks.
+✅ AI hanya sebagai engineer, bukan creative director.
+✅ Dokumentasi dipecah menjadi banyak markdown kecil.
+✅ Source code Page 1 tidak dirombak.
+Yang menurutku BELUM LOCK (dan memang sengaja belum)
+
+Ini justru akan menjadi isi markdown berikutnya.
+
+Image Composition System (bagaimana 53+ foto disusun).
+World Coordinate (posisi pasti setiap Experience di canvas).
+Camera Path Detail (jalur kamera per Experience).
+Asset Mapping (foto ke berapa masuk ke Experience mana).
+Interaction Detail (drawer, lightbox, gallery stack, dll.).
+Responsive World (bagaimana dunia ini berubah di tablet dan mobile).

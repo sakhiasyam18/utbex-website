@@ -1,8 +1,13 @@
 // app/layout.tsx
+//
+// Root layout — provides html, body, fonts, metadata, and analytics.
+// Navigation and page wrappers are handled by route group layouts:
+//   (main)/layout.tsx  → includes Navigation + <main>
+//   (explore)/explore/layout.tsx → immersive fullscreen, no Navigation
+//
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "../components/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,10 +54,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className={`${inter.className} antialiased bg-utbex-canvas flex flex-col min-h-screen selection:bg-utbex-maroon/20 selection:text-utbex-maroon`}>
-        <Navigation />
-        <main className="flex-grow">
-          {children}
-        </main>
+        {children}
         <Analytics />
       </body>
     </html>
