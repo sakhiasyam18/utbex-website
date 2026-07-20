@@ -9,12 +9,12 @@
 //   - Has a safe area (breathing room) around it
 //   - Shows dev-only debug info in development mode
 //
-// This component renders NO content. Content will be added
-// in later implementation phases per individual experience specs.
+// Content is rendered by ExperienceZoneContent inside this shell.
 
 "use client";
 
 import type { ExperienceZone } from "@/components/explore/camera/types";
+import { ExperienceZoneContent } from "./ExperienceZoneContent";
 
 interface ExperiencePlaceholderProps {
   zone: ExperienceZone;
@@ -83,6 +83,11 @@ export function ExperiencePlaceholder({
           </div>
         </div>
       )}
+
+      {/* ── Experience Content ───────────────────────────── */}
+      {/* Museum room interior — evidence cards, editorial layout, drawer */}
+      <ExperienceZoneContent zone={zone} isActive={isActive} />
     </div>
   );
 }
+

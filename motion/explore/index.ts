@@ -10,6 +10,8 @@ export {
   revealDuration,
   revealDistance,
   exploreStagger,
+  interactionDuration,
+  hoverStaggerDelay,
   exploreMotionTokens,
 } from "./tokens";
 
@@ -21,6 +23,15 @@ export {
   fadeIn,
   scaleReveal,
   floatingDriftConfig,
+  heroReveal,
+  supportingStagger,
+  supportingChild,
+  experienceEntry,
+  drawerOverlay,
+  drawerPanel,
+  drawerContentStagger,
+  drawerContentChild,
 } from "./variants";
 
 export { useExploreReducedMotion } from "./useReducedMotion";
+

@@ -93,6 +93,44 @@ export const exploreStagger = {
   explorative: 0.24,
 } as const;
 
+// ─── Interaction Durations ────────────────────────────────────
+// Per 10_ANIMATION_SYSTEM.md §25: animation timing by category.
+// Values in seconds for framer-motion transitions.
+export const interactionDuration = {
+  /** 100–150ms — hover scale, border highlight */
+  micro: 0.12,
+  /** 150–200ms — hover glow, metadata text */
+  hover: 0.18,
+  /** 300–500ms — card component reveal */
+  component: 0.4,
+  /** 600–900ms — hero evidence reveal */
+  hero: 0.8,
+  /** 800–1400ms — camera transitions */
+  camera: 1.1,
+  /** Drawer slide in/out */
+  drawer: 0.4,
+  /** Drawer content reveal per item */
+  drawerContent: 0.3,
+} as const;
+
+// ─── Hover Stagger Delays ─────────────────────────────────────
+// Progressive metadata reveal on hover.
+// Per 10_ANIMATION_SYSTEM.md §11–§12 and 09A §14.
+// Each metadata element appears in sequence, not all at once.
+// Creates a "reading" effect — user progressively discovers content.
+// Values in seconds, used as CSS transition-delay.
+export const hoverStaggerDelay = {
+  scale: 0,
+  shadow: 0,
+  glow: 0.03,
+  border: 0.03,
+  title: 0.08,
+  subtitle: 0.13,
+  year: 0.18,
+  category: 0.23,
+  hint: 0.28,
+} as const;
+
 // ─── Combined Export ──────────────────────────────────────────
 export const exploreMotionTokens = {
   cameraEase,
@@ -101,4 +139,6 @@ export const exploreMotionTokens = {
   revealDuration,
   revealDistance,
   exploreStagger,
+  interactionDuration,
+  hoverStaggerDelay,
 } as const;

@@ -113,13 +113,15 @@ export const CAMERA_WAYPOINTS: CameraWaypoint[] = [
 // ─── Experience Zones ─────────────────────────────────────────
 // Zones define the spatial bounds of each experience in the world.
 // Used by ExperiencePlaceholder for positioning and sizing.
+// Sized to accommodate editorial layouts with multiple evidence cards.
 export const EXPERIENCE_ZONES: ExperienceZone[] = CAMERA_WAYPOINTS.map((wp) => ({
   id: wp.id,
   label: wp.label,
   focus: wp.focus,
   position: wp.position,
   size: {
-    width: 1200,   // placeholder — will be sized per-experience
-    height: 800,   // placeholder — will be sized per-experience
+    width: 1400,   // sized for editorial grid with 6–10 cards
+    height: 1000,  // sized for editorial grid with 6–10 cards
   },
 }));
+

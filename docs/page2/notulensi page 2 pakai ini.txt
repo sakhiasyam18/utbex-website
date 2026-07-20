@@ -1769,3 +1769,196 @@ Camera Path Detail (jalur kamera per Experience).
 Asset Mapping (foto ke berapa masuk ke Experience mana).
 Interaction Detail (drawer, lightbox, gallery stack, dll.).
 Responsive World (bagaimana dunia ini berubah di tablet dan mobile).
+
+Jadi totalnya memang sekitar 17 file
+
+Kalau diurutkan menjadi seperti ini:
+
+00_MASTER_PROJECT.md
+
+01_CANVAS_DUNIA.md
+
+02_CAMERA_SYSTEM.md
+
+03_VISUAL_SYSTEM.md
+
+04_MOTION_SYSTEM.md
+
+05_EXPERIENCE_SYSTEM.md
+
+06_CONTENT_SYSTEM.md
+
+07_ASSET_MAPPING.md
+
+08_COMPONENT_SYSTEM.md
+
+09_INTERACTION_SYSTEM.md
+
+10_ANIMATION_SYSTEM.md
+
+11_FOLDER_STRUCTURE.md
+
+12_DATA_STRUCTURE.md
+
+13_TECHNICAL_ARCHITECTURE.md
+
+14_PERFORMANCE_GUIDE.md
+
+15_IMPLEMENTATION_GUIDE.md
+
+16_CHECKLIST.md
+
+17_AI_IMPLEMENTATION_PROMPT.md
+
+Misalnya begini
+
+Sekarang kotaknya cuma placeholder.
+
+Kalau nanti menjadi seperti ini.
+
+┌─────────────────────┐
+│                     │
+│  Foto Workshop      │
+│                     │
+└─────────────────────┘
+
+User hover.
+
+↓
+
+Card membesar sedikit.
+
+↓
+
+Background glow.
+
+↓
+
+Muncul judul.
+
+↓
+
+Subtitle.
+
+↓
+
+Tahun.
+
+↓
+
+Kategori.
+
+↓
+
+"Click to explore"
+
+User klik.
+
+↓
+
+Drawer keluar.
+
+Workshop UMKM 2023
+
+Deskripsi
+
+Foto
+
+Video
+
+PDF
+
+Award
+
+HKI
+
+
+Nah.
+
+Sekarang terasa hidup.
+
+Bahkan aku punya ide yang lebih seru.
+
+Misalnya camera berhenti di Experience.
+
+Di dalam Experience ada 6 evidence.
+
+Camera
+
+↓
+
+Community
+
+Di dalam Community.
+
+Foto 1
+
+Foto 2
+
+Foto 3
+
+Foto 4
+
+PDF
+
+Award
+
+User bebas hover-hover.
+
+Bebas klik.
+
+Bebas buka.
+
+Tapi...
+
+Camera tidak pernah bebas.
+
+Jadi interaksinya ada.
+
+Exploration ada.
+
+Tetapi storytelling tetap terjaga.
+
+Menurutku Experience itu jangan cuma satu kotak.
+
+Misalnya nanti.
+
+Community
+
+Camera berhenti.
+
+Lalu muncul.
+
+┌─────┐
+
+Workshop
+
+└─────┘
+
+        ┌─────┐
+
+        UMKM
+
+        └─────┘
+
+
+┌─────┐
+
+Award
+
+└─────┘
+
+
+        ┌─────┐
+
+Video
+
+└─────┘
+
+Nah sekarang user punya aktivitas.
+
+Hover.
+
+Klik.
+
+Explore.
