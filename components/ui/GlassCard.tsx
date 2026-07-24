@@ -14,7 +14,7 @@ export function GlassCard({ children, className, dark = false, hoverEffect = fal
   return (
     <motion.div
       className={cn(
-        "rounded-[32px] overflow-hidden",
+        "rounded-[32px] overflow-hidden will-change-transform transform-gpu",
         dark ? "glass-card-dark" : "glass-card",
         hoverEffect && "hover:shadow-[0_16px_64px_rgba(255,51,51,0.1)] transition-shadow duration-500",
         className
