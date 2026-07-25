@@ -3,7 +3,7 @@
 // REVISION 04: Removed redundant metadata, quieter interface.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { PortfolioProject } from "../types/portfolio";

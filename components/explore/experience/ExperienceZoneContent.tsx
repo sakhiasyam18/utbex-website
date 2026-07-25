@@ -25,7 +25,7 @@
 
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import {  m as motion, AnimatePresence  } from "framer-motion";
 import type { ExperienceZone } from "@/types/explore";
 import { heroReveal, experienceEntry } from "@/motion/explore/variants";
 import { EXPERIENCE_EVIDENCE_MAP, EXPERIENCE_COMPOSITIONS } from "@/data/explore/groups";

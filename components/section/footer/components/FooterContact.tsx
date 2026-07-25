@@ -2,7 +2,7 @@
 // REVISION 05: Visual weight reduced. Contact becomes a quiet supporting detail.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { staggerContainer, fadeUp } from "../motion/footerMotion";
 import { FooterContactContent } from "../types/footer";
 

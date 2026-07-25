@@ -2,7 +2,7 @@
 
 "use client";
 
-import { motion } from 'framer-motion';
+import {  m as motion  } from "framer-motion";
 import { impactContent } from '../data/impactContent';
 import { fadeInUp } from '../motion/impactMotion';
 

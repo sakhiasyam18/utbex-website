@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import {  m as motion, useInView  } from "framer-motion";
 import { IMPACT_STATS, AWARDS_DATA } from "../../data/page-2";
 import { AnimatedSection } from "../ui/AnimatedSection";
 import { GradientText } from "../ui/GradientText";

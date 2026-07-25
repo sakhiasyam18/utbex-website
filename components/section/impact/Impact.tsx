@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import {  m as motion, useInView  } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
 

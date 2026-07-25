@@ -4,7 +4,7 @@
 // REVISION 08: Reduced bottom spacing from mb-48 to mb-24.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { PortfolioProject } from "../types/portfolio";
 import ProjectCard from "./ProjectCard";
 import { mosaicStagger } from "../motion/portfolioMotion";

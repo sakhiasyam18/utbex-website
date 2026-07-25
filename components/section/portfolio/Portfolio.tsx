@@ -2,7 +2,7 @@
 // components/section/portfolio/Portfolio.tsx — Dark heynesh-style project cards
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
 
 const projects = [

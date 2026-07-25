@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { imageHover, primaryImageReveal, staggerContainer, supportingImage } from "../motion/aboutMotion";
 import AboutGallery from "./AboutGallery";
 import { AboutGalleryData } from "../types/about";

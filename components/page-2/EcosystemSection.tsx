@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { ECOSYSTEM_DATA } from "../../data/page-2";
 import { AnimatedSection } from "../ui/AnimatedSection";
 import { GradientText } from "../ui/GradientText";

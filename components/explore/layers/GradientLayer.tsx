@@ -16,7 +16,7 @@
 
 "use client";
 
-import { motion, useTransform, type MotionValue } from "framer-motion";
+import {  m as motion, useTransform, type MotionValue  } from "framer-motion";
 import { parallaxRatio } from "@/motion/explore/tokens";
 import { useExploreReducedMotion } from "@/motion/explore/useReducedMotion";
 

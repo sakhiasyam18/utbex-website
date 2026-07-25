@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import {  AnimatePresence, m as motion  } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { usePastHero } from "../providers/HeroVisibilityContext";
@@ -85,7 +85,7 @@ const mobileBarAnim: any = {
 
 export function Navigation() {
   const pastHero = usePastHero();           // ← shared context, zero extra observer
-  const { activeSection } = useActiveSection();
+  const { activeSection, setActiveSection } = useActiveSection();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -106,9 +106,9 @@ export function Navigation() {
                        bg-utbex-canvas border-r border-black/[0.07]"
           >
             {/* ── Logo Block ────────────────────────────────────── */}
-            <div className="px-6 pt-7 pb-5 border-b border-black/[0.07]">
-              <Link href="/" className="flex items-center gap-3 group mb-4">
-                <div className="relative w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 shadow-sm">
+            <div className="px-6 pt-8 pb-6 border-b border-black/[0.07]">
+              <Link href="/" className="flex items-center gap-3 group mb-5">
+                <div className="relative w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 shadow-sm bg-utbex-maroon/5">
                   <Image
                     src="/images/logo-utbex-3.avif"
                     alt="UTBEX logo"
@@ -117,48 +117,70 @@ export function Navigation() {
                   />
                 </div>
                 <div className="leading-tight">
-                  <p className="font-black text-xl text-utbex-dark tracking-tight leading-none">
+                  <p className="font-black text-2xl text-utbex-dark tracking-tight leading-none">
                     UTBEX<span className="text-utbex-maroon">.</span>
                   </p>
-                  <p className="text-[10px] font-semibold text-utbex-text-secondary/70 tracking-widest uppercase mt-0.5">
+                  <p className="text-[10px] font-bold text-utbex-text-secondary/60 tracking-widest uppercase mt-1">
                     Inovasi Indonesia
                   </p>
                 </div>
               </Link>
-              <p className="text-[11px] text-utbex-text-secondary leading-relaxed">
-                Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise
+              <p className="text-[12px] text-utbex-text-secondary font-medium leading-relaxed">
+                Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise.
               </p>
             </div>
 
+            {/* ── Stats / Testimonials Strip ──────────────────────── */}
+            <div className="px-6 py-5 border-b border-black/[0.07] bg-black/[0.02]">
+              <div className="flex divide-x divide-black/[0.07]">
+                <div className="flex-1 pr-4">
+                  <p className="text-xl font-black text-utbex-maroon tracking-tighter">10<span className="text-sm">+</span></p>
+                  <p className="text-[9px] font-bold text-utbex-text-secondary/70 leading-tight uppercase mt-1 tracking-widest">Tahun<br/>Pengalaman</p>
+                </div>
+                <div className="flex-1 pl-4">
+                  <p className="text-xl font-black text-utbex-maroon tracking-tighter">80<span className="text-sm">+</span></p>
+                  <p className="text-[9px] font-bold text-utbex-text-secondary/70 leading-tight uppercase mt-1 tracking-widest">Desa & UMKM<br/>Kolaborasi</p>
+                </div>
+              </div>
+            </div>
+
             {/* ── Nav Links ─────────────────────────────────────── */}
-            <nav className="flex-1 px-4 py-5 overflow-y-auto" aria-label="Main navigation">
-              <p className="text-[10px] font-bold tracking-widest text-utbex-text-secondary/40 uppercase px-3 mb-3">
+            <nav className="flex-1 px-4 py-6 overflow-y-auto" aria-label="Main navigation">
+              <p className="text-[10px] font-bold tracking-[0.2em] text-utbex-text-secondary/40 uppercase px-3 mb-4">
                 Navigasi
               </p>
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 {navigationLinks.map((link) => {
                   const isActive = activeSection === link.id;
                   return (
                     <Link
                       key={link.id}
                       href={link.href}
-                      className={`group flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-semibold
-                        tracking-wide transition-all duration-300
+                      onClick={(e) => {
+                          e.preventDefault();
+                          setActiveSection(link.id);
+                          const el = document.getElementById(link.id);
+                          if (el) {
+                              // Account for fixed header on mobile if necessary, though this is sidebar
+                              el.scrollIntoView({ behavior: 'smooth' });
+                          }
+                      }}
+                      className={`group flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-[11px] font-bold tracking-widest uppercase transition-all duration-300 border border-transparent
                         ${isActive
                           ? "bg-utbex-maroon text-white shadow-[0_4px_14px_rgba(139,0,0,0.3)]"
-                          : "text-utbex-dark/70 hover:bg-black/[0.05] hover:text-utbex-dark hover:translate-x-1.5"
+                          : "bg-white text-utbex-dark border-black/[0.08] hover:bg-utbex-maroon hover:text-white hover:border-transparent hover:shadow-[0_4px_14px_rgba(139,0,0,0.3)] hover:translate-x-1"
                         }`}
                     >
                       <span
-                        className={`flex-shrink-0 ${
-                          isActive ? "text-white" : "text-utbex-dark/40 group-hover:text-utbex-dark/70"
+                        className={`flex-shrink-0 transition-colors ${
+                          isActive ? "text-white" : "text-utbex-dark/50 group-hover:text-white"
                         }`}
                       >
                         {sectionIcons[link.id] ?? <HomeIcon />}
                       </span>
-                      <span className="uppercase tracking-widest text-[11px]">{link.label}</span>
+                      <span>{link.label}</span>
                       {isActive && (
-                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-white/60" />
+                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-white/80" />
                       )}
                     </Link>
                   );
@@ -167,19 +189,15 @@ export function Navigation() {
             </nav>
 
             {/* ── Bottom CTA ────────────────────────────────────── */}
-            <div className="px-4 pb-7 pt-4 border-t border-black/[0.07] space-y-3">
-              <div className="flex items-center gap-2 px-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                <span className="text-[11px] text-utbex-text-secondary/70 font-medium">
-                  Siap berkolaborasi
-                </span>
-              </div>
+            <div className="px-4 pb-7 pt-4 border-t border-black/[0.07]">
               <Link
                 href={navigationContent.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-utbex-maroon text-white
-                           py-3 px-4 rounded-xl text-sm font-bold tracking-wide uppercase
-                           hover:bg-[#6A0000] transition-colors duration-200
-                           shadow-[0_4px_14px_rgba(139,0,0,0.25)]"
+                           py-4 px-4 rounded-2xl text-[11px] font-bold tracking-[0.15em] uppercase
+                           hover:bg-[#6A0000] transition-all duration-300
+                           shadow-[0_4px_14px_rgba(139,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(139,0,0,0.4)]"
               >
                 {navigationContent.cta.label}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -271,12 +289,18 @@ export function Navigation() {
                     <Link
                       key={link.id}
                       href={link.href}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={(e) => {
+                          e.preventDefault();
+                          setActiveSection(link.id);
+                          setMobileOpen(false);
+                          const el = document.getElementById(link.id);
+                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
                       className={`flex items-center gap-3.5 px-4 py-3 rounded-xl text-[11px] font-bold tracking-widest uppercase transition-all ${
-                        isActive ? "bg-utbex-maroon text-white" : "text-utbex-dark/70 hover:bg-black/[0.05] hover:text-utbex-dark"
+                        isActive ? "bg-utbex-maroon text-white" : "text-utbex-dark/70 hover:bg-utbex-maroon hover:text-white"
                       }`}
                     >
-                      <span className={isActive ? "text-white" : "text-utbex-dark/40"}>
+                      <span className={isActive ? "text-white" : "text-utbex-dark/40 group-hover:text-white"}>
                         {sectionIcons[link.id] ?? <HomeIcon />}
                       </span>
                       {link.label}

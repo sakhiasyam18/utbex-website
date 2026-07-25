@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { HERO_DATA } from "../../data/page-2";
 import { GradientText } from "../ui/GradientText";
 import { ArrowDown } from "lucide-react";
@@ -9,13 +9,10 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 sm:px-12 lg:px-24">
       {/* Background Parallax Image or Video placeholder */}
-      <motion.div 
+      <div 
         className="absolute inset-0 z-0 opacity-20"
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 10, ease: "linear" }}
         style={{
-          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,1)), url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80")',
+          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,1)), url("/images/pelatihan-utbex-digital-marketing-di-umkm.avif")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

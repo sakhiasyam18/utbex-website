@@ -3,7 +3,7 @@
 //                  This component is kept for FeaturedStory use only.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { quietFade } from "../motion/portfolioMotion";
 
 interface DocumentaryCaptionProps {

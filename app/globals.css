@@ -139,4 +139,16 @@ html.lenis body {
     overflow: hidden;
     display: block;
   }
+}
+
+/* ============================================
+   PERFORMANCE: CSS Animations
+   ============================================ */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-card {
+  animation: floatCard 5s ease-in-out infinite;
+  will-change: transform;
 }

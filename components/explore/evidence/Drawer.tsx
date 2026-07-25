@@ -18,7 +18,7 @@
 "use client";
 
 import { useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {  m as motion, AnimatePresence  } from "framer-motion";
 import { X } from "lucide-react";
 import {
   drawerOverlay,

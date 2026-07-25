@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { navigationLinks } from "../data/navigationLinks";
 import { NavigationIndicator } from "./NavigationIndicator";
 import { linkHoverVariants } from "../motion/navigationHover";

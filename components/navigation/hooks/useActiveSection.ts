@@ -36,16 +36,40 @@ export function useActiveSection() {
             threshold: [0, 0.25, 0.5, 0.75, 1.0]
         });
 
-        navigationLinks.forEach(link => {
-            const id = link.href.replace('#', '');
-            const element = document.getElementById(id);
-            if (element) {
-                observer.observe(element);
-            }
-        });
+        const observedIds = new Set<string>();
+
+        const observeElements = () => {
+            let allObserved = true;
+            navigationLinks.forEach(link => {
+                const id = link.href.replace('#', '');
+                if (!observedIds.has(id)) {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        observer.observe(element);
+                        observedIds.add(id);
+                    } else {
+                        allObserved = false;
+                    }
+                }
+            });
+            return allObserved;
+        };
+
+        if (!observeElements()) {
+            const intervalId = setInterval(() => {
+                if (observeElements()) {
+                    clearInterval(intervalId);
+                }
+            }, 500);
+
+            return () => {
+                clearInterval(intervalId);
+                observer.disconnect();
+            };
+        }
 
         return () => observer.disconnect();
     }, []);
 
-    return { activeSection };
+    return { activeSection, setActiveSection };
 }

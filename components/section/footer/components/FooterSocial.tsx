@@ -1,7 +1,7 @@
 // components/section/footer/components/FooterSocial.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { staggerContainer, fadeUp } from "../motion/footerMotion";
 import { FooterSocialItem } from "../types/footer";
 

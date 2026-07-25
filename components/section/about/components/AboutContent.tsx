@@ -1,7 +1,7 @@
 //app/sections/about/components/AboutContent.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { fadeUp, staggerContainer } from "../motion/aboutMotion";
 import SectionLabel from "./SectionLabel";

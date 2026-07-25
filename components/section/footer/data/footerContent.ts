@@ -26,12 +26,12 @@ export const footerContent: FooterContent = {
     items: [
       {
         label: "Alamat Email",
-        value: "hello@utbex.id",
-        href: "mailto:hello@utbex.id",
+        value: "reyzareyza87@gmail.com",
+        href: "mailto:reyzareyza87@gmail.com",
       },
       {
         label: "Lokasi",
-        value: "Indonesia",
+        value: "Jl. Kyai Rajiman RT.06 RW.02, Bantur, Malang, 65179",
       },
     ],
   },

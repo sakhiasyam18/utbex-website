@@ -15,7 +15,7 @@
 
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { supportingChild } from "@/motion/explore/variants";
 import { hoverStaggerDelay, interactionDuration } from "@/motion/explore/tokens";
 import type { EvidenceItem, CardSize, CardTransform } from "@/types/explore";

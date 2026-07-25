@@ -3,7 +3,7 @@
 //              variation. Visitors should feel the atmosphere, not see it.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { usePrefersReducedMotion } from "../utils/footerHelpers";
 import { ambientFloat } from "../../about/motion/aboutMotion";
 

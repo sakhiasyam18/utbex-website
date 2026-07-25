@@ -1,16 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { AnimatedSection } from "../ui/AnimatedSection";
 import { GradientText } from "../ui/GradientText";
 
-// Dummy image placeholders matching the documentary vibe
+import Image from "next/image";
+
 const GALLERY_IMAGES = [
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80",
+  { src: "/images/pelatihan-digital-marketing-dan-packaging-utbex.avif", caption: "Pelatihan Digital Marketing & Packaging", year: "2023" },
+  { src: "/images/foto-bersama-arik-dwi-asmara-utbex-dengan-pemerintah.avif", caption: "Kolaborasi dengan Pemerintah Daerah", year: "2023" },
+  { src: "/images/awarding-inotek-award-ceremony-2023-utbex.avif", caption: "INOTEK Award Ceremony", year: "2023" },
+  { src: "/images/utbex-pelatihan-manajemen-umkm-dengan-arik-dwi-asmara.avif", caption: "Pelatihan Manajemen UMKM", year: "2022" },
+  { src: "/images/foto-bersama-arif-dwi-asmara-utbex.avif", caption: "Komunitas UMKM Bantur", year: "2024" },
 ];
 
 export function GallerySection() {
@@ -30,7 +31,7 @@ export function GallerySection() {
 
         {/* Masonry-style Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {GALLERY_IMAGES.map((src, index) => {
+          {GALLERY_IMAGES.map((item, index) => {
             // Create a masonry look by varying the heights and spans
             let spanClass = "col-span-1 aspect-square";
             if (index === 0) spanClass = "md:col-span-2 aspect-video";
@@ -47,9 +48,13 @@ export function GallerySection() {
                 whileHover={{ y: -8 }}
               >
                 {/* Image */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${src})` }}
+                <Image
+                  src={item.src}
+                  alt={item.caption}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="lazy"
                 />
                 
                 {/* Overlays */}
@@ -57,8 +62,8 @@ export function GallerySection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  <p className="text-white font-medium">Dokumentasi Pelatihan</p>
-                  <p className="text-white/70 text-sm">Desa Inovasi, 2023</p>
+                  <p className="text-white font-medium">{item.caption}</p>
+                  <p className="text-white/70 text-sm">Desa Inovasi, {item.year}</p>
                 </div>
               </motion.div>
             );

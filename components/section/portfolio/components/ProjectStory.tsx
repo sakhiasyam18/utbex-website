@@ -1,7 +1,7 @@
 // components/section/portfolio/components/ProjectStory.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { storyReveal } from "../motion/portfolioMotion";
 
 interface ProjectStoryProps {

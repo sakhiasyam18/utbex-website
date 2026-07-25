@@ -1,7 +1,7 @@
 //app/sections/about/components/QuoteBlock.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { fade } from "../motion/aboutMotion";
 import { AboutQuote } from "../types/about";
 

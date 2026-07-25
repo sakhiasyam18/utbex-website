@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import {  m as motion, AnimatePresence  } from "framer-motion";
 import Link from "next/link";
 import { navigationLinks } from "../data/navigationLinks";
 import { navigationContent } from "../data/navigationContent";

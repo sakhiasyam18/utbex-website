@@ -7,38 +7,33 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
+import { m as motion, useScroll, useTransform } from "framer-motion";
 
 const stats = [
-  { value: "45+", label: "Desa Kolaborasi" },
-  { value: "120+", label: "UMKM Didampingi" },
-  { value: "2500+", label: "Pemuda Terlatih" },
+  { value: "2016", label: "Pionir Kaos Lukis Tanpa Tinta Pertama" },
+  { value: "2019", label: "Juara I Penemu Ide Kreatif Malaysia" },
+  { value: "2022", label: "Merchandise Resmi MotoGP Mandalika" },
 ];
 
 const tags = ["Inovatif", "Berdampak", "Kolaboratif", "Berkelanjutan", "Lokal"];
 
 export default function Hero() {
-  const photoWrapRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "60% start"],
+  });
 
-  // Scroll: photo blurs + recedes (heynesh style)
-  useEffect(() => {
-    const heroEl = document.getElementById("hero");
-    if (!photoWrapRef.current || !heroEl) return;
-    const onScroll = () => {
-      const p = Math.min(window.scrollY / (heroEl.offsetHeight * 0.6), 1);
-      if (photoWrapRef.current) {
-        photoWrapRef.current.style.filter  = `blur(${p * 14}px)`;
-        photoWrapRef.current.style.transform = `scale(${1 - p * 0.08})`;
-        photoWrapRef.current.style.opacity  = `${1 - p * 0.75}`;
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // GPU-composited — tidak menyentuh main thread
+  const blur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(14px)"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.25]);
 
   return (
     <section
       id="hero"
+      ref={heroRef}
       className="relative w-full bg-utbex-canvas flex flex-col"
       style={{ minHeight: "100svh" }}
       aria-label="Beranda UTBEX Indonesia"
@@ -49,17 +44,27 @@ export default function Hero() {
                    animate-fade-up opacity-0"
         style={{ animationDelay: "60ms", animationFillMode: "forwards" }}
       >
-        <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full
-                         bg-utbex-maroon/10 text-utbex-maroon text-[11px] font-bold
-                         tracking-widest border border-utbex-maroon/20 uppercase">
-          <span className="w-1.5 h-1.5 rounded-full bg-utbex-maroon animate-pulse" />
-          PT. UTBEX INOVASI INDONESIA
-        </span>
-        <div className="hidden md:flex flex-wrap gap-2">
-          {tags.map((t) => (
-            <span key={t} className="text-[11px] font-semibold text-utbex-text-secondary/70
-                                     border border-black/10 rounded-full px-3 py-1">
-              {t}
+        <div className="relative group cursor-default">
+          {/* Subtle glow behind the badge */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-utbex-maroon to-red-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+          {/* The badge itself */}
+          <span className="relative inline-flex items-center gap-2.5 py-2 px-5 rounded-full bg-white/90 backdrop-blur-md text-utbex-dark text-xs font-black tracking-[0.15em] border border-black/5 shadow-sm uppercase">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-utbex-maroon opacity-60"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-utbex-maroon"></span>
+            </span>
+            PT. UTBEX INOVASI INDONESIA
+          </span>
+        </div>
+        <div className="hidden md:flex flex-wrap items-center gap-3 mt-1">
+          {tags.map((t, i) => (
+            <span key={t} className="flex items-center gap-3">
+              <span className="text-[10px] font-bold text-utbex-dark uppercase tracking-[0.2em] opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-default">
+                {t}
+              </span>
+              {i < tags.length - 1 && (
+                <span className="text-black/20 text-[10px] select-none">/</span>
+              )}
             </span>
           ))}
         </div>
@@ -80,34 +85,34 @@ export default function Hero() {
         >
           {/* Small label */}
           <p className="text-xs font-bold tracking-widest text-utbex-text-secondary/70 uppercase mb-5">
-            Pusat Pengembangan Ekonomi Kreatif Malang Selatan
+            From Ideas To Impact
           </p>
 
           {/* Headline */}
           <h1
             className="font-black text-utbex-dark leading-[0.9] tracking-tighter mb-8"
-            style={{ fontSize: "clamp(36px, 4vw, 62px)" }}
+            style={{ fontSize: "clamp(34px, 4vw, 56px)" }}
           >
-            Mengubah
+            Unusually Think
             <br />
-            Ide Menjadi
+            Become
             <br />
-            <span className="text-utbex-maroon italic">Dampak</span>
-            <br />
-            Nyata.
+            <span className="text-utbex-maroon italic">Extraordinary.</span>
           </h1>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-3">
             <Link
-              href="#portfolio"
+              href="https://wa.me/6282252358901"
+              target="_blank"
+              rel="noopener noreferrer"
               id="hero-cta-primary"
               className="inline-flex items-center gap-2 px-6 py-3
                          bg-utbex-maroon text-white rounded-full text-sm font-semibold
                          hover:bg-[#6A0000] transition-colors duration-200
                          shadow-[0_6px_20px_rgba(139,0,0,0.3)]"
             >
-              Lihat Kolaborasi Kami
+              Hubungi
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -157,11 +162,10 @@ export default function Hero() {
           </div>
 
           {/* Pak Arik portrait — above UTBEX, scroll-blurs out */}
-          <div
-            ref={photoWrapRef}
+          <motion.div
             className="absolute inset-0 flex justify-center
                        pointer-events-none select-none will-change-transform"
-            style={{ zIndex: 10, transformOrigin: "center bottom" }}
+            style={{ filter: blur, scale, opacity, zIndex: 10, transformOrigin: "center bottom" }}
           >
             <Image
               src="/images/arik.webp"
@@ -181,7 +185,7 @@ export default function Hero() {
                 zIndex: 20,
               }}
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* ═══════════════════════════════════════════════════
@@ -241,9 +245,9 @@ export default function Hero() {
               className="relative font-bold text-utbex-dark leading-relaxed"
               style={{ fontSize: "clamp(12px, 1vw, 15px)" }}
             >
-              Bersama desa, UMKM, dan komunitas — kami membangun inovasi
-              yang tumbuh dari kebutuhan nyata dan menciptakan perubahan
-              yang terus dirasakan.
+              Pusat pengembangan ekonomi kreatif dan pemberdayaan pemuda desa
+              yang mengubah ide sederhana menjadi karya luar biasa
+              dan berdampak nyata.
             </p>
 
             {/* Closing quote */}
@@ -262,7 +266,7 @@ export default function Hero() {
               Arik Dwi Asmara
             </p>
             <p className="text-sm font-semibold text-utbex-text-secondary mt-0.5">
-              Founder UTBEX Indonesia
+              CEO & Founder UTBEX Indonesia Group
             </p>
           </div>
         </div>
@@ -275,11 +279,11 @@ export default function Hero() {
           style={{ animationDelay: "140ms", animationFillMode: "forwards" }}
         >
           <p className="text-xs font-bold tracking-widest text-utbex-text-secondary/70 uppercase mb-3">
-            Pusat Pengembangan Ekonomi Kreatif Malang Selatan
+            From Ideas To Impact
           </p>
           <h1 className="text-4xl sm:text-5xl font-black text-utbex-dark leading-[0.9] tracking-tighter mb-4">
-            Mengubah Ide Menjadi{" "}
-            <span className="text-utbex-maroon italic">Dampak</span> Nyata.
+            Unusually Think Become{" "}
+            <span className="text-utbex-maroon italic">Extraordinary.</span>
           </h1>
           {/* Mobile glass card */}
           <div
@@ -293,20 +297,22 @@ export default function Hero() {
           >
             <span className="font-black text-utbex-maroon/25 text-5xl leading-none block -mt-2 mb-1">"</span>
             <p className="text-sm font-bold text-utbex-dark leading-relaxed">
-              Bersama desa, UMKM, dan komunitas — kami membangun inovasi yang tumbuh dari kebutuhan
-              nyata dan menciptakan perubahan yang terus dirasakan.
+              Pusat pengembangan ekonomi kreatif dan pemberdayaan pemuda desa yang mengubah ide sederhana menjadi karya luar biasa dan berdampak nyata.
             </p>
             <span className="font-black text-utbex-maroon/25 text-5xl leading-none block text-right -mb-2">"</span>
           </div>
           <div className="mb-5">
             <p className="text-sm font-black text-utbex-dark">Arik Dwi Asmara</p>
-            <p className="text-xs font-semibold text-utbex-text-secondary">Founder UTBEX Indonesia</p>
+            <p className="text-xs font-semibold text-utbex-text-secondary">CEO & Founder UTBEX Indonesia Group</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="#portfolio"
+            <Link 
+              href="https://wa.me/6282252358901"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-utbex-maroon text-white
                          rounded-full text-sm font-semibold shadow-[0_6px_20px_rgba(139,0,0,0.3)]">
-              Lihat Kolaborasi Kami
+              Hubungi
             </Link>
             <Link href="#about"
               className="inline-flex items-center gap-2 px-6 py-3 border-2 border-utbex-dark/20
@@ -332,11 +338,11 @@ export default function Hero() {
         {stats.map((s, i) => (
           <div
             key={s.label}
-            className={`py-5 flex flex-col items-start gap-0.5 px-8 first:pl-0
+            className={`py-6 flex flex-col items-center justify-center text-center gap-1 px-4
               ${i < stats.length - 1 ? "border-r border-black/[0.07]" : ""}`}
           >
             <span className="text-2xl sm:text-3xl font-black text-utbex-dark">{s.value}</span>
-            <span className="text-xs text-utbex-text-secondary">{s.label}</span>
+            <span className="text-xs text-utbex-text-secondary leading-snug">{s.label}</span>
           </div>
         ))}
       </div>

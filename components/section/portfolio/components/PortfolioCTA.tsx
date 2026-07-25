@@ -4,7 +4,7 @@
 // REVISION 08: Reduced bottom spacing.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { staggerContainer, fadeUp } from "../../about/motion/aboutMotion";
 import { PortfolioContent } from "../types/portfolio";
 

@@ -4,7 +4,7 @@
 // REVISION 09: Secondary image overlaps slightly for documentary depth.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import Image from "next/image";
 import { PortfolioProject } from "../types/portfolio";
 import EvidenceAnnotation from "./EvidenceAnnotation";

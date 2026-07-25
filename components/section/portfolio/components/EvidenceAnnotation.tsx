@@ -2,7 +2,7 @@
 // REVISION 04, 09: More minimal. Glassy, attached to photo.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { evidenceReveal } from "../motion/portfolioReveal";
 
 interface EvidenceAnnotationProps {

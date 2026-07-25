@@ -3,7 +3,7 @@
 "use client";
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import {  m as motion  } from "framer-motion";
 import { staggerContainer, fadeInUp } from '../motion/heroMotion';
 import { cx } from '../utils/heroHelpers';
 

@@ -3,7 +3,7 @@
 // REVISION 08: Reduced mb from mb-32 to mb-16.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { staggerContainer, fadeUp } from "../../about/motion/aboutMotion";
 import { PortfolioContent } from "../types/portfolio";
 

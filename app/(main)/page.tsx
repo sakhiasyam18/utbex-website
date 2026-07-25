@@ -1,9 +1,13 @@
+"use client";
+
 //app/(main)/page.tsx
 import Hero from "@/components/section/hero/Hero";
-import About from "@/components/section/about/About";
-import Portfolio from "@/components/section/portfolio/Portfolio";
-import Impact from "@/components/section/impact/Impact";
-import { Footer } from "@/components/section/footer";
+import dynamic from "next/dynamic";
+
+const About = dynamic(() => import("@/components/section/about/About"), { ssr: false });
+const Portfolio = dynamic(() => import("@/components/section/portfolio/Portfolio"), { ssr: false });
+const Impact = dynamic(() => import("@/components/section/impact/Impact"), { ssr: false });
+const Footer = dynamic(() => import("@/components/section/footer").then(mod => mod.Footer), { ssr: false });
 import { GlobalAtmosphere } from "@/components/atmosphere/GlobalAtmosphere";
 
 export default function Home() {

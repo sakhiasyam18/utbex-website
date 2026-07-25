@@ -1,7 +1,7 @@
 //app/sections/about/components/BackgroundEffects.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { ambientFloat } from "../motion/aboutMotion";
 import { usePrefersReducedMotion } from "../utils/aboutHelpers";
 

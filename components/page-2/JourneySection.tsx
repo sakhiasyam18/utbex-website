@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {  m as motion, useScroll, useTransform  } from "framer-motion";
 import { JOURNEY_DATA } from "../../data/page-2";
 import { AnimatedSection } from "../ui/AnimatedSection";
 import { GradientText } from "../ui/GradientText";

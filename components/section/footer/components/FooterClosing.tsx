@@ -5,7 +5,7 @@
 //              creating a natural pause before the visitor reads further.
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import {  m as motion, Variants  } from "framer-motion";
 import { fade } from "../motion/footerMotion";
 import { FooterClosingContent } from "../types/footer";
 

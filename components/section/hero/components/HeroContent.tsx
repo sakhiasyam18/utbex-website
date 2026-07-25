@@ -4,7 +4,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, Play } from 'lucide-react';
-import { motion } from 'framer-motion';
+import {  m as motion  } from "framer-motion";
 import { heroContent } from '../data/heroContent';
 import { cx } from '../utils/heroHelpers';
 import { staggerContainer, fadeInUp } from '../motion/heroMotion';

@@ -2,54 +2,63 @@
 // components/section/about/About.tsx — Heynesh-style sticky split layout
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
 
 const milestones = [
   {
-    year: "'20",
-    title: "Lahirnya UTBEX",
+    year: "'14",
+    title: "Titik Awal UTBEX",
     story:
-      "UTBEX lahir dari keyakinan bahwa perubahan tidak harus selalu dimulai dari sesuatu yang besar. Sebuah ide sederhana yang tumbuh dari kegelisahan melihat potensi desa yang belum tersentuh.",
+      "UTBEX resmi berdiri dengan keyakinan bahwa setiap ide, sekecil apa pun, dapat menjadi kekuatan besar jika dipikirkan secara berbeda dan dieksekusi secara nyata.",
     image: "/images/arik-dwi-asmara-penyampaian-materi-utbex.avif",
-    alt: "Arik Dwi Asmara menyampaikan materi",
-    tag: "Asal Mula",
+    alt: "Arik Dwi Asmara",
+    tag: "Pendirian",
+  },
+  {
+    year: "'16",
+    title: "Inovasi Kaos Lukis",
+    story:
+      "Kami meluncurkan inovasi Kaos Lukis Tanpa Tinta Pertama di Indonesia, membuktikan bahwa kreativitas tanpa batas bisa lahir dari ide-ide sederhana di desa.",
+    image: "/images/kaos-lukis-tanpa-tinta-pertama-di-indonesia.avif",
+    alt: "Kaos Lukis Tanpa Tinta",
+    tag: "Inovasi",
+  },
+  {
+    year: "'19",
+    title: "Penghargaan Malaysia",
+    story:
+      "Mewakili Indonesia dan meraih Juara I Penemu Ide Kreatif di Malaysia, membuktikan bahwa gagasan pemuda desa mampu bersaing di panggung internasional.",
+    image: "/images/awarding-inotek-award-ceremony-2023-utbex.avif",
+    alt: "Penghargaan Ide Kreatif",
+    tag: "Prestasi Global",
   },
   {
     year: "'21",
-    title: "Program SCoVil Pertama",
+    title: "Social Enterprise",
     story:
-      "Program SCoVil (Social Community Village) pertama diluncurkan. Bersama komunitas desa, kami membangun ruang untuk belajar, berkolaborasi, dan menciptakan solusi dari kebutuhan nyata.",
+      "Resmi bertransformasi menjadi Social Enterprise yang fokus pada pemberdayaan pemuda desa dan pelaku UMKM melalui ekonomi kreatif berkelanjutan.",
     image: "/images/pelatihan-digital-marketing-dan-packaging-utbex.avif",
-    alt: "Pelatihan digital marketing dan packaging UTBEX",
-    tag: "Program",
+    alt: "Pemberdayaan UMKM",
+    tag: "Transformasi",
   },
   {
     year: "'22",
-    title: "Ekspansi ke UMKM",
+    title: "MotoGP Mandalika",
     story:
-      "Memperluas dampak ke pelaku UMKM lokal — membantu mereka bertransformasi digital, membangun merek, dan menjangkau pasar yang lebih luas.",
+      "Produk inovasi UTBEX terpilih dan dipercaya menjadi Merchandise Resmi untuk ajang internasional MotoGP Mandalika.",
     image: "/images/pelatihan-utbex-digital-marketing-di-umkm.avif",
-    alt: "Pelatihan UTBEX di UMKM lokal",
-    tag: "Ekspansi",
+    alt: "Produk UTBEX MotoGP",
+    tag: "Kolaborasi",
   },
   {
     year: "'23",
-    title: "Penghargaan INOTEK",
+    title: "Penghargaan Nasional",
     story:
-      "UTBEX meraih penghargaan INOTEK Award sebagai pengakuan atas kontribusi nyata dalam inovasi pemberdayaan masyarakat lokal Indonesia.",
-    image: "/images/awarding-inotek-award-ceremony-2023-utbex.avif",
-    alt: "Awarding INOTEK 2023 UTBEX",
-    tag: "Penghargaan",
-  },
-  {
-    year: "'24",
-    title: "Kolaborasi Pemerintah",
-    story:
-      "Menjalin kemitraan strategis dengan pemerintah daerah untuk memperluas program pemberdayaan. Bagi kami, dampak adalah perubahan yang tetap dirasakan setelah kegiatan selesai.",
+      "Meraih Juara II INOTEK Award Provinsi Jawa Timur dan menerima Penghargaan Sumpah Pemuda dari Bupati Malang atas dedikasi pemberdayaan masyarakat.",
     image: "/images/utbex-foto-bersama-pemerintah-arif-dwi-asmara.avif",
-    alt: "UTBEX foto bersama pemerintah",
-    tag: "Kemitraan",
+    alt: "Penghargaan INOTEK",
+    tag: "Penghargaan",
   },
 ];
 
@@ -86,6 +95,48 @@ export default function About() {
           </motion.div>
         </motion.div>
 
+        {/* Visi & Misi Section */}
+        <motion.div 
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-24 lg:mb-32 grid lg:grid-cols-2 gap-8 lg:gap-16"
+        >
+          {/* Visi */}
+          <motion.div variants={staggerChild} className="bg-white rounded-[2rem] p-8 sm:p-12 border border-black/[0.04] shadow-[0_8px_32px_rgba(0,0,0,0.04)] h-full flex flex-col">
+            <div className="w-12 h-12 rounded-2xl bg-utbex-maroon/10 flex items-center justify-center mb-8">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-utbex-maroon">
+                <path d="M2 12h4l3-9 5 18 3-9h5" />
+              </svg>
+            </div>
+            <h3 className="text-3xl font-black text-utbex-dark mb-5 tracking-tight">Visi Kami</h3>
+            <p className="text-utbex-text-secondary text-lg leading-relaxed font-medium">
+              Menjadi pusat pengembangan kreativitas dan pemberdayaan pemuda desa berbasis ekonomi kreatif yang berkelanjutan dan berdampak nasional hingga global.
+            </p>
+          </motion.div>
+
+          {/* Misi */}
+          <motion.div variants={staggerChild} className="bg-[#111111] rounded-[2rem] p-8 sm:p-12 shadow-[0_16px_48px_rgba(0,0,0,0.2)] text-white h-full flex flex-col">
+            <h3 className="text-3xl font-black mb-8 text-white tracking-tight">Misi Utama</h3>
+            <ul className="space-y-6 flex-1">
+              {[
+                "Mengembangkan potensi pemuda desa melalui program pelatihan, produksi, dan pengelolaan usaha.",
+                "Mendorong lahirnya wirausahawan muda desa yang mandiri, kreatif, dan inovatif.",
+                "Menjadi rumah kolaborasi antar pelaku ekonomi kreatif lintas sektor.",
+                "Mengangkat kearifan lokal menjadi produk berkualitas dan berdaya saing."
+              ].map((misi, i) => (
+                <li key={i} className="flex gap-4 items-start">
+                  <span className="w-7 h-7 shrink-0 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/90 mt-0.5">
+                    {i + 1}
+                  </span>
+                  <span className="text-[15px] text-white/70 leading-relaxed font-medium">{misi}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </motion.div>
+
         {/* Timeline scroll cards — 2 col on desktop */}
         <div className="lg:grid lg:grid-cols-[200px_1fr] lg:gap-16">
 
@@ -94,7 +145,7 @@ export default function About() {
             <div className="sticky top-1/3">
               <div className="space-y-1">
                 <p className="text-xs font-semibold tracking-widest text-utbex-text-secondary/50 uppercase">Perjalanan</p>
-                <p className="text-xs text-utbex-text-secondary/50">2020 — 2024</p>
+                <p className="text-xs text-utbex-text-secondary/50">2014 — Sekarang</p>
               </div>
               <motion.div className="mt-8 w-px h-40 bg-gradient-to-b from-utbex-maroon/30 to-transparent" />
             </div>

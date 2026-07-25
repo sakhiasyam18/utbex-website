@@ -3,11 +3,11 @@
 export const navigationContent = {
     cta: {
         label: "Mari Berdiskusi",
-        href: "/layanan"
+        href: "https://wa.me/6282252358901"
     },
     logo: {
         primary: "UTBEX",
-        accent: ".ID",
+        accent: ".",
         href: "/"
     }
 };

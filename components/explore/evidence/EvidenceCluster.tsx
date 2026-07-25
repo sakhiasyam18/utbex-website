@@ -12,7 +12,7 @@
 
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { supportingStagger } from "@/motion/explore/variants";
 import type { EvidenceItem } from "@/types/explore";
 import type { ExperienceLayoutComposition } from "@/types/explore";

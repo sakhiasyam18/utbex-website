@@ -24,7 +24,7 @@
 
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { WORLD_SCROLL_HEIGHT } from "@/data/explore/waypoints";
 import { useCamera } from "@/hooks/explore/useCamera";
 import { useCurrentExperience } from "@/hooks/explore/useCurrentExperience";

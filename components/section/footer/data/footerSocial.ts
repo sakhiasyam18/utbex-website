@@ -26,13 +26,13 @@ export const footerSocial: FooterSocialItem[] = [
   {
     id: "social-facebook",
     platform: "Facebook",
-    href: "https://www.facebook.com/UtbexclothingIndonesia/",
+    href: "https://www.facebook.com/utbexindonesia.group",
     ariaLabel: "UTBEX Indonesia (Halaman Facebook)",
   },
   {
     id: "social-instagram",
     platform: "Instagram",
-    href: "https://instagram.com/utbex.id",
+    href: "https://instagram.com/utbexindonesia.group",
     ariaLabel: "UTBEX di Instagram",
   },
   {

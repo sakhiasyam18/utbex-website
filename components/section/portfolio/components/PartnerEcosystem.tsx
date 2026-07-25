@@ -4,7 +4,7 @@
 // REVISION 08: Reduced vertical spacing.
 "use client";
 
-import { motion } from "framer-motion";
+import {  m as motion  } from "framer-motion";
 import { PortfolioPartner } from "../types/portfolio";
 import { partnerReveal } from "../motion/portfolioReveal";
 import { mosaicStagger } from "../motion/portfolioMotion";
