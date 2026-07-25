@@ -272,51 +272,92 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Mobile fallback (stacked) ────────────────────── */}
-      <div className="flex-1 flex flex-col justify-center px-6 py-8 lg:hidden gap-5">
+      {/* ── Mobile layout: full-screen photo + text overlay ─── */}
+      <div className="flex-1 relative lg:hidden overflow-hidden" style={{ minHeight: "85svh" }}>
+
+        {/* Pak Arik — fills the entire mobile screen */}
+        <motion.div
+          className="absolute inset-0 will-change-transform"
+          style={{ filter: blur, scale, opacity, transformOrigin: "center bottom" }}
+        >
+          <Image
+            src="/images/arik.webp"
+            alt="Arik Dwi Asmara, Founder UTBEX Indonesia"
+            fill
+            className="object-cover object-top"
+            priority
+            sizes="100vw"
+          />
+          {/* Bottom fade so text is readable */}
+          <div
+            className="absolute bottom-0 inset-x-0 pointer-events-none"
+            style={{
+              height: "70%",
+              background: "linear-gradient(to top, #FDFCFB 30%, rgba(253,252,251,0.7) 60%, transparent 100%)",
+            }}
+          />
+          {/* UTBEX watermark behind Pak Arik — partially clipped */}
+          <div
+            className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+            aria-hidden="true"
+          >
+            <span
+              className="font-black whitespace-nowrap opacity-80"
+              style={{
+                fontSize: "clamp(80px, 30vw, 160px)",
+                lineHeight: 0.8,
+                letterSpacing: "-0.04em",
+                color: "#8B0000",
+              }}
+            >
+              UTBEX
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Text overlay — positioned at bottom */}
         <div
-          className="animate-fade-up opacity-0"
-          style={{ animationDelay: "140ms", animationFillMode: "forwards" }}
+          className="absolute bottom-0 inset-x-0 px-6 pb-8 pt-4 animate-fade-up opacity-0"
+          style={{ animationDelay: "140ms", animationFillMode: "forwards", zIndex: 20 }}
         >
           <p className="text-xs font-bold tracking-widest text-utbex-text-secondary/70 uppercase mb-3">
             From Ideas To Impact
           </p>
-          <h1 className="text-4xl sm:text-5xl font-black text-utbex-dark leading-[0.9] tracking-tighter mb-4">
+          <h1 className="text-4xl sm:text-5xl font-black text-utbex-dark leading-[0.9] tracking-tighter mb-5">
             Unusually Think Become{" "}
             <span className="text-utbex-maroon italic">Extraordinary.</span>
           </h1>
-          {/* Mobile glass card */}
-          <div
-            className="rounded-2xl p-5 mb-4"
-            style={{
-              background: "rgba(255,255,255,0.5)",
-              backdropFilter: "blur(16px)",
-              border: "1px solid rgba(255,255,255,0.75)",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9)",
-            }}
-          >
-            <span className="font-black text-utbex-maroon/25 text-5xl leading-none block -mt-2 mb-1">"</span>
-            <p className="text-sm font-bold text-utbex-dark leading-relaxed">
-              Pusat pengembangan ekonomi kreatif dan pemberdayaan pemuda desa yang mengubah ide sederhana menjadi karya luar biasa dan berdampak nyata.
-            </p>
-            <span className="font-black text-utbex-maroon/25 text-5xl leading-none block text-right -mb-2">"</span>
+
+          {/* Founder info */}
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-8 h-px bg-utbex-maroon/40" />
+            <div>
+              <p className="text-sm font-black text-utbex-dark">Arik Dwi Asmara</p>
+              <p className="text-xs font-semibold text-utbex-text-secondary/70">CEO &amp; Founder UTBEX Indonesia Group</p>
+            </div>
           </div>
-          <div className="mb-5">
-            <p className="text-sm font-black text-utbex-dark">Arik Dwi Asmara</p>
-            <p className="text-xs font-semibold text-utbex-text-secondary">CEO & Founder UTBEX Indonesia Group</p>
-          </div>
+
+          {/* CTA buttons */}
           <div className="flex flex-wrap gap-3">
-            <Link 
+            <Link
               href="https://wa.me/6282252358901"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-utbex-maroon text-white
-                         rounded-full text-sm font-semibold shadow-[0_6px_20px_rgba(139,0,0,0.3)]">
+                         rounded-full text-sm font-semibold shadow-[0_6px_20px_rgba(139,0,0,0.3)]
+                         hover:bg-[#6A0000] transition-colors duration-200"
+            >
               Hubungi
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+              </svg>
             </Link>
-            <Link href="#about"
+            <Link
+              href="#about"
               className="inline-flex items-center gap-2 px-6 py-3 border-2 border-utbex-dark/20
-                         text-utbex-dark rounded-full text-sm font-semibold bg-white/50">
+                         text-utbex-dark rounded-full text-sm font-semibold bg-white/60 backdrop-blur-sm
+                         hover:bg-white/80 transition-all duration-200"
+            >
               Tentang Kami
             </Link>
           </div>
@@ -325,7 +366,7 @@ export default function Hero() {
 
       {/* ── Stats bar ───────────────────────────────────────── */}
       <div
-        className="grid grid-cols-3 border-t border-black/[0.07] px-10
+        className="grid grid-cols-3 border-t border-black/[0.07] px-4 sm:px-10
                    bg-utbex-canvas/90 backdrop-blur-sm
                    animate-fade-up opacity-0"
         style={{
@@ -338,14 +379,14 @@ export default function Hero() {
         {stats.map((s, i) => (
           <div
             key={s.label}
-            className={`py-6 flex flex-col items-center justify-center text-center gap-1 px-4
+            className={`py-4 sm:py-6 flex flex-col items-center justify-center text-center gap-1 px-2 sm:px-4
               ${i < stats.length - 1 ? "border-r border-black/[0.07]" : ""}`}
           >
-            <span className="text-2xl sm:text-3xl font-black text-utbex-dark">{s.value}</span>
-            <span className="text-xs text-utbex-text-secondary leading-snug">{s.label}</span>
+            <span className="text-xl sm:text-3xl font-black text-utbex-dark">{s.value}</span>
+            <span className="text-[10px] sm:text-xs text-utbex-text-secondary leading-snug">{s.label}</span>
           </div>
         ))}
       </div>
     </section>
   );
-}
+}

@@ -102,7 +102,7 @@ export default function Portfolio() {
           className="mb-16 lg:mb-24"
         >
           <motion.div variants={staggerChild} className="text-mask">
-            <span className="inline-block text-xs font-semibold tracking-widest text-utbex-maroon uppercase mb-4">
+            <span className="inline-block text-xs font-semibold tracking-widest text-white uppercase mb-4">
               — Jejak Kolaborasi
             </span>
           </motion.div>

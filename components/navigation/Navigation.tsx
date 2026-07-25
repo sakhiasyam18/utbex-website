@@ -88,6 +88,15 @@ export function Navigation() {
   const { activeSection, setActiveSection } = useActiveSection();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const isDark = activeSection === 'portfolio';
+  
+  const sidebarBg = isDark ? "bg-[#0a0a0a] border-white/5" : "bg-utbex-canvas border-black/[0.07]";
+  const textColor = isDark ? "text-white" : "text-utbex-dark";
+  const secondaryTextColor = isDark ? "text-white/60" : "text-utbex-text-secondary/60";
+  const dividerColor = isDark ? "border-white/5" : "border-black/[0.07]";
+  const statsBg = isDark ? "bg-white/[0.02]" : "bg-black/[0.02]";
+  const statsDivider = isDark ? "divide-white/5" : "divide-black/[0.07]";
+
   return (
     <>
       {/* ═══════════════════════════════════════════════════════════════════════
@@ -102,11 +111,11 @@ export function Navigation() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="hidden lg:flex fixed left-0 top-0 h-screen w-72 xl:w-80 flex-col z-50
-                       bg-utbex-canvas border-r border-black/[0.07]"
+            className={`hidden lg:flex fixed left-0 top-0 h-screen w-72 xl:w-80 flex-col z-50 border-r transition-colors duration-500
+                       ${sidebarBg}`}
           >
             {/* ── Logo Block ────────────────────────────────────── */}
-            <div className="px-6 pt-8 pb-6 border-b border-black/[0.07]">
+            <div className={`px-6 pt-8 pb-6 border-b transition-colors duration-500 ${dividerColor}`}>
               <Link href="/" className="flex items-center gap-3 group mb-5">
                 <div className="relative w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 shadow-sm bg-utbex-maroon/5">
                   <Image
@@ -117,36 +126,36 @@ export function Navigation() {
                   />
                 </div>
                 <div className="leading-tight">
-                  <p className="font-black text-2xl text-utbex-dark tracking-tight leading-none">
+                  <p className={`font-black text-2xl tracking-tight leading-none transition-colors duration-500 ${textColor}`}>
                     UTBEX<span className="text-utbex-maroon">.</span>
                   </p>
-                  <p className="text-[10px] font-bold text-utbex-text-secondary/60 tracking-widest uppercase mt-1">
+                  <p className={`text-[10px] font-bold tracking-widest uppercase mt-1 transition-colors duration-500 ${secondaryTextColor}`}>
                     Inovasi Indonesia
                   </p>
                 </div>
               </Link>
-              <p className="text-[12px] text-utbex-text-secondary font-medium leading-relaxed">
+              <p className={`text-[12px] font-medium leading-relaxed transition-colors duration-500 ${isDark ? "text-white/60" : "text-utbex-text-secondary"}`}>
                 Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise.
               </p>
             </div>
 
             {/* ── Stats / Testimonials Strip ──────────────────────── */}
-            <div className="px-6 py-5 border-b border-black/[0.07] bg-black/[0.02]">
-              <div className="flex divide-x divide-black/[0.07]">
+            <div className={`px-6 py-5 border-b transition-colors duration-500 ${dividerColor} ${statsBg}`}>
+              <div className={`flex divide-x transition-colors duration-500 ${statsDivider}`}>
                 <div className="flex-1 pr-4">
-                  <p className="text-xl font-black text-utbex-maroon tracking-tighter">10<span className="text-sm">+</span></p>
-                  <p className="text-[9px] font-bold text-utbex-text-secondary/70 leading-tight uppercase mt-1 tracking-widest">Tahun<br/>Pengalaman</p>
+                  <p className={`text-xl font-black tracking-tighter transition-colors duration-500 ${isDark ? "text-white" : "text-utbex-maroon"}`}>10<span className="text-sm">+</span></p>
+                  <p className={`text-[9px] font-bold leading-tight uppercase mt-1 tracking-widest transition-colors duration-500 ${isDark ? "text-white/60" : "text-utbex-text-secondary/70"}`}>Tahun<br/>Pengalaman</p>
                 </div>
                 <div className="flex-1 pl-4">
-                  <p className="text-xl font-black text-utbex-maroon tracking-tighter">80<span className="text-sm">+</span></p>
-                  <p className="text-[9px] font-bold text-utbex-text-secondary/70 leading-tight uppercase mt-1 tracking-widest">Desa & UMKM<br/>Kolaborasi</p>
+                  <p className={`text-xl font-black tracking-tighter transition-colors duration-500 ${isDark ? "text-white" : "text-utbex-maroon"}`}>80<span className="text-sm">+</span></p>
+                  <p className={`text-[9px] font-bold leading-tight uppercase mt-1 tracking-widest transition-colors duration-500 ${isDark ? "text-white/60" : "text-utbex-text-secondary/70"}`}>Desa & UMKM<br/>Kolaborasi</p>
                 </div>
               </div>
             </div>
 
             {/* ── Nav Links ─────────────────────────────────────── */}
             <nav className="flex-1 px-4 py-6 overflow-y-auto" aria-label="Main navigation">
-              <p className="text-[10px] font-bold tracking-[0.2em] text-utbex-text-secondary/40 uppercase px-3 mb-4">
+              <p className={`text-[10px] font-bold tracking-[0.2em] uppercase px-3 mb-4 transition-colors duration-500 ${isDark ? "text-white/40" : "text-utbex-text-secondary/40"}`}>
                 Navigasi
               </p>
               <div className="space-y-2">
@@ -168,12 +177,16 @@ export function Navigation() {
                       className={`group flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-[11px] font-bold tracking-widest uppercase transition-all duration-300 border border-transparent
                         ${isActive
                           ? "bg-utbex-maroon text-white shadow-[0_4px_14px_rgba(139,0,0,0.3)]"
-                          : "bg-white text-utbex-dark border-black/[0.08] hover:bg-utbex-maroon hover:text-white hover:border-transparent hover:shadow-[0_4px_14px_rgba(139,0,0,0.3)] hover:translate-x-1"
+                          : isDark
+                            ? "bg-white/5 text-white/70 hover:bg-utbex-maroon hover:text-white hover:border-transparent hover:shadow-[0_4px_14px_rgba(139,0,0,0.3)] hover:translate-x-1"
+                            : "bg-white text-utbex-dark border-black/[0.08] hover:bg-utbex-maroon hover:text-white hover:border-transparent hover:shadow-[0_4px_14px_rgba(139,0,0,0.3)] hover:translate-x-1"
                         }`}
                     >
                       <span
                         className={`flex-shrink-0 transition-colors ${
-                          isActive ? "text-white" : "text-utbex-dark/50 group-hover:text-white"
+                          isActive 
+                            ? "text-white" 
+                            : isDark ? "text-white/40 group-hover:text-white" : "text-utbex-dark/50 group-hover:text-white"
                         }`}
                       >
                         {sectionIcons[link.id] ?? <HomeIcon />}
@@ -189,7 +202,7 @@ export function Navigation() {
             </nav>
 
             {/* ── Bottom CTA ────────────────────────────────────── */}
-            <div className="px-4 pb-7 pt-4 border-t border-black/[0.07]">
+            <div className={`px-4 pb-7 pt-4 border-t transition-colors duration-500 ${dividerColor}`}>
               <Link
                 href={navigationContent.cta.href}
                 target="_blank"
@@ -220,22 +233,23 @@ export function Navigation() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between
-                       px-5 py-3.5 bg-utbex-canvas/95 backdrop-blur-md border-b border-black/[0.07]"
+            className={`lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between
+                       px-5 py-3.5 backdrop-blur-md border-b transition-colors duration-500
+                       ${isDark ? "bg-[#0a0a0a]/95 border-white/5" : "bg-utbex-canvas/95 border-black/[0.07]"}`}
           >
             <Link href="/" className="flex items-center gap-2.5">
               <div className="relative w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
                 <Image src="/images/logo-utbex-3.avif" alt="UTBEX logo" fill className="object-cover" />
               </div>
               <div className="leading-tight">
-                <p className="font-black text-base text-utbex-dark tracking-tight leading-none">
+                <p className={`font-black text-base tracking-tight leading-none transition-colors duration-500 ${textColor}`}>
                   UTBEX<span className="text-utbex-maroon">.</span>
                 </p>
               </div>
             </Link>
             <button
               onClick={() => setMobileOpen(true)}
-              className="p-2 text-utbex-text-secondary hover:text-utbex-dark transition-colors"
+              className={`p-2 transition-colors ${isDark ? "text-white/70 hover:text-white" : "text-utbex-text-secondary hover:text-utbex-dark"}`}
               aria-label="Open menu"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -266,23 +280,24 @@ export function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", ease: [0.25, 0.1, 0.25, 1], duration: 0.32 }}
-              className="lg:hidden fixed top-0 right-0 bottom-0 z-[70] w-72 bg-white flex flex-col shadow-2xl"
+              className={`lg:hidden fixed top-0 right-0 bottom-0 z-[70] w-72 flex flex-col shadow-2xl transition-colors duration-500
+                          ${isDark ? "bg-[#0a0a0a]" : "bg-white"}`}
             >
-              <div className="flex justify-between items-center px-6 py-5 border-b border-black/[0.07]">
+              <div className={`flex justify-between items-center px-6 py-5 border-b transition-colors duration-500 ${dividerColor}`}>
                 <div className="flex items-center gap-2.5">
                   <div className="relative w-8 h-8 rounded-lg overflow-hidden">
                     <Image src="/images/logo-utbex-3.avif" alt="UTBEX logo" fill className="object-cover" />
                   </div>
-                  <span className="font-black text-utbex-dark text-base">UTBEX<span className="text-utbex-maroon">.</span></span>
+                  <span className={`font-black text-base transition-colors duration-500 ${textColor}`}>UTBEX<span className="text-utbex-maroon">.</span></span>
                 </div>
-                <button onClick={() => setMobileOpen(false)} className="p-1.5 text-utbex-text-secondary hover:text-utbex-dark" aria-label="Close">
+                <button onClick={() => setMobileOpen(false)} className={`p-1.5 transition-colors ${isDark ? "text-white/70 hover:text-white" : "text-utbex-text-secondary hover:text-utbex-dark"}`} aria-label="Close">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                     <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
                 </button>
               </div>
               <nav className="flex-1 px-4 py-5 space-y-1.5">
-                <p className="text-[10px] font-bold tracking-widest text-utbex-text-secondary/40 uppercase px-3 mb-3">Menu</p>
+                <p className={`text-[10px] font-bold tracking-widest uppercase px-3 mb-3 transition-colors duration-500 ${isDark ? "text-white/40" : "text-utbex-text-secondary/40"}`}>Menu</p>
                 {navigationLinks.map((link) => {
                   const isActive = activeSection === link.id;
                   return (
@@ -296,11 +311,15 @@ export function Navigation() {
                           const el = document.getElementById(link.id);
                           if (el) el.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className={`flex items-center gap-3.5 px-4 py-3 rounded-xl text-[11px] font-bold tracking-widest uppercase transition-all ${
-                        isActive ? "bg-utbex-maroon text-white" : "text-utbex-dark/70 hover:bg-utbex-maroon hover:text-white"
+                      className={`group flex items-center gap-3.5 px-4 py-3 rounded-xl text-[11px] font-bold tracking-widest uppercase transition-all ${
+                        isActive 
+                          ? "bg-utbex-maroon text-white" 
+                          : isDark
+                            ? "text-white/70 hover:bg-utbex-maroon hover:text-white"
+                            : "text-utbex-dark/70 hover:bg-utbex-maroon hover:text-white"
                       }`}
                     >
-                      <span className={isActive ? "text-white" : "text-utbex-dark/40 group-hover:text-white"}>
+                      <span className={isActive ? "text-white" : isDark ? "text-white/40 group-hover:text-white" : "text-utbex-dark/40 group-hover:text-white"}>
                         {sectionIcons[link.id] ?? <HomeIcon />}
                       </span>
                       {link.label}

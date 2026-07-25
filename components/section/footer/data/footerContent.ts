@@ -26,8 +26,8 @@ export const footerContent: FooterContent = {
     items: [
       {
         label: "Alamat Email",
-        value: "reyzareyza87@gmail.com",
-        href: "mailto:reyzareyza87@gmail.com",
+        value: "Utbexgrup.id!2026@gmail.com",
+        href: "mailto:Utbexgrup.id!2026@gmail.com",
       },
       {
         label: "Lokasi",

@@ -2,7 +2,7 @@
 // components/section/about/About.tsx — Heynesh-style sticky split layout
 
 import Image from "next/image";
-import {  m as motion  } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
 
 const milestones = [
@@ -72,7 +72,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-6 sm:px-10 py-24 lg:py-32">
 
         {/* Section intro */}
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -93,10 +93,18 @@ export default function About() {
               <span className="text-utbex-maroon italic">Langkah Kecil.</span>
             </h2>
           </motion.div>
+          <motion.div variants={staggerChild} className="mt-8 max-w-2xl space-y-4">
+            <p className="text-base sm:text-lg text-utbex-text-secondary/80 leading-relaxed font-medium">
+              UTBEX Indonesia Group adalah sebuah lembaga <em className="text-utbex-dark not-italic font-semibold">social enterprise</em> yang berkomitmen untuk memajukan dan meningkatkan kualitas hidup masyarakat di wilayah Bantur, Jawa Timur, Indonesia, serta daerah sekitarnya. Kami memiliki visi yang kuat untuk menciptakan perubahan positif melalui inovasi, pembangunan berkelanjutan, dan kemitraan yang berdampak.
+            </p>
+            <p className="text-sm sm:text-base text-utbex-text-secondary/60 leading-relaxed">
+              Sebagai lembaga social enterprise, kami memadukan prinsip bisnis yang berkelanjutan dengan misi sosial yang tulus mengatasi berbagai tantangan sosial, ekonomi, dan lingkungan di wilayah Bantur dengan pendekatan yang berfokus pada pendidikan, lingkungan, dan pengembangan ekonomi masyarakat.
+            </p>
+          </motion.div>
         </motion.div>
 
         {/* Visi & Misi Section */}
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -152,7 +160,7 @@ export default function About() {
           </div>
 
           {/* Right: Scroll cards */}
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"

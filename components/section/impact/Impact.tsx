@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {  m as motion, useInView  } from "framer-motion";
+import { m as motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
 
@@ -57,7 +57,7 @@ export default function Impact() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-24 lg:py-32">
 
         {/* Header */}
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -78,7 +78,7 @@ export default function Impact() {
         </motion.div>
 
         {/* Stats Grid */}
-        <motion.div 
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -113,7 +113,7 @@ export default function Impact() {
             <motion.p variants={staggerChild} className="text-lg sm:text-xl text-utbex-text-secondary leading-relaxed mb-8">
               Bagi kami, dampak bukan hanya tentang berapa banyak program yang telah berjalan. Dampak adalah{" "}
               <strong className="text-utbex-dark font-semibold">perubahan yang tetap dirasakan</strong>{" "}
-              setelah kegiatan selesai — hubungan yang terus terjalin, dan peluang baru yang terus berkembang bersama masyarakat.
+              setelah kegiatan selesai hubungan yang terus terjalin, dan peluang baru yang terus berkembang bersama masyarakat.
             </motion.p>
 
             {/* Testimonial */}
