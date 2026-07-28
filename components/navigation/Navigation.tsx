@@ -122,6 +122,7 @@ export function Navigation() {
                     src="/images/logo-utbex-3.avif"
                     alt="UTBEX logo"
                     fill
+                    sizes="56px"
                     className="object-cover"
                   />
                 </div>
@@ -239,7 +240,7 @@ export function Navigation() {
           >
             <Link href="/" className="flex items-center gap-2.5">
               <div className="relative w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
-                <Image src="/images/logo-utbex-3.avif" alt="UTBEX logo" fill className="object-cover" />
+                <Image src="/images/logo-utbex-3.avif" alt="UTBEX logo" fill sizes="32px" className="object-cover" />
               </div>
               <div className="leading-tight">
                 <p className={`font-black text-base tracking-tight leading-none transition-colors duration-500 ${textColor}`}>
@@ -286,7 +287,7 @@ export function Navigation() {
               <div className={`flex justify-between items-center px-6 py-5 border-b transition-colors duration-500 ${dividerColor}`}>
                 <div className="flex items-center gap-2.5">
                   <div className="relative w-8 h-8 rounded-lg overflow-hidden">
-                    <Image src="/images/logo-utbex-3.avif" alt="UTBEX logo" fill className="object-cover" />
+                    <Image src="/images/logo-utbex-3.avif" alt="UTBEX logo" fill sizes="32px" className="object-cover" />
                   </div>
                   <span className={`font-black text-base transition-colors duration-500 ${textColor}`}>UTBEX<span className="text-utbex-maroon">.</span></span>
                 </div>

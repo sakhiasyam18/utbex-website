@@ -294,9 +294,9 @@ export default function Hero() {
             src="/images/arik.webp"
             alt="Arik Dwi Asmara, Founder UTBEX Indonesia"
             fill
-            className="object-cover object-top"
-            priority
             sizes="100vw"
+            className="object-cover object-[center_20%] sm:object-center"
+            priority
           />
           {/* Bottom fade so text is readable */}
           <div
