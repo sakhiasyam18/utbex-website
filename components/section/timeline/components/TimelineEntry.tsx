@@ -30,18 +30,20 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
     return (
         <div ref={entryRef} className="relative">
             {/* Desktop: 2-col layout alternating sides */}
-            <div className={`flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
+            <div className={`flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                 {/* Timeline node — centered on desktop via absolute positioning */}
                 <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-2 z-20">
                     <TimelineNode year={milestone.year} isInView={isInView} />
                 </div>
 
                 {/* Mobile: node inline */}
-                <div className="lg:hidden flex items-center gap-4 mb-2">
+                <div className="lg:hidden flex items-center gap-4 mb-3">
                     <TimelineNode year={milestone.year} isInView={isInView} />
-                    <span className={`text-[10px] font-bold tracking-[0.18em] uppercase transition-colors duration-300 ${isInView ? 'text-utbex-maroon' : 'text-utbex-text-secondary/50'}`}>
-                        {milestone.tag}
-                    </span>
+                    <div className="flex flex-col">
+                        <span className={`text-[10px] font-bold tracking-[0.18em] uppercase transition-colors duration-300 ${isInView ? 'text-utbex-maroon' : 'text-utbex-text-secondary/50'}`}>
+                            {milestone.tag}
+                        </span>
+                    </div>
                 </div>
 
                 {/* Content side */}
@@ -55,10 +57,10 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
                     <span className={`hidden lg:inline-block text-[10px] font-bold tracking-[0.18em] uppercase mb-3 transition-colors duration-300 ${isInView ? 'text-utbex-maroon' : 'text-utbex-text-secondary/50'}`}>
                         {milestone.tag}
                     </span>
-                    <h3 className={`text-xl md:text-2xl lg:text-3xl font-bold tracking-tight leading-snug mb-3 transition-colors duration-500 ${isInView ? 'text-utbex-dark' : 'text-utbex-dark/60'}`}>
+                    <h3 className={`text-xl md:text-2xl lg:text-3xl font-black tracking-tight leading-snug mb-3 transition-colors duration-500 ${isInView ? 'text-utbex-dark' : 'text-utbex-dark/60'}`}>
                         {milestone.title}
                     </h3>
-                    <p className="text-sm md:text-base text-utbex-text-secondary leading-relaxed mb-2">
+                    <p className="text-sm md:text-base text-utbex-text-secondary leading-relaxed mb-3">
                         {milestone.story}
                     </p>
 
@@ -78,7 +80,7 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
                         viewport={{ once: true, margin: "-60px" }}
                         className={`w-full lg:w-[calc(50%-60px)] mt-4 lg:mt-0 ${isEven ? '' : ''}`}
                     >
-                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.08)] group">
+                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.08)] group border border-black/[0.04]">
                             <motion.div
                                 className="absolute inset-0"
                                 style={{ y: imageY }}
@@ -88,12 +90,17 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
                                     alt={milestone.imageAlt || milestone.title}
                                     fill
                                     sizes="(max-width: 1024px) 100vw, 45vw"
-                                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                                     quality={80}
                                 />
                             </motion.div>
                             {/* Subtle gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none" />
+                            
+                            {/* Year badge on image */}
+                            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-utbex-dark text-[10px] font-black tracking-widest px-3 py-1.5 rounded-full shadow-sm pointer-events-none">
+                                {milestone.year}
+                            </div>
                         </div>
                     </motion.div>
                 )}

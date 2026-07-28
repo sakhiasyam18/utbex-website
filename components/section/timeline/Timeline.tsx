@@ -14,8 +14,11 @@ export default function Timeline() {
         <section
             id="timeline"
             ref={sectionRef}
-            className="relative w-full bg-utbex-light py-24 md:py-32 overflow-hidden"
+            className="relative w-full bg-utbex-light py-24 md:py-32 lg:py-40 overflow-hidden"
         >
+            {/* Subtle warm gradient background */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(139,0,0,0.03)_0%,_transparent_60%)]" aria-hidden="true" />
+
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
                 {/* Header Section */}
                 <TimelineHeader
@@ -30,7 +33,7 @@ export default function Timeline() {
                     <TimelineProgressLine />
 
                     {/* Timeline Entries */}
-                    <div className="flex flex-col gap-16 md:gap-24 relative z-10">
+                    <div className="flex flex-col gap-20 md:gap-28 lg:gap-32 relative z-10">
                         {timelineMilestones.map((milestone, index) => (
                             <TimelineEntry
                                 key={milestone.id}
