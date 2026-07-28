@@ -10,20 +10,22 @@ interface TimelineNodeProps {
 
 export default function TimelineNode({ year, isInView }: TimelineNodeProps) {
     return (
-        <div className="flex flex-col items-center gap-2 relative z-10">
-            {/* Year label */}
-            <span
-                className={`text-xs sm:text-sm font-black tracking-[0.15em] tabular-nums transition-colors duration-500 ${
-                    isInView ? "text-utbex-maroon" : "text-utbex-text-secondary/40"
+        <div className="flex flex-col items-center gap-2.5 relative z-10">
+            {/* Year label — glassmorphism pill */}
+            <div
+                className={`px-3 py-1 rounded-full text-xs font-black tracking-[0.1em] tabular-nums transition-all duration-500 ${
+                    isInView
+                        ? "bg-utbex-maroon text-white shadow-[0_4px_16px_rgba(139,0,0,0.3)]"
+                        : "bg-white/80 backdrop-blur-sm text-utbex-text-secondary/50 border border-black/[0.06] shadow-sm"
                 }`}
             >
                 {year}
-            </span>
+            </div>
 
-            {/* Node dot with ring */}
+            {/* Node dot */}
             <div className="relative">
                 <motion.div
-                    className={`w-4 h-4 rounded-full border-2 transition-all duration-500 ${
+                    className={`w-3.5 h-3.5 rounded-full border-2 transition-all duration-500 ${
                         isInView
                             ? "bg-utbex-maroon border-utbex-maroon shadow-[0_0_16px_rgba(139,0,0,0.35)]"
                             : "bg-utbex-canvas border-utbex-text-secondary/20"
@@ -37,7 +39,7 @@ export default function TimelineNode({ year, isInView }: TimelineNodeProps) {
                         className="absolute inset-0 rounded-full border-2 border-utbex-maroon/30"
                         initial={{ scale: 1, opacity: 0.6 }}
                         animate={{ scale: 2.5, opacity: 0 }}
-                        transition={{ duration: 1.5, ease: "easeOut", repeat: Infinity, repeatDelay: 2 }}
+                        transition={{ duration: 1.8, ease: "easeOut", repeat: Infinity, repeatDelay: 3 }}
                     />
                 )}
             </div>

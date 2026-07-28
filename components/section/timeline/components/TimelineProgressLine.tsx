@@ -19,18 +19,18 @@ export default function TimelineProgressLine() {
             className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px z-0"
             aria-hidden="true"
         >
-            {/* Background track */}
+            {/* Background track — subtle dashed feel */}
             <div className="absolute inset-0 bg-black/[0.06]" />
 
-            {/* Filled progress */}
+            {/* Filled progress — gradient maroon */}
             <motion.div
-                className="absolute top-0 left-0 right-0 bg-utbex-maroon origin-top"
+                className="absolute top-0 left-0 right-0 bg-gradient-to-b from-utbex-maroon via-utbex-maroon to-utbex-maroon/40 origin-top"
                 style={{ height }}
             />
 
             {/* Glow at the tip */}
             <motion.div
-                className="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-utbex-maroon/30 blur-sm"
+                className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-utbex-maroon/20 blur-md"
                 style={{ top: height }}
             />
         </div>
