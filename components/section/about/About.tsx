@@ -115,7 +115,7 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-24 lg:mb-32 grid lg:grid-cols-2 gap-8 lg:gap-16"
+          className="mb-24 lg:mb-32 grid md:grid-cols-2 gap-6 lg:gap-16 items-stretch"
         >
           {/* Visi */}
           <motion.div variants={staggerChild} className="bg-white rounded-[2rem] p-8 sm:p-12 border border-black/[0.04] shadow-[0_8px_32px_rgba(0,0,0,0.04)] h-full flex flex-col">
@@ -206,7 +206,7 @@ export default function About() {
                   </div>
 
                   {/* Image */}
-                  <div className="relative h-48 sm:h-full overflow-hidden">
+                  <div className="relative aspect-video sm:aspect-auto sm:h-full overflow-hidden">
                     <Image
                       src={item.image}
                       alt={item.alt}
@@ -227,10 +227,10 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7 }}
-          className="mt-20 lg:mt-28 relative bg-utbex-maroon rounded-2xl px-8 py-10 sm:px-12 text-white overflow-hidden shadow-[0_16px_48px_rgba(139,0,0,0.15)]"
+          className="mt-16 sm:mt-20 lg:mt-28 relative bg-utbex-maroon rounded-2xl px-6 py-8 sm:px-12 sm:py-12 text-white overflow-hidden shadow-[0_16px_48px_rgba(139,0,0,0.15)]"
         >
-          <motion.div className="absolute -top-6 -left-4 text-[120px] font-black text-white/10 leading-none select-none">"</motion.div>
-          <p className="relative z-10 text-xl sm:text-2xl font-medium leading-relaxed max-w-2xl">
+          <motion.div className="absolute -top-4 -left-2 sm:-top-6 sm:-left-4 text-[80px] sm:text-[120px] font-black text-white/10 leading-none select-none">"</motion.div>
+          <p className="relative z-10 text-lg sm:text-2xl font-medium leading-relaxed max-w-2xl">
             UTBEX tidak hanya mengajari kami cara menjalankan bisnis. Mereka lebih dulu percaya pada kami.
           </p>
           <footer className="mt-6 flex items-center gap-3 relative z-10">

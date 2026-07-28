@@ -132,7 +132,7 @@ export default function Portfolio() {
               className="group relative bg-[#111111] border border-white/5 rounded-2xl overflow-hidden hover:border-white/15 transition-all duration-500 hover:-translate-y-1 hover:bg-[#1a1a1a] will-change-transform transform-gpu"
             >
               {/* Image */}
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <div className="absolute inset-0">
                   <Image
                     src={project.image}
@@ -144,9 +144,9 @@ export default function Portfolio() {
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 {/* Category badge on image */}
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="text-xs font-bold text-white/70 tracking-widest">{project.num}</span>
-                  <span className="glass-panel text-xs font-semibold text-white/90 rounded-full px-3 py-1">
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                  <span className="text-xs font-bold text-white/70 tracking-widest bg-black/20 backdrop-blur-sm px-2 py-0.5 rounded">{project.num}</span>
+                  <span className="glass-panel text-[10px] sm:text-xs font-semibold text-white/90 rounded-full px-3 py-1 shadow-sm border border-white/10 backdrop-blur-md">
                     {project.category}
                   </span>
                 </div>

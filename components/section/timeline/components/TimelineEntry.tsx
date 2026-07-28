@@ -30,9 +30,9 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
     return (
         <div ref={entryRef} className="relative">
             {/* Desktop: 2-col layout alternating sides */}
-            <div className={`flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-12 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
+            <div className={`flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                 {/* Timeline node — centered on desktop via absolute positioning */}
-                <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-0 z-20">
+                <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-2 z-20">
                     <TimelineNode year={milestone.year} isInView={isInView} />
                 </div>
 
@@ -50,7 +50,7 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
-                    className={`w-full lg:w-[calc(50%-40px)] ${isEven ? 'lg:pr-8' : 'lg:pl-8'} ${isEven ? '' : 'lg:text-left'}`}
+                    className={`w-full lg:w-[calc(50%-60px)] ${isEven ? 'lg:pr-8' : 'lg:pl-8'} ${isEven ? '' : 'lg:text-left'}`}
                 >
                     <span className={`hidden lg:inline-block text-[10px] font-bold tracking-[0.18em] uppercase mb-3 transition-colors duration-300 ${isInView ? 'text-utbex-maroon' : 'text-utbex-text-secondary/50'}`}>
                         {milestone.tag}
@@ -76,7 +76,7 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-60px" }}
-                        className={`w-full lg:w-[calc(50%-40px)] ${isEven ? '' : ''}`}
+                        className={`w-full lg:w-[calc(50%-60px)] mt-4 lg:mt-0 ${isEven ? '' : ''}`}
                     >
                         <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.08)] group">
                             <motion.div

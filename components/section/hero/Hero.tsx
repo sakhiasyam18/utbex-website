@@ -102,10 +102,10 @@ export default function Hero() {
 
           {/* Apple-style Impact Statement — Visual Element */}
           <div className="my-6 border-l-2 border-utbex-maroon pl-4 flex flex-col justify-center">
-            <span className="text-4xl lg:text-5xl font-black text-utbex-maroon leading-none tracking-tight">
+            <span className="text-[clamp(2rem,3vw,3rem)] font-black text-utbex-maroon leading-none tracking-tight">
               10+ Tahun
             </span>
-            <span className="text-xs lg:text-sm font-bold text-utbex-dark/80 tracking-wide mt-1 uppercase">
+            <span className="text-[clamp(10px,1vw,14px)] font-bold text-utbex-dark/80 tracking-wide mt-1 uppercase">
               Membangun Potensi Desa
             </span>
           </div>
@@ -282,8 +282,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Mobile layout: full-screen photo + text overlay ─── */}
-      <div className="flex-1 relative lg:hidden overflow-hidden" style={{ minHeight: "85svh" }}>
+      {/* ── Mobile & Tablet layout: full-screen photo + text overlay ─── */}
+      <div className="flex-1 relative lg:hidden overflow-hidden" style={{ minHeight: "90svh" }}>
 
         {/* Pak Arik — fills the entire mobile screen */}
         <motion.div
@@ -325,25 +325,25 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Text overlay — positioned at bottom */}
+          {/* Text overlay — positioned at bottom */}
         <div
-          className="absolute bottom-0 inset-x-0 px-6 pb-8 pt-4 animate-fade-up opacity-0"
+          className="absolute bottom-0 inset-x-0 px-6 sm:px-12 pb-10 pt-8 animate-fade-up opacity-0"
           style={{ animationDelay: "140ms", animationFillMode: "forwards", zIndex: 20 }}
         >
-          <p className="text-xs font-bold tracking-widest text-utbex-text-secondary/70 uppercase mb-3">
+          <p className="text-[10px] sm:text-xs font-bold tracking-widest text-utbex-text-secondary/70 uppercase mb-3">
             From Ideas To Impact
           </p>
-          <h1 className="text-4xl sm:text-5xl font-black text-utbex-dark leading-[0.9] tracking-tighter mb-5">
+          <h1 className="text-[clamp(2.25rem,9vw,4.5rem)] font-black text-utbex-dark leading-[0.9] tracking-tighter mb-6 sm:mb-8 max-w-[90%]">
             Unusually Think Become{" "}
             <span className="text-utbex-maroon italic">Extraordinary.</span>
           </h1>
 
           {/* Apple-style Impact Statement — Visual Element Mobile */}
-          <div className="mb-4 border-l-2 border-utbex-maroon pl-3 flex flex-col">
-            <span className="text-3xl font-black text-utbex-maroon leading-none tracking-tight">
+          <div className="mb-6 border-l-2 border-utbex-maroon pl-3 sm:pl-4 flex flex-col">
+            <span className="text-[clamp(1.75rem,6vw,2.5rem)] font-black text-utbex-maroon leading-none tracking-tight">
               10+ Tahun
             </span>
-            <span className="text-[10px] font-bold text-utbex-dark/80 tracking-wide uppercase mt-0.5">
+            <span className="text-[10px] sm:text-xs font-bold text-utbex-dark/80 tracking-wide uppercase mt-1">
               Membangun Potensi Desa
             </span>
           </div>
@@ -399,11 +399,11 @@ export default function Hero() {
         {stats.map((s, i) => (
           <div
             key={s.label}
-            className={`py-4 sm:py-6 flex flex-col items-center justify-center text-center gap-1 px-2 sm:px-4
+            className={`py-4 sm:py-6 flex flex-col items-center justify-center text-center gap-1.5 px-2 sm:px-6
               ${i < stats.length - 1 ? "border-r border-black/[0.07]" : ""}`}
           >
-            <span className="text-xl sm:text-3xl font-black text-utbex-dark">{s.value}</span>
-            <span className="text-[10px] sm:text-xs text-utbex-text-secondary leading-snug">{s.label}</span>
+            <span className="text-[clamp(1.25rem,4vw,2.25rem)] font-black text-utbex-dark leading-none">{s.value}</span>
+            <span className="text-[9px] sm:text-[11px] lg:text-xs font-medium text-utbex-text-secondary leading-tight max-w-[120px] sm:max-w-none">{s.label}</span>
           </div>
         ))}
       </div>

@@ -111,7 +111,7 @@ export function Navigation() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className={`hidden lg:flex fixed left-0 top-0 h-screen w-72 xl:w-80 flex-col z-50 border-r transition-colors duration-500
+            className={`hidden lg:flex fixed left-0 top-0 h-screen w-72 xl:w-80 flex-col z-[100] border-r transition-colors duration-500
                        ${sidebarBg}`}
           >
             {/* ── Logo Block ────────────────────────────────────── */}
@@ -233,7 +233,7 @@ export function Navigation() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className={`lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between
+            className={`lg:hidden fixed top-0 left-0 right-0 z-[100] flex items-center justify-between
                        px-5 py-3.5 backdrop-blur-md border-b transition-colors duration-500
                        ${isDark ? "bg-[#0a0a0a]/95 border-white/5" : "bg-utbex-canvas/95 border-black/[0.07]"}`}
           >
@@ -273,14 +273,14 @@ export function Navigation() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setMobileOpen(false)}
-              className="lg:hidden fixed inset-0 z-[60] bg-black/25 backdrop-blur-[2px]"
+              className="lg:hidden fixed inset-0 z-[110] bg-black/25 backdrop-blur-[2px]"
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", ease: [0.25, 0.1, 0.25, 1], duration: 0.32 }}
-              className={`lg:hidden fixed top-0 right-0 bottom-0 z-[70] w-72 flex flex-col shadow-2xl transition-colors duration-500
+              className={`lg:hidden fixed top-0 right-0 bottom-0 z-[120] w-72 flex flex-col shadow-2xl transition-colors duration-500
                           ${isDark ? "bg-[#0a0a0a]" : "bg-white"}`}
             >
               <div className={`flex justify-between items-center px-6 py-5 border-b transition-colors duration-500 ${dividerColor}`}>

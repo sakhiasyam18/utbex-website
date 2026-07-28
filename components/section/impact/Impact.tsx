@@ -89,12 +89,12 @@ export default function Impact() {
             <motion.div
               key={stat.id}
               variants={staggerChild}
-              className="bg-white border border-black/[0.04] rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+              className="bg-white border border-black/[0.04] rounded-2xl p-4 sm:p-6 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
             >
-              <p className="text-3xl sm:text-4xl font-black text-utbex-dark mb-1">
+              <p className="text-[clamp(1.75rem,5vw,2.25rem)] font-black text-utbex-dark mb-1 leading-none tracking-tight">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="text-sm font-semibold text-utbex-dark/80 mb-1">{stat.label}</p>
+              <p className="text-[10px] sm:text-sm font-semibold text-utbex-dark/80 mb-1 leading-tight">{stat.label}</p>
               <p className="text-xs text-utbex-text-secondary">{stat.description}</p>
             </motion.div>
           ))}
@@ -153,29 +153,29 @@ export default function Impact() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-2 gap-3"
+            className="grid grid-cols-2 gap-3 sm:gap-4 mt-8 lg:mt-0"
           >
-            <div className="space-y-3">
-              <motion.div variants={staggerChild} className="relative aspect-square rounded-2xl overflow-hidden group">
+            <div className="space-y-3 sm:space-y-4">
+              <motion.div variants={staggerChild} className="relative aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden group shadow-sm border border-black/[0.03]">
                 <div className="absolute inset-0">
-                  <Image src="/images/arik-dwi-asmara-utbex-menyampaikan-materi.avif" alt="UTBEX workshop" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image src="/images/arik-dwi-asmara-utbex-menyampaikan-materi.avif" alt="UTBEX workshop" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
               </motion.div>
-              <motion.div variants={staggerChild} className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
+              <motion.div variants={staggerChild} className="relative aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden group shadow-sm border border-black/[0.03]">
                 <div className="absolute inset-0">
-                  <Image src="/images/foto-bersama-arik-dwi-asmara-utbex-dengan-pemerintah.avif" alt="UTBEX bersama pemerintah" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image src="/images/foto-bersama-arik-dwi-asmara-utbex-dengan-pemerintah.avif" alt="UTBEX bersama pemerintah" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
               </motion.div>
             </div>
-            <div className="space-y-3 mt-6">
-              <motion.div variants={staggerChild} className="relative aspect-[4/3] rounded-2xl overflow-hidden group">
+            <div className="space-y-3 sm:space-y-4 mt-6 sm:mt-8">
+              <motion.div variants={staggerChild} className="relative aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden group shadow-sm border border-black/[0.03]">
                 <div className="absolute inset-0">
-                  <Image src="/images/piagam-penghargaan-utbex-sebagai-media-pemerdaya-generasi-nusantara-terinovatif-utbex.avif" alt="Penghargaan UTBEX" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image src="/images/piagam-penghargaan-utbex-sebagai-media-pemerdaya-generasi-nusantara-terinovatif-utbex.avif" alt="Penghargaan UTBEX" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
               </motion.div>
-              <motion.div variants={staggerChild} className="relative aspect-square rounded-2xl overflow-hidden group">
+              <motion.div variants={staggerChild} className="relative aspect-square sm:aspect-[4/3] rounded-2xl overflow-hidden group shadow-sm border border-black/[0.03]">
                 <div className="absolute inset-0">
-                  <Image src="/images/sertifikat-haki-utbex.avif" alt="Sertifikat HAKI UTBEX" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image src="/images/sertifikat-haki-utbex.avif" alt="Sertifikat HAKI UTBEX" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
               </motion.div>
             </div>
