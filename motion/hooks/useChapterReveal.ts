@@ -74,7 +74,7 @@ export function useChapterReveal(
 
     // If reduced motion is preferred, show immediately
     if (prefersReducedMotion) {
-      setIsInView(true);
+      setTimeout(() => setIsInView(true), 0);
       return;
     }
 

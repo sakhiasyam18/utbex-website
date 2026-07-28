@@ -183,6 +183,7 @@ export default function Hero() {
               fill
               className="object-contain object-bottom"
               priority
+              loading="eager"
               sizes="43vw"
             />
             {/* Bottom fade — smooth white transition */}
@@ -247,7 +248,7 @@ export default function Hero() {
               style={{ fontSize: "64px", lineHeight: 1, marginBottom: "-4px", marginTop: "-8px" }}
               aria-hidden="true"
             >
-              "
+              &ldquo;
             </div>
 
             {/* Description text */}
@@ -266,7 +267,7 @@ export default function Hero() {
               style={{ fontSize: "64px", lineHeight: 1, marginTop: "-4px", marginBottom: "-12px" }}
               aria-hidden="true"
             >
-              "
+              &rdquo;
             </div>
           </div>
 
@@ -294,9 +295,10 @@ export default function Hero() {
             src="/images/arik.webp"
             alt="Arik Dwi Asmara, Founder UTBEX Indonesia"
             fill
-            sizes="100vw"
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover object-[center_20%] sm:object-center"
             priority
+            loading="eager"
           />
           {/* Bottom fade so text is readable */}
           <div

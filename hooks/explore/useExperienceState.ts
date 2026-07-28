@@ -75,10 +75,10 @@ export function useExperienceState(
   // Drawer state transitions
   useEffect(() => {
     if (isDrawerOpen && state === "explore") {
-      setState("deep-dive");
+      setTimeout(() => setState("deep-dive"), 0);
     } else if (!isDrawerOpen && state === "deep-dive") {
       // Return to explore after drawer closes
-      setState("explore");
+      setTimeout(() => setState("explore"), 0);
     }
   }, [isDrawerOpen, state]);
 
