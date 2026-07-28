@@ -16,10 +16,14 @@ export const footerContent: FooterContent = {
   closing: {
     label: "KOLABORASI BERIKUTNYA",
 
-    headline: "Membangun perubahan tidak pernah\nmenjadi perjalanan satu pihak.",
+    headline: "Mari bangun perubahan\nberikutnya bersama kami.",
 
     description:
-      "Setiap langkah selalu dimulai dari orang-orang yang percaya bahwa masa depan dapat dibentuk bersama. Jika Anda memiliki visi yang sama untuk menciptakan perubahan yang berkelanjutan, kami akan senang memulai percakapan bersama Anda.",
+      "Dari desa, untuk Indonesia. Setiap kolaborasi dimulai dari satu percakapan.",
+    cta: {
+      label: "Mulai Percakapan",
+      href: "https://wa.me/6282252358901",
+    },
   },
 
   contact: {

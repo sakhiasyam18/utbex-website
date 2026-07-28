@@ -4,19 +4,29 @@
 // REVISION 09: Secondary image overlaps slightly for documentary depth.
 "use client";
 
-import {  m as motion  } from "framer-motion";
+import { useState } from "react";
+import { m as motion } from "framer-motion";
 import Image from "next/image";
 import { PortfolioProject } from "../types/portfolio";
 import EvidenceAnnotation from "./EvidenceAnnotation";
 import { staggerContainer, fadeUp } from "../../about/motion/aboutMotion";
 import { storyReveal, imageReveal } from "../motion/portfolioMotion";
+import { Lightbox } from "@/components/ui/Lightbox";
 
 interface FeaturedStoryProps {
   project?: PortfolioProject;
 }
 
 export default function FeaturedStory({ project }: FeaturedStoryProps) {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
+
   if (!project) return null;
+
+  const handleImageClick = (index: number) => {
+    setActiveImage(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <motion.div
@@ -70,7 +80,8 @@ export default function FeaturedStory({ project }: FeaturedStoryProps) {
           {/* Primary image — large, dominant */}
           <motion.div
             variants={imageReveal}
-            className="relative overflow-hidden rounded-xl shadow-[0_12px_48px_rgb(0,0,0,0.08)] aspect-[5/4] lg:aspect-[4/3] w-full lg:-mr-8"
+            onClick={() => handleImageClick(0)}
+            className="relative overflow-hidden rounded-xl shadow-[0_12px_48px_rgb(0,0,0,0.08)] aspect-[5/4] lg:aspect-[4/3] w-full lg:-mr-8 cursor-pointer group"
           >
             <Image
               src={project.primaryImage.src}
@@ -78,7 +89,7 @@ export default function FeaturedStory({ project }: FeaturedStoryProps) {
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               quality={90}
             />
             {/* Evidence annotation attached to photograph */}
@@ -91,20 +102,29 @@ export default function FeaturedStory({ project }: FeaturedStoryProps) {
           {project.secondaryImages && project.secondaryImages.length > 0 && (
             <motion.div
               variants={imageReveal}
-              className="hidden lg:block absolute -bottom-8 -left-10 w-[38%] aspect-[4/3] overflow-hidden rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.07)] border-[3px] border-white z-10"
+              onClick={() => handleImageClick(1)}
+              className="hidden lg:block absolute -bottom-8 -left-10 w-[38%] aspect-[4/3] overflow-hidden rounded-lg shadow-[0_8px_32px_rgba(0,0,0,0.07)] border-[3px] border-white z-10 cursor-pointer group"
             >
               <Image
                 src={project.secondaryImages[0].src}
                 alt={project.secondaryImages[0].alt}
                 fill
                 sizes="25vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                 quality={75}
               />
             </motion.div>
           )}
         </div>
       </div>
+
+      <Lightbox
+        isOpen={lightboxOpen}
+        src={activeImage === 0 ? project.primaryImage.src : (project.secondaryImages?.[0].src || project.primaryImage.src)}
+        alt={activeImage === 0 ? project.primaryImage.alt : (project.secondaryImages?.[0].alt || project.primaryImage.alt)}
+        caption={`${project.title} — ${project.location} (${project.year})`}
+        onClose={() => setLightboxOpen(false)}
+      />
     </motion.div>
   );
 }

@@ -4,6 +4,7 @@ import { HeroVisibilityProvider } from "@/components/providers/HeroVisibilityCon
 import { LayoutShift } from "@/components/providers/LayoutShift";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { FramerMotionProvider } from "@/components/providers/FramerMotionProvider";
+import { ScrollProgress } from "@/components/navigation/components/ScrollProgress";
 
 export default function MainLayout({
   children,
@@ -16,6 +17,7 @@ export default function MainLayout({
         <HeroVisibilityProvider>
           <FramerMotionProvider>
             <Navigation />
+            <ScrollProgress />
             <LayoutShift>{children}</LayoutShift>
           </FramerMotionProvider>
         </HeroVisibilityProvider>

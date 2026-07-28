@@ -7,6 +7,10 @@ export const heroContent: HeroContentData = {
     headlineStart: "Mengubah Ide Menjadi",
     headlineHighlight: "Dampak Nyata.",
     description: "Bersama desa, UMKM, dan komunitas, kami menghadirkan inovasi yang tumbuh dari kebutuhan. Setiap program dirancang untuk menciptakan perubahan yang dapat dirasakan dan terus berkembang bersama masyarakat.",
+    impactStatement: {
+        number: "10+",
+        label: "Tahun Membangun Potensi Desa.",
+    },
     buttons: [
         {
             id: "btn-explore",

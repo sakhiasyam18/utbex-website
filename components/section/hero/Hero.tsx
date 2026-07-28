@@ -100,6 +100,16 @@ export default function Hero() {
             <span className="text-utbex-maroon italic">Extraordinary.</span>
           </h1>
 
+          {/* Apple-style Impact Statement — Visual Element */}
+          <div className="my-6 border-l-2 border-utbex-maroon pl-4 flex flex-col justify-center">
+            <span className="text-4xl lg:text-5xl font-black text-utbex-maroon leading-none tracking-tight">
+              10+ Tahun
+            </span>
+            <span className="text-xs lg:text-sm font-bold text-utbex-dark/80 tracking-wide mt-1 uppercase">
+              Membangun Potensi Desa
+            </span>
+          </div>
+
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-3">
             <Link
@@ -328,6 +338,16 @@ export default function Hero() {
             <span className="text-utbex-maroon italic">Extraordinary.</span>
           </h1>
 
+          {/* Apple-style Impact Statement — Visual Element Mobile */}
+          <div className="mb-4 border-l-2 border-utbex-maroon pl-3 flex flex-col">
+            <span className="text-3xl font-black text-utbex-maroon leading-none tracking-tight">
+              10+ Tahun
+            </span>
+            <span className="text-[10px] font-bold text-utbex-dark/80 tracking-wide uppercase mt-0.5">
+              Membangun Potensi Desa
+            </span>
+          </div>
+
           {/* Founder info */}
           <div className="flex items-center gap-3 mb-5">
             <div className="w-8 h-px bg-utbex-maroon/40" />
@@ -389,4 +409,4 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+}

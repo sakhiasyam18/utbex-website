@@ -16,6 +16,10 @@ export interface FooterClosingContent {
   headline: string;
   /** Supporting paragraph, maximum three lines */
   description: string;
+  cta?: {
+    label: string;
+    href: string;
+  };
 }
 
 export interface FooterContactItem {

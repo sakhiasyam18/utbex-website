@@ -14,6 +14,7 @@ const milestones = [
     image: "/images/arik-dwi-asmara-penyampaian-materi-utbex.avif",
     alt: "Arik Dwi Asmara",
     tag: "Pendirian",
+    evidence: "Akte Notaris & Legitimasi Desa",
   },
   {
     year: "'16",
@@ -23,6 +24,7 @@ const milestones = [
     image: "/images/kaos-lukis-tanpa-tinta-pertama-di-indonesia.avif",
     alt: "Kaos Lukis Tanpa Tinta",
     tag: "Inovasi",
+    evidence: "Paten Hak Cipta & Liputan DakoMagz",
   },
   {
     year: "'19",
@@ -32,6 +34,7 @@ const milestones = [
     image: "/images/awarding-inotek-award-ceremony-2023-utbex.avif",
     alt: "Penghargaan Ide Kreatif",
     tag: "Prestasi Global",
+    evidence: "Sertifikat Juara I Malaysia",
   },
   {
     year: "'21",
@@ -41,6 +44,7 @@ const milestones = [
     image: "/images/pelatihan-digital-marketing-dan-packaging-utbex.avif",
     alt: "Pemberdayaan UMKM",
     tag: "Transformasi",
+    evidence: "Dokumentasi Inkubasi UMKM",
   },
   {
     year: "'22",
@@ -50,6 +54,7 @@ const milestones = [
     image: "/images/pelatihan-utbex-digital-marketing-di-umkm.avif",
     alt: "Produk UTBEX MotoGP",
     tag: "Kolaborasi",
+    evidence: "Merchandise Resmi Mandalika",
   },
   {
     year: "'23",
@@ -59,6 +64,7 @@ const milestones = [
     image: "/images/utbex-foto-bersama-pemerintah-arif-dwi-asmara.avif",
     alt: "Penghargaan INOTEK",
     tag: "Penghargaan",
+    evidence: "Piagam INOTEK & Pemkab Malang",
   },
 ];
 
@@ -185,9 +191,18 @@ export default function About() {
                     <h3 className="text-xl font-bold text-utbex-dark mb-3 leading-snug group-hover:text-utbex-maroon transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-utbex-text-secondary leading-relaxed">
+                    <p className="text-sm text-utbex-text-secondary leading-relaxed mb-4">
                       {item.story}
                     </p>
+                    {/* Evidence Layer Tag */}
+                    {item.evidence && (
+                      <div className="flex items-center gap-1.5 text-xs font-semibold text-utbex-maroon/90 bg-utbex-maroon/5 w-fit px-3 py-1 rounded-md border border-utbex-maroon/10">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>Bukti: {item.evidence}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Image */}

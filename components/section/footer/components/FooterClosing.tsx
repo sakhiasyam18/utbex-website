@@ -86,10 +86,26 @@ export default function FooterClosing({ content }: FooterClosingProps) {
       {/* Supporting description — understated, one paragraph */}
       <motion.p
         variants={descriptionFade}
-        className="text-sm sm:text-base text-utbex-text-secondary/60 leading-relaxed max-w-[44ch]"
+        className="text-sm sm:text-base text-utbex-text-secondary/80 leading-relaxed max-w-[44ch] mb-8"
       >
         {content.description}
       </motion.p>
+
+      {/* Primary Footer CTA Button — memorable ending */}
+      <motion.div variants={descriptionFade}>
+        <a
+          href={content.cta?.href || "https://wa.me/6282252358901"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-utbex-maroon text-white font-bold text-sm tracking-wide shadow-[0_8px_32px_rgba(139,0,0,0.25)] hover:bg-[#6A0000] hover:shadow-[0_12px_40px_rgba(139,0,0,0.35)] transition-all duration-300 transform hover:-translate-y-0.5"
+        >
+          <span>{content.cta?.label || "Mari Berdiskusi"}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </motion.div>
     </motion.div>
   );
 }

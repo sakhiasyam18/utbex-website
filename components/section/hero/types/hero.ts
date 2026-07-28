@@ -13,11 +13,17 @@ export interface HeroButtonData {
     icon?: IconType;
 }
 
+export interface HeroImpactStatement {
+    number: string;
+    label: string;
+}
+
 export interface HeroContentData {
     badge: string;
     headlineStart: string;
     headlineHighlight: string;
     description: string;
+    impactStatement: HeroImpactStatement;
     buttons: HeroButtonData[];
 }
 

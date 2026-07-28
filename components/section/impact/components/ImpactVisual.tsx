@@ -24,8 +24,8 @@ export function ImpactVisual() {
                     alt={impactContent.image.alt}
                     fill
                     sizes="(max-width: 1280px) 100vw, 1280px"
-                    /* DS 07: Images remain stable. Very small hover is acceptable. */
-                    className="object-cover transition-transform duration-[3000ms] ease-out hover:scale-[1.01]"
+                    /* DS 07: Micro interactions. */
+                    className="object-cover transition-all duration-[3000ms] ease-out hover:scale-[1.02] hover:shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none mix-blend-multiply" aria-hidden="true"></div>
             </motion.div>
