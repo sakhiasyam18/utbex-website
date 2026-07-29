@@ -151,4 +151,107 @@ html.lenis body {
 .float-card {
   animation: floatCard 5s ease-in-out infinite;
   will-change: transform;
+}
+
+/* ============================================
+   ABOUT SECTION — Gen Z Glass / Neumorphism
+   ============================================ */
+
+/* Ambient gradient orb (decorative background blobs) */
+.about-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Light Glassmorphism Card */
+@layer utilities {
+  .about-glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .about-glass-subtle {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  /* Neumorphic Raised (light canvas) */
+  .about-neumorph {
+    background: #FDFCFB;
+    box-shadow:
+      8px 8px 24px rgba(0, 0, 0, 0.06),
+      -8px -8px 24px rgba(255, 255, 255, 0.95),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+  }
+
+  /* Neumorphic Pressed — hover state */
+  .about-neumorph-hover:hover {
+    box-shadow:
+      4px 4px 16px rgba(0, 0, 0, 0.08),
+      -4px -4px 16px rgba(255, 255, 255, 0.9),
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      0 0 0 1px rgba(139, 0, 0, 0.06);
+  }
+
+  /* Neon text glow (subtle on light) */
+  .neon-text-maroon {
+    text-shadow:
+      0 0 8px rgba(139, 0, 0, 0.25),
+      0 0 24px rgba(139, 0, 0, 0.12);
+  }
+
+  /* Neon box glow (subtle on light) */
+  .neon-box-maroon {
+    box-shadow:
+      0 0 16px rgba(139, 0, 0, 0.1),
+      0 0 40px rgba(139, 0, 0, 0.06);
+  }
+}
+
+/* Neon pulse animation */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 16px rgba(139, 0, 0, 0.12),
+      0 0 40px rgba(139, 0, 0, 0.06);
+  }
+  50% {
+    box-shadow:
+      0 0 24px rgba(139, 0, 0, 0.2),
+      0 0 60px rgba(139, 0, 0, 0.1);
+  }
+}
+
+.neon-pulse {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+/* Shimmer sweep effect */
+@keyframes shimmerSweep {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(150%); }
+}
+
+/* Ambient orb float animation */
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -15px) scale(1.05); }
+  66% { transform: translate(-10px, 10px) scale(0.97); }
+}
+
+.about-orb-animate {
+  animation: orbFloat 20s ease-in-out infinite;
 }
