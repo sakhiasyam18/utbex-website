@@ -152,7 +152,7 @@ export function Footer() {
 
             {/* Email — besar dan klik-able */}
             <a
-              href="mailto:Utbexgrup.id!2026@gmail.com"
+              href="mailto:utbexindonesiagroup@gmail.com"
               aria-label="Kirim email ke UTBEX"
               className="group flex items-start gap-3 hover:text-utbex-maroon transition-colors duration-300"
             >
@@ -160,7 +160,7 @@ export function Footer() {
               <div>
                 <p className="text-[9px] font-bold uppercase tracking-widest text-utbex-text-secondary/40 mb-0.5">Email</p>
                 <p className="text-base font-semibold text-utbex-dark group-hover:text-utbex-maroon transition-colors duration-300 leading-snug break-all">
-                  Utbexgrup.id!2026@gmail.com
+                  utbexindonesiagroup@gmail.com
                 </p>
               </div>
             </a>
