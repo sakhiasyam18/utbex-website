@@ -165,16 +165,23 @@ export function Footer() {
               </div>
             </a>
 
-            {/* Alamat */}
-            <div className="flex items-start gap-3">
+            {/* Alamat — klik-able */}
+            <a
+              href="https://maps.app.goo.gl/XK3o1qds4trNNwX86"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 hover:text-utbex-maroon transition-colors duration-300"
+            >
               <span className="mt-0.5 text-utbex-maroon shrink-0"><MapPinIcon /></span>
               <div>
                 <p className="text-[9px] font-bold uppercase tracking-widest text-utbex-text-secondary/40 mb-0.5">Lokasi</p>
-                <p className="text-sm font-medium text-utbex-dark/75 leading-relaxed">
-                  Jl. Kyai Rajiman RT.06 RW.02,<br />Bantur, Malang, 65179
+                <p className="text-sm font-medium text-utbex-dark group-hover:text-utbex-maroon transition-colors duration-300 leading-relaxed">
+                  Utbex Indonesia Kaos lukis tanpa tinta<br />
+                  Dsn krajan, RT.06/RW.002, Banturkrajan,<br />
+                  Bantur, Kab. Malang, Jatim 65179
                 </p>
               </div>
-            </div>
+            </a>
           </motion.div>
 
           {/* Col 4 — Sosial Media */}
