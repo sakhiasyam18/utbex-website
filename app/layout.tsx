@@ -89,7 +89,7 @@ export default function RootLayout({
                 "contactType": "customer service"
               },
               "sameAs": [
-                "https://www.facebook.com/utbexindonesia.group",
+                "https://www.facebook.com/UtbexclothingIndonesia/",
                 "https://instagram.com/utbexindonesia.group",
                 "https://www.youtube.com/@utbexindonesia",
                 "https://www.tiktok.com/@utbexindonesiagroup"
