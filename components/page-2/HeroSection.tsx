@@ -58,10 +58,10 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <button className="px-8 py-4 rounded-full bg-white text-black font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
+          <button id="klik-hero-jelajahi" className="px-8 py-4 rounded-full bg-white text-black font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
             {HERO_DATA.ctaPrimary}
           </button>
-          <button className="px-8 py-4 rounded-full glass-card text-white font-semibold text-lg hover:bg-white/10 transition-colors duration-300 border border-white/20">
+          <button id="klik-hero-kolaborasi" className="px-8 py-4 rounded-full glass-card text-white font-semibold text-lg hover:bg-white/10 transition-colors duration-300 border border-white/20">
             {HERO_DATA.ctaSecondary}
           </button>
         </motion.div>

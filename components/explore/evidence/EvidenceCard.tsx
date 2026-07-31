@@ -85,6 +85,7 @@ export function EvidenceCard({
           transform?.scale ? `scale(${transform.scale})` : "",
         ].filter(Boolean).join(" ") || undefined,
       }}
+      id={item.title === "Company Profile" ? "klik-company-profile" : undefined}
     >
       <motion.div
         className={`

@@ -124,6 +124,7 @@ export function Footer() {
               href="https://wa.me/6282252358901"
               target="_blank"
               rel="noopener noreferrer"
+              id="klik-whatsapp"
               className="inline-flex items-center gap-2 self-start mt-2 bg-utbex-maroon text-white text-xs font-bold tracking-widest uppercase px-5 py-3 rounded-xl hover:bg-[#6A0000] transition-all duration-300 shadow-[0_4px_14px_rgba(139,0,0,0.2)] hover:shadow-[0_6px_20px_rgba(139,0,0,0.35)]"
             >
               <WhatsAppIcon />
@@ -139,6 +140,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
+                id={`klik-nav-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
                 className="text-sm font-medium text-utbex-dark/70 hover:text-utbex-maroon hover:translate-x-1 transition-all duration-300"
               >
                 {link.label}
@@ -154,6 +156,7 @@ export function Footer() {
             <a
               href="mailto:utbexindonesiagroup@gmail.com"
               aria-label="Kirim email ke UTBEX"
+              id="klik-email"
               className="group flex items-start gap-3 hover:text-utbex-maroon transition-colors duration-300"
             >
               <span className="mt-0.5 text-utbex-maroon shrink-0"><MailIcon /></span>
@@ -170,6 +173,7 @@ export function Footer() {
               href="https://maps.app.goo.gl/XK3o1qds4trNNwX86"
               target="_blank"
               rel="noopener noreferrer"
+              id="klik-maps"
               className="group flex items-start gap-3 hover:text-utbex-maroon transition-colors duration-300"
             >
               <span className="mt-0.5 text-utbex-maroon shrink-0"><MapPinIcon /></span>
@@ -198,6 +202,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.ariaLabel}
+                    id={item.platform === "Website" || item.platform === "Blog" ? "klik-partner-bcn" : `klik-${item.platform.toLowerCase()}`}
                     className="group inline-flex items-center gap-3 text-utbex-dark/60 hover:text-utbex-maroon transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-utbex-maroon/50 focus-visible:ring-offset-2 rounded-sm"
                   >
                     <span className="shrink-0 transition-colors duration-300"><Icon /></span>
