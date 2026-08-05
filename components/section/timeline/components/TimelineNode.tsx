@@ -12,15 +12,18 @@ export default function TimelineNode({ year, isInView }: TimelineNodeProps) {
     return (
         <div className="flex flex-col items-center gap-2.5 relative z-10">
             {/* Year label — glassmorphism pill */}
-            <div
+            <motion.div
                 className={`px-3 py-1 rounded-full text-xs font-black tracking-[0.1em] tabular-nums transition-all duration-500 ${
                     isInView
                         ? "bg-utbex-maroon text-white shadow-[0_4px_16px_rgba(139,0,0,0.3)]"
                         : "bg-white/80 backdrop-blur-sm text-utbex-text-secondary/50 border border-black/[0.06] shadow-sm"
                 }`}
+                initial={{ opacity: 0, y: -10 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
                 {year}
-            </div>
+            </motion.div>
 
             {/* Node dot */}
             <div className="relative">
@@ -30,7 +33,8 @@ export default function TimelineNode({ year, isInView }: TimelineNodeProps) {
                             ? "bg-utbex-maroon border-utbex-maroon shadow-[0_0_16px_rgba(139,0,0,0.35)]"
                             : "bg-utbex-canvas border-utbex-text-secondary/20"
                     }`}
-                    animate={isInView ? { scale: [1, 1.3, 1] } : {}}
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    animate={isInView ? { scale: [0.5, 1.4, 1], opacity: 1 } : { scale: 0.5, opacity: 0 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 />
                 {/* Pulse ring when in view */}

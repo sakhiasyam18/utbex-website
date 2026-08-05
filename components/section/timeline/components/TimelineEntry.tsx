@@ -30,9 +30,9 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
     return (
         <div ref={entryRef} className="relative">
             {/* Desktop: 2-col layout alternating sides */}
-            <div className={`flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
+            <div className={`flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                 {/* Timeline node — centered on desktop via absolute positioning */}
-                <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1 z-20">
+                <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-40">
                     <TimelineNode year={milestone.year} isInView={isInView} />
                 </div>
 
