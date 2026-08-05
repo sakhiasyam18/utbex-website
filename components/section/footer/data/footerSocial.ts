@@ -26,7 +26,7 @@ export const footerSocial: FooterSocialItem[] = [
   {
     id: "social-facebook",
     platform: "Facebook",
-    href: "https://www.facebook.com/utbexindonesia.group",
+    href: "https://www.facebook.com/UtbexclothingIndonesia/",
     ariaLabel: "UTBEX Indonesia (Halaman Facebook)",
   },
   {

@@ -8,6 +8,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,6 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="scroll-smooth" data-scroll-behavior="smooth">
+      <GoogleTagManager gtmId="GTM-TK9VMJFV" />
       <body className={`${inter.className} antialiased bg-utbex-canvas flex flex-col min-h-screen selection:bg-utbex-maroon/20 selection:text-utbex-maroon`}>
         {/* JSON-LD for Organization SEO */}
         <script
@@ -87,7 +89,7 @@ export default function RootLayout({
                 "contactType": "customer service"
               },
               "sameAs": [
-                "https://www.facebook.com/utbexindonesia.group",
+                "https://www.facebook.com/UtbexclothingIndonesia/",
                 "https://instagram.com/utbexindonesia.group",
                 "https://www.youtube.com/@utbexindonesia",
                 "https://www.tiktok.com/@utbexindonesiagroup"
