@@ -1,32 +1,13 @@
 // components/section/footer/components/FooterCopyright.tsx
-"use client";
-
-import {  m as motion  } from "framer-motion";
-import { fade } from "../motion/footerMotion";
-
-interface FooterCopyrightProps {
-  text: string;
-}
-
-/**
- * Always the final element.
- *
- * Per 01_FOOTER_BIBLE.md:
- * — Quiet. Small. Readable. Never visually dominant.
- *
- * Per 03_FOOTER_LAYOUT_SYSTEM.md:
- * — Small typography. Quiet contrast. Minimal spacing.
- */
-export default function FooterCopyright({ text }: FooterCopyrightProps) {
+export function FooterCopyright() {
   return (
-    <motion.p
-      variants={fade}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-20px" }}
-      className="text-[11px] text-utbex-text-secondary/30 tracking-wide text-center"
-    >
-      {text}
-    </motion.p>
+    <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p className="text-[11px] text-utbex-text-secondary/35 tracking-wide text-center sm:text-left">
+        © 2026 UTBEX Indonesia. Hak cipta dilindungi undang-undang.
+      </p>
+      <p className="text-[10px] font-semibold tracking-[0.15em] uppercase text-utbex-text-secondary/25">
+        Unusually Think Become Extraordinary
+      </p>
+    </div>
   );
 }
