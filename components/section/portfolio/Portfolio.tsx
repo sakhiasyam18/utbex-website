@@ -335,15 +335,15 @@ export default function Portfolio() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-2xl w-full bg-[#0d0714] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 flex flex-col max-h-[90vh]"
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="relative max-w-2xl w-full bg-[#060006] rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col max-h-[90vh]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -362,7 +362,7 @@ export default function Portfolio() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0714] via-[#0d0714]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060006] to-transparent" />
 
                 <div className="absolute bottom-5 left-6 flex items-center gap-3">
                   <span className={`text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full border backdrop-blur-md ${categoryColor[selectedProject.categoryTag] || "bg-white/10 text-white/70 border-white/10"}`}>
