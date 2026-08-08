@@ -7,24 +7,21 @@ import { m as motion, useScroll, useTransform, useSpring, useMotionValueEvent } 
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
 import { portfolioData, CategoryTab } from "./data/portfolioData";
 
-const tabs: CategoryTab[] = ["Bisnis Kreatif", "Pelatihan & Edukasi", "Inisiatif Sosial"];
+const tabs: CategoryTab[] = ["Ekonomi Kreatif", "Pemberdayaan", "Sosial & Kemitraan"];
 
 const categoryColor: Record<string, string> = {
-  "INOVASI": "bg-amber-500/20 text-amber-300 border-amber-500/20",
-  "FASHION & MERCH": "bg-purple-500/20 text-purple-300 border-purple-500/20",
-  "DESAIN & BRANDING": "bg-pink-500/20 text-pink-300 border-pink-500/20",
-  "DIGITAL MARKETING": "bg-blue-500/20 text-blue-300 border-blue-500/20",
+  "PRODUK LOKAL": "bg-amber-500/20 text-amber-300 border-amber-500/20",
+  "DIGITALISASI": "bg-blue-500/20 text-blue-300 border-blue-500/20",
   "INKUBASI": "bg-emerald-500/20 text-emerald-300 border-emerald-500/20",
   "PENDAMPINGAN": "bg-red-500/20 text-red-300 border-red-500/20",
-  "PENDIDIKAN": "bg-cyan-500/20 text-cyan-300 border-cyan-500/20",
-  "PARIWISATA": "bg-orange-500/20 text-orange-300 border-orange-500/20",
-  "KEMANUSIAAN": "bg-rose-500/20 text-rose-300 border-rose-500/20",
+  "EDUKASI SOSIAL": "bg-cyan-500/20 text-cyan-300 border-cyan-500/20",
+  "KOLABORASI": "bg-purple-500/20 text-purple-300 border-purple-500/20",
 };
 
 export default function Portfolio() {
   const targetRef = useRef<HTMLDivElement>(null);
   const [isDesktop, setIsDesktop] = useState(true);
-  const [activeTab, setActiveTab] = useState<CategoryTab>("Bisnis Kreatif");
+  const [activeTab, setActiveTab] = useState<CategoryTab>("Ekonomi Kreatif");
 
   useEffect(() => {
     const checkScreen = () => setIsDesktop(window.innerWidth >= 1024);
@@ -52,11 +49,11 @@ export default function Portfolio() {
     
     // Divide the track into 3 equal parts
     if (latest < 0.33) {
-      if (activeTab !== "Bisnis Kreatif") setActiveTab("Bisnis Kreatif");
+      if (activeTab !== "Ekonomi Kreatif") setActiveTab("Ekonomi Kreatif");
     } else if (latest < 0.66) {
-      if (activeTab !== "Pelatihan & Edukasi") setActiveTab("Pelatihan & Edukasi");
+      if (activeTab !== "Pemberdayaan") setActiveTab("Pemberdayaan");
     } else {
-      if (activeTab !== "Inisiatif Sosial") setActiveTab("Inisiatif Sosial");
+      if (activeTab !== "Sosial & Kemitraan") setActiveTab("Sosial & Kemitraan");
     }
   });
 
@@ -108,18 +105,18 @@ export default function Portfolio() {
             <div>
               <motion.div variants={staggerChild} className="text-mask">
                 <span className="inline-block text-[10px] font-bold tracking-[0.25em] text-white uppercase mb-5">
-                  — Ekosistem Karya
+                  — Nilai Lebih Kami
                 </span>
               </motion.div>
               <motion.h2 variants={staggerChild} className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight max-w-3xl">
-                Kreativitas Tanpa Batas,{" "}
+                Keunggulan{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-utbex-maroon via-red-400 to-utbex-maroon italic pr-4 py-1 box-decoration-clone">
-                  Dampak Tanpa Akhir.
+                  UTBEX Indonesia
                 </span>
               </motion.h2>
             </div>
             <motion.p variants={staggerChild} className="text-white/50 text-sm max-w-sm leading-relaxed font-medium">
-              Lebih dari sekadar bisnis. Geser untuk menjelajahi berbagai layanan, program edukasi, hingga inisiatif sosial dari UTBEX Indonesia.
+              Pendekatan komprehensif kami dalam membangun ekosistem desa mandiri melalui kreativitas, kolaborasi, dan aksi nyata yang berdampak luas.
             </motion.p>
           </motion.div>
         </div>

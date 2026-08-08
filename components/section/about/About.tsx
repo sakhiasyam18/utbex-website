@@ -21,10 +21,11 @@ const popUpChild = {
 
 
 const misiItems = [
-  "Mengembangkan potensi pemuda desa melalui program pelatihan, produksi, dan pengelolaan usaha.",
-  "Mendorong lahirnya wirausahawan muda desa yang mandiri, kreatif, dan inovatif.",
-  "Menjadi rumah kolaborasi antar pelaku ekonomi kreatif lintas sektor.",
-  "Mengangkat kearifan lokal menjadi produk berkualitas dan berdaya saing.",
+  "Memberdayakan pemuda desa",
+  "Mengembangkan produk lokal unggulan",
+  "Menghubungkan dunia usaha, akademisi, dan komunitas",
+  "Menguatkan ekosistem kreatif desa pesisir",
+  "Mendorong wirausaha mandiri & tangguh",
 ];
 
 export default function About() {
@@ -53,30 +54,20 @@ export default function About() {
           className="mb-16 lg:mb-24"
         >
           {/* Label with subtle neon glow */}
-          <motion.div variants={staggerChild} className="text-mask">
-            <span className="inline-block text-xs font-semibold tracking-widest text-utbex-maroon uppercase mb-4 neon-text-maroon">
-              — Tentang Kami
+          <motion.div variants={staggerChild} className="text-mask flex justify-center lg:justify-start">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-utbex-maroon/10 border border-utbex-maroon/20 text-xs font-bold tracking-widest text-utbex-maroon uppercase mb-6 shadow-sm">
+              EXECUTIVE SUMMARY
             </span>
           </motion.div>
 
-          {/* Headline */}
-          <motion.div variants={staggerChild} className="text-mask">
-            <h2
-              id="about-headline"
-              className="text-4xl sm:text-5xl lg:text-6xl font-black text-utbex-dark leading-[0.95] tracking-tighter max-w-3xl pb-2 lg:pb-4"
-            >
-              Perubahan Besar Selalu Dimulai dari{" "}
-              <span className="text-utbex-maroon italic neon-text-maroon">Langkah Kecil.</span>
-            </h2>
-          </motion.div>
           {/* Description in frosted glass card */}
-          <motion.div variants={staggerChild} className="mt-8 max-w-2xl">
-            <div className="about-glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 space-y-4">
+          <motion.div variants={staggerChild} className="max-w-4xl">
+            <div className="about-glass rounded-2xl sm:rounded-3xl p-6 sm:p-10 space-y-6">
               <p className="text-base sm:text-lg text-utbex-dark leading-relaxed font-medium">
-                UTBEX Indonesia Group adalah sebuah lembaga <em className="text-utbex-dark not-italic font-bold">social enterprise</em> yang berkomitmen untuk memajukan dan meningkatkan kualitas hidup masyarakat di wilayah Bantur, Jawa Timur, Indonesia, serta daerah sekitarnya. Kami memiliki visi yang kuat untuk menciptakan perubahan positif melalui inovasi, pembangunan berkelanjutan, dan kemitraan yang berdampak.
+                UTBEX Indonesia adalah lembaga <em className="text-utbex-dark not-italic font-bold">social enterprise</em> berbasis desa yang mengusung filosofi &ldquo;Unusually Think Become Extraordinary&rdquo; &mdash; berpikir kreatif, melahirkan dampak nyata. Sejak berdiri 2014, UTBEX terus mendorong pemuda desa untuk bangkit, berkarya, dan berwirausaha melalui ekosistem ekonomi kreatif, dengan fokus pengembangan fashion, kriya, UMKM kuliner, pariwisata pesisir, dan edukasi kewirausahaan.
               </p>
-              <p className="text-sm sm:text-base text-utbex-dark leading-relaxed">
-                Sebagai lembaga social enterprise, kami memadukan prinsip bisnis yang berkelanjutan dengan misi sosial yang tulus mengatasi berbagai tantangan sosial, ekonomi, dan lingkungan di wilayah Bantur dengan pendekatan yang berfokus pada pendidikan, lingkungan, dan pengembangan ekonomi masyarakat.
+              <p className="text-base sm:text-lg text-utbex-dark leading-relaxed font-medium">
+                <span className="font-bold text-utbex-maroon">Genap 1 Dekade</span> Kini UTBEX bertransformasi menjadi Creative Hub Pesisir, menggandeng berbagai sektor untuk membangun generasi kreatif desa yang berkelanjutan.
               </p>
             </div>
           </motion.div>
@@ -116,7 +107,7 @@ export default function About() {
 
             <h3 className="text-3xl font-black text-utbex-dark mb-5 tracking-tight">Visi Kami</h3>
             <p className="text-utbex-text-secondary text-lg leading-relaxed font-medium">
-              Menjadi pusat pengembangan kreativitas dan pemberdayaan pemuda desa berbasis ekonomi kreatif yang berkelanjutan dan berdampak nasional hingga global.
+              &quot;Menjadi pusat pengembangan ekonomi kreatif berbasis pemuda desa yang berdampak nasional dan global, mendorong Indonesia Emas 2045.&quot;
             </p>
 
             {/* Subtle shimmer on hover */}

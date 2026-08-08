@@ -1,138 +1,100 @@
 // components/section/portfolio/data/portfolioData.ts
 
-export type CategoryTab = "Bisnis Kreatif" | "Pelatihan & Edukasi" | "Inisiatif Sosial";
+export type CategoryTab = "Ekonomi Kreatif" | "Pemberdayaan" | "Sosial & Kemitraan";
 
 export interface ProjectData {
   id: string;
   tab: CategoryTab;
-  categoryTag: string; // The small pill text (e.g. FASHION, UMKM, SOSIAL)
+  categoryTag: string;
   title: string;
   story: string;
   location: string;
   year: string;
   evidence: string;
   image: string;
-  span?: string; // For CSS grid layout (e.g. md:col-span-2)
-  aspect: string; // Aspect ratio
+  span?: string;
+  aspect: string;
 }
 
 export const portfolioData: ProjectData[] = [
-  // ─── TAB 1: BISNIS KREATIF ───────────────────────────────────────
+  // ─── TAB 1: EKONOMI KREATIF ───────────────────────────────────────
   {
-    id: "bk-1",
-    tab: "Bisnis Kreatif",
-    categoryTag: "INOVASI",
-    title: "Kaos Lukis Tanpa Tinta — Inovasi Pertama di Indonesia",
-    story: "Mengembangkan teknik kaos lukis tanpa tinta yang ramah lingkungan. Inovasi karya anak bangsa pertama di Indonesia.",
-    location: "Jawa Timur",
-    year: "2023",
-    evidence: "HAKI Terdaftar",
+    id: "ek-1",
+    tab: "Ekonomi Kreatif",
+    categoryTag: "PRODUK LOKAL",
+    title: "Inovasi Kriya & Fashion Berkelanjutan",
+    story: "Mengangkat potensi kearifan lokal melalui produk inovatif seperti kaos lukis tanpa tinta pertama di Indonesia.",
+    location: "Nasional",
+    year: "Sejak 2016",
+    evidence: "HAKI & Penghargaan",
     image: "/images/kaos-lukis-tanpa-tinta-pertama-di-indonesia.avif",
     span: "",
     aspect: "aspect-[4/5]",
   },
   {
-    id: "bk-2",
-    tab: "Bisnis Kreatif",
-    categoryTag: "FASHION & MERCH",
-    title: "Sablon, Fashion Custom & Merchandise",
-    story: "Memproduksi berbagai pakaian custom dan souvenir promosi kualitas premium untuk perusahaan dan komunitas.",
-    location: "Malang, Jawa Timur",
-    year: "2024",
-    evidence: "Ratusan Klien",
-    image: "/images/produk-2024-utbex-macam-macam.avif",
-    span: "", // normal
-    aspect: "aspect-[4/5]",
-  },
-  {
-    id: "bk-3",
-    tab: "Bisnis Kreatif",
-    categoryTag: "DESAIN & BRANDING",
-    title: "Jasa Desain Grafis & Digital Printing",
-    story: "Menyediakan layanan desain grafis komprehensif mulai dari logo, kemasan UMKM, hingga pencetakan skala besar.",
-    location: "Indonesia",
-    year: "2025",
-    evidence: "Desain Premium",
+    id: "ek-2",
+    tab: "Ekonomi Kreatif",
+    categoryTag: "DIGITALISASI",
+    title: "Optimalisasi Desain & Branding UMKM",
+    story: "Memberikan nilai tambah pada produk lokal melalui standardisasi kemasan, identitas visual, dan digital marketing.",
+    location: "Malang Raya",
+    year: "Sejak 2023",
+    evidence: "Transformasi Digital",
     image: "/images/utapura-egg-premium-ayam-kampung.avif",
-    span: "", // normal
-    aspect: "aspect-[4/5]",
-  },
-
-  // ─── TAB 2: PELATIHAN & EDUKASI ──────────────────────────────────
-  {
-    id: "pe-1",
-    tab: "Pelatihan & Edukasi",
-    categoryTag: "DIGITAL MARKETING",
-    title: "Edukasi Manajemen Usaha & Pemasaran Digital",
-    story: "Membekali pelaku UMKM desa dengan strategi digital marketing, foto produk, dan optimalisasi media sosial.",
-    location: "Yogyakarta",
-    year: "2023",
-    evidence: "Ratusan Peserta",
-    image: "/images/pelatihan-digital-marketing-dan-packaging-utbex-dengan-arif-dwi-asmara.avif",
     span: "",
     aspect: "aspect-[4/5]",
   },
+
+  // ─── TAB 2: PEMBERDAYAAN ──────────────────────────────────────────
   {
-    id: "pe-2",
-    tab: "Pelatihan & Edukasi",
+    id: "pb-1",
+    tab: "Pemberdayaan",
     categoryTag: "INKUBASI",
-    title: "Inkubasi Wirausaha Muda Desa",
-    story: "Program pendampingan intensif bagi pemuda desa untuk merintis dan memvalidasi model bisnis kreatif mereka.",
-    location: "Bandung, Jawa Barat",
-    year: "2024",
-    evidence: "Lahirnya Wirausaha Baru",
+    title: "Mencetak Wirausaha Muda Desa",
+    story: "Program pelatihan intensif untuk membekali pemuda desa dengan mindset bisnis, keterampilan praktis, dan manajemen.",
+    location: "Jawa Timur",
+    year: "Berkelanjutan",
+    evidence: "Generasi Mandiri",
     image: "/images/utbex-pelatihan-manajemen-umkm-dengan-arik-dwi-asmara.avif",
     aspect: "aspect-[4/5]",
   },
   {
-    id: "pe-3",
-    tab: "Pelatihan & Edukasi",
+    id: "pb-2",
+    tab: "Pemberdayaan",
     categoryTag: "PENDAMPINGAN",
-    title: "Konsultan Pendampingan UMKM Naik Kelas",
-    story: "Mendampingi UMKM lokal mengurus legalitas (NIB, PIRT, Halal) serta meningkatkan standardisasi pengemasan.",
-    location: "Malang, Jawa Timur",
-    year: "2025",
-    evidence: "80+ UMKM Didampingi",
+    title: "Pendampingan Legalitas & UMKM Naik Kelas",
+    story: "Mendampingi UMKM lokal secara langsung dalam pengurusan NIB, PIRT, sertifikasi Halal, hingga perluasan akses pasar.",
+    location: "Jawa Timur",
+    year: "Berkelanjutan",
+    evidence: "UMKM Terverifikasi",
     image: "/images/arik-dwi-asmara-penyampaian-materi-utbex.avif",
     aspect: "aspect-[4/5]",
   },
 
-  // ─── TAB 3: INISIATIF SOSIAL ─────────────────────────────────────
+  // ─── TAB 3: SOSIAL & KEMITRAAN ─────────────────────────────────────
   {
-    id: "is-1",
-    tab: "Inisiatif Sosial",
-    categoryTag: "PENDIDIKAN",
-    title: "SCoVIL (School of Creative Village Learning)",
-    story: "Sekolah non-formal yang memberikan beasiswa keterampilan untuk pemuda pesisir agar siap kerja dan mandiri.",
-    location: "Pesisir Malang Selatan",
-    year: "2024",
-    evidence: "Membangun Generasi Muda",
+    id: "sk-1",
+    tab: "Sosial & Kemitraan",
+    categoryTag: "EDUKASI SOSIAL",
+    title: "SCoVIL & Penggerak Pariwisata Pesisir",
+    story: "Membangun School of Creative Village Learning untuk pemuda pesisir dan mengembangkan ekosistem desa wisata yang terintegrasi.",
+    location: "Pesisir Selatan",
+    year: "Berkelanjutan",
+    evidence: "Dampak Sosial",
     image: "/images/foto-bersama-arik-dwi-asmara-dengan-pemerintah-utbex.avif",
     span: "",
     aspect: "aspect-[4/5]",
   },
   {
-    id: "is-2",
-    tab: "Inisiatif Sosial",
-    categoryTag: "PARIWISATA",
-    title: "Pengembangan Desa Wisata & Ekosistem Pesisir",
-    story: "Membangun ekosistem ekonomi kreatif pariwisata yang terintegrasi untuk mengangkat potensi wisata daerah pantai.",
-    location: "Bantur, Malang",
-    year: "2023",
-    evidence: "Desa Mandiri",
+    id: "sk-2",
+    tab: "Sosial & Kemitraan",
+    categoryTag: "KOLABORASI",
+    title: "Sinergi Multi-Sektor (Pentahelix)",
+    story: "Menjalin kemitraan strategis dengan pemerintah, CSR perusahaan, institusi pendidikan, dan komunitas untuk keberlanjutan program.",
+    location: "Indonesia",
+    year: "Berkelanjutan",
+    evidence: "Jejaring Kemitraan",
     image: "/images/postingan-utbex-news-kolase-foto-foto.avif",
-    aspect: "aspect-[4/5]",
-  },
-  {
-    id: "is-3",
-    tab: "Inisiatif Sosial",
-    categoryTag: "KEMANUSIAAN",
-    title: "SAR Banturono Rescue",
-    story: "Terlibat aktif dalam mitigasi bencana, penyelamatan (SAR), dan bantuan kemanusiaan di wilayah pesisir Jawa Timur.",
-    location: "Jawa Timur",
-    year: "2025",
-    evidence: "Tim Relawan Tangguh",
-    image: "/images/pemateri-arik-dwi-asmara-meyerahkan-gift-dengan-peserta-seminar-umkm.avif",
     aspect: "aspect-[4/5]",
   },
 ];
