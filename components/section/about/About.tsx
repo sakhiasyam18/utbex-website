@@ -32,7 +32,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-headline"
-      className="relative w-full bg-utbex-canvas overflow-hidden"
+      className="relative w-full overflow-hidden"
     >
       {/* ── Ambient Gradient Orbs ── */}
       {/* These give the white canvas warmth and depth without being distracting */}

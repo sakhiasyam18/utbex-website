@@ -48,7 +48,7 @@ export default function Impact() {
   return (
     <section
       id="impact"
-      className="relative w-full bg-[#f8f9fc] text-utbex-dark overflow-hidden py-24 lg:py-36"
+      className="relative w-full text-utbex-dark overflow-hidden py-24 lg:py-36"
       aria-label="UTBEX Indonesia Impact and Statistics"
     >
       {/* Ambient background glows (Light Theme) */}
@@ -80,7 +80,7 @@ export default function Impact() {
             </span>
           </motion.div>
           <motion.div variants={staggerChild} className="text-mask">
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.92] tracking-tighter text-utbex-dark">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.92] tracking-tighter text-utbex-dark pb-4">
               Perubahan Tidak Berhenti Saat{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-utbex-maroon via-red-600 to-utbex-maroon italic">
                 Program Selesai.

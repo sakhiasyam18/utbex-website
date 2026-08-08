@@ -34,7 +34,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={heroRef}
-      className="relative w-full bg-utbex-canvas flex flex-col"
+      className="relative w-full flex flex-col"
       style={{ minHeight: "100svh" }}
       aria-label="Beranda UTBEX Indonesia"
     >
@@ -124,7 +124,7 @@ export default function Hero() {
             >
               Hubungi
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
@@ -175,7 +175,15 @@ export default function Hero() {
           <motion.div
             className="absolute inset-0 flex justify-center
                        pointer-events-none select-none will-change-transform"
-            style={{ filter: blur, scale, opacity, zIndex: 10, transformOrigin: "center bottom" }}
+            style={{ 
+              filter: blur, 
+              scale, 
+              opacity, 
+              zIndex: 10, 
+              transformOrigin: "center bottom",
+              WebkitMaskImage: "linear-gradient(to top, transparent 0px, transparent 40px, black 220px)",
+              maskImage: "linear-gradient(to top, transparent 0px, transparent 40px, black 220px)"
+            }}
           >
             <Image
               src="/images/arik.webp"
@@ -185,16 +193,6 @@ export default function Hero() {
               priority
               loading="eager"
               sizes="43vw"
-            />
-            {/* Bottom fade — smooth white transition */}
-            <div
-              className="absolute bottom-0 inset-x-0 pointer-events-none"
-              style={{
-                height: "220px",
-                background:
-                  "linear-gradient(to top, #FDFCFB 0%, #FDFCFB 15%, rgba(253,252,251,0.7) 50%, transparent 100%)",
-                zIndex: 20,
-              }}
             />
           </motion.div>
         </div>
@@ -289,7 +287,14 @@ export default function Hero() {
         {/* Pak Arik — fills the entire mobile screen */}
         <motion.div
           className="absolute inset-0 will-change-transform"
-          style={{ filter: blur, scale, opacity, transformOrigin: "center bottom" }}
+          style={{ 
+            filter: blur, 
+            scale, 
+            opacity, 
+            transformOrigin: "center bottom",
+            WebkitMaskImage: "linear-gradient(to top, transparent 0%, transparent 20%, black 50%)",
+            maskImage: "linear-gradient(to top, transparent 0%, transparent 20%, black 50%)"
+          }}
         >
           <Image
             src="/images/arik.webp"
@@ -299,14 +304,6 @@ export default function Hero() {
             className="object-cover object-[center_20%] sm:object-center"
             priority
             loading="eager"
-          />
-          {/* Bottom fade so text is readable */}
-          <div
-            className="absolute bottom-0 inset-x-0 pointer-events-none"
-            style={{
-              height: "70%",
-              background: "linear-gradient(to top, #FDFCFB 30%, rgba(253,252,251,0.7) 60%, transparent 100%)",
-            }}
           />
           {/* UTBEX watermark behind Pak Arik — partially clipped */}
           <div
@@ -327,7 +324,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-          {/* Text overlay — positioned at bottom */}
+        {/* Text overlay — positioned at bottom */}
         <div
           className="absolute bottom-0 inset-x-0 px-6 sm:px-12 pb-10 pt-8 animate-fade-up opacity-0"
           style={{ animationDelay: "140ms", animationFillMode: "forwards", zIndex: 20 }}
@@ -389,7 +386,7 @@ export default function Hero() {
       {/* ── Stats bar ───────────────────────────────────────── */}
       <div
         className="grid grid-cols-3 border-t border-black/[0.07] px-4 sm:px-10
-                   bg-utbex-canvas/90 backdrop-blur-sm
+                   bg-white/80 backdrop-blur-sm
                    animate-fade-up opacity-0"
         style={{
           animationDelay: "300ms",

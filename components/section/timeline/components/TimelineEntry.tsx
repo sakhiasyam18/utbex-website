@@ -13,9 +13,10 @@ interface TimelineEntryProps {
     milestone: TimelineMilestone;
     index: number;
     isEven: boolean;
+    isLast?: boolean;
 }
 
-export default function TimelineEntry({ milestone, index, isEven }: TimelineEntryProps) {
+export default function TimelineEntry({ milestone, index, isEven, isLast = false }: TimelineEntryProps) {
     const entryRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(entryRef, { once: false, margin: "-30% 0px -30% 0px" });
@@ -27,8 +28,57 @@ export default function TimelineEntry({ milestone, index, isEven }: TimelineEntr
     });
     const imageY = useTransform(scrollYProgress, [0, 1], [-15, 15]);
 
+    // Generate precise SVG path to weave exactly between nodes
+    const isFirst = index === 0;
+    let pathD = "";
+    if (isFirst) {
+        pathD = "M 50 0 L 50 50";
+    } else {
+        const startX = isEven ? 20 : 80;
+        pathD = `M ${startX} 0 C ${startX} 25, 50 25, 50 50`;
+    }
+
+    if (isLast) {
+        pathD += " L 50 100";
+    } else {
+        const endX = isEven ? 80 : 20;
+        pathD += ` C 50 75, ${endX} 75, ${endX} 100`;
+    }
+
     return (
-        <div ref={entryRef} className="relative">
+        <div ref={entryRef} className="relative py-10 md:py-14 lg:py-16">
+            {/* Spiral Curved Line Background (Desktop only) */}
+            <div className="hidden lg:block absolute inset-0 pointer-events-none" style={{ zIndex: -5 }}>
+                {/* Faint track */}
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+                    <path 
+                        d={pathD}
+                        stroke="rgba(0,0,0,0.06)"
+                        strokeWidth="8" 
+                        fill="none" 
+                        vectorEffect="non-scaling-stroke"
+                    />
+                </svg>
+
+                {/* Animated Red Line using clipPath to avoid non-uniform scaling bugs */}
+                <motion.svg 
+                    viewBox="0 0 100 100" 
+                    preserveAspectRatio="none" 
+                    className="absolute inset-0 w-full h-full"
+                    initial={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)" }}
+                    whileInView={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
+                    viewport={{ once: false, margin: "-10% 0px -10% 0px" }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                >
+                    <path 
+                        d={pathD}
+                        stroke="#8B0000"
+                        strokeWidth="8" 
+                        fill="none" 
+                        vectorEffect="non-scaling-stroke"
+                    />
+                </motion.svg>
+            </div>
             {/* Desktop: 2-col layout alternating sides */}
             <div className={`flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                 {/* Timeline node — centered on desktop via absolute positioning */}

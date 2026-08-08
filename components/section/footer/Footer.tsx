@@ -77,7 +77,7 @@ const ICON_MAP: Record<string, React.ComponentType> = {
 const navLinks = [
   { label: "Beranda", href: "#hero" },
   { label: "Tentang Kami", href: "#about" },
-  { label: "Jejak Kolaborasi", href: "#portfolio" },
+  { label: "Ekosistem Karya", href: "#portfolio" },
   { label: "Dampak", href: "#impact" },
 ];
 
@@ -97,7 +97,7 @@ export function Footer() {
     <footer
       id="contact"
       aria-label="UTBEX Footer — Kontak dan Navigasi"
-      className="relative w-full overflow-hidden bg-utbex-canvas"
+      className="relative w-full overflow-hidden"
     >
       {/* ── Ambient background orbs ──────────────────────────── */}
       <div className="absolute top-0 left-1/4  w-[700px] h-[400px] bg-utbex-maroon/[0.03] rounded-full blur-[120px] pointer-events-none" />
@@ -187,7 +187,7 @@ export function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1.4fr_1.3fr] gap-10 lg:gap-8 pb-14"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_1.4fr_1.5fr] gap-10 lg:gap-8 pb-14"
         >
 
           {/* ── Col 1: Brand ─────────────────────────────────── */}
@@ -197,12 +197,12 @@ export function Footer() {
               <p className="font-black text-[1.6rem] tracking-tight text-utbex-dark leading-none mb-0.5">
                 UTBEX<span className="text-utbex-maroon" style={{ textShadow: "0 0 12px rgba(139,0,0,0.25)" }}>.</span>
               </p>
-              <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-utbex-text-secondary/40">
+              <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-utbex-dark/70">
                 Inovasi Indonesia
               </p>
             </div>
 
-            <p className="text-sm text-utbex-text-secondary/65 leading-relaxed max-w-[24ch]">
+            <p className="text-sm text-utbex-dark/90 leading-relaxed max-w-[24ch]">
               Unusually Think Become Extraordinary — Pusat Pengembangan Ekonomi Kreatif Desa &amp; Social Enterprise.
             </p>
 
@@ -211,13 +211,13 @@ export function Footer() {
                             bg-white/55 backdrop-blur-md border border-white/65
                             shadow-[0_4px_12px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.9)]">
               <span className="text-utbex-maroon flex-shrink-0"><MapPinIcon /></span>
-              <span className="text-[11px] font-semibold text-utbex-text-secondary/70">Bantur, Malang</span>
+              <span className="text-[11px] font-semibold text-utbex-dark/90">Bantur, Malang</span>
             </div>
           </motion.div>
 
           {/* ── Col 2: Navigasi ───────────────────────────────── */}
           <motion.div variants={fadeUp} className="flex flex-col gap-4">
-            <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-text-secondary/35 mb-1">
+            <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-dark/60 mb-1">
               Navigasi
             </p>
             <nav aria-label="Footer navigation">
@@ -227,7 +227,7 @@ export function Footer() {
                     <Link
                       href={link.href}
                       id={`klik-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
-                      className="group/link inline-flex items-center gap-2 text-sm font-medium text-utbex-dark/65
+                      className="group/link inline-flex items-center gap-2 text-sm font-semibold text-utbex-dark/90
                                  hover:text-utbex-maroon transition-all duration-300"
                     >
                       <span className="w-0 group-hover/link:w-3 h-px bg-utbex-maroon transition-all duration-300 overflow-hidden" />
@@ -241,7 +241,7 @@ export function Footer() {
 
           {/* ── Col 3: Kontak ─────────────────────────────────── */}
           <motion.div variants={fadeUp} className="flex flex-col gap-5">
-            <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-text-secondary/35 mb-1">
+            <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-dark/60 mb-1">
               Kontak
             </p>
 
@@ -261,9 +261,9 @@ export function Footer() {
                 <MailIcon />
               </span>
               <div className="min-w-0">
-                <p className="text-[9px] font-bold uppercase tracking-widest text-utbex-text-secondary/35 mb-1">Email</p>
-                <p className="text-[12px] sm:text-[13px] font-semibold text-utbex-dark/80 group-hover/c:text-utbex-maroon
-                               transition-colors duration-300 leading-snug break-all">
+                <p className="text-[9px] font-bold uppercase tracking-widest text-utbex-dark/60 mb-1">Email</p>
+                <p className="text-[11px] xl:text-[12px] font-bold text-utbex-dark group-hover/c:text-utbex-maroon
+                               transition-colors duration-300 leading-snug break-words">
                   Utbexgrup.id!2026@gmail.com
                 </p>
               </div>
@@ -287,8 +287,8 @@ export function Footer() {
                 <MapPinIcon />
               </span>
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-widest text-utbex-text-secondary/35 mb-1">Lokasi</p>
-                <p className="text-[12px] sm:text-[13px] font-medium text-utbex-dark/70 group-hover/c:text-utbex-maroon
+                <p className="text-[9px] font-bold uppercase tracking-widest text-utbex-dark/60 mb-1">Lokasi</p>
+                <p className="text-[12px] sm:text-[13px] font-semibold text-utbex-dark/90 group-hover/c:text-utbex-maroon
                                transition-colors duration-300 leading-relaxed">
                   Jl. Kyai Rajiman RT.06 RW.02<br />
                   Bantur, Kab. Malang, 65179
@@ -299,7 +299,7 @@ export function Footer() {
 
           {/* ── Col 4: Sosial Media ───────────────────────────── */}
           <motion.div variants={fadeUp} className="flex flex-col gap-4">
-            <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-text-secondary/35 mb-1">
+            <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-dark/60 mb-1">
               Ikuti Kami
             </p>
 
@@ -326,12 +326,12 @@ export function Footer() {
                                transition-all duration-300 hover:-translate-y-0.5
                                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-utbex-maroon/40"
                   >
-                    <span className="text-utbex-text-secondary/55 group-hover/s:text-utbex-maroon
+                    <span className="text-utbex-dark/70 group-hover/s:text-utbex-maroon
                                      transition-colors duration-300 flex-shrink-0">
                       <Icon />
                     </span>
-                    <span className="text-[11px] font-semibold text-utbex-dark/65 group-hover/s:text-utbex-maroon
-                                     transition-colors duration-300 truncate">
+                    <span className="text-[11px] font-bold text-utbex-dark/90 group-hover/s:text-utbex-maroon
+                                     transition-colors duration-300 whitespace-nowrap">
                       {item.platform}
                     </span>
                   </a>
@@ -455,10 +455,10 @@ export function Footer() {
 
         {/* ── Copyright bar ────────────────────────────────────── */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[11px] text-utbex-text-secondary/35 tracking-wide text-center sm:text-left">
+          <p className="text-[11px] text-utbex-dark/60 font-medium tracking-wide text-center sm:text-left">
             © 2026 UTBEX Indonesia. Hak cipta dilindungi undang-undang.
           </p>
-          <p className="text-[10px] font-semibold tracking-[0.15em] uppercase text-utbex-text-secondary/25">
+          <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-utbex-dark/50">
             Unusually Think Become Extraordinary
           </p>
         </div>
