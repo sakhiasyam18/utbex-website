@@ -3,9 +3,9 @@
 
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { m as motion, useScroll, useTransform, useSpring, useMotionValueEvent } from "framer-motion";
+import { m as motion, useScroll, useTransform, useSpring, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
-import { portfolioData, CategoryTab } from "./data/portfolioData";
+import { portfolioData, CategoryTab, ProjectData } from "./data/portfolioData";
 
 const tabs: CategoryTab[] = ["Bidang Usaha & Produk", "Program Pemberdayaan", "Kolaborasi Sosial"];
 
@@ -34,6 +34,7 @@ export default function Portfolio() {
   const targetRef = useRef<HTMLDivElement>(null);
   const [isDesktop, setIsDesktop] = useState(true);
   const [activeTab, setActiveTab] = useState<CategoryTab>("Bidang Usaha & Produk");
+  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
 
   useEffect(() => {
     const checkScreen = () => setIsDesktop(window.innerWidth >= 1024);
@@ -51,7 +52,7 @@ export default function Portfolio() {
 
   // Transform scroll progress to x translation (only for desktop)
   // With 15 items, we need a larger negative percentage to scroll to the very end
-  const x = useTransform(smoothProgress, [0, 1], ["0%", "-85%"]);
+  const x = useTransform(smoothProgress, [0, 1], ["0%", "-75%"]);
 
   // Mobile layout doesn't use the x transform
   const transformX = isDesktop ? x : "0%";
@@ -72,7 +73,7 @@ export default function Portfolio() {
 
   const scrollToTab = (tab: CategoryTab, index: number) => {
     setActiveTab(tab);
-    
+
     if (!isDesktop) {
       // Mobile: just change tab, content updates in place without scrolling window
       return;
@@ -164,15 +165,15 @@ export default function Portfolio() {
           <div className="px-6 sm:px-10 mb-4 relative">
             <div className="flex justify-between items-end mb-3">
               <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Pilih Kategori :</p>
-              <motion.div 
-                animate={{ x: [0, 4, 0] }} 
+              <motion.div
+                animate={{ x: [0, 4, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                 className="text-[9px] font-bold text-utbex-maroon flex items-center gap-1 opacity-80"
               >
-                Geser kategori <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                Geser kategori <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
               </motion.div>
             </div>
-            
+
             {/* Native horizontal scroll for tabs to prevent messy wrapping */}
             <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-3 -mb-3 relative z-10" style={{ WebkitOverflowScrolling: 'touch' }}>
               {tabs.map((tab, idx) => (
@@ -180,16 +181,16 @@ export default function Portfolio() {
                   key={tab}
                   onClick={() => scrollToTab(tab, idx)}
                   className={`flex-shrink-0 flex items-center gap-2 px-5 py-3.5 rounded-2xl text-[11px] font-bold tracking-wider uppercase transition-all duration-300 border
-                             ${activeTab === tab 
-                               ? "text-white bg-utbex-maroon border-utbex-maroon shadow-[0_4px_20px_rgba(139,0,0,0.3)]" 
-                               : "text-white/50 bg-white/5 border-white/10 active:bg-white/10"}`}
+                             ${activeTab === tab
+                      ? "text-white bg-utbex-maroon border-utbex-maroon shadow-[0_4px_20px_rgba(139,0,0,0.3)]"
+                      : "text-white/50 bg-white/5 border-white/10 active:bg-white/10"}`}
                 >
                   <span>{tab}</span>
                   {/* Visual affordance for clicking */}
                   {activeTab !== tab && (
                     <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center ml-1">
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                        <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                       </svg>
                     </span>
                   )}
@@ -210,7 +211,8 @@ export default function Portfolio() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
                 key={project.id}
-                className="w-full relative rounded-[2rem] overflow-hidden group border border-white/[0.08] shadow-2xl"
+                onClick={() => setSelectedProject(project)}
+                className="w-full relative rounded-[2rem] overflow-hidden group border border-white/[0.08] shadow-2xl cursor-pointer"
               >
                 <div className="relative aspect-[4/5] sm:aspect-square w-full overflow-hidden bg-white/5">
                   <Image
@@ -223,10 +225,10 @@ export default function Portfolio() {
                   />
                   {/* Subtle Top Gradient for badges */}
                   <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black/80 to-transparent" />
-                  
+
                   {/* Deep Bottom Gradient for content */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#060006] via-black/50 to-transparent" />
-                  
+
                   {/* Top Badges */}
                   <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-10">
                     <span className="text-[12px] font-black text-white/50 tracking-[0.2em]">{`0${idx + 1}`}</span>
@@ -244,20 +246,13 @@ export default function Portfolio() {
                       {project.story}
                     </p>
 
-                    <div className="flex items-center justify-between gap-4 pt-5 border-t border-white/15">
-                      <div className="min-w-0">
-                        <p className="text-[11px] font-bold text-white/40 mb-1 tracking-widest uppercase">
-                          {project.location} · {project.year}
-                        </p>
-                        <p className="text-xs text-white/90 font-bold truncate">
-                          {project.evidence}
-                        </p>
-                      </div>
-                      <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center flex-shrink-0 border border-white/20">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                          <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                        </svg>
-                      </div>
+                    <div className="flex flex-col gap-1 pt-5 border-t border-white/15">
+                      <p className="text-[11px] font-bold text-white/40 tracking-widest uppercase">
+                        {project.location} · {project.year}
+                      </p>
+                      <p className="text-xs text-white/90 font-bold truncate">
+                        {project.evidence}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -279,6 +274,7 @@ export default function Portfolio() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 key={project.id}
+                onClick={() => setSelectedProject(project)}
                 className="w-[450px] flex-shrink-0 h-full relative rounded-3xl overflow-hidden group cursor-pointer border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500"
               >
                 <div className={`relative h-full w-full overflow-hidden bg-white/5`}>
@@ -313,17 +309,9 @@ export default function Portfolio() {
                       </p>
 
                       {/* Meta row */}
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="min-w-0 flex-1">
-                          <p className="text-[10px] font-medium text-white/30 truncate">{project.location} · {project.year}</p>
-                          <p className="text-[11px] text-white/90 font-bold mt-1 truncate">{project.evidence}</p>
-                        </div>
-                        {/* Arrow button */}
-                        <div className="w-10 h-10 rounded-full bg-white/[0.08] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-utbex-maroon group-hover:border-utbex-maroon group-hover:scale-110 transition-all duration-300">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">
-                            <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                          </svg>
-                        </div>
+                      <div className="flex flex-col gap-1 pt-3">
+                        <p className="text-[10px] font-medium text-white/30 truncate">{project.location} · {project.year}</p>
+                        <p className="text-[11px] text-white/90 font-bold truncate">{project.evidence}</p>
                       </div>
                     </div>
                   </div>
@@ -339,6 +327,75 @@ export default function Portfolio() {
           </motion.div>
         </div>
       </div>
+
+      {/* AESTHETIC POPUP MODAL */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-sm"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-2xl w-full bg-[#0d0714] rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10 flex flex-col max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-black/70 transition-colors"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+              </button>
+
+              {/* Image Area */}
+              <div className="relative w-full h-[35vh] sm:h-[45vh] bg-white/5">
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0714] via-[#0d0714]/20 to-transparent" />
+
+                <div className="absolute bottom-5 left-6 flex items-center gap-3">
+                  <span className={`text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full border backdrop-blur-md ${categoryColor[selectedProject.categoryTag] || "bg-white/10 text-white/70 border-white/10"}`}>
+                    {selectedProject.categoryTag}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content Area */}
+              <div className="p-6 sm:p-8 overflow-y-auto scrollbar-hide">
+                <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-4">
+                  {selectedProject.title}
+                </h3>
+                <p className="text-white/70 leading-relaxed mb-8 text-sm sm:text-base">
+                  {selectedProject.story}
+                </p>
+
+                {/* Meta details */}
+                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
+                  <div>
+                    <p className="text-[10px] font-bold text-white/40 mb-1 tracking-widest uppercase">Lokasi & Tahun</p>
+                    <p className="text-sm text-white/90 font-bold">{selectedProject.location} · {selectedProject.year}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-white/40 mb-1 tracking-widest uppercase">Dampak / Bukti</p>
+                    <p className="text-sm text-white/90 font-bold">{selectedProject.evidence}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
