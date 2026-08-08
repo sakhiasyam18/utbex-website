@@ -62,8 +62,9 @@ export const milestones = [
 ];
 
 export const misiItems = [
-  "Mengembangkan potensi pemuda desa melalui program pelatihan, produksi, dan pengelolaan usaha.",
-  "Mendorong lahirnya wirausahawan muda desa yang mandiri, kreatif, dan inovatif.",
-  "Menjadi rumah kolaborasi antar pelaku ekonomi kreatif lintas sektor.",
-  "Mengangkat kearifan lokal menjadi produk berkualitas dan berdaya saing.",
+  "Memberdayakan pemuda desa",
+  "Mengembangkan produk lokal unggulan",
+  "Menghubungkan dunia usaha, akademisi, dan komunitas",
+  "Menguatkan ekosistem kreatif desa pesisir",
+  "Mendorong wirausaha mandiri & tangguh",
 ];

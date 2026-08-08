@@ -32,7 +32,7 @@ export function AboutVisionMission() {
 
         <h3 className="text-3xl font-black text-utbex-dark mb-5 tracking-tight">Visi Kami</h3>
         <p className="text-utbex-text-secondary text-lg leading-relaxed font-medium">
-          Menjadi pusat pengembangan kreativitas dan pemberdayaan pemuda desa berbasis ekonomi kreatif yang berkelanjutan dan berdampak nasional hingga global.
+          &quot;Menjadi pusat pengembangan ekonomi kreatif berbasis pemuda desa yang berdampak nasional dan global, mendorong Indonesia Emas 2045.&quot;
         </p>
 
         <div className="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
