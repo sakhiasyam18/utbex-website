@@ -51,12 +51,12 @@ export default function Portfolio() {
 
   // Transform scroll progress to x translation (only for desktop)
   // With 15 items, we need a larger negative percentage to scroll to the very end
-  const x = useTransform(smoothProgress, [0, 1], ["0%", "-75%"]);
+  const x = useTransform(smoothProgress, [0, 1], ["0%", "-85%"]);
 
   // Mobile layout doesn't use the x transform
   const transformX = isDesktop ? x : "0%";
 
-  // Automatically update the active tab based on scroll progress
+  // Automatically update the active tab based on scroll progress (Desktop Only)
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (!isDesktop) return;
 
@@ -72,11 +72,13 @@ export default function Portfolio() {
 
   const scrollToTab = (tab: CategoryTab, index: number) => {
     setActiveTab(tab);
+    
     if (!isDesktop) {
-      return; // Normal layout for mobile
+      // Mobile: just change tab, content updates in place without scrolling window
+      return;
     }
 
-    // Desktop: jump to specific scroll percentage
+    // Desktop: Jump to specific scroll percentage
     // index 0 = 0% (Start), index 1 = ~35% (Middle), index 2 = ~65% (End of cards)
     const percentages = [0, 0.35, 0.65];
     const targetPercentage = percentages[index];
@@ -134,8 +136,8 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* Jump Links (Tabs) - Centered */}
-        <div className="w-full flex justify-center z-20 mt-8 lg:mt-10 mb-8 lg:mb-10 flex-shrink-0 relative px-6">
+        {/* DESKTOP TABS - Centered */}
+        <div className="hidden lg:flex w-full justify-center z-20 mt-10 mb-10 flex-shrink-0 relative px-6">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -157,11 +159,117 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* HORIZONTALLY SCROLLING TRACK */}
-        <div className="flex-1 w-full relative flex lg:items-start items-center lg:overflow-visible overflow-hidden mt-4 lg:mt-0 pb-10">
+        {/* MOBILE TABS & SCROLL INDICATOR */}
+        <div className="lg:hidden w-full z-20 mt-8 mb-6 flex-shrink-0 relative">
+          <div className="px-6 sm:px-10 mb-4 relative">
+            <div className="flex justify-between items-end mb-3">
+              <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Pilih Kategori :</p>
+              <motion.div 
+                animate={{ x: [0, 4, 0] }} 
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                className="text-[9px] font-bold text-utbex-maroon flex items-center gap-1 opacity-80"
+              >
+                Geser kategori <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </motion.div>
+            </div>
+            
+            {/* Native horizontal scroll for tabs to prevent messy wrapping */}
+            <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-3 -mb-3 relative z-10" style={{ WebkitOverflowScrolling: 'touch' }}>
+              {tabs.map((tab, idx) => (
+                <button
+                  key={tab}
+                  onClick={() => scrollToTab(tab, idx)}
+                  className={`flex-shrink-0 flex items-center gap-2 px-5 py-3.5 rounded-2xl text-[11px] font-bold tracking-wider uppercase transition-all duration-300 border
+                             ${activeTab === tab 
+                               ? "text-white bg-utbex-maroon border-utbex-maroon shadow-[0_4px_20px_rgba(139,0,0,0.3)]" 
+                               : "text-white/50 bg-white/5 border-white/10 active:bg-white/10"}`}
+                >
+                  <span>{tab}</span>
+                  {/* Visual affordance for clicking */}
+                  {activeTab !== tab && (
+                    <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center ml-1">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* MOBILE LAYOUT: Beautiful Vertical Stack (Filtered by Active Tab) */}
+        <div className="lg:hidden flex flex-col gap-10 px-6 sm:px-10 pb-20 mt-4">
+          {portfolioData
+            .filter((p) => p.tab === activeTab)
+            .map((project, idx) => (
+              <motion.article
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+                key={project.id}
+                className="w-full relative rounded-[2rem] overflow-hidden group border border-white/[0.08] shadow-2xl"
+              >
+                <div className="relative aspect-[4/5] sm:aspect-square w-full overflow-hidden bg-white/5">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="100vw"
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    quality={85}
+                  />
+                  {/* Subtle Top Gradient for badges */}
+                  <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-black/80 to-transparent" />
+                  
+                  {/* Deep Bottom Gradient for content */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060006] via-black/50 to-transparent" />
+                  
+                  {/* Top Badges */}
+                  <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-10">
+                    <span className="text-[12px] font-black text-white/50 tracking-[0.2em]">{`0${idx + 1}`}</span>
+                    <span className={`text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full border backdrop-blur-md ${categoryColor[project.categoryTag] || "bg-white/10 text-white/70 border-white/10"}`}>
+                      {project.categoryTag}
+                    </span>
+                  </div>
+
+                  {/* Content Area */}
+                  <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8 z-10 flex flex-col justify-end">
+                    <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-white/70 leading-relaxed mb-6">
+                      {project.story}
+                    </p>
+
+                    <div className="flex items-center justify-between gap-4 pt-5 border-t border-white/15">
+                      <div className="min-w-0">
+                        <p className="text-[11px] font-bold text-white/40 mb-1 tracking-widest uppercase">
+                          {project.location} · {project.year}
+                        </p>
+                        <p className="text-xs text-white/90 font-bold truncate">
+                          {project.evidence}
+                        </p>
+                      </div>
+                      <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center flex-shrink-0 border border-white/20">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                          <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+        </div>
+
+        {/* DESKTOP LAYOUT: Framer Motion Horizontal Scroll */}
+        <div className="hidden lg:flex flex-1 w-full relative items-start overflow-visible pb-10">
           <motion.div
             style={{ x: transformX }}
-            className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-10 px-6 sm:px-10 lg:px-[10vw] lg:h-[55vh] lg:max-h-[500px] lg:w-[max-content]"
+            className="relative z-10 flex flex-row items-center gap-10 px-[10vw] h-[65vh] max-h-[500px] w-[max-content]"
           >
             {/* Cards Track */}
             {portfolioData.map((project, idx) => (
@@ -171,14 +279,14 @@ export default function Portfolio() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 key={project.id}
-                className="w-full sm:w-[400px] lg:w-[450px] flex-shrink-0 lg:h-full relative rounded-3xl overflow-hidden group cursor-pointer border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500"
+                className="w-[450px] flex-shrink-0 h-full relative rounded-3xl overflow-hidden group cursor-pointer border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-500"
               >
-                <div className={`relative aspect-[4/5] lg:aspect-auto lg:h-full lg:w-full overflow-hidden bg-white/5`}>
+                <div className={`relative h-full w-full overflow-hidden bg-white/5`}>
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="33vw"
                     className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
                     quality={80}
                   />
@@ -189,18 +297,18 @@ export default function Portfolio() {
                   {/* Top badge row */}
                   <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-10">
                     <span className="text-[10px] font-black text-white/50 tracking-[0.2em]">{`0${idx + 1}`}</span>
-                    <span className={`text-[9px] sm:text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border backdrop-blur-md ${categoryColor[project.categoryTag] || "bg-white/10 text-white/70 border-white/10"}`}>
+                    <span className={`text-[10px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border backdrop-blur-md ${categoryColor[project.categoryTag] || "bg-white/10 text-white/70 border-white/10"}`}>
                       {project.categoryTag}
                     </span>
                   </div>
 
                   {/* Bottom content */}
-                  <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 z-10">
+                  <div className="absolute bottom-0 inset-x-0 p-5 z-10">
                     <div className="bg-white/[0.07] backdrop-blur-xl rounded-2xl p-5 border border-white/[0.08] transition-all duration-500 group-hover:bg-white/[0.12] group-hover:border-white/[0.15]">
-                      <h3 className="text-sm sm:text-lg font-bold text-white leading-snug mb-3 group-hover:text-white transition-colors">
+                      <h3 className="text-lg font-bold text-white leading-snug mb-3 group-hover:text-white transition-colors line-clamp-2">
                         {project.title}
                       </h3>
-                      <p className="text-[11px] sm:text-xs text-white/50 leading-relaxed mb-4 line-clamp-3">
+                      <p className="text-xs text-white/50 leading-relaxed mb-4 line-clamp-3">
                         {project.story}
                       </p>
 
@@ -208,7 +316,7 @@ export default function Portfolio() {
                       <div className="flex items-center justify-between gap-3">
                         <div className="min-w-0 flex-1">
                           <p className="text-[10px] font-medium text-white/30 truncate">{project.location} · {project.year}</p>
-                          <p className="text-[11px] text-white/90 font-bold mt-1">{project.evidence}</p>
+                          <p className="text-[11px] text-white/90 font-bold mt-1 truncate">{project.evidence}</p>
                         </div>
                         {/* Arrow button */}
                         <div className="w-10 h-10 rounded-full bg-white/[0.08] border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-utbex-maroon group-hover:border-utbex-maroon group-hover:scale-110 transition-all duration-300">
@@ -226,10 +334,8 @@ export default function Portfolio() {
               </motion.article>
             ))}
 
-
-
-            {/* Right buffer for desktop scrolling */}
-            <div className="hidden lg:block w-[10vw] flex-shrink-0" />
+            {/* Right buffer for scrolling */}
+            <div className="w-[10vw] flex-shrink-0" />
           </motion.div>
         </div>
       </div>

@@ -46,7 +46,21 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
     }
 
     return (
-        <div ref={entryRef} className="relative py-10 md:py-14 lg:py-16">
+        <div ref={entryRef} className="relative py-8 md:py-14 lg:py-16">
+            {/* Mobile: Vertical connecting line (left side) */}
+            <div className="lg:hidden absolute left-[18px] top-0 bottom-0 pointer-events-none" style={{ zIndex: 0 }}>
+                {/* Faint track line */}
+                <div className="absolute inset-0 w-[2px] bg-black/[0.08]" />
+                {/* Animated maroon fill */}
+                <motion.div 
+                    className="absolute top-0 left-0 w-[2px] bg-utbex-maroon origin-top"
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                />
+            </div>
+
             {/* Spiral Curved Line Background (Desktop only) */}
             <div className="hidden lg:block absolute inset-0 pointer-events-none" style={{ zIndex: -5 }}>
                 {/* Faint track */}
@@ -80,14 +94,14 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                 </motion.svg>
             </div>
             {/* Desktop: 2-col layout alternating sides */}
-            <div className={`flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
+            <div className={`flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 lg:gap-0 ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                 {/* Timeline node — centered on desktop via absolute positioning */}
                 <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-40">
                     <TimelineNode year={milestone.year} isInView={isInView} />
                 </div>
 
-                {/* Mobile: node inline */}
-                <div className="lg:hidden flex items-center gap-4 mb-4">
+                {/* Mobile: node inline with connecting line */}
+                <div className="lg:hidden flex items-center gap-4 mb-3 pl-1 relative z-10">
                     <TimelineNode year={milestone.year} isInView={isInView} />
                     <span className={`text-[10px] font-bold tracking-[0.18em] uppercase transition-colors duration-300 ${isInView ? 'text-utbex-maroon' : 'text-utbex-text-secondary/50'}`}>
                         {milestone.tag}
@@ -100,7 +114,7 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-60px" }}
-                    className={`w-full lg:w-[calc(50%-60px)] ${isEven ? 'lg:pr-10' : 'lg:pl-10'}`}
+                    className={`w-full pl-10 lg:pl-0 lg:w-[calc(50%-60px)] ${isEven ? 'lg:pr-10' : 'lg:pl-10'}`}
                 >
                     {/* Tag label - desktop only */}
                     <span className={`hidden lg:inline-block text-[10px] font-bold tracking-[0.18em] uppercase mb-3 transition-colors duration-300 ${isInView ? 'text-utbex-maroon' : 'text-utbex-text-secondary/50'}`}>
@@ -131,7 +145,7 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-60px" }}
-                        className={`w-full lg:w-[calc(50%-60px)] mt-2 lg:mt-0`}
+                        className={`w-full pl-10 lg:pl-0 lg:w-[calc(50%-60px)] mt-2 lg:mt-0`}
                     >
                         {/* Glass container */}
                         <div className="relative group">

@@ -77,8 +77,10 @@ const ICON_MAP: Record<string, React.ComponentType> = {
 const navLinks = [
   { label: "Beranda", href: "#hero" },
   { label: "Tentang Kami", href: "#about" },
-  { label: "Ekosistem Karya", href: "#portfolio" },
-  { label: "Dampak", href: "#impact" },
+  { label: "Keunggulan", href: "#keunggulan" },
+  { label: "Perjalanan & Prestasi", href: "#timeline" },
+  { label: "Lingkup Program", href: "#portfolio" },
+  { label: "Peluang Kemitraan", href: "#impact" },
 ];
 
 // ─── Animation variants ─────────────────────────────────────────
@@ -129,15 +131,15 @@ export function Footer() {
           {/* Ambient glow top-left */}
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/20 blur-[80px] rounded-full pointer-events-none opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-8 sm:p-12 lg:p-14">
+          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-6 sm:p-12 lg:p-14">
             {/* Left: copy */}
             <div className="max-w-xl">
               <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-white/50 mb-4">
                 — Pesan Inspirasi
               </span>
               <blockquote className="relative">
-                <div className="absolute -top-4 -left-4 text-5xl text-white/10 font-serif leading-none select-none">"</div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white leading-[1.25] tracking-tight mb-5 relative z-10">
+                <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 text-4xl sm:text-5xl text-white/10 font-serif leading-none select-none">"</div>
+                <h2 className="text-lg sm:text-2xl lg:text-3xl font-light text-white leading-[1.35] tracking-tight mb-5 relative z-10">
                   <span className="italic text-white/90">"Berpikirlah yang secara logika orang akan bilang tidak mungkin.</span>{" "}
                   <span className="font-black text-white">Kemudian pikirkan lagi, cari caranya hingga hal tersebut berubah menjadi mungkin."</span>
                 </h2>
@@ -155,8 +157,8 @@ export function Footer() {
               rel="noopener noreferrer"
               id="klik-whatsapp"
               aria-label="Mulai percakapan via WhatsApp"
-              className="group/btn relative flex-shrink-0 flex items-center gap-3
-                         px-8 py-5 rounded-[1.5rem]
+              className="group/btn relative flex-shrink-0 flex items-center justify-center gap-3
+                         w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 rounded-[1.5rem]
                          bg-white/15 backdrop-blur-md
                          border border-white/25
                          shadow-[inset_0_2px_4px_rgba(255,255,255,0.25),0_8px_24px_rgba(0,0,0,0.15)]
@@ -165,7 +167,7 @@ export function Footer() {
                          transition-all duration-500 hover:scale-[1.03] active:scale-[0.98]"
             >
               <WhatsAppIcon />
-              <span className="text-sm font-bold tracking-widest uppercase text-white drop-shadow-sm">
+              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-white drop-shadow-sm">
                 Mulai Percakapan
               </span>
               <span className="w-7 h-7 rounded-full bg-white/20 border border-white/30 flex items-center justify-center
@@ -251,7 +253,7 @@ export function Footer() {
 
             {/* Email — glass card */}
             <a
-              href="mailto:Utbexgrup.id!2026@gmail.com"
+              href="mailto:utbexindonesiagroup@gmail.com"
               id="klik-email"
               aria-label="Kirim email ke UTBEX"
               className="group/c flex items-start gap-3 p-4 rounded-2xl
@@ -268,7 +270,7 @@ export function Footer() {
                 <p className="text-[9px] font-bold uppercase tracking-widest text-utbex-dark/60 mb-1">Email</p>
                 <p className="text-[11px] xl:text-[12px] font-bold text-utbex-dark group-hover/c:text-utbex-maroon
                                transition-colors duration-300 leading-snug break-words">
-                  Utbexgrup.id!2026@gmail.com
+                  utbexindonesiagroup@gmail.com
                 </p>
               </div>
             </a>
