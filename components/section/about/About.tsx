@@ -198,10 +198,10 @@ export default function About() {
             </div>
 
             <div className="relative z-10 max-w-3xl">
-              <p className="text-xl sm:text-3xl lg:text-4xl font-semibold tracking-tight leading-[1.4] text-transparent bg-clip-text bg-gradient-to-br from-white via-white/95 to-white/70 mb-10">
-                UTBEX tidak hanya mengajari kami cara menjalankan bisnis.{" "}
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight leading-[1.5] text-transparent bg-clip-text bg-gradient-to-br from-white via-white/95 to-white/70 mb-10">
+                Sebuah ruang kreatif diciptakan untuk mereka yang ingin berkarya, sehingga mampu menumbuhkan{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10 text-white italic font-light drop-shadow-md pr-1">Mereka lebih dulu percaya</span>
+                  <span className="relative z-10 text-white italic font-light drop-shadow-md px-1">wirausahawan baru</span>
                   {/* Highlight marker (animated on hover) */}
                   <motion.span
                     className="absolute bottom-1 sm:bottom-2 left-0 right-0 h-3 sm:h-4 bg-white/20 -z-10 -rotate-2 rounded-sm"
@@ -213,7 +213,7 @@ export default function About() {
                   <span className="absolute bottom-1 sm:bottom-2 left-0 right-0 h-3 sm:h-4 bg-white/40 -z-10 -rotate-2 rounded-sm origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out block
                                    shadow-[0_0_12px_rgba(255,255,255,0.3)]" />
                 </span>
-                {" "}pada kami.
+                {" "}yang saling membantu untuk bertumbuh.
               </p>
 
               <footer className="flex items-center gap-5 relative">
@@ -231,10 +231,10 @@ export default function About() {
                 </div>
 
                 <div className="flex flex-col">
-                  <p className="text-base sm:text-lg font-bold text-white tracking-wide group-hover:translate-x-1 transition-transform duration-500 drop-shadow-sm">Mitra Komunitas</p>
+                  <p className="text-base sm:text-lg font-bold text-white tracking-wide group-hover:translate-x-1 transition-transform duration-500 drop-shadow-sm">DakoMagz #20</p>
                   <div className="flex items-center gap-2 mt-1 group-hover:translate-x-2 transition-transform duration-700 delay-75">
                     <div className="w-5 h-px bg-white/60" />
-                    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/80">Jawa Timur</p>
+                    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/80">Edisi Tokoh Inspiratif</p>
                   </div>
                 </div>
               </footer>

@@ -131,16 +131,20 @@ export function Footer() {
 
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-8 sm:p-12 lg:p-14">
             {/* Left: copy */}
-            <div className="max-w-lg">
+            <div className="max-w-xl">
               <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-white/50 mb-4">
-                — Kolaborasi Berikutnya
+                — Pesan Inspirasi
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.05] tracking-tight mb-4">
-                Mari bangun perubahan<br />
-                <span className="italic font-light text-white/80">berikutnya bersama kami.</span>
-              </h2>
-              <p className="text-sm sm:text-base text-white/60 leading-relaxed max-w-sm">
-                Dari desa, untuk Indonesia. Setiap kolaborasi dimulai dari satu percakapan.
+              <blockquote className="relative">
+                <div className="absolute -top-4 -left-4 text-5xl text-white/10 font-serif leading-none select-none">"</div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white leading-[1.25] tracking-tight mb-5 relative z-10">
+                  <span className="italic text-white/90">"Berpikirlah yang secara logika orang akan bilang tidak mungkin.</span>{" "}
+                  <span className="font-black text-white">Kemudian pikirkan lagi, cari caranya hingga hal tersebut berubah menjadi mungkin."</span>
+                </h2>
+              </blockquote>
+              <p className="text-sm sm:text-base text-white/70 font-semibold tracking-wide flex items-center gap-3">
+                <span className="w-6 h-px bg-utbex-maroon/50 shadow-[0_0_8px_rgba(255,255,255,0.5)]" /> 
+                Arik Dwi Asmara
               </p>
             </div>
 

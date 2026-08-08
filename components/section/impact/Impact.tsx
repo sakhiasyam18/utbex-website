@@ -47,7 +47,7 @@ const partners = [
   {
     id: "partner-5",
     num: "05",
-    title: "Lembaga Sosial & Komunitas",
+    title: "Lembaga Sosial & Komunitas Ekonomi Kreatif",
     desc: "Membangun jaringan dan ekosistem yang saling mendukung antar penggerak sosial untuk memperluas jangkauan kebermanfaatan.",
     color: "from-orange-500/10 to-transparent",
     glow: "group-hover:shadow-[0_20px_40px_rgba(249,115,22,0.15)] group-hover:border-orange-500/30",
@@ -56,7 +56,7 @@ const partners = [
   {
     id: "partner-6",
     num: "06",
-    title: "Organisasi Internasional",
+    title: "Organisasi Internasional Pemberdayaan",
     desc: "Mengadaptasi standar global dan membawa potensi desa ke kancah internasional melalui program kolaborasi lintas batas.",
     color: "from-teal-500/10 to-transparent",
     glow: "group-hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] group-hover:border-teal-500/30",
@@ -148,6 +148,39 @@ export default function Impact() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Bentuk Kolaborasi */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="mt-16 mb-24 max-w-4xl mx-auto relative z-10"
+        >
+          <div className="p-8 sm:p-10 rounded-[2.5rem] bg-white border border-black/[0.08] backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.06),inset_0_2px_4px_rgba(255,255,255,1)] relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-utbex-maroon/5 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
+            <motion.h3 variants={staggerChild} className="text-xl sm:text-2xl font-black text-utbex-dark mb-6 tracking-tight uppercase text-center sm:text-left">
+              Bentuk Kolaborasi Yang Ditawarkan
+            </motion.h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {[
+                "Program Inkubasi Pemuda Desa",
+                "Co-Branding Produk Lokal",
+                "CSR Pendidikan & Pelatihan Wirausaha",
+                "Program Desa Wisata Kreatif",
+                "Pendampingan UMKM Digital",
+                "Program Anti Stunting Berbasis Ekonomi Kreatif"
+              ].map((item, i) => (
+                <motion.div key={i} variants={staggerChild} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-utbex-maroon/10 text-utbex-maroon flex items-center justify-center shrink-0 mt-0.5">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <span className="text-sm sm:text-base font-semibold text-utbex-dark/80 leading-snug">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         {/* Story + Photo split - Light Theme */}

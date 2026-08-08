@@ -7,21 +7,33 @@ import { m as motion, useScroll, useTransform, useSpring, useMotionValueEvent } 
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
 import { portfolioData, CategoryTab } from "./data/portfolioData";
 
-const tabs: CategoryTab[] = ["Ekonomi Kreatif", "Pemberdayaan", "Sosial & Kemitraan"];
+const tabs: CategoryTab[] = ["Bidang Usaha & Produk", "Program Pemberdayaan", "Kolaborasi Sosial"];
 
 const categoryColor: Record<string, string> = {
-  "PRODUK LOKAL": "bg-amber-500/20 text-amber-300 border-amber-500/20",
-  "DIGITALISASI": "bg-blue-500/20 text-blue-300 border-blue-500/20",
+  // Bidang Usaha
+  "INOVASI": "bg-amber-500/20 text-amber-300 border-amber-500/20",
+  "PERCETAKAN": "bg-blue-500/20 text-blue-300 border-blue-500/20",
+  "MERCHANDISE": "bg-pink-500/20 text-pink-300 border-pink-500/20",
+  "FASHION": "bg-purple-500/20 text-purple-300 border-purple-500/20",
+  "DESAIN": "bg-teal-500/20 text-teal-300 border-teal-500/20",
+  // Pemberdayaan
+  "PELATIHAN": "bg-indigo-500/20 text-indigo-300 border-indigo-500/20",
   "INKUBASI": "bg-emerald-500/20 text-emerald-300 border-emerald-500/20",
   "PENDAMPINGAN": "bg-red-500/20 text-red-300 border-red-500/20",
-  "EDUKASI SOSIAL": "bg-cyan-500/20 text-cyan-300 border-cyan-500/20",
-  "KOLABORASI": "bg-purple-500/20 text-purple-300 border-purple-500/20",
+  "LEGALITAS": "bg-yellow-500/20 text-yellow-300 border-yellow-500/20",
+  "MARKETING": "bg-sky-500/20 text-sky-300 border-sky-500/20",
+  "DESA": "bg-green-500/20 text-green-300 border-green-500/20",
+  // Kolaborasi
+  "PENDIDIKAN": "bg-cyan-500/20 text-cyan-300 border-cyan-500/20",
+  "KEMANUSIAAN": "bg-rose-500/20 text-rose-300 border-rose-500/20",
+  "PARIWISATA": "bg-orange-500/20 text-orange-300 border-orange-500/20",
+  "KEMITRAAN": "bg-fuchsia-500/20 text-fuchsia-300 border-fuchsia-500/20",
 };
 
 export default function Portfolio() {
   const targetRef = useRef<HTMLDivElement>(null);
   const [isDesktop, setIsDesktop] = useState(true);
-  const [activeTab, setActiveTab] = useState<CategoryTab>("Ekonomi Kreatif");
+  const [activeTab, setActiveTab] = useState<CategoryTab>("Bidang Usaha & Produk");
 
   useEffect(() => {
     const checkScreen = () => setIsDesktop(window.innerWidth >= 1024);
@@ -38,7 +50,8 @@ export default function Portfolio() {
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 20, restDelta: 0.001 });
 
   // Transform scroll progress to x translation (only for desktop)
-  const x = useTransform(smoothProgress, [0, 1], ["0%", "-65%"]);
+  // With 15 items, we need a larger negative percentage to scroll to the very end
+  const x = useTransform(smoothProgress, [0, 1], ["0%", "-75%"]);
 
   // Mobile layout doesn't use the x transform
   const transformX = isDesktop ? x : "0%";
@@ -46,14 +59,14 @@ export default function Portfolio() {
   // Automatically update the active tab based on scroll progress
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (!isDesktop) return;
-    
+
     // Divide the track into 3 equal parts
     if (latest < 0.33) {
-      if (activeTab !== "Ekonomi Kreatif") setActiveTab("Ekonomi Kreatif");
+      if (activeTab !== "Bidang Usaha & Produk") setActiveTab("Bidang Usaha & Produk");
     } else if (latest < 0.66) {
-      if (activeTab !== "Pemberdayaan") setActiveTab("Pemberdayaan");
+      if (activeTab !== "Program Pemberdayaan") setActiveTab("Program Pemberdayaan");
     } else {
-      if (activeTab !== "Sosial & Kemitraan") setActiveTab("Sosial & Kemitraan");
+      if (activeTab !== "Kolaborasi Sosial") setActiveTab("Kolaborasi Sosial");
     }
   });
 
@@ -79,7 +92,7 @@ export default function Portfolio() {
     <section
       id="portfolio"
       ref={targetRef}
-      className="relative w-full bg-[#060006] text-white lg:h-[400vh]"
+      className="relative w-full bg-[#060006] text-white lg:h-[600vh]"
     >
       {/* Container: sticky on desktop, static on mobile */}
       <div className="lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col relative w-full h-auto py-24 lg:py-0 lg:pb-10">
