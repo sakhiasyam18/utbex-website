@@ -52,10 +52,18 @@ function MessageIcon() {
     </svg>
   );
 }
+function StarIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+    </svg>
+  );
+}
 
 const sectionIcons: Record<string, React.ReactNode> = {
   hero: <HomeIcon />,
   about: <InfoIcon />,
+  keunggulan: <StarIcon />,
   timeline: <TimelineIcon />,
   portfolio: <BriefcaseIcon />,
   impact: <TrendingUpIcon />,
@@ -98,7 +106,7 @@ export function Navigation() {
   const sidebarRef = useRef<HTMLElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  const isDark = activeSection === 'portfolio' || activeSection === 'impact';
+  const isDark = activeSection === 'portfolio';
 
   // Mouse spotlight tracker
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
@@ -158,29 +166,29 @@ export function Navigation() {
             <div className={`absolute top-0 inset-x-0 h-px ${isDark ? "bg-gradient-to-r from-transparent via-utbex-maroon/40 to-transparent" : "bg-gradient-to-r from-transparent via-utbex-maroon/20 to-transparent"}`} aria-hidden="true" />
 
             {/* ── Logo Block ────────────────────────────────────── */}
-            <div className={`relative z-10 px-6 pt-8 pb-6 border-b transition-colors duration-500 ${isDark ? "border-white/[0.04]" : "border-black/[0.06]"}`}>
-              <Link href="/" className="flex items-center gap-3 group mb-5">
-                <div className="relative w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0 shadow-[0_4px_16px_rgba(139,0,0,0.15)] group-hover:shadow-[0_4px_24px_rgba(139,0,0,0.3)] transition-shadow duration-500">
+            <div className={`relative z-10 px-6 pt-10 pb-8 border-b transition-colors duration-500 ${isDark ? "border-white/[0.04]" : "border-black/[0.06]"}`}>
+              <Link href="/" className="flex items-center gap-4 group mb-6">
+                <div className="relative w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 shadow-[0_4px_16px_rgba(139,0,0,0.15)] group-hover:shadow-[0_4px_24px_rgba(139,0,0,0.3)] transition-shadow duration-500">
                   {/* Neumorphism inner shadow */}
                   <div className="absolute inset-0 rounded-2xl shadow-[inset_0_2px_4px_rgba(255,255,255,0.1)] z-10 pointer-events-none" />
                   <Image
                     src="/images/logo-utbex-3.avif"
                     alt="UTBEX logo"
                     fill
-                    sizes="56px"
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="80px"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500 scale-[1.15]"
                   />
                 </div>
                 <div className="leading-tight">
-                  <p className={`font-black text-2xl tracking-tight leading-none transition-colors duration-500 ${isDark ? "text-white" : "text-utbex-dark"}`}>
+                  <p className={`font-black text-[1.75rem] tracking-tight leading-none transition-colors duration-500 ${isDark ? "text-white" : "text-utbex-dark"}`}>
                     UTBEX<span className="text-utbex-maroon">.</span>
                   </p>
-                  <p className={`text-[10px] font-bold tracking-widest uppercase mt-1 transition-colors duration-500 ${isDark ? "text-utbex-maroon/70" : "text-utbex-maroon/60"}`}>
+                  <p className={`text-xs font-bold tracking-[0.15em] uppercase mt-1.5 transition-colors duration-500 ${isDark ? "text-utbex-maroon/70" : "text-utbex-maroon/90"}`}>
                     Inovasi Indonesia
                   </p>
                 </div>
               </Link>
-              <p className={`text-[12px] font-medium leading-relaxed transition-colors duration-500 ${isDark ? "text-white/50" : "text-utbex-text-secondary"}`}>
+              <p className={`text-[13px] font-semibold leading-relaxed transition-colors duration-500 ${isDark ? "text-white/60" : "text-utbex-dark/80"}`}>
                 Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise.
               </p>
             </div>
@@ -216,11 +224,11 @@ export function Navigation() {
             </div>
 
             {/* ── Nav Links ─────────────────────────────────────── */}
-            <nav className="relative z-10 flex-1 px-4 py-6 overflow-y-auto" aria-label="Main navigation">
-              <p className={`text-[10px] font-bold tracking-[0.2em] uppercase px-3 mb-4 transition-colors duration-500 ${isDark ? "text-white/30" : "text-utbex-text-secondary/40"}`}>
+            <nav className="relative z-10 flex-1 px-4 py-8 overflow-y-auto flex flex-col" aria-label="Main navigation">
+              <p className={`text-[10px] font-bold tracking-[0.2em] uppercase px-3 mb-4 transition-colors duration-500 ${isDark ? "text-white/30" : "text-utbex-dark/40"}`}>
                 Navigasi
               </p>
-              <div className="space-y-1.5">
+              <div className="space-y-2.5 flex-1 flex flex-col">
                 {navigationLinks.map((link) => {
                   const isActive = activeSection === link.id;
                   return (
@@ -233,40 +241,24 @@ export function Navigation() {
                           const el = document.getElementById(link.id);
                           if (el) el.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className={`group flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-[11px] font-bold tracking-widest uppercase transition-all duration-300 border relative overflow-hidden
+                      className={`group flex items-center gap-4 px-5 py-4 rounded-2xl text-[12px] font-bold tracking-widest uppercase transition-all duration-300 border relative overflow-hidden
                         ${isActive
                           ? "bg-utbex-maroon text-white border-utbex-maroon shadow-[0_4px_20px_rgba(139,0,0,0.35)]"
                           : isDark
-                            ? "bg-white/[0.03] text-white/60 border-white/[0.04] hover:bg-white/[0.08] hover:text-white hover:border-utbex-maroon/30 hover:shadow-[0_0_16px_rgba(139,0,0,0.12)] hover:translate-x-1"
-                            : "bg-white/60 text-utbex-dark/70 border-black/[0.05] shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:bg-utbex-maroon hover:text-white hover:border-utbex-maroon hover:shadow-[0_4px_20px_rgba(139,0,0,0.3)] hover:translate-x-1"
+                            ? "bg-white/[0.03] text-white border-white/[0.04] hover:bg-white/[0.08] hover:border-utbex-maroon/30 hover:shadow-[0_0_16px_rgba(139,0,0,0.12)] hover:translate-x-1"
+                            : "bg-white/90 text-utbex-dark border-black/[0.08] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:bg-utbex-maroon hover:text-white hover:border-utbex-maroon hover:shadow-[0_4px_20px_rgba(139,0,0,0.3)] hover:translate-x-1"
                         }`}
                     >
-                      {/* Neon glow line on active */}
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeNavGlow"
-                          className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.6)]"
-                          transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-                        />
-                      )}
                       <span
                         className={`flex-shrink-0 transition-all duration-300 ${
                           isActive
                             ? "text-white"
-                            : isDark ? "text-white/30 group-hover:text-white" : "text-utbex-dark/40 group-hover:text-white"
+                            : isDark ? "text-white/50 group-hover:text-white" : "text-utbex-dark/50 group-hover:text-white"
                         }`}
                       >
                         {sectionIcons[link.id] ?? <HomeIcon />}
                       </span>
                       <span>{link.label}</span>
-                      {isActive && (
-                        <span className="ml-auto flex items-center gap-1.5">
-                          <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/60 opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
-                          </span>
-                        </span>
-                      )}
                     </Link>
                   );
                 })}
@@ -274,13 +266,13 @@ export function Navigation() {
             </nav>
 
             {/* ── Bottom CTA — Glassmorphism neon button ────────────── */}
-            <div className={`relative z-10 px-4 pb-7 pt-4 border-t transition-colors duration-500 ${isDark ? "border-white/[0.04]" : "border-black/[0.06]"}`}>
+            <div className={`relative z-10 px-4 pb-8 pt-6 border-t mt-auto transition-colors duration-500 ${isDark ? "border-white/[0.04]" : "border-black/[0.06]"}`}>
               <Link
                 href={navigationContent.cta.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center gap-2.5 w-full bg-utbex-maroon text-white
-                           py-4 px-4 rounded-2xl text-[11px] font-bold tracking-[0.15em] uppercase overflow-hidden
+                           py-5 px-4 rounded-2xl text-[12px] font-bold tracking-[0.15em] uppercase overflow-hidden
                            transition-all duration-500
                            shadow-[0_4px_20px_rgba(139,0,0,0.3)] hover:shadow-[0_8px_32px_rgba(139,0,0,0.5)]
                            hover:scale-[1.02] active:scale-[0.98]"
@@ -424,12 +416,6 @@ export function Navigation() {
                         {sectionIcons[link.id] ?? <HomeIcon />}
                       </span>
                       {link.label}
-                      {isActive && (
-                        <span className="ml-auto relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/60 opacity-75" />
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
-                        </span>
-                      )}
                     </Link>
                   );
                 })}

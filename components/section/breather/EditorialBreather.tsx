@@ -134,6 +134,46 @@ export function EditorialBreather() {
               </div>
             </div>
 
+            {/* Profil Pendiri Extended */}
+            <div className="mt-10 p-6 sm:p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+              <h4 className="text-sm font-bold tracking-[0.2em] text-utbex-maroon uppercase mb-4">Profil Pendiri</h4>
+              
+              <ul className="space-y-3 mb-6 text-sm sm:text-base text-white/80 font-medium">
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
+                  <span><strong className="text-white">Arik Dwi Asmara</strong> &mdash; CEO &amp; Founder UTBEX Indonesia Group</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
+                  <span>Founder BCN (Bantur Creative Network)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
+                  <span>Konsultan UMKM &amp; Wirausaha Muda Malang Raya</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
+                  <span>Guru Kewirausahaan SMP PGRI 01 Bantur</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
+                  <span>Mentor Mahasiswa FEB Universitas Brawijaya Malang</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
+                  <span>Founder SCoVIL (School of Creative Village Learning)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
+                  <span>Founder Peluex Creative Tourism, dan Banturono Rescue</span>
+                </li>
+              </ul>
+              
+              <p className="text-sm text-white/60 leading-relaxed font-medium">
+                Memiliki pengalaman panjang dalam pengembangan UMKM desa, pelatihan wirausaha muda, pendampingan sosial, serta aktif berkontribusi dalam berbagai program pemerintah daerah, kementerian, hingga CSR perusahaan.
+              </p>
+            </div>
+
           </div>
         </motion.div>
       </div>

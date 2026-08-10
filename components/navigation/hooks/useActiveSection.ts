@@ -1,74 +1,77 @@
 // components/navigation/hooks/useActiveSection.ts
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { navigationLinks } from "../data/navigationLinks";
 
 export function useActiveSection() {
-    const [activeSection, setActiveSection] = useState<string | null>(null);
+    const [activeSection, setActiveSectionState] = useState<string | null>(null);
+    const ignoreScrollRef = useRef(false);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    const setActiveSection = (id: string) => {
+        setActiveSectionState(id);
+        ignoreScrollRef.current = true;
+        
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+            ignoreScrollRef.current = false;
+        }, 1000);
+    };
 
     useEffect(() => {
-        const observers = new Map<string, IntersectionObserverEntry>();
+        let ticking = false;
 
-        const callback = (entries: IntersectionObserverEntry[]) => {
-            entries.forEach(entry => {
-                observers.set(entry.target.id, entry);
-            });
+        const updateActiveSection = () => {
+            if (ignoreScrollRef.current) {
+                ticking = false;
+                return;
+            }
 
-            let currentActive = null;
-            let maxVisibleRatio = 0;
+            let currentActive: string | null = null;
+            // The point on the screen that determines which section is "active".
+            // 30% from the top of the viewport works well for most layouts.
+            const triggerPoint = window.innerHeight * 0.3;
 
-            Array.from(observers.values()).forEach(entry => {
-                if (entry.isIntersecting && entry.intersectionRatio > maxVisibleRatio) {
-                    maxVisibleRatio = entry.intersectionRatio;
-                    currentActive = entry.target.id;
-                }
-            });
+            // Check if user is at the absolute bottom of the page
+            const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10;
+
+            if (isAtBottom) {
+                const lastLink = navigationLinks[navigationLinks.length - 1];
+                currentActive = lastLink.href.replace('#', '');
+            } else {
+                navigationLinks.forEach(link => {
+                    const id = link.href.replace('#', '');
+                    const element = document.getElementById(id);
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        // Check if the trigger point is inside this element's vertical bounds
+                        if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
+                            currentActive = id;
+                        }
+                    }
+                });
+            }
 
             if (currentActive) {
-                setActiveSection(currentActive);
+                setActiveSectionState(currentActive);
+            }
+            ticking = false;
+        };
+
+        const handleScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateActiveSection);
+                ticking = true;
             }
         };
 
-        const observer = new IntersectionObserver(callback, {
-            root: null,
-            rootMargin: "-20% 0px -40% 0px",
-            threshold: [0, 0.25, 0.5, 0.75, 1.0]
-        });
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        
+        // Initial check, wait a bit for DOM to settle
+        setTimeout(updateActiveSection, 100);
 
-        const observedIds = new Set<string>();
-
-        const observeElements = () => {
-            let allObserved = true;
-            navigationLinks.forEach(link => {
-                const id = link.href.replace('#', '');
-                if (!observedIds.has(id)) {
-                    const element = document.getElementById(id);
-                    if (element) {
-                        observer.observe(element);
-                        observedIds.add(id);
-                    } else {
-                        allObserved = false;
-                    }
-                }
-            });
-            return allObserved;
-        };
-
-        if (!observeElements()) {
-            const intervalId = setInterval(() => {
-                if (observeElements()) {
-                    clearInterval(intervalId);
-                }
-            }, 500);
-
-            return () => {
-                clearInterval(intervalId);
-                observer.disconnect();
-            };
-        }
-
-        return () => observer.disconnect();
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return { activeSection, setActiveSection };

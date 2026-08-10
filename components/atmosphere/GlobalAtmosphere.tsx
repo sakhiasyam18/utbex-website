@@ -1,6 +1,6 @@
 "use client";
 
-import {  m as motion, useReducedMotion  } from "framer-motion";
+import { m as motion, useReducedMotion } from "framer-motion";
 
 // components/atmosphere/GlobalAtmosphere.tsx
 //
@@ -12,15 +12,15 @@ import {  m as motion, useReducedMotion  } from "framer-motion";
 // It breathes. It flows. It is never recognizable as "a blur".
 //
 // Depth Layering:
-//   Canvas -> Ambient Gradient -> Light -> Noise -> Content
+//   Canvas -> Mega Mendung Pattern -> Ambient Gradient -> Light -> Noise -> Content
 
 export function GlobalAtmosphere() {
   return (
     <div
       aria-hidden="true"
-      className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#FDFCFB] to-[#FAF9F7] pointer-events-none"
+      className="absolute inset-0 -z-10 overflow-hidden bg-white pointer-events-none"
     >
-      {/* CSS Keyframes for ambient breathing */}
+      {/* CSS Keyframes for ambient breathing and clouds */}
       <style>{`
         @keyframes ambientBreathe {
           0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.6; }
@@ -31,13 +31,34 @@ export function GlobalAtmosphere() {
           0%, 100% { transform: translate(0, 0); }
           50% { transform: translate(3%, -2%); }
         }
+        @keyframes cloudFloat {
+          0% { background-position: 0px 0px; }
+          50% { background-position: 200px -100px; }
+          100% { background-position: 0px 0px; }
+        }
         .animate-ambient-breathe {
           animation: ambientBreathe 20s ease-in-out infinite;
         }
         .animate-ambient-drift {
           animation: ambientDrift 25s ease-in-out infinite;
         }
+        .animate-cloud-float {
+          animation: cloudFloat 45s ease-in-out infinite;
+        }
       `}</style>
+
+      {/* 1.5. MEGA MENDUNG CLOUD PATTERN */}
+      <div 
+        className="fixed -inset-[5%] pointer-events-none opacity-[0.04] animate-cloud-float"
+        style={{
+          backgroundImage: "url('/images/mega-mendung.jpg')",
+          backgroundSize: "1200px",
+          backgroundRepeat: "repeat",
+          willChange: "background-position",
+          zIndex: -5
+        }}
+        aria-hidden="true"
+      />
 
       {/* 2 & 3. AMBIENT GRADIENTS & LIGHT */}
       {/* HERO: Clean, soft, warm ivory. */}
