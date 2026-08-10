@@ -1,12 +1,6 @@
 "use client";
-// components/section/about/About.tsx — Refactored using Component Composition
+// components/section/about/About.tsx — Gen Z Glassmorphism / Neumorphism Redesign
 
-<<<<<<< HEAD
-import { AboutHeader } from "./components/AboutHeader";
-import { AboutVisionMission } from "./components/AboutVisionMission";
-import { AboutMilestones } from "./components/AboutMilestones";
-import { AboutQuote } from "./components/AboutQuote";
-=======
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "../../../motion/variants/stagger";
 
@@ -33,7 +27,6 @@ const misiItems = [
   "Menguatkan ekosistem kreatif desa pesisir",
   "Mendorong wirausaha mandiri & tangguh",
 ];
->>>>>>> eksperimen-gabungan
 
 export default function About() {
   return (
@@ -43,20 +36,12 @@ export default function About() {
       className="relative w-full overflow-hidden"
     >
       {/* ── Ambient Gradient Orbs ── */}
+      {/* These give the white canvas warmth and depth without being distracting */}
       <div className="about-orb about-orb-animate w-[500px] h-[500px] bg-utbex-maroon/[0.035] top-[5%] -left-[10%]" />
       <div className="about-orb about-orb-animate w-[400px] h-[400px] bg-rose-200/[0.18] top-[30%] right-[-8%]" style={{ animationDelay: "-7s" }} />
       <div className="about-orb about-orb-animate w-[350px] h-[350px] bg-orange-100/[0.15] bottom-[15%] left-[20%]" style={{ animationDelay: "-13s" }} />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-24 lg:py-32">
-<<<<<<< HEAD
-        <AboutHeader />
-        
-        <AboutVisionMission />
-        
-        <AboutMilestones />
-        
-        <AboutQuote />
-=======
 
         {/* ═══════════════════════════════════════════
             Section Intro — Neon label + Glass description
@@ -327,7 +312,6 @@ export default function About() {
             </div>
           </motion.blockquote>
         </div>
->>>>>>> eksperimen-gabungan
       </div>
     </section>
   );

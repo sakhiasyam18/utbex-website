@@ -1,15 +1,15 @@
 "use client";
 // components/section/footer/Footer.tsx
-// Redesigned with Component Composition for maximum readability and performance.
+// Gen Z Light Glassmorphism Footer — elegant, clean, all-age friendly
+// • Warm white canvas + frosted glass panels
+// • Neumorphic CTA button
+// • Soft neon maroon accents
+// • Fully responsive: mobile-first grid
 
-import { FooterClosing } from "./components/FooterClosing";
-import { FooterColumns } from "./components/FooterColumns";
-import { FooterMap } from "./components/FooterMap";
-import { FooterCopyright } from "./components/FooterCopyright";
-import { FooterWordmark } from "./components/FooterWordmark";
+import { m as motion } from "framer-motion";
+import Link from "next/link";
+import { footerSocial } from "./data/footerSocial";
 
-<<<<<<< HEAD
-=======
 // ─── SVG Icons ─────────────────────────────────────────────────
 const InstagramIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -94,7 +94,6 @@ const staggerCols = {
 };
 
 // ─── Component ─────────────────────────────────────────────────
->>>>>>> eksperimen-gabungan
 export function Footer() {
   return (
     <footer
@@ -103,15 +102,35 @@ export function Footer() {
       className="relative w-full overflow-hidden"
     >
       {/* ── Ambient background orbs ──────────────────────────── */}
-      <div className="absolute top-0 left-1/4 w-[700px] h-[400px] bg-utbex-maroon/[0.03] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-rose-200/[0.12] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4  w-[700px] h-[400px] bg-utbex-maroon/[0.03] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-rose-200/[0.12]   rounded-full blur-[100px] pointer-events-none" />
 
-      {/* ── CTA Top Band ─────────────────────────────────────── */}
-      <FooterClosing />
+      {/* ════════════════════════════════════════════════════════
+          TOP CLOSING BAND — frosted glass CTA card
+          ════════════════════════════════════════════════════════ */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 pt-20 pb-0">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="group relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden mb-16 lg:mb-20
+                     bg-gradient-to-br from-utbex-maroon to-[#5A0000]
+                     shadow-[0_20px_60px_rgba(139,0,0,0.22),inset_0_2px_4px_rgba(255,255,255,0.18)]
+                     hover:shadow-[0_28px_72px_rgba(139,0,0,0.32),inset_0_2px_4px_rgba(255,255,255,0.24)]
+                     transition-all duration-700 cursor-default"
+        >
+          {/* Inner glass overlay */}
+          <div className="absolute inset-0 bg-white/[0.03] backdrop-blur-[1px] pointer-events-none" />
+          {/* Skeuomorphic top bevel */}
+          <div className="absolute inset-0 border-[1.5px] border-white/10 rounded-[2rem] sm:rounded-[2.5rem] mix-blend-overlay pointer-events-none" />
+          {/* Top shine line */}
+          <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+          {/* Hover shimmer sweep */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/12 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-[1200ms] ease-in-out pointer-events-none" />
+          {/* Ambient glow top-left */}
+          <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/20 blur-[80px] rounded-full pointer-events-none opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
 
-<<<<<<< HEAD
-      {/* ── Main Information & Navigation ────────────────────── */}
-=======
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-6 sm:p-12 lg:p-14">
             {/* Left: copy */}
             <div className="max-w-xl">
@@ -163,19 +182,10 @@ export function Footer() {
       {/* ════════════════════════════════════════════════════════
           MAIN FOOTER INFO — glass columns
           ════════════════════════════════════════════════════════ */}
->>>>>>> eksperimen-gabungan
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10">
+
+        {/* Divider glass strip */}
         <div className="h-px bg-gradient-to-r from-transparent via-black/[0.08] to-transparent mb-14" />
-<<<<<<< HEAD
-        
-        <FooterColumns />
-        
-        <FooterMap />
-        
-        <div className="h-px bg-gradient-to-r from-transparent via-black/[0.07] to-transparent" />
-        
-        <FooterCopyright />
-=======
 
         {/* Columns */}
         <motion.div
@@ -458,11 +468,42 @@ export function Footer() {
             AHU-0100239.AH.01.01.TAHUN 2025
           </p>
         </div>
->>>>>>> eksperimen-gabungan
       </div>
 
-      {/* ── Final Wordmark ───────────────────────────────────── */}
-      <FooterWordmark />
+      {/* ════════════════════════════════════════════════════════
+          UTBEX Wordmark — batik gradient watermark
+          ════════════════════════════════════════════════════════ */}
+      <div className="relative w-full overflow-hidden select-none mt-1" aria-hidden="true">
+        <style>{`
+          .utbex-wordmark {
+            font-size: clamp(72px, 17vw, 260px);
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            font-family: 'Arial Black', 'Impact', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            width: 100%;
+            display: block;
+            background: linear-gradient(
+              135deg,
+              #3d0000 0%,
+              #8B0000 30%,
+              #C0392B 55%,
+              #8B0000 75%,
+              #4a0000 100%
+            ),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cellipse cx='15' cy='15' rx='8' ry='5' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='0.8'/%3E%3Cellipse cx='15' cy='15' rx='5' ry='8' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='0.8'/%3E%3Cellipse cx='45' cy='15' rx='8' ry='5' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='0.8'/%3E%3Cellipse cx='45' cy='15' rx='5' ry='8' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='0.8'/%3E%3Cellipse cx='15' cy='45' rx='8' ry='5' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='0.8'/%3E%3Cellipse cx='15' cy='45' rx='5' ry='8' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='0.8'/%3E%3Cellipse cx='45' cy='45' rx='8' ry='5' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='0.8'/%3E%3Cellipse cx='45' cy='45' rx='5' ry='8' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='0.8'/%3E%3Ccircle cx='30' cy='30' r='4' fill='none' stroke='rgba(255,255,255,0.16)' stroke-width='0.8'/%3E%3Ccircle cx='30' cy='30' r='2' fill='rgba(255,255,255,0.09)'/%3E%3Cline x1='0' y1='0' x2='60' y2='60' stroke='rgba(255,255,255,0.07)' stroke-width='0.6'/%3E%3Cline x1='60' y1='0' x2='0' y2='60' stroke='rgba(255,255,255,0.07)' stroke-width='0.6'/%3E%3C/svg%3E");
+            background-blend-mode: normal, overlay;
+            background-size: 100% 100%, 60px 60px;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            opacity: 0.9;
+          }
+        `}</style>
+        <span className="utbex-wordmark">UTBEX</span>
+      </div>
     </footer>
   );
 }

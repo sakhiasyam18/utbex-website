@@ -1,12 +1,22 @@
 "use client";
-// Hero.tsx — Refactored using Component Composition
+// Hero.tsx — 3-column strict zone layout
+// COL 1 (left)  : Label + Headline + Buttons ONLY
+// COL 2 (center): Photo + UTBEX bg (self-contained, no bleed)
+// COL 3 (right) : Description quote + Arik profile
+// UTBEX is clipped inside center col via overflow-hidden wrapper
 
+import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
-import { useScroll, useTransform } from "framer-motion";
-import { HeroTopBar } from "./components/HeroTopBar";
-import { HeroDesktopContent } from "./components/HeroDesktopContent";
-import { HeroMobileContent } from "./components/HeroMobileContent";
-import { HeroStatsBar } from "./components/HeroStatsBar";
+import { m as motion, useScroll, useTransform } from "framer-motion";
+
+const stats = [
+  { value: "2016", label: "Pionir Kaos Lukis Tanpa Tinta Pertama" },
+  { value: "2019", label: "Juara I Penemu Ide Kreatif Malaysia" },
+  { value: "2022", label: "Merchandise Resmi MotoGP Mandalika" },
+];
+
+const tags = ["Inovatif", "Berdampak", "Kolaboratif", "Berkelanjutan", "Lokal"];
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -15,7 +25,7 @@ export default function Hero() {
     offset: ["start start", "60% start"],
   });
 
-  // GPU-composited motion values
+  // GPU-composited — tidak menyentuh main thread
   const blur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(14px)"]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.25]);
@@ -28,15 +38,38 @@ export default function Hero() {
       style={{ minHeight: "100svh" }}
       aria-label="Beranda UTBEX Indonesia"
     >
-      <HeroTopBar />
-      
-      <HeroDesktopContent blur={blur} scale={scale} opacity={opacity} />
-      
-      <HeroMobileContent blur={blur} scale={scale} opacity={opacity} />
+      {/* ── Top bar ─────────────────────────────────────────── */}
+      <div
+        className="flex flex-wrap items-center justify-between gap-3 px-10 pt-8 lg:pt-10
+                   animate-fade-up opacity-0"
+        style={{ animationDelay: "60ms", animationFillMode: "forwards" }}
+      >
+        <div className="relative group cursor-default">
+          {/* Subtle glow behind the badge */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-utbex-maroon to-red-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+          {/* The badge itself */}
+          <span className="relative inline-flex items-center gap-2.5 py-2 px-5 rounded-full bg-white/90 backdrop-blur-md text-utbex-dark text-xs font-black tracking-[0.15em] border border-black/5 shadow-sm uppercase">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-utbex-maroon opacity-60"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-utbex-maroon"></span>
+            </span>
+            PT. UTBEX INOVASI INDONESIA
+          </span>
+        </div>
+        <div className="hidden md:flex flex-wrap items-center gap-3 mt-1">
+          {tags.map((t, i) => (
+            <span key={t} className="flex items-center gap-3">
+              <span className="text-[10px] font-bold text-utbex-dark uppercase tracking-[0.2em] opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-default">
+                {t}
+              </span>
+              {i < tags.length - 1 && (
+                <span className="text-black/20 text-[10px] select-none">/</span>
+              )}
+            </span>
+          ))}
+        </div>
+      </div>
 
-<<<<<<< HEAD
-      <HeroStatsBar />
-=======
       {/* ── 3-Column Main Area ──────────────────────────────── */}
       <div
         className="flex-1 hidden lg:grid"
@@ -373,7 +406,6 @@ export default function Hero() {
           </div>
         ))}
       </div>
->>>>>>> eksperimen-gabungan
     </section>
   );
 }
