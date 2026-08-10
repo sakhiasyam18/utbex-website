@@ -145,7 +145,7 @@ export function Footer() {
                 </h2>
               </blockquote>
               <p className="text-sm sm:text-base text-white/70 font-semibold tracking-wide flex items-center gap-3">
-                <span className="w-6 h-px bg-utbex-maroon/50 shadow-[0_0_8px_rgba(255,255,255,0.5)]" /> 
+                <span className="w-6 h-px bg-utbex-maroon/50 shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                 Arik Dwi Asmara
               </p>
             </div>
@@ -209,7 +209,7 @@ export function Footer() {
             </div>
 
             <p className="text-sm text-utbex-dark/90 leading-relaxed max-w-[24ch]">
-              Unusually Think Become Extraordinary — Pusat Pengembangan Ekonomi Kreatif Desa &amp; Social Enterprise.
+              PT. UTBEX INOVASI INDONESIA — Pusat Pengembangan Ekonomi Kreatif Desa &amp; Social Enterprise.
             </p>
 
             {/* Glass location pill */}
@@ -465,7 +465,7 @@ export function Footer() {
             © 2026 UTBEX Indonesia. Hak cipta dilindungi undang-undang.
           </p>
           <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-utbex-dark/50">
-            Unusually Think Become Extraordinary
+            AHU-0100239.AH.01.01.TAHUN 2025
           </p>
         </div>
       </div>

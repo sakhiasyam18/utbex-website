@@ -34,6 +34,15 @@ export const timelineMilestones: TimelineMilestone[] = [
         ],
     },
     {
+        id: 'tl-3b',
+        year: '2021',
+        tag: 'TRANSFORMASI',
+        title: 'Transformasi Menjadi Social Enterprise',
+        story: 'Hari ini, UTBEX resmi bertransformasi menjadi Social Enterprise berbasis desa yang memadukan usaha bisnis kreatif dengan gerakan pemberdayaan pemuda.',
+        image: '/images/postiingan-utbex-news-wajah-baru-semangat-baru-logo-utbex-lahir.avif',
+        imageAlt: 'Transformasi UTBEX',
+    },
+    {
         id: 'tl-4',
         year: '2022',
         tag: 'KOLABORASI GLOBAL',
@@ -74,6 +83,15 @@ export const timelineMilestones: TimelineMilestone[] = [
         evidence: [
             { label: 'Lihat Piagam', href: '/images/piagam-penghargaan-utbex-sebagai-media-pemerdaya-generasi-nusantara-terinovatif-utbex.avif', type: 'certificate' },
         ],
+    },
+    {
+        id: 'tl-7b',
+        year: '2023',
+        tag: 'KOLABORASI',
+        title: 'Jaringan Kolaborasi Lintas Sektor',
+        story: 'Bekerja sama dengan berbagai pihak, termasuk BCN (Bantur Creative Network), pemerintah daerah, lembaga pendidikan, organisasi sosial, dan komunitas UMKM.',
+        image: '/images/postingan-news-kolase-utbex-penyerahan-dengan-pemerintahan.avif',
+        imageAlt: 'Kolaborasi Lintas Sektor',
     },
     {
         id: 'tl-8',

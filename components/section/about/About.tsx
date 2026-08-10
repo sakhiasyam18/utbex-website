@@ -64,10 +64,24 @@ export default function About() {
           <motion.div variants={staggerChild} className="max-w-4xl">
             <div className="about-glass rounded-2xl sm:rounded-3xl p-6 sm:p-10 space-y-6">
               <p className="text-base sm:text-lg text-utbex-dark leading-relaxed font-medium">
-                UTBEX Indonesia adalah lembaga <em className="text-utbex-dark not-italic font-bold">social enterprise</em> berbasis desa yang mengusung filosofi &ldquo;Unusually Think Become Extraordinary&rdquo; &mdash; berpikir kreatif, melahirkan dampak nyata. Sejak berdiri 2014, UTBEX terus mendorong pemuda desa untuk bangkit, berkarya, dan berwirausaha melalui ekosistem ekonomi kreatif, dengan fokus pengembangan fashion, kriya, UMKM kuliner, pariwisata pesisir, dan edukasi kewirausahaan.
+                UTBEX Indonesia lahir dari sebuah keyakinan: <em className="text-utbex-maroon font-bold">&ldquo;Setiap ide, sekecil apapun, dapat menjadi kekuatan besar jika dipikirkan secara berbeda dan dieksekusi secara nyata.&rdquo;</em>
               </p>
+              
+              <div className="pl-4 sm:pl-6 border-l-2 border-utbex-maroon/30 space-y-3 py-2 my-6">
+                <p className="text-base sm:text-lg text-utbex-dark leading-relaxed">
+                  <strong className="text-utbex-dark">Unusually Think:</strong> Cara berpikir berbeda, berani keluar dari kebiasaan.
+                </p>
+                <p className="text-base sm:text-lg text-utbex-dark leading-relaxed">
+                  <strong className="text-utbex-dark">Become Extraordinary:</strong> Dari ide-ide sederhana menjadi karya yang luar biasa dan berdampak.
+                </p>
+              </div>
+
               <p className="text-base sm:text-lg text-utbex-dark leading-relaxed font-medium">
-                <span className="font-bold text-utbex-maroon">Genap 1 Dekade</span> Kini UTBEX bertransformasi menjadi Creative Hub Pesisir, menggandeng berbagai sektor untuk membangun generasi kreatif desa yang berkelanjutan.
+                UTBEX percaya bahwa kreativitas bukan hanya milik kota besar, tetapi milik siapa pun, termasuk pemuda desa. Sejak berdiri pada 2014, <strong className="text-utbex-dark">dari desa kami memulai, dan dari keterbatasan kami bertumbuh</strong> &mdash; memadukan usaha bisnis kreatif (fashion, kriya, kuliner, dan pariwisata) dengan gerakan pemberdayaan pemuda.
+              </p>
+
+              <p className="text-base sm:text-lg text-utbex-dark leading-relaxed font-medium">
+                <span className="font-bold text-utbex-maroon">Genap 1 Dekade.</span> Kini UTBEX bertransformasi menjadi Creative Hub Pesisir, menggandeng berbagai sektor untuk membangun generasi kreatif desa yang berkelanjutan.
               </p>
             </div>
           </motion.div>
@@ -155,6 +169,63 @@ export default function About() {
             {/* Shimmer sweep on hover */}
             <div className="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent opacity-0 group-hover:opacity-100 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
+            </div>
+          </motion.div>
+        </motion.div>
+
+
+        {/* ═══════════════════════════════════════════
+            Visi Besar Jangka Panjang
+            ═══════════════════════════════════════════ */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-24 lg:mb-32 grid md:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center"
+        >
+          {/* Left: Image (Dream Board aesthetic) */}
+          <motion.div variants={staggerChild} className="relative aspect-[4/3] sm:aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] group">
+            {/* Menggunakan generic image foto tim atau kegiatan */}
+            <div className="absolute inset-0 bg-gray-200" />
+            <img src="/images/foto-bersama-arik-dwi-asmara-utbex-dengan-pemerintah.avif" alt="UTBEX Dream Board" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-utbex-maroon/10 mix-blend-multiply pointer-events-none" />
+            {/* Overlay Gradient for premium feel */}
+            <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)] rounded-3xl pointer-events-none" />
+          </motion.div>
+
+          {/* Right: Text Content */}
+          <motion.div variants={staggerChild} className="flex flex-col gap-6">
+            <h3 className="text-3xl sm:text-4xl font-black text-utbex-dark tracking-tight">
+              Visi Besar Jangka Panjang
+            </h3>
+            
+            <ul className="space-y-4">
+              {[
+                "Membangun Creative Hub Pesisir Selatan Malang",
+                "Menjadi pusat pelatihan ekonomi kreatif desa tingkat regional",
+                "Mengembangkan desa binaan menjadi Desa Mandiri Ekonomi Kreatif",
+                "Melahirkan 1000 wirausaha muda desa di wilayah pesisir Malang Selatan",
+                "Menjadi bagian dari kontribusi menuju Indonesia Emas 2045"
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 group/li">
+                  <div className="w-6 h-6 rounded-full bg-utbex-maroon/10 flex items-center justify-center shrink-0 mt-0.5 group-hover/li:bg-utbex-maroon/20 transition-colors">
+                    <div className="w-2 h-2 rounded-full bg-utbex-maroon" />
+                  </div>
+                  <span className="text-[15px] sm:text-base text-utbex-dark/80 font-semibold leading-relaxed group-hover/li:text-utbex-dark transition-colors">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-4 p-5 sm:p-6 rounded-2xl bg-utbex-maroon/[0.03] border border-utbex-maroon/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 text-8xl text-utbex-maroon/5 font-serif leading-none -mt-4 mr-2 pointer-events-none">
+                &ldquo;
+              </div>
+              <p className="relative z-10 text-sm sm:text-base text-utbex-text-secondary leading-relaxed font-medium italic">
+                Setiap perjalanan memiliki <strong className="text-utbex-dark">tantangan</strong>. Di UTBEX, kami menghadapi berbagai rintangan, mulai dari <strong className="text-utbex-dark">pendanaan</strong> hingga <strong className="text-utbex-dark">penerimaan masyarakat</strong>. Namun, setiap tantangan adalah kesempatan untuk belajar dan <strong className="text-utbex-dark">beradaptasi</strong>, memperkuat komitmen kami.
+              </p>
             </div>
           </motion.div>
         </motion.div>
