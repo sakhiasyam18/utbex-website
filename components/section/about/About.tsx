@@ -185,10 +185,8 @@ export default function About() {
           className="mb-24 lg:mb-32 grid md:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center"
         >
           {/* Left: Image (Dream Board aesthetic) */}
-          <motion.div variants={staggerChild} className="relative aspect-[4/3] sm:aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] group">
-            {/* Menggunakan generic image foto tim atau kegiatan */}
-            <div className="absolute inset-0 bg-gray-200" />
-            <img src="/images/foto-bersama-arik-dwi-asmara-utbex-dengan-pemerintah.avif" alt="UTBEX Dream Board" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <motion.div variants={staggerChild} className="relative aspect-[4/3] sm:aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] group bg-gray-100">
+            <img src="/images/visi-panjang-utbex.avif" alt="UTBEX Dream Board" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-utbex-maroon/10 mix-blend-multiply pointer-events-none" />
             {/* Overlay Gradient for premium feel */}
             <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)] rounded-3xl pointer-events-none" />
