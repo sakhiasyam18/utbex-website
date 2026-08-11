@@ -1,32 +1,33 @@
-// src/sections/impact/components/ImpactHeader.tsx
+// components/section/impact/components/ImpactHeader.tsx
+import { m as motion } from "framer-motion";
+import { staggerContainer, staggerChild } from "@/motion/variants/stagger";
 
-"use client";
-
-import {  m as motion  } from "framer-motion";
-import { impactContent } from '../data/impactContent';
-import { fadeInUp } from '../motion/impactMotion';
-
-export function ImpactHeader() {
-    return (
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end mb-16"
-        >
-            <motion.h2
-                variants={fadeInUp}
-                className="text-3xl md:text-4xl lg:text-5xl font-semibold text-utbex-dark leading-[1.15] tracking-tight text-balance"
-            >
-                {impactContent.headline}
-            </motion.h2>
-
-            <motion.p
-                variants={fadeInUp}
-                className="text-lg text-utbex-text-secondary leading-relaxed text-balance lg:pb-2"
-            >
-                {impactContent.story}
-            </motion.p>
-        </motion.div>
-    );
-}
+export const ImpactHeader = () => (
+  <motion.header
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-100px" }}
+    className="mb-16 lg:mb-24 max-w-4xl mx-auto text-center"
+  >
+    {/* Label */}
+    <motion.div variants={staggerChild} className="text-mask flex justify-center">
+      <span className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white border border-black/5 backdrop-blur-md mb-6 shadow-sm">
+        <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon animate-pulse" />
+        <span className="text-[10px] font-bold tracking-[0.2em] text-utbex-maroon uppercase">
+          Peluang Kemitraan
+        </span>
+      </span>
+    </motion.div>
+    
+    {/* Main Headline (SEO optimized with H2) */}
+    <motion.div variants={staggerChild} className="text-mask">
+      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.92] tracking-tighter text-utbex-dark">
+        OPEN KERJASAMA{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-utbex-maroon via-red-600 to-utbex-maroon italic">
+          &amp; KOLABORASI
+        </span>
+      </h2>
+    </motion.div>
+  </motion.header>
+);
