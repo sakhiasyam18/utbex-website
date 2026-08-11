@@ -1,5 +1,5 @@
 import { m as motion } from "framer-motion";
-import { staggerContainer, staggerChild } from "../../../../motion/variants/stagger";
+import { staggerContainer, staggerChild } from "@/motion/variants/stagger";
 import { misiItems } from "../data/aboutData";
 
 export function AboutVisionMission() {
@@ -11,6 +11,7 @@ export function AboutVisionMission() {
       viewport={{ once: true, margin: "-100px" }}
       className="mb-24 lg:mb-32 grid md:grid-cols-2 gap-6 lg:gap-16 items-stretch"
     >
+      {/* ── Visi — Neumorphic Raised Glass ── */}
       <motion.div
         variants={staggerChild}
         className="group relative rounded-[2rem] p-8 sm:p-12 h-full flex flex-col
@@ -18,8 +19,10 @@ export function AboutVisionMission() {
                    border border-white/60
                    transition-all duration-500 hover:-translate-y-1"
       >
+        {/* Skeuomorphic top-edge highlight */}
         <div className="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent pointer-events-none" />
 
+        {/* Icon — neumorphic inset circle */}
         <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8
                         bg-utbex-maroon/[0.08]
                         shadow-[inset_3px_3px_8px_rgba(139,0,0,0.08),inset_-2px_-2px_6px_rgba(255,255,255,0.9)]
@@ -35,11 +38,13 @@ export function AboutVisionMission() {
           &quot;Menjadi pusat pengembangan ekonomi kreatif berbasis pemuda desa yang berdampak nasional dan global, mendorong Indonesia Emas 2045.&quot;
         </p>
 
+        {/* Subtle shimmer on hover */}
         <div className="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
         </div>
       </motion.div>
 
+      {/* ── Misi — Glassmorphic Dark ── */}
       <motion.div
         variants={staggerChild}
         className="group relative rounded-[2rem] p-8 sm:p-12 text-white h-full flex flex-col overflow-hidden
@@ -49,13 +54,15 @@ export function AboutVisionMission() {
                    hover:shadow-[0_20px_60px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.12),0_0_40px_rgba(139,0,0,0.08)]
                    transition-all duration-500 hover:-translate-y-1"
       >
+        {/* Glass inner border (skeuomorphic) */}
         <div className="absolute inset-0 rounded-[2rem] border border-white/[0.05] pointer-events-none" />
+        {/* Top-edge glass shine */}
         <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
-
         <h3 className="text-3xl font-black mb-8 text-white tracking-tight">Misi Utama</h3>
         <ul className="space-y-6 flex-1">
           {misiItems.map((misi, i) => (
             <li key={i} className="group/item flex gap-4 items-start">
+              {/* Neon numbered circle */}
               <span className="w-8 h-8 shrink-0 rounded-full flex items-center justify-center text-xs font-bold mt-0.5
                                bg-utbex-maroon/20 border border-utbex-maroon/30 text-white/90
                                shadow-[0_0_10px_rgba(139,0,0,0.25),0_0_3px_rgba(139,0,0,0.4)]
@@ -73,6 +80,7 @@ export function AboutVisionMission() {
           ))}
         </ul>
 
+        {/* Shimmer sweep on hover */}
         <div className="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent opacity-0 group-hover:opacity-100 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
         </div>
