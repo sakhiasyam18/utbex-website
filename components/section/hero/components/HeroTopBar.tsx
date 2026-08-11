@@ -1,5 +1,5 @@
 // components/section/hero/components/HeroTopBar.tsx
-const tags = ["Inovatif", "Berdampak", "Kolaboratif", "Berkelanjutan", "Lokal"];
+import { heroTagsData as tags } from "../data/heroData";
 
 export function HeroTopBar() {
   return (

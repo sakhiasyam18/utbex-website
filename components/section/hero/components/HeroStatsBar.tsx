@@ -1,14 +1,10 @@
 // components/section/hero/components/HeroStatsBar.tsx
-const stats = [
-  { value: "2016", label: "Pionir Kaos Lukis Tanpa Tinta Pertama" },
-  { value: "2019", label: "Juara I Penemu Ide Kreatif Malaysia" },
-  { value: "2022", label: "Merchandise Resmi MotoGP Mandalika" },
-];
+import { heroStatsData as stats } from "../data/heroData";
 
 export function HeroStatsBar() {
   return (
     <div
-      className="grid grid-cols-3 border-t border-black/[0.07] px-4 sm:px-10 bg-utbex-canvas/90 backdrop-blur-sm animate-fade-up opacity-0"
+      className="grid grid-cols-3 border-t border-black/[0.07] px-4 sm:px-10 bg-white/80 backdrop-blur-sm animate-fade-up opacity-0"
       style={{
         animationDelay: "300ms",
         animationFillMode: "forwards",

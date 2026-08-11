@@ -9,7 +9,14 @@ export function HeroMobileContent({ blur, scale, opacity }: HeroMotionProps) {
     <div className="flex-1 relative lg:hidden overflow-hidden" style={{ minHeight: "90svh" }}>
       <motion.div
         className="absolute inset-0 will-change-transform"
-        style={{ filter: blur, scale, opacity, transformOrigin: "center bottom" }}
+        style={{ 
+          filter: blur, 
+          scale, 
+          opacity, 
+          transformOrigin: "center bottom",
+          WebkitMaskImage: "linear-gradient(to top, transparent 0%, transparent 20%, black 50%)",
+          maskImage: "linear-gradient(to top, transparent 0%, transparent 20%, black 50%)"
+        }}
       >
         <Image
           src="/images/arik.webp"

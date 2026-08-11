@@ -96,7 +96,15 @@ export function HeroDesktopContent({ blur, scale, opacity }: HeroMotionProps) {
 
         <motion.div
           className="absolute inset-0 flex justify-center pointer-events-none select-none will-change-transform"
-          style={{ filter: blur, scale, opacity, zIndex: 10, transformOrigin: "center bottom" }}
+          style={{ 
+            filter: blur, 
+            scale, 
+            opacity, 
+            zIndex: 10, 
+            transformOrigin: "center bottom",
+            WebkitMaskImage: "linear-gradient(to top, transparent 0px, transparent 40px, black 220px)",
+            maskImage: "linear-gradient(to top, transparent 0px, transparent 40px, black 220px)"
+          }}
         >
           <Image
             src="/images/arik.webp"
