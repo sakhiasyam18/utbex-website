@@ -1,13 +1,14 @@
 // components/section/timeline/components/TimelineEntry.tsx
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { m as motion, useInView, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { TimelineMilestone } from "../types/timeline";
 import { entryReveal, imageReveal } from "../motion/timelineMotion";
 import TimelineNode from "./TimelineNode";
 import TimelineEvidence from "./TimelineEvidence";
+import { Lightbox } from "@/components/ui/Lightbox";
 
 interface TimelineEntryProps {
     milestone: TimelineMilestone;
@@ -19,6 +20,7 @@ interface TimelineEntryProps {
 export default function TimelineEntry({ milestone, index, isEven, isLast = false }: TimelineEntryProps) {
     const entryRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
+    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
     const isInView = useInView(entryRef, { once: false, margin: "-30% 0px -30% 0px" });
 
     // Parallax on images
@@ -148,12 +150,15 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                         className={`w-full pl-10 lg:pl-0 lg:w-[calc(50%-60px)] mt-2 lg:mt-0`}
                     >
                         {/* Glass container */}
-                        <div className="relative group">
+                        <div 
+                            className="relative group cursor-pointer"
+                            onClick={() => setIsLightboxOpen(true)}
+                        >
                             {/* Glassmorphism outer frame */}
                             <div className="absolute -inset-2 sm:-inset-3 rounded-[1.25rem] bg-white/40 backdrop-blur-sm border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.06)] -z-10 transition-all duration-500 group-hover:shadow-[0_16px_48px_rgba(139,0,0,0.08)] group-hover:border-utbex-maroon/10" />
                             
                             {/* Image */}
-                            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                            <div className="relative aspect-square rounded-2xl overflow-hidden">
                                 <motion.div
                                     className="absolute inset-0"
                                     style={{ y: imageY }}
@@ -183,6 +188,16 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                     </motion.div>
                 )}
             </div>
+
+            {milestone.image && (
+                <Lightbox
+                    isOpen={isLightboxOpen}
+                    src={milestone.image}
+                    alt={milestone.imageAlt || milestone.title}
+                    caption={milestone.title}
+                    onClose={() => setIsLightboxOpen(false)}
+                />
+            )}
         </div>
     );
 }

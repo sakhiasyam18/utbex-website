@@ -75,7 +75,7 @@ export default function Impact() {
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         {/* Soft light noise texture */}
         <div className="absolute inset-0 opacity-[0.4] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMC4yIi8+PC9zdmc+')]" />
-        
+
         {/* Soft pastel orbs */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-utbex-maroon/[0.03] rounded-full blur-[100px]" />
         <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-blue-500/[0.02] rounded-full blur-[120px]" />
@@ -129,10 +129,10 @@ export default function Impact() {
             >
               {/* Colored subtle gradient background per stat */}
               <div className={`absolute inset-0 bg-gradient-to-b ${partner.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-              
+
               {/* Top edge highlight */}
               <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <div className="relative z-10 flex flex-col h-full text-left gap-3">
                 <div className="mb-2">
                   <span className="text-[10px] font-black text-black/20 tracking-[0.2em] group-hover:text-utbex-maroon/40 transition-colors duration-500">
@@ -174,7 +174,7 @@ export default function Impact() {
               ].map((item, i) => (
                 <motion.div key={i} variants={staggerChild} className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-utbex-maroon/10 text-utbex-maroon flex items-center justify-center shrink-0 mt-0.5">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                   </div>
                   <span className="text-sm sm:text-base font-semibold text-utbex-dark/80 leading-snug">{item}</span>
                 </motion.div>
@@ -201,8 +201,8 @@ export default function Impact() {
             </motion.p>
 
             {/* Testimonial - Light Frosted Glass */}
-            <motion.blockquote 
-              variants={staggerChild} 
+            <motion.blockquote
+              variants={staggerChild}
               className="relative p-7 sm:p-10 rounded-[2.5rem] bg-white border border-black/[0.08] backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.06),inset_0_2px_4px_rgba(255,255,255,1)] group hover:bg-white hover:border-black/10 transition-all duration-500"
             >
               <div className="absolute -top-6 -left-2 text-[80px] font-serif leading-none text-black/5 select-none group-hover:text-utbex-maroon/10 transition-colors duration-500 rotate-12">&ldquo;</div>
@@ -228,7 +228,7 @@ export default function Impact() {
               >
                 {/* Light sweep effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-700 ease-in-out" />
-                
+
                 <span className="relative z-10 flex items-center gap-3 drop-shadow-md">
                   Mulai Berkolaborasi
                   <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center border border-white/30 group-hover:bg-white group-hover:text-utbex-maroon transition-colors duration-300">
@@ -238,7 +238,7 @@ export default function Impact() {
                   </div>
                 </span>
               </Link>
-              
+
               {/* Secondary CTA - Light Glass Button */}
               <Link
                 href="#about"
@@ -262,19 +262,19 @@ export default function Impact() {
             <div className="space-y-4 sm:space-y-6 transform-gpu rotate-y-[6deg] rotate-x-[3deg] translate-y-4">
               <motion.div variants={staggerChild} className="relative aspect-[4/5] rounded-[2rem] overflow-hidden group shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-black/5 bg-white p-1">
                 <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden">
-                  <Image src="/images/arik-dwi-asmara-utbex-menyampaikan-materi.avif" alt="UTBEX workshop" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <Image src="/images/mockup-utbex-papan-poster-ekslusif.avif" alt="UTBEX workshop" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-5 left-5 right-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <p className="text-[10px] font-bold text-white uppercase tracking-widest bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full inline-block border border-white/20 shadow-sm">Workshop</p>
+                    <p className="text-[10px] font-bold text-white uppercase tracking-widest bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full inline-block border border-white/20 shadow-sm">UTBEX.id</p>
                   </div>
                 </div>
               </motion.div>
               <motion.div variants={staggerChild} className="relative aspect-square rounded-[2rem] overflow-hidden group shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-black/5 bg-white p-1">
                 <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden">
-                  <Image src="/images/foto-bersama-arik-dwi-asmara-utbex-dengan-pemerintah.avif" alt="UTBEX bersama pemerintah" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <Image src="/images/sertifikat-merek-utbex.avif" alt="UTBEX bersama pemerintah" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-5 left-5 right-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <p className="text-[10px] font-bold text-white uppercase tracking-widest bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full inline-block border border-white/20 shadow-sm">Kemitraan</p>
+                    <p className="text-[10px] font-bold text-white uppercase tracking-widest bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full inline-block border border-white/20 shadow-sm">Sertifikat Merek</p>
                   </div>
                 </div>
               </motion.div>
@@ -283,10 +283,10 @@ export default function Impact() {
             <div className="space-y-4 sm:space-y-6 transform-gpu -rotate-y-[6deg] -rotate-x-[3deg] -translate-y-8">
               <motion.div variants={staggerChild} className="relative aspect-square rounded-[2rem] overflow-hidden group shadow-[0_15px_40px_rgba(0,0,0,0.12)] border border-black/5 bg-white p-1">
                 <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden">
-                  <Image src="/images/piagam-penghargaan-utbex-sebagai-media-pemerdaya-generasi-nusantara-terinovatif-utbex.avif" alt="Penghargaan UTBEX" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+                  <Image src="/images/mockup-stempel-utbex.avif" alt="Penghargaan UTBEX" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-5 left-5 right-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <p className="text-[10px] font-bold text-white uppercase tracking-widest bg-utbex-maroon/90 backdrop-blur-md px-3 py-1.5 rounded-full inline-block border border-white/20 shadow-sm">Penghargaan</p>
+                    <p className="text-[10px] font-bold text-white uppercase tracking-widest bg-utbex-maroon/90 backdrop-blur-md px-3 py-1.5 rounded-full inline-block border border-white/20 shadow-sm">PT. Utbex Inovasi Indonesia</p>
                   </div>
                 </div>
               </motion.div>
