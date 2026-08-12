@@ -1,8 +1,7 @@
-// components/navigation/components/ScrollProgress.tsx
 "use client";
 
-import { useActiveSection } from "../hooks/useActiveSection";
-import { navigationLinks } from "../data/navigationLinks";
+import { useActiveSection } from "./useActiveSection";
+import { navigationLinks } from "./navigationLinks";
 import { m as motion } from "framer-motion";
 import { usePastHero } from "@/components/providers/HeroVisibilityContext";
 

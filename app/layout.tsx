@@ -3,7 +3,6 @@
 // Root layout — provides html, body, fonts, metadata, and analytics.
 // Navigation and page wrappers are handled by route group layouts:
 //   (main)/layout.tsx  → includes Navigation + <main>
-//   (explore)/explore/layout.tsx → immersive fullscreen, no Navigation
 //
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";

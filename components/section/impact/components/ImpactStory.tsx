@@ -1,7 +1,7 @@
 // components/section/impact/components/ImpactStory.tsx
 import Link from "next/link";
 import { m as motion } from "framer-motion";
-import { staggerContainer, staggerChild } from "@/motion/variants/stagger";
+import { staggerContainer, staggerChild } from "@/components/ui/motion";
 
 export const ImpactStory = () => (
   <motion.div

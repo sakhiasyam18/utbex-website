@@ -1,7 +1,11 @@
 // components/section/footer/data/footerSocial.ts
 
-import { FooterSocialItem } from "../types/footer";
-
+export interface FooterSocialItem {
+  id: string;
+  platform: string;
+  href: string;
+  ariaLabel?: string;
+}
 /**
  * Official social channels per 01_FOOTER_BIBLE.md:
  * — Only official channels.

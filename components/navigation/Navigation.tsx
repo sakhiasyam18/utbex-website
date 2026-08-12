@@ -5,9 +5,9 @@ import { AnimatePresence, m as motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { usePastHero } from "../providers/HeroVisibilityContext";
-import { useActiveSection } from "./hooks/useActiveSection";
-import { navigationLinks } from "./data/navigationLinks";
-import { navigationContent } from "./data/navigationContent";
+import { useActiveSection } from "./useActiveSection";
+import { navigationLinks } from "./navigationLinks";
+import { navigationContent } from "./navigationContent";
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 function HomeIcon() {

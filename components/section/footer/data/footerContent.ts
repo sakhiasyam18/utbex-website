@@ -1,7 +1,20 @@
 // components/section/footer/data/footerContent.ts
 
-import { FooterContent } from "../types/footer";
-
+export interface FooterContent {
+  closing: {
+    label: string;
+    headline: string;
+    description: string;
+    cta: {
+      label: string;
+      href: string;
+    };
+  };
+  contact: {
+    items: { label: string; value: string; href?: string }[];
+  };
+  copyright: string;
+}
 /**
  * Footer content follows the emotional closing arc specified in
  * 04_FOOTER_CONTENT_SYSTEM.md.

@@ -1,7 +1,10 @@
 // // components/section/footer/data/footerNavigation.ts
 
-import { FooterNavItem } from "../types/footer";
-
+export interface FooterNavItem {
+  id: string;
+  label: string;
+  href: string;
+}
 // /**
 //  * Primary navigation links per 03_FOOTER_LAYOUT_SYSTEM.md:
 //  * — Maximum five items.

@@ -1,6 +1,10 @@
-// components/navigation/data/navigationLinks.ts
+// components/navigation/navigationLinks.ts
 
-import { NavigationItem } from '../types/navigation';
+export interface NavigationItem {
+    id: string;
+    label: string;
+    href: string;
+}
 
 export const navigationLinks: NavigationItem[] = [
     { id: 'hero', label: 'Beranda', href: '#hero' },

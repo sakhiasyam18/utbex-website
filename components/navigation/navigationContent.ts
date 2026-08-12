@@ -1,4 +1,4 @@
-// components/navigation/data/navigationContent.ts
+// components/navigation/navigationContent.ts
 
 export const navigationContent = {
     cta: {

@@ -1,6 +1,6 @@
 // components/section/impact/components/ImpactCollaborations.tsx
 import { m as motion } from "framer-motion";
-import { staggerContainer, staggerChild } from "@/motion/variants/stagger";
+import { staggerContainer, staggerChild } from "@/components/ui/motion";
 import { collaborationItemsData } from "../data/impactData";
 
 export const ImpactCollaborations = () => (

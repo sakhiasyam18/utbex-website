@@ -1,8 +1,7 @@
-// components/navigation/hooks/useActiveSection.ts
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { navigationLinks } from "../data/navigationLinks";
+import { navigationLinks } from "./navigationLinks";
 
 export function useActiveSection() {
     const [activeSection, setActiveSectionState] = useState<string | null>(null);
