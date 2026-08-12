@@ -16,6 +16,29 @@ export interface ProjectData {
   aspect: string;
 }
 
+export const tabs: CategoryTab[] = ["Bidang Usaha & Produk", "Program Pemberdayaan", "Kolaborasi Sosial"];
+
+export const categoryColor: Record<string, string> = {
+  // Bidang Usaha
+  "INOVASI": "bg-amber-500/20 text-amber-300 border-amber-500/20",
+  "PERCETAKAN": "bg-blue-500/20 text-blue-300 border-blue-500/20",
+  "MERCHANDISE": "bg-pink-500/20 text-pink-300 border-pink-500/20",
+  "FASHION": "bg-purple-500/20 text-purple-300 border-purple-500/20",
+  "DESAIN": "bg-teal-500/20 text-teal-300 border-teal-500/20",
+  // Pemberdayaan
+  "PELATIHAN": "bg-indigo-500/20 text-indigo-300 border-indigo-500/20",
+  "INKUBASI": "bg-emerald-500/20 text-emerald-300 border-emerald-500/20",
+  "PENDAMPINGAN": "bg-red-500/20 text-red-300 border-red-500/20",
+  "LEGALITAS": "bg-yellow-500/20 text-yellow-300 border-yellow-500/20",
+  "MARKETING": "bg-sky-500/20 text-sky-300 border-sky-500/20",
+  "DESA": "bg-green-500/20 text-green-300 border-green-500/20",
+  // Kolaborasi
+  "PENDIDIKAN": "bg-cyan-500/20 text-cyan-300 border-cyan-500/20",
+  "KEMANUSIAAN": "bg-rose-500/20 text-rose-300 border-rose-500/20",
+  "PARIWISATA": "bg-orange-500/20 text-orange-300 border-orange-500/20",
+  "KEMITRAAN": "bg-fuchsia-500/20 text-fuchsia-300 border-fuchsia-500/20",
+};
+
 export const portfolioData: ProjectData[] = [
   // ─── TAB 1: BIDANG USAHA & PRODUK ───────────────────────────────────────
   {

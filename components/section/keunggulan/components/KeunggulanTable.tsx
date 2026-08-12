@@ -20,23 +20,24 @@ export function KeunggulanTable() {
           UTBEX INDONESIA
         </motion.h2>
 
-        {/* Table-like Layout */}
-        <motion.div variants={staggerChild} className="w-full mb-10">
+        {/* Table-like Layout with Semantic ARIA Roles for Chatbots/SEO */}
+        <motion.div variants={staggerChild} className="w-full mb-10" role="table" aria-label="Keunggulan UTBEX Indonesia">
           {/* Table Header */}
-          <div className="grid grid-cols-[120px_1fr] sm:grid-cols-[160px_1fr] gap-4 pb-4 border-b-2 border-black/80 font-bold text-lg">
-            <div className="text-center">Aspek</div>
-            <div className="text-center">Keunggulan</div>
+          <div className="grid grid-cols-[120px_1fr] sm:grid-cols-[160px_1fr] gap-4 pb-4 border-b-2 border-black/80 font-bold text-lg" role="row">
+            <div className="text-center" role="columnheader">Aspek</div>
+            <div className="text-center" role="columnheader">Keunggulan</div>
           </div>
 
           {/* Table Rows */}
-          <div className="flex flex-col">
+          <div className="flex flex-col" role="rowgroup">
             {keunggulanData.map((item, idx) => (
               <div 
                 key={idx} 
+                role="row"
                 className="grid grid-cols-[120px_1fr] sm:grid-cols-[160px_1fr] gap-4 py-4 border-b border-black/20 text-sm sm:text-base items-center"
               >
-                <div className="font-bold text-center px-2">{item.aspek}</div>
-                <div className="font-medium text-black/80 px-4 sm:px-8 border-l border-black/20">{item.keunggulan}</div>
+                <div className="font-bold text-center px-2" role="cell">{item.aspek}</div>
+                <div className="font-medium text-black/80 px-4 sm:px-8 border-l border-black/20" role="cell">{item.keunggulan}</div>
               </div>
             ))}
           </div>
