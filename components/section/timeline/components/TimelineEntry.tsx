@@ -2,13 +2,22 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { m as motion, useInView, useScroll, useTransform } from "framer-motion";
+import { m as motion, useInView, useScroll, useTransform, Variants } from "framer-motion";
 import Image from "next/image";
-import { TimelineMilestone } from "../types/timeline";
-import { entryReveal, imageReveal } from "../motion/timelineMotion";
+import { TimelineMilestone } from "../data/timelineData";
 import TimelineNode from "./TimelineNode";
 import TimelineEvidence from "./TimelineEvidence";
 import { Lightbox } from "@/components/ui/Lightbox";
+
+const entryReveal: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+const imageReveal: Variants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } }
+};
+
 
 interface TimelineEntryProps {
     milestone: TimelineMilestone;
@@ -48,7 +57,7 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
     }
 
     return (
-        <div ref={entryRef} className="relative py-8 md:py-14 lg:py-16">
+        <article ref={entryRef} className="relative py-8 md:py-14 lg:py-16">
             {/* Mobile: Vertical connecting line (left side) */}
             <div className="lg:hidden absolute left-[18px] top-0 bottom-0 pointer-events-none" style={{ zIndex: 0 }}>
                 {/* Faint track line */}
@@ -141,13 +150,13 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
 
                 {/* Image side — with glassmorphism frame */}
                 {milestone.image && (
-                    <motion.div
+                    <motion.figure
                         ref={imageRef}
                         variants={imageReveal}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-60px" }}
-                        className={`w-full pl-10 lg:pl-0 lg:w-[calc(50%-60px)] mt-2 lg:mt-0`}
+                        className={`w-full pl-10 lg:pl-0 lg:w-[calc(50%-60px)] mt-2 lg:mt-0 m-0`}
                     >
                         {/* Glass container */}
                         <div 
@@ -178,14 +187,14 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                             </div>
 
                             {/* Glass caption bar at bottom of image */}
-                            <div className="absolute bottom-0 inset-x-0 mx-1 mb-1 px-4 py-2.5 rounded-xl bg-white/70 backdrop-blur-md border border-white/50 shadow-sm z-10 flex items-center gap-3 transition-all duration-300 group-hover:bg-white/85">
-                                <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon flex-shrink-0" />
+                            <figcaption className="absolute bottom-0 inset-x-0 mx-1 mb-1 px-4 py-2.5 rounded-xl bg-white/70 backdrop-blur-md border border-white/50 shadow-sm z-10 flex items-center gap-3 transition-all duration-300 group-hover:bg-white/85">
+                                <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon flex-shrink-0" aria-hidden="true" />
                                 <p className="text-[10px] sm:text-[11px] font-medium text-utbex-dark/80 leading-tight truncate">
                                     {milestone.imageAlt}
                                 </p>
-                            </div>
+                            </figcaption>
                         </div>
-                    </motion.div>
+                    </motion.figure>
                 )}
             </div>
 
@@ -198,6 +207,6 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                     onClose={() => setIsLightboxOpen(false)}
                 />
             )}
-        </div>
+        </article>
     );
 }

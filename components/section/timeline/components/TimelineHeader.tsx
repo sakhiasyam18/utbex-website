@@ -1,9 +1,11 @@
 // components/section/timeline/components/TimelineHeader.tsx
 "use client";
 
-import { m as motion } from "framer-motion";
-import { headerReveal } from "../motion/timelineMotion";
-
+import { m as motion, Variants } from "framer-motion";
+const headerReveal: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
 interface TimelineHeaderProps {
     label: string;
     headline: string;
@@ -12,7 +14,7 @@ interface TimelineHeaderProps {
 
 export default function TimelineHeader({ label, headline, description }: TimelineHeaderProps) {
     return (
-        <motion.div
+        <motion.header
             variants={headerReveal}
             initial="hidden"
             whileInView="visible"
@@ -35,6 +37,6 @@ export default function TimelineHeader({ label, headline, description }: Timelin
                 <div className="w-2 h-2 rounded-full bg-utbex-maroon/30" />
                 <div className="w-8 h-px bg-utbex-maroon/20" />
             </div>
-        </motion.div>
+        </motion.header>
     );
 }

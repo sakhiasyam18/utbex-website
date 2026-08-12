@@ -1,6 +1,21 @@
-// components/section/timeline/data/timelineContent.ts
+// components/section/timeline/data/timelineData.ts
 
-import { TimelineMilestone } from '../types/timeline';
+export interface TimelineEvidence {
+    label: string;
+    href?: string;
+    type: 'certificate' | 'documentation' | 'media';
+}
+
+export interface TimelineMilestone {
+    id: string;
+    year: string;
+    tag: string;
+    title: string;
+    story: string;
+    image?: string;
+    imageAlt?: string;
+    evidence?: TimelineEvidence[];
+}
 
 export const timelineMilestones: TimelineMilestone[] = [
     {

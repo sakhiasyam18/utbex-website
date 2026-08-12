@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { TimelineEvidence as EvidenceType } from "../types/timeline";
+import { TimelineEvidence as EvidenceType } from "../data/timelineData";
 import { Lightbox } from "@/components/ui/Lightbox";
 
 interface TimelineEvidenceProps {

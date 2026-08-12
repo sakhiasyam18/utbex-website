@@ -2,7 +2,7 @@
 "use client";
 
 import { useRef } from "react";
-import { timelineMilestones, timelineHeader } from "./data/timelineContent";
+import { timelineMilestones, timelineHeader } from "./data/timelineData";
 import TimelineHeader from "./components/TimelineHeader";
 import TimelineEntry from "./components/TimelineEntry";
 
