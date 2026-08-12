@@ -2,7 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { m as motion } from "framer-motion";
-import { HeroMotionProps } from "./types";
+import { MotionValue } from "framer-motion";
+
+export interface HeroMotionProps {
+  blur: MotionValue<string>;
+  scale: MotionValue<number>;
+  opacity: MotionValue<number>;
+}
 
 export function HeroMobileContent({ blur, scale, opacity }: HeroMotionProps) {
   return (
