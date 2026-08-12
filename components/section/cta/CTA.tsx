@@ -4,14 +4,14 @@ import { m as motion } from "framer-motion";
 
 export default function CTA() {
   return (
-    <section className="relative w-full py-24 sm:py-32 bg-[#030003] text-white overflow-hidden flex flex-col items-center justify-center border-t border-white/5">
+    <section aria-labelledby="cta-heading" className="relative w-full py-24 sm:py-32 bg-[#030003] text-white overflow-hidden flex flex-col items-center justify-center border-t border-white/5">
       {/* Background ambient glow */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-[100%] bg-utbex-maroon/20 blur-[120px] opacity-60" />
       </div>
 
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center">
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -21,10 +21,10 @@ export default function CTA() {
             Tagline UTBEX Indonesia
           </span>
           
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70 tracking-tight leading-[1.1] mb-10">
+          <h2 id="cta-heading" className="text-4xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70 tracking-tight leading-[1.1] mb-10">
             FROM IDEAS TO <span className="text-utbex-maroon">IMPACT</span>
           </h2>
-        </motion.div>
+        </motion.header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-left">
           <motion.div

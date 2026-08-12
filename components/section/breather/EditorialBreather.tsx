@@ -3,6 +3,7 @@
 import { m as motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import Image from "next/image";
+import { founderProfile } from "./data/breatherData";
 
 export function EditorialBreather() {
   const containerRef = useRef<HTMLElement>(null);
@@ -139,34 +140,12 @@ export function EditorialBreather() {
               <h4 className="text-sm font-bold tracking-[0.2em] text-utbex-maroon uppercase mb-4">Profil Pendiri</h4>
               
               <ul className="space-y-3 mb-6 text-sm sm:text-base text-white/80 font-medium">
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
-                  <span><strong className="text-white">Arik Dwi Asmara</strong> &mdash; CEO &amp; Founder UTBEX Indonesia Group</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
-                  <span>Founder BCN (Bantur Creative Network)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
-                  <span>Konsultan UMKM &amp; Wirausaha Muda Malang Raya</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
-                  <span>Guru Kewirausahaan SMP PGRI 01 Bantur</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
-                  <span>Mentor Mahasiswa FEB Universitas Brawijaya Malang</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
-                  <span>Founder SCoVIL (School of Creative Village Learning)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
-                  <span>Founder Peluex Creative Tourism, dan Banturono Rescue</span>
-                </li>
+                {founderProfile.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-utbex-maroon mt-2 shrink-0" />
+                    <span dangerouslySetInnerHTML={{ __html: item.replace("Arik Dwi Asmara", "<strong class='text-white'>Arik Dwi Asmara</strong>").replace("—", "&mdash;") }} />
+                  </li>
+                ))}
               </ul>
               
               <p className="text-sm text-white/60 leading-relaxed font-medium">
