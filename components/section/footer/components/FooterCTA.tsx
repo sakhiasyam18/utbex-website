@@ -1,8 +1,7 @@
-// components/section/footer/components/FooterClosing.tsx
 import { m as motion } from "framer-motion";
-import { WhatsAppIcon, ArrowIcon } from "./Icons";
+import { WhatsAppIcon, ArrowIcon } from "./FooterIcons";
 
-export function FooterClosing() {
+export function FooterCTA() {
   return (
     <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 pt-20 pb-0">
       <motion.div
@@ -27,18 +26,22 @@ export function FooterClosing() {
         {/* Ambient glow top-left */}
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/20 blur-[80px] rounded-full pointer-events-none opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
 
-        <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-8 sm:p-12 lg:p-14">
+        <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 p-6 sm:p-12 lg:p-14">
           {/* Left: copy */}
-          <div className="max-w-lg">
+          <div className="max-w-xl">
             <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-white/50 mb-4">
-              — Kolaborasi Berikutnya
+              — Pesan Inspirasi
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.05] tracking-tight mb-4">
-              Mari bangun perubahan<br />
-              <span className="italic font-light text-white/80">berikutnya bersama kami.</span>
-            </h2>
-            <p className="text-sm sm:text-base text-white/60 leading-relaxed max-w-sm">
-              Dari desa, untuk Indonesia. Setiap kolaborasi dimulai dari satu percakapan.
+            <blockquote className="relative">
+              <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 text-4xl sm:text-5xl text-white/10 font-serif leading-none select-none" aria-hidden="true">"</div>
+              <h2 className="text-lg sm:text-2xl lg:text-3xl font-light text-white leading-[1.35] tracking-tight mb-5 relative z-10">
+                <span className="italic text-white/90">"Berpikirlah yang secara logika orang akan bilang tidak mungkin.</span>{" "}
+                <span className="font-black text-white">Kemudian pikirkan lagi, cari caranya hingga hal tersebut berubah menjadi mungkin."</span>
+              </h2>
+            </blockquote>
+            <p className="text-sm sm:text-base text-white/70 font-semibold tracking-wide flex items-center gap-3">
+              <span className="w-6 h-px bg-utbex-maroon/50 shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+              Arik Dwi Asmara
             </p>
           </div>
 
@@ -49,8 +52,8 @@ export function FooterClosing() {
             rel="noopener noreferrer"
             id="klik-whatsapp"
             aria-label="Mulai percakapan via WhatsApp"
-            className="group/btn relative flex-shrink-0 flex items-center gap-3
-                       px-8 py-5 rounded-[1.5rem]
+            className="group/btn relative flex-shrink-0 flex items-center justify-center gap-3
+                       w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 rounded-[1.5rem]
                        bg-white/15 backdrop-blur-md
                        border border-white/25
                        shadow-[inset_0_2px_4px_rgba(255,255,255,0.25),0_8px_24px_rgba(0,0,0,0.15)]
@@ -59,7 +62,7 @@ export function FooterClosing() {
                        transition-all duration-500 hover:scale-[1.03] active:scale-[0.98]"
           >
             <WhatsAppIcon />
-            <span className="text-sm font-bold tracking-widest uppercase text-white drop-shadow-sm">
+            <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-white drop-shadow-sm">
               Mulai Percakapan
             </span>
             <span className="w-7 h-7 rounded-full bg-white/20 border border-white/30 flex items-center justify-center

@@ -8,7 +8,7 @@ const Portfolio = dynamic(() => import("@/components/section/portfolio/Portfolio
 const Impact = dynamic(() => import("@/components/section/impact/Impact"));
 const Keunggulan = dynamic(() => import("@/components/section/keunggulan/Keunggulan"));
 const CTA = dynamic(() => import("@/components/section/cta/CTA"));
-const Footer = dynamic(() => import("@/components/section/footer").then(mod => mod.Footer));
+const Footer = dynamic(() => import("@/components/section/footer/Footer").then(mod => mod.Footer));
 import { EditorialBreather } from "@/components/section/breather/EditorialBreather";
 import { GlobalAtmosphere } from "@/components/atmosphere/GlobalAtmosphere";
 

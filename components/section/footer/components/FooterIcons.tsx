@@ -1,4 +1,3 @@
-// components/section/footer/components/Icons.tsx
 import React from "react";
 
 export const InstagramIcon = () => (
