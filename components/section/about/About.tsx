@@ -15,7 +15,7 @@ export default function About() {
       <div className="about-orb about-orb-animate w-[450px] h-[450px] bg-utbex-maroon/[0.03] top-[5%] -left-[10%]" />
       <div className="about-orb about-orb-animate w-[350px] h-[350px] bg-rose-200/[0.15] bottom-[10%] right-[-5%]" style={{ animationDelay: "-8s" }} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-24 lg:py-32">
+      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-10 py-14 lg:py-32">
         <AboutHeader />
         <AboutVisionMission />
         <AboutLongTermVision />

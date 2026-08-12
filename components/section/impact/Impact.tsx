@@ -12,7 +12,7 @@ export default function Impact() {
   return (
     <section
       id="impact"
-      className="relative w-full text-utbex-dark overflow-hidden py-24 lg:py-36"
+      className="relative w-full text-utbex-dark overflow-hidden py-10 lg:py-36"
       aria-label="UTBEX Indonesia Impact and Statistics"
     >
       {/* 1. Ambient Background */}

@@ -13,7 +13,7 @@ export default function Timeline() {
         <section
             id="timeline"
             ref={sectionRef}
-            className="relative w-full bg-utbex-light py-24 md:py-32 lg:py-40 overflow-hidden"
+            className="relative w-full bg-utbex-light py-14 md:py-32 lg:py-40 overflow-hidden"
         >
             {/* Subtle warm gradient background */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(139,0,0,0.03)_0%,_transparent_60%)]" aria-hidden="true" />
@@ -27,7 +27,7 @@ export default function Timeline() {
                 />
 
                 {/* Timeline Journey Container */}
-                <div className="relative mt-16 md:mt-24 max-w-5xl mx-auto">
+                <div className="relative mt-10 md:mt-24 max-w-5xl mx-auto">
                     {/* Timeline Entries - No gaps, so the SVG lines connect seamlessly */}
                     <div className="flex flex-col relative z-10">
                         {timelineMilestones.map((milestone, index) => (

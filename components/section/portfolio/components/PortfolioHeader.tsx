@@ -14,7 +14,7 @@ export function PortfolioHeader({ isDesktop, activeTab, scrollToTab }: Portfolio
   return (
     <>
       {/* STATIC HEADER */}
-      <header className="w-full px-6 sm:px-10 lg:px-[10vw] pt-0 lg:pt-12 xl:pt-16 z-20 flex-shrink-0 relative">
+      <header className="w-full px-5 sm:px-10 lg:px-[10vw] pt-0 lg:pt-12 xl:pt-16 z-20 flex-shrink-0 relative">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -28,8 +28,8 @@ export function PortfolioHeader({ isDesktop, activeTab, scrollToTab }: Portfolio
                 — Nilai Lebih Kami
               </span>
             </motion.div>
-            <motion.h2 variants={staggerChild} className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight max-w-3xl">
-              Keunggulan{" "}
+            <motion.h2 variants={staggerChild} className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight max-w-3xl">
+              Portofolio{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-utbex-maroon via-red-400 to-utbex-maroon italic pr-4 py-1 box-decoration-clone">
                 UTBEX Indonesia
               </span>
@@ -65,36 +65,19 @@ export function PortfolioHeader({ isDesktop, activeTab, scrollToTab }: Portfolio
       </div>
 
       {/* MOBILE TABS */}
-      <div className="lg:hidden w-full z-20 mt-8 mb-6 flex-shrink-0 relative">
-        <div className="px-6 sm:px-10 mb-4 relative">
-          <div className="flex justify-between items-end mb-3">
-            <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Pilih Kategori :</p>
-            <motion.div
-              animate={{ x: [0, 4, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-              className="text-[9px] font-bold text-utbex-maroon flex items-center gap-1 opacity-80"
-            >
-              Geser kategori <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </motion.div>
-          </div>
-          <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-3 -mb-3 relative z-10" style={{ WebkitOverflowScrolling: 'touch' }}>
+      <div className="lg:hidden w-full z-20 mt-6 mb-4 flex-shrink-0 relative">
+        <div className="px-5 sm:px-10 relative">
+          <div className="flex gap-2.5 overflow-x-auto scrollbar-hide pb-2 relative z-10" style={{ WebkitOverflowScrolling: 'touch' }}>
             {tabs.map((tab, idx) => (
               <button
                 key={tab}
                 onClick={() => scrollToTab(tab, idx)}
-                className={`flex-shrink-0 flex items-center gap-2 px-5 py-3.5 rounded-2xl text-[11px] font-bold tracking-wider uppercase transition-all duration-300 border
+                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-[10px] font-bold tracking-wider uppercase transition-all duration-300 border
                            ${activeTab === tab
-                    ? "text-white bg-utbex-maroon border-utbex-maroon shadow-[0_4px_20px_rgba(139,0,0,0.3)]"
-                    : "text-white/50 bg-white/5 border-white/10 active:bg-white/10"}`}
+                    ? "text-white bg-utbex-maroon border-utbex-maroon shadow-[0_4px_15px_rgba(139,0,0,0.3)]"
+                    : "text-white/60 bg-white/5 border-white/10 active:bg-white/10"}`}
               >
                 <span>{tab}</span>
-                {activeTab !== tab && (
-                  <span className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center ml-1">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </span>
-                )}
               </button>
             ))}
           </div>

@@ -4,7 +4,7 @@ import { keunggulanData } from "../data/keunggulanData";
 
 export function KeunggulanTable() {
   return (
-    <div className="relative w-full lg:w-7/12 py-16 lg:py-24 px-6 sm:px-10 lg:px-16 xl:px-20 z-10 flex flex-col justify-center">
+    <div className="relative w-full lg:w-7/12 py-10 lg:py-24 px-5 sm:px-10 lg:px-16 xl:px-20 z-10 flex flex-col justify-center">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -14,7 +14,7 @@ export function KeunggulanTable() {
         {/* Section Title */}
         <motion.h2 
           variants={staggerChild} 
-          className="text-4xl sm:text-5xl font-black text-[#1e1b4b] mb-12 uppercase tracking-tight leading-tight"
+          className="text-3xl sm:text-5xl font-black text-[#1e1b4b] mb-8 sm:mb-12 uppercase tracking-tight leading-tight"
         >
           KEUNGGULAN <br />
           UTBEX INDONESIA
@@ -23,7 +23,7 @@ export function KeunggulanTable() {
         {/* Table-like Layout with Semantic ARIA Roles for Chatbots/SEO */}
         <motion.div variants={staggerChild} className="w-full mb-10" role="table" aria-label="Keunggulan UTBEX Indonesia">
           {/* Table Header */}
-          <div className="grid grid-cols-[120px_1fr] sm:grid-cols-[160px_1fr] gap-4 pb-4 border-b-2 border-black/80 font-bold text-lg" role="row">
+          <div className="grid grid-cols-[90px_1fr] sm:grid-cols-[160px_1fr] gap-3 pb-3 border-b-2 border-black/80 font-bold text-sm sm:text-lg" role="row">
             <div className="text-center" role="columnheader">Aspek</div>
             <div className="text-center" role="columnheader">Keunggulan</div>
           </div>
@@ -34,10 +34,10 @@ export function KeunggulanTable() {
               <div 
                 key={idx} 
                 role="row"
-                className="grid grid-cols-[120px_1fr] sm:grid-cols-[160px_1fr] gap-4 py-4 border-b border-black/20 text-sm sm:text-base items-center"
+                className="grid grid-cols-[90px_1fr] sm:grid-cols-[160px_1fr] gap-3 py-3 border-b border-black/20 text-xs sm:text-base items-center"
               >
-                <div className="font-bold text-center px-2" role="cell">{item.aspek}</div>
-                <div className="font-medium text-black/80 px-4 sm:px-8 border-l border-black/20" role="cell">{item.keunggulan}</div>
+                <div className="font-bold text-center px-1 text-xs sm:text-sm" role="cell">{item.aspek}</div>
+                <div className="font-medium text-black/80 px-3 sm:px-8 border-l border-black/20 text-xs sm:text-sm leading-relaxed" role="cell">{item.keunggulan}</div>
               </div>
             ))}
           </div>

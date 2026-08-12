@@ -14,7 +14,7 @@ export function KeunggulanVisual() {
       </svg>
 
       {/* Left side: Image */}
-      <figure className="relative w-full lg:w-5/12 h-[50vh] lg:h-auto min-h-[400px] m-0">
+      <figure className="relative w-full lg:w-5/12 h-[40vh] lg:h-auto min-h-[280px] lg:min-h-[400px] m-0">
         <Image
           src="/images/foto-penyerahan-penghargaan-utbex-arif-dwi-asmara-dengan-pemerintah.avif"
           alt="Arik Dwi Asmara menerima penghargaan"

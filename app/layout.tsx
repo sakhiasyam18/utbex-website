@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth" data-scroll-behavior="smooth">
       <GoogleTagManager gtmId="GTM-TK9VMJFV" />
-      <body className={`${inter.className} antialiased bg-utbex-canvas flex flex-col min-h-screen selection:bg-utbex-maroon/20 selection:text-utbex-maroon`}>
+      <body className={`${inter.className} antialiased bg-utbex-canvas flex flex-col min-h-screen selection:bg-utbex-maroon/20 selection:text-utbex-maroon overflow-x-hidden`}>
         {/* JSON-LD for Organization SEO */}
         <script
           type="application/ld+json"

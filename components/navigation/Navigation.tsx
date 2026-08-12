@@ -307,18 +307,11 @@ export function Navigation() {
       {/* ═══════════════════════════════════════════════════════════════════════
           MOBILE — Top bar (Glassmorphism)
       ═══════════════════════════════════════════════════════════════════════ */}
-      <AnimatePresence>
-        {pastHero && (
-          <motion.header
-            key="mobile-bar"
-            variants={mobileBarAnim}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className={`lg:hidden fixed top-0 left-0 right-0 z-[100] flex items-center justify-between
-                       px-5 py-3.5 backdrop-blur-xl border-b transition-colors duration-500
-                       ${isDark ? "bg-[#050005]/80 border-white/[0.05]" : "bg-white/70 border-black/[0.06]"}`}
-          >
+      <header
+        className={`lg:hidden fixed top-0 left-0 right-0 w-full z-[100] flex items-center justify-between
+                   px-5 py-3.5 backdrop-blur-xl border-b transition-colors duration-500
+                   ${isDark ? "bg-[#050005]/80 border-white/[0.05]" : "bg-white/70 border-black/[0.06]"}`}
+      >
             {/* Top highlight */}
             <div className={`absolute top-0 inset-x-0 h-px ${isDark ? "bg-gradient-to-r from-transparent via-utbex-maroon/30 to-transparent" : "bg-gradient-to-r from-transparent via-utbex-maroon/15 to-transparent"}`} />
 
@@ -332,22 +325,20 @@ export function Navigation() {
                 </p>
               </div>
             </Link>
-            <button
-              onClick={() => setMobileOpen(true)}
-              className={`p-2.5 rounded-xl border transition-all duration-300
-                         ${isDark
-                           ? "text-white/70 hover:text-white bg-white/[0.04] border-white/[0.06] hover:bg-white/[0.08]"
-                           : "text-utbex-text-secondary hover:text-utbex-dark bg-white/50 border-black/[0.05] hover:bg-white/80"}`}
-              aria-label="Open menu"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                <line x1="4" y1="7" x2="20" y2="7" />
-                <line x1="4" y1="17" x2="20" y2="17" />
-              </svg>
-            </button>
-          </motion.header>
-        )}
-      </AnimatePresence>
+      <button
+        onClick={() => setMobileOpen(true)}
+        className={`p-2.5 rounded-xl border transition-all duration-300
+                   ${isDark
+                     ? "text-white/70 hover:text-white bg-white/[0.04] border-white/[0.06] hover:bg-white/[0.08]"
+                     : "text-utbex-text-secondary hover:text-utbex-dark bg-white/50 border-black/[0.05] hover:bg-white/80"}`}
+        aria-label="Open menu"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <line x1="4" y1="7" x2="20" y2="7" />
+          <line x1="4" y1="17" x2="20" y2="17" />
+        </svg>
+      </button>
+      </header>
 
       {/* ═══════════════════════════════════════════════════════════════════════
           MOBILE — Slide drawer (Glassmorphism)

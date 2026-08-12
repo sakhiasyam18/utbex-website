@@ -11,7 +11,7 @@ interface PortfolioMobileProps {
 
 export function PortfolioMobile({ activeTab, setSelectedProject }: PortfolioMobileProps) {
   return (
-    <div className="lg:hidden flex flex-col gap-10 px-6 sm:px-10 pb-20 mt-4">
+    <div className="lg:hidden flex flex-col gap-6 px-5 sm:px-10 pb-16 mt-2">
       {portfolioData
         .filter((p) => p.tab === activeTab)
         .map((project, idx) => (
@@ -48,19 +48,19 @@ export function PortfolioMobile({ activeTab, setSelectedProject }: PortfolioMobi
               </div>
 
               {/* Content Area */}
-              <figcaption className="absolute bottom-0 inset-x-0 p-6 sm:p-8 z-10 flex flex-col justify-end">
-                <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+              <figcaption className="absolute bottom-0 inset-x-0 p-5 sm:p-8 z-10 flex flex-col justify-end">
+                <h3 className="text-xl sm:text-3xl font-black text-white leading-tight mb-2">
                   {project.title}
                 </h3>
-                <p className="text-sm text-white/70 leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4 line-clamp-3">
                   {project.story}
                 </p>
 
-                <div className="flex flex-col gap-1 pt-5 border-t border-white/15">
-                  <p className="text-[11px] font-bold text-white/40 tracking-widest uppercase">
+                <div className="flex flex-col gap-1 pt-4 border-t border-white/15">
+                  <p className="text-[10px] sm:text-[11px] font-bold text-white/40 tracking-widest uppercase">
                     {project.location} · {project.year}
                   </p>
-                  <p className="text-xs text-white/90 font-bold truncate">
+                  <p className="text-[11px] sm:text-xs text-white/90 font-bold truncate">
                     {project.evidence}
                   </p>
                 </div>

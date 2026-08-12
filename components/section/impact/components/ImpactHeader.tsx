@@ -22,10 +22,10 @@ export const ImpactHeader = () => (
     
     {/* Main Headline (SEO optimized with H2) */}
     <motion.div variants={staggerChild} className="text-mask">
-      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.92] tracking-tighter text-utbex-dark">
-        OPEN KERJASAMA{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-utbex-maroon via-red-600 to-utbex-maroon italic">
-          &amp; KOLABORASI
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-[0.92] tracking-tighter text-utbex-dark">
+        OPEN KERJASAMA &amp;{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-utbex-maroon via-red-600 to-utbex-maroon italic pr-2 lg:pr-4">
+          KOLABORASI
         </span>
       </h2>
     </motion.div>

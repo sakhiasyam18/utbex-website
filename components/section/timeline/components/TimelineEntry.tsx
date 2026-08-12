@@ -162,8 +162,7 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                             
                             {/* Image */}
                             <div className="relative aspect-square rounded-2xl overflow-hidden">
-                                <div
-                                    className="absolute inset-0"
+                                <div className="absolute inset-0">
                                     <Image
                                         src={milestone.image}
                                         alt={milestone.imageAlt || milestone.title}

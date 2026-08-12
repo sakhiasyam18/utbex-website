@@ -34,8 +34,8 @@ export function EditorialBreather() {
         />
 
         {/* Parallax orbs — GPU transform only */}
-        <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-[350px] h-[350px] rounded-full bg-purple-900/12" style={{ filter: "blur(70px)" }} />
-        <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-rose-900/12" style={{ filter: "blur(70px)" }} />
+        <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-[350px] h-[350px] rounded-full bg-purple-900/12 blur-[70px]" />
+        <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-rose-900/12 blur-[70px]" />
       </div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-10 perspective-[1000px]">
@@ -52,8 +52,8 @@ export function EditorialBreather() {
         >
           {/* Card background (Frosted Glass / Neumorphism blend) */}
           <div className="absolute inset-0 rounded-[2.5rem] sm:rounded-[3rem] bg-white/[0.02] backdrop-blur-2xl border border-white/[0.05] z-0 overflow-hidden">
-            {/* Inner glow on hover */}
-            <div className={`absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-utbex-maroon/[0.08] opacity-0 transition-opacity duration-700 ${isHovered ? 'opacity-100' : ''}`} />
+            {/* Inner glow on hover — pure CSS group-hover, no JS */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-utbex-maroon/[0.08] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             {/* Highlight border on top */}
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           </div>
