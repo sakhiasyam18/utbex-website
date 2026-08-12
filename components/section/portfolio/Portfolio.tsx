@@ -2,7 +2,7 @@
 // components/section/portfolio/Portfolio.tsx
 
 import { useRef, useState, useEffect } from "react";
-import { useScroll, useTransform, useSpring, useMotionValueEvent } from "framer-motion";
+import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { CategoryTab, ProjectData } from "./data/portfolioData";
 
 import { PortfolioHeader } from "./components/PortfolioHeader";
@@ -27,24 +27,22 @@ export default function Portfolio() {
     target: targetRef,
   });
 
-  // Smooth out the scroll progress
-  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 20, restDelta: 0.001 });
-
-  // Transform scroll progress to x translation (only for desktop)
-  const x = useTransform(smoothProgress, [0, 1], ["0%", "-75%"]);
-
-  // Mobile layout doesn't use the x transform
+  // Direct transform — no useSpring (which ran every animation frame)
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
   const transformX = isDesktop ? x : "0%";
 
-  // Automatically update the active tab based on scroll progress (Desktop Only)
+  // Throttle tab updates — only fires when crossing thresholds, not every frame
+  const lastTabRef = useRef<string>("Bidang Usaha & Produk");
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (!isDesktop) return;
-    if (latest < 0.33) {
-      if (activeTab !== "Bidang Usaha & Produk") setActiveTab("Bidang Usaha & Produk");
-    } else if (latest < 0.66) {
-      if (activeTab !== "Program Pemberdayaan") setActiveTab("Program Pemberdayaan");
-    } else {
-      if (activeTab !== "Kolaborasi Sosial") setActiveTab("Kolaborasi Sosial");
+    let next: string;
+    if (latest < 0.33)       next = "Bidang Usaha & Produk";
+    else if (latest < 0.66)  next = "Program Pemberdayaan";
+    else                     next = "Kolaborasi Sosial";
+    // Only trigger setState when tab actually changes (prevents per-frame re-renders)
+    if (next !== lastTabRef.current) {
+      lastTabRef.current = next;
+      setActiveTab(next as CategoryTab);
     }
   });
 

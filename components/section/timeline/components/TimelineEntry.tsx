@@ -2,7 +2,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { m as motion, useInView, useScroll, useTransform, Variants } from "framer-motion";
+import { m as motion, useInView, Variants } from "framer-motion";
 import Image from "next/image";
 import { TimelineMilestone } from "../data/timelineData";
 import TimelineNode from "./TimelineNode";
@@ -30,14 +30,8 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
     const entryRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLDivElement>(null);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-    const isInView = useInView(entryRef, { once: false, margin: "-30% 0px -30% 0px" });
-
-    // Parallax on images
-    const { scrollYProgress } = useScroll({
-        target: imageRef,
-        offset: ["start end", "end start"],
-    });
-    const imageY = useTransform(scrollYProgress, [0, 1], [-15, 15]);
+    // once: true stops observing after first intersection — no ongoing IntersectionObserver cost
+    const isInView = useInView(entryRef, { once: true, margin: "-20% 0px -20% 0px" });
 
     // Generate precise SVG path to weave exactly between nodes
     const isFirst = index === 0;
@@ -168,10 +162,8 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                             
                             {/* Image */}
                             <div className="relative aspect-square rounded-2xl overflow-hidden">
-                                <motion.div
+                                <div
                                     className="absolute inset-0"
-                                    style={{ y: imageY }}
-                                >
                                     <Image
                                         src={milestone.image}
                                         alt={milestone.imageAlt || milestone.title}
@@ -180,7 +172,7 @@ export default function TimelineEntry({ milestone, index, isEven, isLast = false
                                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                                         quality={80}
                                     />
-                                </motion.div>
+                                </div>
 
                                 {/* Gradient overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />

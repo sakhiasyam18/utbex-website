@@ -108,11 +108,21 @@ export function Navigation() {
 
   const isDark = activeSection === 'portfolio';
 
-  // Mouse spotlight tracker
+  const rafRef = useRef<number | null>(null);
+
+  // Throttle with RAF — fires at most once per frame (~16ms) instead of every mousemove event
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!sidebarRef.current) return;
-    const rect = sidebarRef.current.getBoundingClientRect();
-    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    if (rafRef.current) return; // skip if RAF is already queued
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    rafRef.current = requestAnimationFrame(() => {
+      if (sidebarRef.current) {
+        const rect = sidebarRef.current.getBoundingClientRect();
+        setMousePos({ x: clientX - rect.left, y: clientY - rect.top });
+      }
+      rafRef.current = null;
+    });
   }, []);
 
   // Lock body scroll when mobile menu is open

@@ -136,7 +136,7 @@ html.lenis body {
 .about-orb {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(120px);
+  filter: blur(60px);  /* was 120px — halved for significant GPU savings */
   pointer-events: none;
   will-change: transform;
 }

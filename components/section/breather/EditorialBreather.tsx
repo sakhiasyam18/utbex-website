@@ -1,13 +1,12 @@
 "use client";
 
 import { m as motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { founderProfile } from "./data/breatherData";
 
 export function EditorialBreather() {
   const containerRef = useRef<HTMLElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   // Subtle parallax for background elements
   const { scrollYProgress } = useScroll({
@@ -22,27 +21,21 @@ export function EditorialBreather() {
     <section 
       ref={containerRef}
       className="relative w-full py-28 md:py-40 bg-[#030003] text-white overflow-hidden flex items-center justify-center min-h-[70vh]"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Ambient background gradients (Gen Z Neon Vibe) */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         {/* Dark noise texture */}
         <div className="absolute inset-0 opacity-[0.04] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMC4yIi8+PC9zdmc+')]" />
         
-        {/* Deep maroon glowing orb */}
-        <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] rounded-full bg-utbex-maroon/10 blur-[120px]"
-          animate={{
-            scale: isHovered ? 1.1 : 1,
-            opacity: isHovered ? 0.8 : 0.4,
-          }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+        {/* Deep maroon glowing orb — CSS transition, no JS re-render */}
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[700px] h-[600px] sm:h-[700px] rounded-full bg-utbex-maroon/10 transition-[opacity] duration-1000"
+          style={{ filter: "blur(60px)" }}
         />
 
-        {/* Floating colored orbs */}
-        <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-purple-900/15 blur-[100px]" />
-        <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-rose-900/15 blur-[120px]" />
+        {/* Parallax orbs — GPU transform only */}
+        <motion.div style={{ y: y1 }} className="absolute top-0 right-0 w-[350px] h-[350px] rounded-full bg-purple-900/12" style={{ filter: "blur(70px)" }} />
+        <motion.div style={{ y: y2 }} className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-rose-900/12" style={{ filter: "blur(70px)" }} />
       </div>
 
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-10 perspective-[1000px]">
@@ -55,7 +48,7 @@ export function EditorialBreather() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className={`relative group rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-16 lg:p-20 
                      transition-all duration-700 ease-out transform-gpu
-                     ${isHovered ? 'scale-[1.02] shadow-[0_40px_100px_rgba(139,0,0,0.15)]' : 'scale-100 shadow-[0_20px_80px_rgba(0,0,0,0.5)]'}`}
+                     hover:scale-[1.02] hover:shadow-[0_40px_100px_rgba(139,0,0,0.15)] scale-100 shadow-[0_20px_80px_rgba(0,0,0,0.5)]`}
         >
           {/* Card background (Frosted Glass / Neumorphism blend) */}
           <div className="absolute inset-0 rounded-[2.5rem] sm:rounded-[3rem] bg-white/[0.02] backdrop-blur-2xl border border-white/[0.05] z-0 overflow-hidden">
@@ -95,7 +88,9 @@ export function EditorialBreather() {
                   {/* Highlight under text */}
                   <motion.span 
                     className="absolute bottom-1 sm:bottom-2 left-0 right-0 h-3 sm:h-4 bg-utbex-maroon/40 -z-10 -rotate-2 rounded-sm"
-                    animate={{ width: isHovered ? "100%" : "0%" }}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "circOut" }}
                   />
                 </span>

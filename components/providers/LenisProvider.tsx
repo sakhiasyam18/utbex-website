@@ -11,9 +11,9 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     // Defer initialization to avoid blocking main thread on hydration
     const timeoutId = setTimeout(() => {
       lenis = new Lenis({
-        lerp: 0.08,
+        lerp: 0.1,         // was 0.08 — slightly faster, less work per frame
         smoothWheel: true,
-        syncTouch: true,
+        syncTouch: false,  // disabled — avoid conflicting with iOS native scroll momentum
       });
 
       function raf(time: number) {
