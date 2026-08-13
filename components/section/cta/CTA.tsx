@@ -49,6 +49,41 @@ export default function CTA() {
             </p>
           </motion.div>
         </div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 sm:mt-14"
+        >
+          <a
+            href="https://wa.me/6282252358901"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="cta-kolaborasi"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-utbex-maroon text-white rounded-2xl text-sm font-bold tracking-wide
+                       shadow-[0_8px_32px_rgba(139,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.15)]
+                       hover:shadow-[0_12px_40px_rgba(139,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.2)]
+                       hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
+          >
+            Mulai Berkolaborasi
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform duration-300">
+              <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a
+            href="#about"
+            id="cta-pelajari"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white/80 rounded-2xl text-sm font-bold tracking-wide
+                       bg-white/[0.04] backdrop-blur-sm
+                       hover:bg-white/[0.08] hover:border-white/30 hover:text-white
+                       hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
+          >
+            Pelajari Perjalanan Kami
+          </a>
+        </motion.div>
       </div>
     </section>
   );

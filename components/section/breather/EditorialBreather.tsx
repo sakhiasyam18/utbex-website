@@ -20,7 +20,7 @@ export function EditorialBreather() {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full py-28 md:py-40 bg-[#030003] text-white overflow-hidden flex items-center justify-center min-h-[70vh]"
+      className="relative w-full py-28 md:py-32 bg-[#030003] text-white overflow-hidden flex items-center justify-center min-h-[55vh]"
     >
       {/* Ambient background gradients (Gen Z Neon Vibe) */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">

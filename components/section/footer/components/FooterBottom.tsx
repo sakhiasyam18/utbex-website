@@ -17,7 +17,7 @@ export function FooterBottom() {
       {/* ════════════════════════════════════════════════════════
           UTBEX Wordmark — batik gradient watermark
           ════════════════════════════════════════════════════════ */}
-      <div className="relative z-10 w-full overflow-hidden select-none mt-1" aria-hidden="true">
+      <div className="relative z-10 w-full overflow-hidden select-none mt-4" aria-hidden="true">
         <style>{`
           .utbex-wordmark {
             font-size: clamp(72px, 17vw, 260px);

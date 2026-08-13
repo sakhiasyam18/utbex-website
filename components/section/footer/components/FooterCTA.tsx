@@ -9,7 +9,7 @@ export function FooterCTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="group relative rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden mb-10 lg:mb-20
+        className="group relative rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden mb-10 lg:mb-16
                    bg-gradient-to-br from-utbex-maroon to-[#5A0000]
                    shadow-[0_20px_60px_rgba(139,0,0,0.22),inset_0_2px_4px_rgba(255,255,255,0.18)]
                    hover:shadow-[0_28px_72px_rgba(139,0,0,0.32),inset_0_2px_4px_rgba(255,255,255,0.24)]

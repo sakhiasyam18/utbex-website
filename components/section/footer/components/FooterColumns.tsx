@@ -62,7 +62,7 @@ export function FooterColumns() {
 
         {/* ── Col 2: Navigasi ───────────────────────────────── */}
         <motion.div variants={fadeUp} className="flex flex-col gap-4">
-          <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-dark/60 mb-1">
+          <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-utbex-dark/60 mb-1">
             Navigasi
           </p>
           <nav aria-label="Footer navigation">
@@ -86,7 +86,7 @@ export function FooterColumns() {
 
         {/* ── Col 3: Kontak ─────────────────────────────────── */}
         <motion.div variants={fadeUp} className="flex flex-col gap-5">
-          <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-dark/60 mb-1">
+          <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-utbex-dark/60 mb-1">
             Kontak
           </p>
           <address className="not-italic flex flex-col gap-5">
@@ -145,7 +145,7 @@ export function FooterColumns() {
 
         {/* ── Col 4: Sosial Media ───────────────────────────── */}
         <motion.div variants={fadeUp} className="flex flex-col gap-4">
-          <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-utbex-dark/60 mb-1">
+          <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-utbex-dark/60 mb-1">
             Ikuti Kami
           </p>
 
