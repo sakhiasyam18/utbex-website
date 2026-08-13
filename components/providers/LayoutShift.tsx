@@ -8,7 +8,7 @@ export function LayoutShift({ children }: { children: React.ReactNode }) {
   const pastHero = usePastHero();
 
   return (
-    <main className={`flex-grow transition-[padding] duration-[380ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] ${pastHero ? "lg:pl-72 xl:pl-80" : ""}`}>
+    <main className={`flex-grow transition-[padding] duration-[380ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] ${pastHero ? "xl:pl-80" : ""}`}>
       {children}
     </main>
   );

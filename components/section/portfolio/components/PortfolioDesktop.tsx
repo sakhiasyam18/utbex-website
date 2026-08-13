@@ -11,10 +11,10 @@ interface PortfolioDesktopProps {
 
 export function PortfolioDesktop({ transformX, setSelectedProject }: PortfolioDesktopProps) {
   return (
-    <div className="hidden lg:flex flex-1 w-full relative items-start overflow-visible pb-10">
+    <div className="hidden lg:flex flex-1 w-full relative items-stretch overflow-clip py-6">
       <motion.div
         style={{ x: transformX }}
-        className="relative z-10 flex flex-row items-center gap-10 px-[10vw] h-[65vh] max-h-[500px] w-[max-content]"
+        className="relative z-10 flex flex-row items-stretch gap-10 px-[10vw] h-full w-[max-content]"
       >
         {/* Cards Track */}
         {portfolioData.map((project, idx) => (

@@ -13,8 +13,8 @@ export interface HeroMotionProps {
 export function HeroDesktopContent({ blur, scale, opacity }: HeroMotionProps) {
   return (
     <div
-      className="flex-1 hidden lg:grid"
-      style={{ gridTemplateColumns: "2fr 3fr 2fr", minHeight: 0 }}
+      className="flex-1 hidden xl:grid max-h-[90vh] overflow-hidden"
+      style={{ gridTemplateColumns: "1.8fr 3.4fr 1.8fr", minHeight: 0 }}
     >
       {/* ═══════════════════════════════════════════════════
           COL 1 — LEFT: Label + Headline + Buttons ONLY

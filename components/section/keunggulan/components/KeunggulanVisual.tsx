@@ -14,16 +14,16 @@ export function KeunggulanVisual() {
       </svg>
 
       {/* Left side: Image */}
-      <figure className="relative w-full lg:w-5/12 h-[40vh] lg:h-auto min-h-[280px] lg:min-h-[400px] m-0">
+      <figure className="relative w-full xl:w-5/12 h-[40vh] xl:h-auto min-h-[280px] xl:min-h-[400px] m-0">
         <Image
           src="/images/foto-penyerahan-penghargaan-utbex-arif-dwi-asmara-dengan-pemerintah.avif"
           alt="Arik Dwi Asmara menerima penghargaan"
           fill
           className="object-cover object-center"
-          sizes="(max-width: 1024px) 100vw, 40vw"
+          sizes="(max-width: 1280px) 100vw, 40vw"
         />
         {/* Gradient overlay to smoothly blend image to the background on mobile, or right edge on desktop */}
-        <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#f8f9fa] via-transparent to-transparent opacity-80 lg:opacity-20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t xl:bg-gradient-to-r from-[#f8f9fa] via-transparent to-transparent opacity-80 xl:opacity-20 pointer-events-none" />
       </figure>
     </>
   );

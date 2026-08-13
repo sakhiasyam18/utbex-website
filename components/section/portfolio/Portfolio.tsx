@@ -1,7 +1,7 @@
 "use client";
 // components/section/portfolio/Portfolio.tsx
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { CategoryTab, ProjectData } from "./data/portfolioData";
 
@@ -12,34 +12,24 @@ import { PortfolioModal } from "./components/PortfolioModal";
 
 export default function Portfolio() {
   const targetRef = useRef<HTMLDivElement>(null);
-  const [isDesktop, setIsDesktop] = useState(true);
   const [activeTab, setActiveTab] = useState<CategoryTab>("Bidang Usaha & Produk");
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
-
-  useEffect(() => {
-    const checkScreen = () => setIsDesktop(window.innerWidth >= 1024);
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  // Direct transform — no useSpring (which ran every animation frame)
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
-  const transformX = isDesktop ? x : "0%";
+  // Simple static transform for horizontal scrolling
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
-  // Throttle tab updates — only fires when crossing thresholds, not every frame
+  // Throttle tab updates based on scroll progress
   const lastTabRef = useRef<string>("Bidang Usaha & Produk");
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (!isDesktop) return;
     let next: string;
     if (latest < 0.33)       next = "Bidang Usaha & Produk";
     else if (latest < 0.66)  next = "Program Pemberdayaan";
     else                     next = "Kolaborasi Sosial";
-    // Only trigger setState when tab actually changes (prevents per-frame re-renders)
+    
     if (next !== lastTabRef.current) {
       lastTabRef.current = next;
       setActiveTab(next as CategoryTab);
@@ -48,9 +38,8 @@ export default function Portfolio() {
 
   const scrollToTab = (tab: CategoryTab, index: number) => {
     setActiveTab(tab);
-    if (!isDesktop) return;
-
-    // Desktop: Jump to specific scroll percentage
+    
+    // Jump to specific scroll percentage
     const percentages = [0, 0.35, 0.65];
     const targetPercentage = percentages[index];
 
@@ -65,22 +54,21 @@ export default function Portfolio() {
     <section
       id="portfolio"
       ref={targetRef}
-      className="relative w-full bg-[#060006] text-white lg:h-[600vh]"
+      className="relative w-full h-auto lg:h-[350vh] bg-[#060006] text-white"
     >
       {/* Container: sticky on desktop, static on mobile */}
-      <div className="lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col relative w-full h-auto py-24 lg:py-0 lg:pb-10">
+      <div className="lg:sticky lg:top-0 lg:h-screen lg:overflow-clip flex flex-col relative w-full h-auto py-24 lg:py-0">
         
-        {/* Ambient background glow (Fixed to viewport) */}
+        {/* Ambient background glow */}
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-utbex-maroon/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-900/8 rounded-full blur-[100px]" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-utbex-maroon/5 rounded-full blur-[150px]" />
-          {/* Noise texture */}
           <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMC4yIi8+PC9zdmc+')]" />
         </div>
 
         <PortfolioHeader 
-          isDesktop={isDesktop}
+          isDesktop={true} // The header handles responsive inside itself or via css
           activeTab={activeTab}
           scrollToTab={scrollToTab}
         />
@@ -91,7 +79,7 @@ export default function Portfolio() {
         />
 
         <PortfolioDesktop 
-          transformX={transformX}
+          transformX={x}
           setSelectedProject={setSelectedProject}
         />
       </div>

@@ -12,7 +12,7 @@ export interface HeroMotionProps {
 
 export function HeroMobileContent({ blur, scale, opacity }: HeroMotionProps) {
   return (
-    <div className="flex-1 w-full flex flex-col lg:hidden relative">
+    <div className="flex-1 w-full flex flex-col xl:hidden relative">
       {/* Photo Block */}
       <motion.div
         className="relative w-full will-change-transform overflow-hidden"

@@ -12,7 +12,7 @@ export function ScrollProgress() {
     if (!pastHero) return null;
 
     return (
-        <aside className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-4 bg-white/40 backdrop-blur-md p-4 rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-white/50 transition-opacity duration-500">
+        <aside className="hidden xl:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-4 bg-white/40 backdrop-blur-md p-4 rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-white/50 transition-opacity duration-500">
             {navigationLinks.map((link, index) => {
                 const isActive = activeSection === link.id || (!activeSection && index === 0);
                 const numberStr = (index + 1).toString().padStart(2, '0');

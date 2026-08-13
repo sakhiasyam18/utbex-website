@@ -92,7 +92,7 @@ export function FooterColumns() {
           <address className="not-italic flex flex-col gap-5">
             {/* Email — glass card */}
             <a
-              href="mailto:utbexindonesiagroup@gmail.com"
+              href="mailto:info@utbex.id"
               id="klik-email"
               aria-label="Kirim email ke UTBEX"
               className="group/c flex items-start gap-3 p-4 rounded-2xl
@@ -109,7 +109,7 @@ export function FooterColumns() {
                 <p className="text-[9px] font-bold uppercase tracking-widest text-utbex-dark/60 mb-1">Email</p>
                 <p className="text-[11px] xl:text-[12px] font-bold text-utbex-dark group-hover/c:text-utbex-maroon
                                transition-colors duration-300 leading-snug break-words">
-                  utbexindonesiagroup@gmail.com
+                  info@utbex.id
                 </p>
               </div>
             </a>

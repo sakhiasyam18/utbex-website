@@ -136,7 +136,7 @@ export function Navigation() {
   }, [mobileOpen]);
 
   return (
-    <>
+    <div id="utbex-navigation-root">
       {/* ═══════════════════════════════════════════════════════════════════════
           DESKTOP — Fixed Left Sidebar (Glassmorphism + Neon)
       ═══════════════════════════════════════════════════════════════════════ */}
@@ -150,7 +150,7 @@ export function Navigation() {
             animate="visible"
             exit="exit"
             onMouseMove={handleMouseMove}
-            className={`hidden lg:flex fixed left-0 top-0 h-screen w-72 xl:w-80 flex-col z-[100] transition-colors duration-500
+            className={`hidden xl:flex fixed left-0 top-0 h-screen w-72 xl:w-80 flex-col z-[100] transition-colors duration-500
                        ${isDark 
                          ? "bg-[#050005]/90 backdrop-blur-2xl border-r border-white/[0.04]" 
                          : "bg-white/70 backdrop-blur-2xl border-r border-black/[0.06]"}`}
@@ -308,7 +308,7 @@ export function Navigation() {
           MOBILE — Top bar (Glassmorphism)
       ═══════════════════════════════════════════════════════════════════════ */}
       <header
-        className={`lg:hidden fixed top-0 left-0 right-0 w-full z-[100] flex items-center justify-between
+        className={`xl:hidden fixed top-0 left-0 right-0 w-full z-[100] flex items-center justify-between
                    px-5 py-3.5 backdrop-blur-xl border-b transition-colors duration-500
                    ${isDark ? "bg-[#050005]/80 border-white/[0.05]" : "bg-white/70 border-black/[0.06]"}`}
       >
@@ -352,14 +352,14 @@ export function Navigation() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setMobileOpen(false)}
-              className="lg:hidden fixed inset-0 z-[110] bg-black/40 backdrop-blur-sm"
+              className="xl:hidden fixed inset-0 z-[110] bg-black/40 backdrop-blur-sm"
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", ease: [0.25, 0.1, 0.25, 1], duration: 0.32 }}
-              className={`lg:hidden fixed top-0 right-0 bottom-0 z-[120] w-[85vw] max-w-sm flex flex-col overflow-hidden
+              className={`xl:hidden fixed top-0 right-0 bottom-0 z-[120] w-[85vw] max-w-sm flex flex-col overflow-hidden
                           ${isDark
                             ? "bg-[#050005]/95 backdrop-blur-2xl border-l border-white/[0.05]"
                             : "bg-white/90 backdrop-blur-2xl border-l border-black/[0.06] shadow-2xl"}`}
@@ -440,6 +440,6 @@ export function Navigation() {
           </>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

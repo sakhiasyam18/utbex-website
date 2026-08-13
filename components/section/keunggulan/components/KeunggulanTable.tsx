@@ -4,7 +4,7 @@ import { keunggulanData } from "../data/keunggulanData";
 
 export function KeunggulanTable() {
   return (
-    <div className="relative w-full lg:w-7/12 py-10 lg:py-24 px-5 sm:px-10 lg:px-16 xl:px-20 z-10 flex flex-col justify-center">
+    <div className="relative w-full xl:w-7/12 py-12 xl:py-24 px-5 sm:px-10 xl:px-20 z-10 flex flex-col justify-center">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
