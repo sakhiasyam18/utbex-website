@@ -119,6 +119,7 @@ export function HeroDesktopContent({ blur, scale, opacity }: HeroMotionProps) {
             className="object-contain object-bottom"
             priority
             loading="eager"
+            fetchPriority="high"
             sizes="43vw"
           />
           <div

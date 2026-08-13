@@ -65,7 +65,7 @@ export function Lightbox({ isOpen, src, alt, caption, onClose }: LightboxProps) 
                 alt={alt}
                 fill
                 className="object-contain"
-                sizes="100vw"
+                sizes="(max-width: 1024px) 100vw, 1024px"
                 quality={95}
               />
             </div>

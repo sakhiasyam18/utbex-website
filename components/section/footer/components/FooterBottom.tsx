@@ -6,10 +6,10 @@ export function FooterBottom() {
 
       {/* ── Copyright bar ────────────────────────────────────── */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p className="text-[11px] text-utbex-dark/60 font-medium tracking-wide text-center sm:text-left">
+        <p className="text-[11px] text-utbex-dark/80 font-medium tracking-wide text-center sm:text-left">
           © 2026 UTBEX Indonesia. Hak cipta dilindungi undang-undang.
         </p>
-        <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-utbex-dark/50">
+        <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-utbex-dark/80">
           AHU-0100239.AH.01.01.TAHUN 2025
         </p>
       </div>

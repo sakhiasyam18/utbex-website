@@ -201,21 +201,20 @@ html.lenis body {
   }
 }
 
-/* Neon pulse animation */
+/* Neon pulse animation (GPU accelerated via opacity) */
 @keyframes neonPulse {
   0%, 100% {
-    box-shadow:
-      0 0 16px rgba(139, 0, 0, 0.12),
-      0 0 40px rgba(139, 0, 0, 0.06);
+    opacity: 0.6;
   }
   50% {
-    box-shadow:
-      0 0 24px rgba(139, 0, 0, 0.2),
-      0 0 60px rgba(139, 0, 0, 0.1);
+    opacity: 1;
   }
 }
 
 .neon-pulse {
+  box-shadow:
+    0 0 24px rgba(139, 0, 0, 0.2),
+    0 0 60px rgba(139, 0, 0, 0.1);
   animation: neonPulse 3s ease-in-out infinite;
 }
 

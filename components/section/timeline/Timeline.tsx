@@ -13,10 +13,19 @@ export default function Timeline() {
         <section
             id="timeline"
             ref={sectionRef}
-            className="relative w-full bg-utbex-light py-14 md:py-32 lg:py-40 overflow-hidden"
+            className="relative w-full bg-[#F8F6F3] py-14 md:py-32 lg:py-40 overflow-hidden"
         >
-            {/* Subtle warm gradient background */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_rgba(139,0,0,0.03)_0%,_transparent_60%)]" aria-hidden="true" />
+            {/* ── Ambient Background Glow ── */}
+            <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+                {/* Top-right warm maroon glow */}
+                <div className="absolute -top-32 -right-32 w-[700px] h-[700px] bg-utbex-maroon/[0.04] rounded-full blur-[140px]" />
+                {/* Bottom-left soft purple glow */}
+                <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-purple-900/[0.03] rounded-full blur-[120px]" />
+                {/* Center breathable warm wash */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-utbex-maroon/[0.02] rounded-full blur-[180px]" />
+                {/* Noise texture for depth */}
+                <div className="absolute inset-0 opacity-[0.025] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMC4yIi8+PC9zdmc+')]" />
+            </div>
 
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
                 {/* Header Section */}

@@ -151,9 +151,9 @@ export function Navigation() {
             exit="exit"
             onMouseMove={handleMouseMove}
             className={`hidden xl:flex fixed left-0 top-0 h-screen w-72 xl:w-80 flex-col z-[100] transition-colors duration-500
-                       ${isDark 
-                         ? "bg-[#050005]/90 backdrop-blur-2xl border-r border-white/[0.04]" 
-                         : "bg-white/70 backdrop-blur-2xl border-r border-black/[0.06]"}`}
+                       ${isDark
+                ? "bg-[#050005]/90 backdrop-blur-2xl border-r border-white/[0.04]"
+                : "bg-white/70 backdrop-blur-2xl border-r border-black/[0.06]"}`}
           >
             {/* Mouse-following spotlight glow */}
             <div
@@ -209,8 +209,8 @@ export function Navigation() {
                 {/* Stat Card 1 */}
                 <div className={`flex-1 px-4 py-3.5 rounded-2xl border transition-all duration-300 hover:scale-[1.03] group/stat cursor-default
                                ${isDark
-                                 ? "bg-white/[0.03] border-white/[0.06] hover:bg-utbex-maroon/10 hover:border-utbex-maroon/20"
-                                 : "bg-white/80 border-black/[0.05] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(139,0,0,0.1)] hover:border-utbex-maroon/20"}`}>
+                    ? "bg-white/[0.03] border-white/[0.06] hover:bg-utbex-maroon/10 hover:border-utbex-maroon/20"
+                    : "bg-white/80 border-black/[0.05] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(139,0,0,0.1)] hover:border-utbex-maroon/20"}`}>
                   <p className={`text-xl font-black tracking-tighter transition-colors duration-300 group-hover/stat:text-utbex-maroon ${isDark ? "text-white" : "text-utbex-maroon"}`}>
                     10<span className="text-sm">+</span>
                   </p>
@@ -221,8 +221,8 @@ export function Navigation() {
                 {/* Stat Card 2 */}
                 <div className={`flex-1 px-4 py-3.5 rounded-2xl border transition-all duration-300 hover:scale-[1.03] group/stat cursor-default
                                ${isDark
-                                 ? "bg-white/[0.03] border-white/[0.06] hover:bg-utbex-maroon/10 hover:border-utbex-maroon/20"
-                                 : "bg-white/80 border-black/[0.05] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(139,0,0,0.1)] hover:border-utbex-maroon/20"}`}>
+                    ? "bg-white/[0.03] border-white/[0.06] hover:bg-utbex-maroon/10 hover:border-utbex-maroon/20"
+                    : "bg-white/80 border-black/[0.05] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(139,0,0,0.1)] hover:border-utbex-maroon/20"}`}>
                   <p className={`text-xl font-black tracking-tighter transition-colors duration-300 group-hover/stat:text-utbex-maroon ${isDark ? "text-white" : "text-utbex-maroon"}`}>
                     80<span className="text-sm">+</span>
                   </p>
@@ -246,10 +246,10 @@ export function Navigation() {
                       key={link.id}
                       href={link.href}
                       onClick={(e) => {
-                          e.preventDefault();
-                          setActiveSection(link.id);
-                          const el = document.getElementById(link.id);
-                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        e.preventDefault();
+                        setActiveSection(link.id);
+                        const el = document.getElementById(link.id);
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
                       }}
                       className={`group flex items-center gap-4 px-5 py-4 rounded-2xl text-[12px] font-bold tracking-widest uppercase transition-all duration-300 border relative overflow-hidden
                         ${isActive
@@ -260,11 +260,10 @@ export function Navigation() {
                         }`}
                     >
                       <span
-                        className={`flex-shrink-0 transition-all duration-300 ${
-                          isActive
+                        className={`flex-shrink-0 transition-all duration-300 ${isActive
                             ? "text-white"
                             : isDark ? "text-white/50 group-hover:text-white" : "text-utbex-dark/50 group-hover:text-white"
-                        }`}
+                          }`}
                       >
                         {sectionIcons[link.id] ?? <HomeIcon />}
                       </span>
@@ -312,32 +311,32 @@ export function Navigation() {
                    px-5 py-3.5 backdrop-blur-xl border-b transition-colors duration-500
                    ${isDark ? "bg-[#050005]/80 border-white/[0.05]" : "bg-white/70 border-black/[0.06]"}`}
       >
-            {/* Top highlight */}
-            <div className={`absolute top-0 inset-x-0 h-px ${isDark ? "bg-gradient-to-r from-transparent via-utbex-maroon/30 to-transparent" : "bg-gradient-to-r from-transparent via-utbex-maroon/15 to-transparent"}`} />
+        {/* Top highlight */}
+        <div className={`absolute top-0 inset-x-0 h-px ${isDark ? "bg-gradient-to-r from-transparent via-utbex-maroon/30 to-transparent" : "bg-gradient-to-r from-transparent via-utbex-maroon/15 to-transparent"}`} />
 
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="relative w-8 h-8 rounded-lg overflow-hidden flex-shrink-0 shadow-sm">
-                <Image src="/images/logo-utbex-3.avif" alt="UTBEX logo" fill sizes="32px" className="object-cover" />
-              </div>
-              <div className="leading-tight">
-                <p className={`font-black text-base tracking-tight leading-none transition-colors duration-500 ${isDark ? "text-white" : "text-utbex-dark"}`}>
-                  UTBEX<span className="text-utbex-maroon">.</span>
-                </p>
-              </div>
-            </Link>
-      <button
-        onClick={() => setMobileOpen(true)}
-        className={`p-2.5 rounded-xl border transition-all duration-300
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden flex-shrink-0 shadow-sm">
+            <Image src="/images/logo-utbex-3.avif" alt="UTBEX logo" fill sizes="32px" className="object-cover" />
+          </div>
+          <div className="leading-tight">
+            <p className={`font-black text-base tracking-tight leading-none transition-colors duration-500 ${isDark ? "text-white" : "text-utbex-dark"}`}>
+              UTBEX<span className="text-utbex-maroon">.</span>
+            </p>
+          </div>
+        </Link>
+        <button
+          onClick={() => setMobileOpen(true)}
+          className={`p-2.5 rounded-xl border transition-all duration-300
                    ${isDark
-                     ? "text-white/70 hover:text-white bg-white/[0.04] border-white/[0.06] hover:bg-white/[0.08]"
-                     : "text-utbex-text-secondary hover:text-utbex-dark bg-white/50 border-black/[0.05] hover:bg-white/80"}`}
-        aria-label="Open menu"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-          <line x1="4" y1="7" x2="20" y2="7" />
-          <line x1="4" y1="17" x2="20" y2="17" />
-        </svg>
-      </button>
+              ? "text-white/70 hover:text-white bg-white/[0.04] border-white/[0.06] hover:bg-white/[0.08]"
+              : "text-utbex-text-secondary hover:text-utbex-dark bg-white/50 border-black/[0.05] hover:bg-white/80"}`}
+          aria-label="Open menu"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
       </header>
 
       {/* ═══════════════════════════════════════════════════════════════════════
@@ -361,8 +360,8 @@ export function Navigation() {
               transition={{ type: "tween", ease: [0.25, 0.1, 0.25, 1], duration: 0.32 }}
               className={`xl:hidden fixed top-0 right-0 bottom-0 z-[120] w-[85vw] max-w-sm flex flex-col overflow-hidden
                           ${isDark
-                            ? "bg-[#050005]/95 backdrop-blur-2xl border-l border-white/[0.05]"
-                            : "bg-white/90 backdrop-blur-2xl border-l border-black/[0.06] shadow-2xl"}`}
+                  ? "bg-[#050005]/95 backdrop-blur-2xl border-l border-white/[0.05]"
+                  : "bg-white/90 backdrop-blur-2xl border-l border-black/[0.06] shadow-2xl"}`}
             >
               {/* Top neon line */}
               <div className={`absolute top-0 inset-x-0 h-px ${isDark ? "bg-gradient-to-r from-transparent via-utbex-maroon/40 to-transparent" : "bg-gradient-to-r from-transparent via-utbex-maroon/20 to-transparent"}`} />
@@ -379,8 +378,8 @@ export function Navigation() {
                   onClick={() => setMobileOpen(false)}
                   className={`p-2 rounded-xl border transition-all duration-300
                              ${isDark
-                               ? "text-white/70 hover:text-white bg-white/[0.04] border-white/[0.06]"
-                               : "text-utbex-text-secondary hover:text-utbex-dark bg-white/50 border-black/[0.05]"}`}
+                      ? "text-white/70 hover:text-white bg-white/[0.04] border-white/[0.06]"
+                      : "text-utbex-text-secondary hover:text-utbex-dark bg-white/50 border-black/[0.05]"}`}
                   aria-label="Close"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -399,11 +398,11 @@ export function Navigation() {
                       key={link.id}
                       href={link.href}
                       onClick={(e) => {
-                          e.preventDefault();
-                          setActiveSection(link.id);
-                          setMobileOpen(false);
-                          const el = document.getElementById(link.id);
-                          if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        e.preventDefault();
+                        setActiveSection(link.id);
+                        setMobileOpen(false);
+                        const el = document.getElementById(link.id);
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
                       }}
                       className={`group flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-[11px] font-bold tracking-widest uppercase transition-all duration-300 border
                         ${isActive

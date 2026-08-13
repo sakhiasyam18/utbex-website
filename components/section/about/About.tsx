@@ -16,6 +16,7 @@ export default function About() {
       <div className="about-orb about-orb-animate w-[350px] h-[350px] bg-rose-200/[0.15] bottom-[10%] right-[-5%]" style={{ animationDelay: "-8s" }} />
 
       <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-10 py-14 lg:py-32">
+        <h2 id="about-headline" className="sr-only">Tentang UTBEX</h2>
         <AboutHeader />
         <AboutVisionMission />
         <AboutLongTermVision />

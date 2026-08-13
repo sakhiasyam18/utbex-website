@@ -63,6 +63,7 @@ export default function CTA() {
             target="_blank"
             rel="noopener noreferrer"
             id="cta-kolaborasi"
+            aria-label="Mulai Berkolaborasi - Hubungi via WhatsApp"
             className="group inline-flex items-center gap-3 px-8 py-4 bg-utbex-maroon text-white rounded-2xl text-sm font-bold tracking-wide
                        shadow-[0_8px_32px_rgba(139,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.15)]
                        hover:shadow-[0_12px_40px_rgba(139,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.2)]

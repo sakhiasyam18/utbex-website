@@ -36,12 +36,14 @@ export default function TimelineEvidence({ evidence }: TimelineEvidenceProps) {
                         key={i}
                         onClick={() => handleClick(item)}
                         className="group inline-flex items-center gap-2 text-[11px] font-semibold
-                                   text-utbex-maroon bg-white/80 backdrop-blur-sm
+                                   text-utbex-maroon bg-white/70 backdrop-blur-sm
                                    px-4 py-2.5 rounded-xl transition-all duration-300 cursor-pointer
-                                   border border-utbex-maroon/15 shadow-[0_2px_8px_rgba(0,0,0,0.04)]
+                                   border border-white/80
+                                   shadow-[inset_1px_1px_2px_rgba(255,255,255,0.8),_2px_2px_8px_rgba(0,0,0,0.05)]
                                    hover:bg-utbex-maroon hover:text-white hover:border-utbex-maroon
-                                   hover:shadow-[0_6px_20px_rgba(139,0,0,0.2)]
-                                   hover:-translate-y-0.5 active:translate-y-0"
+                                   hover:shadow-[0_6px_24px_rgba(139,0,0,0.25),_inset_0_1px_0_rgba(255,255,255,0.15)]
+                                   hover:-translate-y-0.5 active:translate-y-0
+                                   active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.15)]"
                     >
                         <span className="text-xs transition-transform duration-300 group-hover:scale-110">
                             {item.type === 'certificate' ? '📜' : item.type === 'documentation' ? '📷' : '📰'}
