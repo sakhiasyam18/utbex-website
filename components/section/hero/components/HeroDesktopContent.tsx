@@ -52,13 +52,13 @@ export function HeroDesktopContent({ blur, scale, opacity }: HeroMotionProps) {
             href="https://wa.me/6282252358901"
             target="_blank"
             rel="noopener noreferrer"
-            id="hero-cta-primary"
+            id="klik-hero-kolaborasi"
             className="inline-flex items-center gap-2 px-6 py-3
                        bg-utbex-maroon text-white rounded-full text-sm font-semibold
                        hover:bg-[#6A0000] transition-colors duration-200
                        shadow-[0_6px_20px_rgba(139,0,0,0.3)]"
           >
-            Hubungi
+            Mari Berkolaborasi
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />
@@ -67,13 +67,13 @@ export function HeroDesktopContent({ blur, scale, opacity }: HeroMotionProps) {
           </Link>
           <Link
             href="#about"
-            id="hero-cta-secondary"
+            id="klik-hero-jelajahi"
             className="inline-flex items-center gap-2 px-6 py-3
                        border-2 border-utbex-dark/20 text-utbex-dark rounded-full
                        text-sm font-semibold bg-white/60 backdrop-blur-sm
                        hover:border-utbex-dark/35 hover:bg-white/80 transition-all duration-200"
           >
-            Tentang Kami
+            Jelajahi Perjalanan
           </Link>
         </div>
       </div>

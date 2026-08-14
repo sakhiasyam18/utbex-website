@@ -72,18 +72,20 @@ export function HeroMobileContent({ blur, scale, opacity }: HeroMotionProps) {
             href="https://wa.me/6282252358901"
             target="_blank"
             rel="noopener noreferrer"
+            id="klik-hero-kolaborasi"
             className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-utbex-maroon text-white rounded-2xl text-[13px] font-bold tracking-wide shadow-[0_6px_20px_rgba(139,0,0,0.28)] active:scale-[0.97] transition-transform duration-100"
           >
-            Hubungi Kami
+            Mari Berkolaborasi
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
             </svg>
           </Link>
           <Link
             href="#about"
+            id="klik-hero-jelajahi"
             className="px-5 py-3.5 border border-black/[0.12] text-utbex-dark rounded-2xl text-[13px] font-bold bg-white/60 backdrop-blur-sm active:scale-[0.97] transition-transform duration-100"
           >
-            Tentang
+            Jelajahi Perjalanan
           </Link>
         </div>
       </div>
