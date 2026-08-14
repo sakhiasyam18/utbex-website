@@ -95,6 +95,14 @@ export function FooterColumns() {
               href="mailto:info@utbex.id"
               id="klik-email"
               aria-label="Kirim email ke UTBEX"
+              onClick={(e) => {
+                try {
+                  navigator.clipboard.writeText("info@utbex.id");
+                  alert("Alamat email info@utbex.id berhasil disalin! (Membuka aplikasi email...)");
+                } catch (err) {
+                  console.error("Gagal menyalin", err);
+                }
+              }}
               className="group/c relative z-20 flex items-start gap-3 p-4 rounded-2xl
                          bg-white/45 backdrop-blur-md border border-white/60
                          shadow-[0_4px_16px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.9)]
