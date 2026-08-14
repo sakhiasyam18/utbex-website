@@ -17,7 +17,22 @@ export const metadata: Metadata = {
     template: "%s | UTBEX Indonesia"
   },
   description: "UTBEX Indonesia Group adalah social enterprise yang berkomitmen memajukan kualitas hidup masyarakat di Bantur, Malang, Jawa Timur melalui ekonomi kreatif, pemberdayaan pemuda desa, dan inovasi UMKM.",
-  keywords: ["UTBEX", "UTBEX Indonesia", "Arik Dwi Asmara", "Social Enterprise", "Ekonomi Kreatif", "Bantur", "Malang", "Jawa Timur", "Pemberdayaan Desa", "UMKM", "Inovasi"],
+  keywords: [
+    "UTBEX", 
+    "UTBEX Indonesia", 
+    "Arik Dwi Asmara", 
+    "Social Enterprise", 
+    "Ekonomi Kreatif", 
+    "Bantur", 
+    "Malang", 
+    "Jawa Timur", 
+    "Pemberdayaan Desa", 
+    "UMKM", 
+    "Inovasi",
+    "Inkubasi Pemuda Desa",
+    "Desa Wisata Pesisir Selatan",
+    "Pusat Pelatihan Ekonomi Kreatif"
+  ],
   metadataBase: new URL("https://utbex.id"),
   openGraph: {
     title: "UTBEX Indonesia | Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise",
@@ -65,11 +80,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": ["Organization", "LocalBusiness"],
               "name": "UTBEX Indonesia Group",
               "url": "https://utbex.id",
               "logo": "https://utbex.id/icon.png",
               "description": "UTBEX Indonesia Group adalah sebuah lembaga social enterprise yang berkomitmen untuk memajukan dan meningkatkan kualitas hidup masyarakat di wilayah Bantur, Jawa Timur, Indonesia.",
+              "priceRange": "$$",
               "founder": {
                 "@type": "Person",
                 "name": "Arik Dwi Asmara"
@@ -82,9 +98,15 @@ export default function RootLayout({
                 "postalCode": "65179",
                 "addressCountry": "ID"
               },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -8.3283,
+                "longitude": 112.5647
+              },
               "contactPoint": {
                 "@type": "ContactPoint",
                 "email": "info@utbex.id",
+                "telephone": "+6282252358901",
                 "contactType": "customer service"
               },
               "sameAs": [
