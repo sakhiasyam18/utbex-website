@@ -96,12 +96,9 @@ export function FooterColumns() {
               id="klik-email"
               aria-label="Kirim email ke UTBEX"
               onClick={(e) => {
-                try {
-                  navigator.clipboard.writeText("info@utbex.id");
-                  alert("Alamat email info@utbex.id berhasil disalin! (Membuka aplikasi email...)");
-                } catch (err) {
-                  console.error("Gagal menyalin", err);
-                }
+                e.preventDefault();
+                // Langsung buka Gmail Web di tab baru (seperti di screenshot)
+                window.open("https://mail.google.com/mail/?view=cm&fs=1&to=info@utbex.id", "_blank");
               }}
               className="group/c relative z-20 flex items-start gap-3 p-4 rounded-2xl
                          bg-white/45 backdrop-blur-md border border-white/60
