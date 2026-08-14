@@ -33,8 +33,8 @@ export default function Hero() {
       {/* Layout untuk Desktop (Grid 3 Kolom) */}
       <HeroDesktopContent blur={blur} scale={scale} opacity={opacity} />
       
-      {/* Layout untuk Mobile & Tablet (Full screen dengan overlay) */}
-      <HeroMobileContent blur={blur} scale={scale} opacity={opacity} />
+      {/* Layout untuk Mobile & Tablet (Full screen — no motion wrapper for fast LCP) */}
+      <HeroMobileContent />
       
       <HeroStatsBar />
     </section>

@@ -22,7 +22,7 @@ export function AboutLongTermVision() {
             src="/images/visi-panjang-utbex.avif" 
             alt="UTBEX Dream Board" 
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 90vw, 40vw"
             className="object-cover group-hover:scale-105 transition-transform duration-700" 
           />
           <div className="absolute inset-0 bg-utbex-maroon/10 mix-blend-multiply pointer-events-none transition-opacity duration-700 group-hover:opacity-50" />

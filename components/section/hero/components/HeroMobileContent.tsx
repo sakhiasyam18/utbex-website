@@ -1,28 +1,20 @@
 // components/section/hero/components/HeroMobileContent.tsx
 import Image from "next/image";
 import Link from "next/link";
-import { m as motion } from "framer-motion";
-import { MotionValue } from "framer-motion";
 
-export interface HeroMotionProps {
-  blur: MotionValue<string>;
-  scale: MotionValue<number>;
-  opacity: MotionValue<number>;
-}
-
-export function HeroMobileContent({ blur, scale, opacity }: HeroMotionProps) {
+export function HeroMobileContent() {
   return (
     <div className="flex-1 w-full flex flex-col xl:hidden relative">
-      {/* Photo Block */}
-      <motion.div
-        className="relative w-full will-change-transform overflow-hidden"
-        style={{ filter: blur, scale, opacity, flex: "0 0 58svh" }}
+      {/* Photo Block — NO motion wrapper = image paints immediately from SSR (saves ~1.1s LCP) */}
+      <div
+        className="relative w-full overflow-hidden"
+        style={{ flex: "0 0 58svh" }}
       >
         <Image
           src="/images/arik.webp"
           alt="Arik Dwi Asmara, Founder UTBEX Indonesia"
           fill
-          sizes="(max-width: 1280px) 100vw, 1vw"
+          sizes="100vw"
           className="object-cover object-[center_15%]"
           priority
           loading="eager"
@@ -39,7 +31,7 @@ export function HeroMobileContent({ blur, scale, opacity }: HeroMotionProps) {
           <p className="text-lg font-black text-utbex-maroon leading-none">10+</p>
           <p className="text-[9px] font-bold text-utbex-dark/60 uppercase tracking-wide leading-tight mt-0.5">Tahun</p>
         </div>
-      </motion.div>
+      </div>
 
       {/* Info Block */}
       <div
