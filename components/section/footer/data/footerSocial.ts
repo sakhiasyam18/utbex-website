@@ -1,4 +1,13 @@
-// components/section/footer/data/footerSocial.ts
+/**
+ * components/section/footer/data/footerSocial.ts
+ * ----------------------------------------------------------------------
+ * File data penyimpan tautan media sosial (Social Links) resmi milik UTBEX.
+ * 
+ * Aturan Penambahan Media Sosial:
+ * 1. Setiap object membutuhkan `id`, `platform` (nama platform persis dengan ikon di FooterIcons.tsx),
+ *    `href` (tautan profil), dan `ariaLabel` (untuk aksesibilitas / SEO).
+ * 2. Jangan tambahkan platform jika ikon-nya belum didaftarkan di `FooterIcons.tsx` (konstanta `ICON_MAP`).
+ */
 
 export interface FooterSocialItem {
   id: string;

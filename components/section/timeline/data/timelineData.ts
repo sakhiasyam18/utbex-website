@@ -1,4 +1,15 @@
-// components/section/timeline/data/timelineData.ts
+/**
+ * components/section/timeline/data/timelineData.ts
+ * ----------------------------------------------------------------------
+ * File penyimpan database statis (array of objects) untuk seluruh 
+ * riwayat perjalanan & pencapaian (milestones) UTBEX.
+ * 
+ * Aturan Penambahan Data:
+ * - Setiap object WAJIB memiliki `id` yang unik.
+ * - Array bukti (`evidence`) bersifat opsional. Jika diisi dengan tipe "certificate" 
+ *   atau "documentation", harus mengarah ke gambar valid. Jika "media", harus URL eksternal.
+ * - `timelineHeader` di bagian bawah digunakan untuk mengubah teks judul seksi.
+ */
 
 export interface TimelineEvidence {
     label: string;

@@ -1,5 +1,29 @@
 "use client";
 
+/**
+ * components/ui/Lightbox.tsx
+ * ----------------------------------------------------------------------
+ * Komponen "Lightbox" — popup layar penuh untuk memperbesar gambar.
+ * 
+ * Cara kerjanya:
+ * 1. Saat pengunjung mengklik gambar (misal: sertifikat di Timeline), 
+ *    komponen ini muncul menutupi seluruh layar dengan latar belakang gelap transparan.
+ * 2. Gambar ditampilkan dalam ukuran besar di tengah layar.
+ * 3. Bisa ditutup dengan klik tombol "X", klik area gelap di luar gambar,
+ *    atau menekan tombol Escape pada keyboard.
+ * 
+ * Teknik yang digunakan:
+ * - AnimatePresence (Framer Motion): Transisi masuk/keluar yang halus (fade + scale).
+ * - useEffect: Mengunci scroll body saat Lightbox terbuka (mencegah halaman di belakangnya ikut scroll).
+ * - stopPropagation: Mencegah klik di gambar menutup popup (hanya klik di area gelap yang menutup).
+ * 
+ * @param isOpen  - Apakah Lightbox sedang terbuka atau tidak.
+ * @param src     - Path/URL gambar yang ditampilkan.
+ * @param alt     - Teks alternatif gambar (untuk aksesibilitas & SEO).
+ * @param caption - (Opsional) Teks keterangan di bawah gambar.
+ * @param onClose - Fungsi callback yang dipanggil saat Lightbox ditutup.
+ */
+
 import { useEffect } from "react";
 import Image from "next/image";
 import { m as motion, AnimatePresence } from "framer-motion";

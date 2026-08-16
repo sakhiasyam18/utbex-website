@@ -1,4 +1,20 @@
 // components/section/hero/components/HeroMobileContent.tsx
+
+/**
+ * HeroMobileContent Component
+ * ----------------------------------------------------------------------
+ * Komponen ini adalah versi Hero khusus untuk layar Mobile dan Tablet (hingga 1280px).
+ * 
+ * Keputusan Arsitektur:
+ * Berbeda dengan versi Desktop, komponen Mobile ini sengaja TIDAK dibungkus 
+ * dengan animasi Framer Motion (<motion.div>).
+ * 
+ * Mengapa? 
+ * Untuk mempercepat proses LCP (Largest Contentful Paint). Jika kita menggunakan 
+ * motion wrapper, gambar utama akan dirender tertunda menunggu JavaScript jalan. 
+ * Dengan HTML/CSS standar, gambar "Arik Dwi Asmara" bisa langsung tampil 
+ * dari proses SSR (Server-Side Rendering), menghemat waktu muat hingga ~1.1 detik.
+ */
 import Image from "next/image";
 import Link from "next/link";
 

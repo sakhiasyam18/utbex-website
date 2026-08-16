@@ -244,4 +244,24 @@ html.lenis body {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ============================================
+   ACCESSIBILITY: Keyboard Navigation (Tab Focus)
+   ============================================ */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid var(--color-utbex-maroon);
+    outline-offset: 4px;
+    border-radius: 2px;
+    transition: outline-offset 0.2s ease, outline-color 0.2s ease;
+  }
+
+  /* Specific border radius for focus ring to look organic */
+  button:focus-visible, 
+  a:focus-visible, 
+  [role="button"]:focus-visible, 
+  [tabindex]:focus-visible {
+    border-radius: 0.5rem; /* Matches most UI elements */
+  }
 }

@@ -1,4 +1,10 @@
-// components/section/impact/components/ImpactHeader.tsx
+/**
+ * components/section/impact/components/ImpactHeader.tsx
+ * ----------------------------------------------------------------------
+ * Komponen header untuk seksi "Dampak & Kolaborasi" (Impact).
+ * Menampilkan label (Peluang Kemitraan) dengan efek titik denyut (pulse) 
+ * dan judul besar (OPEN KERJASAMA & KOLABORASI).
+ */
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";
 

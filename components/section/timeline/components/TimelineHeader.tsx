@@ -1,6 +1,16 @@
 // components/section/timeline/components/TimelineHeader.tsx
 "use client";
 
+/**
+ * TimelineHeader Component
+ * ----------------------------------------------------------------------
+ * Menampilkan judul (headline) dan deskripsi pembuka untuk seksi Timeline.
+ * 
+ * Ornamen Visual:
+ * - Label dengan gaya pil (pill shape) glassmorphism.
+ * - Pembatas (divider) di bawah deskripsi dengan animasi titik "pulse" (berdenyut) 
+ *   di tengahnya untuk menambah kesan dinamis dan hidup.
+ */
 import { m as motion, Variants } from "framer-motion";
 
 const headerReveal: Variants = {

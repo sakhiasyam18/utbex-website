@@ -1,3 +1,15 @@
+/**
+ * components/section/portfolio/components/PortfolioHeader.tsx
+ * ----------------------------------------------------------------------
+ * Komponen header untuk seksi Portofolio yang berisi judul utama dan 
+ * sistem navigasi Tab (Kategori).
+ * 
+ * Sistem Tab:
+ * - Men-generate tab secara dinamis berdasarkan data `tabs` dari portfolioData.ts.
+ * - Tab dibagi menjadi dua tampilan:
+ *   1. Desktop: Berada di tengah (center), gaya "pill" melayang.
+ *   2. Mobile: Rata kiri, bisa di-scroll secara horizontal (overflow-x-auto).
+ */
 "use client";
 
 import { m as motion } from "framer-motion";

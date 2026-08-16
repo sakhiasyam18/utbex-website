@@ -1,6 +1,18 @@
 // components/section/timeline/Timeline.tsx
 "use client";
 
+/**
+ * Timeline Component
+ * ----------------------------------------------------------------------
+ * Komponen utama (wrapper) untuk seksi "Pengalaman & Prestasi" (Rekam Jejak).
+ * Menampilkan daftar pencapaian berurutan dalam bentuk timeline vertikal.
+ * 
+ * Struktur UI:
+ * - Ambient Background: Menggunakan efek blur glow untuk estetika kedalaman.
+ * - TimelineHeader: Judul seksi ("Rekam Jejak & Dedikasi").
+ * - TimelineEntry: Komponen anak yang dilooping dari data statis `timelineMilestones`.
+ *   Setiap entry akan diposisikan selang-seling (kiri-kanan) berdasarkan indeks Genap/Ganjil.
+ */
 import { useRef } from "react";
 import { timelineMilestones, timelineHeader } from "./data/timelineData";
 import TimelineHeader from "./components/TimelineHeader";

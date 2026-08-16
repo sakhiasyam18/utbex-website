@@ -1,4 +1,20 @@
 // components/section/hero/components/HeroDesktopContent.tsx
+
+/**
+ * HeroDesktopContent Component
+ * ----------------------------------------------------------------------
+ * Komponen ini menangani tampilan seksi Hero khusus untuk layar besar (Desktop).
+ * 
+ * Layout menggunakan CSS Grid dengan 3 kolom:
+ * - Kolom 1 (Kiri)  : Teks Utama (Headline), Umur Perusahaan, dan Tombol CTA.
+ * - Kolom 2 (Tengah): Gambar/Foto tokoh utama (Arik Dwi Asmara) dengan teks raksasa di belakangnya.
+ * - Kolom 3 (Kanan) : Kotak (Card) bergaya Glassmorphism berisi kutipan visi.
+ * 
+ * Properti Animasi (HeroMotionProps):
+ * Menerima nilai animasi (blur, scale, opacity) dari komponen induk (Hero.tsx).
+ * Nilai-nilai ini dihubungkan langsung ke elemen <motion.div> pada gambar utama 
+ * agar menciptakan efek parallax saat layar di-scroll ke bawah.
+ */
 import Image from "next/image";
 import Link from "next/link";
 import { m as motion } from "framer-motion";

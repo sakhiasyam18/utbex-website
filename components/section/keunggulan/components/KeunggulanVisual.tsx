@@ -1,3 +1,14 @@
+/**
+ * components/section/keunggulan/components/KeunggulanVisual.tsx
+ * ----------------------------------------------------------------------
+ * Komponen yang menampilkan foto visualisasi di sisi kiri seksi Keunggulan.
+ * Memuat gambar profil/kegiatan pendiri (Arik Dwi Asmara) dengan beberapa
+ * ornamen dekoratif abstrak (lingkaran blur warna-warni & garis lengkung SVG).
+ * 
+ * Overlay Gradien:
+ * Ditambahkan gradien tipis (fade) di tepi gambar agar menyatu halus 
+ * dengan background putih/abu-abu tanpa garis potong yang kaku.
+ */
 import Image from "next/image";
 
 export function KeunggulanVisual() {

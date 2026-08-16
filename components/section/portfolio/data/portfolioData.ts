@@ -1,4 +1,16 @@
-// components/section/portfolio/data/portfolioData.ts
+/**
+ * components/section/portfolio/data/portfolioData.ts
+ * ----------------------------------------------------------------------
+ * File data sentral untuk seksi Portofolio. 
+ * Menyimpan konfigurasi tab, palet warna kategori (Tags), dan 
+ * daftar lengkap (array) dari semua proyek/karya UTBEX.
+ * 
+ * Aturan Penambahan Data Baru:
+ * 1. `id` harus unik.
+ * 2. `tab` harus sesuai dengan salah satu nilai di tipe `CategoryTab`.
+ * 3. `categoryTag` akan menentukan warna badge (diambil dari `categoryColor`).
+ *    Jika nama tag belum ada di `categoryColor`, ia akan menggunakan warna default.
+ */
 
 export type CategoryTab = "Bidang Usaha & Produk" | "Program Pemberdayaan" | "Kolaborasi Sosial";
 

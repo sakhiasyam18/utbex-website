@@ -1,4 +1,12 @@
-// components/section/impact/components/ImpactBackground.tsx
+/**
+ * components/section/impact/components/ImpactBackground.tsx
+ * ----------------------------------------------------------------------
+ * Komponen murni visual (dekoratif) untuk latar belakang (background) seksi Impact.
+ * Berisi elemen-elemen abstrak seperti:
+ * - Lingkaran bercahaya (ambient glow) berwarna marun dan rose yang diblur.
+ * - Lapisan noise (tekstur butiran) transparan yang di-generate via SVG base64 
+ *   untuk memberikan kesan kedalaman/tekstur pada latar belakang putih.
+ */
 import React from "react";
 
 export const ImpactBackground = () => (

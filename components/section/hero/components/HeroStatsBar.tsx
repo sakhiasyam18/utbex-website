@@ -1,4 +1,19 @@
 // components/section/hero/components/HeroStatsBar.tsx
+
+/**
+ * HeroStatsBar Component
+ * ----------------------------------------------------------------------
+ * Komponen ini menampilkan barisan statistik/pencapaian utama di bagian paling bawah
+ * dari seksi Hero (misal: "2016 Pionir Kaos Lukis...").
+ * 
+ * Penggunaan Data:
+ * Memanggil data secara dinamis dari `heroStatsData` (heroData.ts),
+ * lalu dirender dalam bentuk grid 3 kolom yang responsif.
+ * 
+ * Animasi:
+ * Muncul perlahan dari bawah (fade-up) dengan jeda (delay) 300ms 
+ * agar tampil setelah teks headline dan gambar Hero selesai dimuat.
+ */
 import { heroStatsData as stats } from "../data/heroData";
 
 export function HeroStatsBar() {

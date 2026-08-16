@@ -1,9 +1,28 @@
 "use client";
 
-// components/atmosphere/GlobalAtmosphere.tsx
-// UTBEX Global Atmosphere System — GPU-optimized
-// All animations use only `transform` and `opacity` — compositor-friendly, zero CPU overhead.
-
+/**
+ * components/atmosphere/GlobalAtmosphere.tsx
+ * ----------------------------------------------------------------------
+ * Komponen visual dekoratif yang memberikan "nyawa" pada latar belakang halaman.
+ * 
+ * Cara kerjanya:
+ * 1. Dua buah lingkaran besar berwarna lembut ("Orb") melayang perlahan 
+ *    dengan animasi CSS keyframe (22-28 detik per siklus).
+ *    - Orb 1: Berwarna ivory hangat di pojok kiri atas.
+ *    - Orb 2: Berwarna maroon sangat tipis di pojok kanan bawah.
+ * 2. Lapisan tekstur noise statis (SVG) ditambahkan di atas untuk 
+ *    memberikan kesan "grain" ala film analog.
+ * 
+ * Optimasi Performa (GPU-friendly):
+ * - Semua animasi hanya menggunakan properti `transform` (translate), 
+ *   yang ditangani langsung oleh GPU (compositor layer). Ini berarti 
+ *   ZERO overhead pada CPU dan tidak menyebabkan re-layout atau re-paint.
+ * - Properti `will-change: transform` memberi sinyal ke browser agar 
+ *   menyiapkan layer terpisah untuk elemen ini.
+ * 
+ * Catatan: Komponen ini ditempatkan dengan `position: absolute` dan `z-index: -10`
+ * sehingga ia berada di belakang semua konten halaman.
+ */
 export function GlobalAtmosphere() {
   return (
     <div

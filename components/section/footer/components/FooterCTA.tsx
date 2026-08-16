@@ -1,3 +1,13 @@
+/**
+ * components/section/footer/components/FooterCTA.tsx
+ * ----------------------------------------------------------------------
+ * Komponen blok penutup (CTA) yang posisinya berada di atas Footer utama.
+ * Memuat kutipan inspiratif (filosofi) dan tombol Call-to-Action menuju WhatsApp.
+ * 
+ * Desain: 
+ * - Menggunakan efek Glassmorphism yang kuat (backdrop-blur) dengan 
+ *   ambient glow (pancaran cahaya abstrak) di baliknya.
+ */
 import { m as motion } from "framer-motion";
 import { WhatsAppIcon, ArrowIcon } from "./FooterIcons";
 

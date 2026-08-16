@@ -1,6 +1,24 @@
-// components/section/impact/data/impactData.ts
+/**
+ * components/section/impact/data/impactData.ts
+ * ----------------------------------------------------------------------
+ * File data sentral untuk seksi "Dampak & Kolaborasi" (Impact).
+ * Berisi konfigurasi array statis untuk:
+ * 1. `partnersData`: Daftar logo instansi/klien yang berkolaborasi.
+ * 2. `collaborationItemsData`: Daftar penawaran bentuk kerjasama (Card).
+ * 3. `impactPhotosData`: Tautan URL gambar untuk blok kolase foto.
+ */
 
-export const partnersData = [
+export interface Partner {
+  id: string;
+  num: string;
+  title: string;
+  desc: string;
+  color: string;
+  glow: string;
+  textGlow: string;
+}
+
+export const partnersData: Partner[] = [
   {
     id: "partner-1",
     num: "01",

@@ -1,5 +1,21 @@
 "use client";
 
+/**
+ * components/navigation/ScrollProgress.tsx
+ * ----------------------------------------------------------------------
+ * Komponen indikator progres scroll yang muncul di sisi kiri layar.
+ * Fungsinya mirip "daftar isi mini" yang menunjukkan posisi baca pengunjung.
+ * 
+ * Cara kerjanya:
+ * - Hanya muncul setelah pengunjung melewati bagian Hero (menggunakan usePastHero).
+ * - Menampilkan daftar angka (01, 02, 03, dst.) yang merepresentasikan setiap seksi.
+ * - Seksi yang sedang aktif ditandai dengan warna UTBEX Maroon dan lingkaran animasi.
+ * - Saat di-hover, label teks seksi akan muncul dengan efek slide-in yang halus.
+ * - Saat diklik, halaman akan men-scroll ke seksi yang bersangkutan.
+ * 
+ * Catatan: Komponen ini hanya muncul di layar XL (1280px+) agar tidak memenuhi
+ * layar HP/tablet yang terlalu sempit.
+ */
 import { useActiveSection } from "./useActiveSection";
 import { navigationLinks } from "./navigationLinks";
 import { m as motion } from "framer-motion";

@@ -1,4 +1,13 @@
-// components/section/impact/components/ImpactPartners.tsx
+/**
+ * components/section/impact/components/ImpactPartners.tsx
+ * ----------------------------------------------------------------------
+ * Komponen yang menampilkan deretan logo Mitra & Klien (Partners).
+ * 
+ * Teknik Animasi (Marquee / Infinite Scroll):
+ * Menggunakan trik duplikasi data (logo di-render 2 kali) dikombinasikan 
+ * dengan CSS Animation `animate-marquee` (translasi X dari 0% ke -50%).
+ * Ini menciptakan ilusi deretan logo yang berjalan tanpa batas (infinite loop).
+ */
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";
 import { partnersData } from "../data/impactData";

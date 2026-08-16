@@ -1,3 +1,19 @@
+/**
+ * components/section/about/components/AboutVisionMission.tsx
+ * ----------------------------------------------------------------------
+ * Menampilkan kartu Visi dan Misi perusahaan secara bersisian (Grid 2 kolom).
+ * 
+ * Desain UI / UX:
+ * 1. Kartu Visi (Kiri): Menggunakan gaya "Neumorphic Raised Glass" (terang, timbul).
+ * 2. Kartu Misi (Kanan): Menggunakan gaya "Glassmorphic Dark" (gelap, elegan).
+ * 
+ * Interaktivitas:
+ * - Efek hover 3D: Kartu akan sedikit terangkat saat di-hover.
+ * - Efek "Shimmer Sweep": Saat di-hover, ada animasi kilauan cahaya yang menyapu 
+ *   melewati kartu (menggunakan properti `translate-x`).
+ * 
+ * Data Misi diambil dari file statis `aboutData.ts` lalu di-looping (map).
+ */
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";
 import { misiItems } from "../data/aboutData";
@@ -35,7 +51,7 @@ export function AboutVisionMission() {
 
         <h3 className="text-3xl font-black text-utbex-dark mb-5 tracking-tight">Visi Kami</h3>
         <p className="text-utbex-text-secondary text-lg leading-relaxed font-medium">
-          &quot;Menjadi pusat pengembangan ekonomi kreatif berbasis pemuda desa yang berdampak nasional dan global, mendorong Indonesia Emas 2045.&quot;
+          &quot;Menjadi pusat pengembangan kreativitas dan pemberdayaan pemuda desa berbasis ekonomi kreatif yang berkelanjutan dan berdampak nasional hingga global.&quot;
         </p>
 
         {/* Subtle shimmer on hover */}

@@ -1,3 +1,18 @@
+/**
+ * components/section/about/components/AboutQuote.tsx
+ * ----------------------------------------------------------------------
+ * Komponen penutup seksi "Tentang Kami".
+ * Menampilkan kutipan inspiratif berukuran besar dengan gaya desain mencolok.
+ * 
+ * Teknik Desain & Efek Visual:
+ * - 3D Perspective & Rotate: Kotak kutipan awalnya sedikit miring (rotateX) 
+ *   lalu tegak saat di-scroll (efek 3D pop-up).
+ * - Cincin Neon: Terdapat glow pulse (berkedip perlahan) di belakang kotak.
+ * - Glassmorphism: Terdapat overlay putih sangat tipis (`bg-white/[0.04]`) 
+ *   untuk memantulkan "cahaya" pada tekstur marun gradient.
+ * - Interaksi Hover: Saat mouse diarahkan ke kata "wirausahawan baru",
+ *   garis bawah (highlight) akan melebar dan bersinar.
+ */
 import { m as motion } from "framer-motion";
 
 export function AboutQuote() {

@@ -1,6 +1,21 @@
 "use client";
-// components/section/portfolio/Portfolio.tsx
 
+/**
+ * components/section/portfolio/Portfolio.tsx
+ * ----------------------------------------------------------------------
+ * Komponen utama (Wrapper) untuk seksi Portofolio (Karya & Dampak).
+ * Menangani logika scroll-spy dan pemisahan tampilan Desktop vs Mobile.
+ * 
+ * Logika Scroll (Framer Motion):
+ * - Menggunakan `useScroll` dan `useTransform` untuk mengubah scroll vertikal 
+ *   menjadi geseran horizontal (transformX) khusus pada Desktop.
+ * - Menggunakan `useMotionValueEvent` untuk melacak progress scroll (0 sampai 1)
+ *   dan mengubah state `activeTab` secara otomatis saat pengguna scroll ke bawah.
+ * 
+ * Catatan Performa:
+ * - Pada perangkat Mobile (lebar layar < 1024px), fitur scroll-spy dinonaktifkan 
+ *   agar tab tidak melompat-lompat liar saat disentuh/digeser.
+ */
 import { useRef, useState, useEffect, useCallback } from "react";
 import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { CategoryTab, ProjectData } from "./data/portfolioData";

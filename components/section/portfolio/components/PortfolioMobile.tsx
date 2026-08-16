@@ -1,3 +1,14 @@
+/**
+ * components/section/portfolio/components/PortfolioMobile.tsx
+ * ----------------------------------------------------------------------
+ * Komponen yang merender daftar kartu Portofolio khusus untuk perangkat Mobile.
+ * 
+ * Perbedaan dengan Desktop:
+ * - Tidak menggunakan efek horizontal scroll (parallax).
+ * - Daftar proyek akan difilter secara statis berdasarkan tab yang sedang aktif 
+ *   (`activeTab`) yang dioper dari komponen induk (Portfolio.tsx).
+ * - Tampilan kartu lebih vertikal (`aspect-[4/5]`) agar muat di layar HP.
+ */
 "use client";
 
 import { m as motion } from "framer-motion";

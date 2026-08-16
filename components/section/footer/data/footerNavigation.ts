@@ -1,17 +1,21 @@
-// // components/section/footer/data/footerNavigation.ts
+/**
+ * components/section/footer/data/footerNavigation.ts
+ * ----------------------------------------------------------------------
+ * File data penyimpan tautan navigasi Footer.
+ * 
+ * Catatan: 
+ * Saat ini array `footerNavigation` tidak digunakan secara langsung 
+ * (di-comment / dikosongkan) karena navigasi di `FooterColumns.tsx` 
+ * sudah di-*hardcode* untuk mempercepat sinkronisasi Scroll-Spy (Anchor Links) 
+ * dengan struktur satu-halaman (Single Page).
+ */
 
 export interface FooterNavItem {
   id: string;
   label: string;
   href: string;
 }
-// /**
-//  * Primary navigation links per 03_FOOTER_LAYOUT_SYSTEM.md:
-//  * — Maximum five items.
-//  * — One or two words only.
-//  * — No dropdowns, no secondary navigation.
-//  * — Every link must have a purpose.
-//  */
+
 export const footerNavigation: FooterNavItem[] = [
   //   {
   //     id: "nav-home",

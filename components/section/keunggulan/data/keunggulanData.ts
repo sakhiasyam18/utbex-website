@@ -1,4 +1,10 @@
-// components/section/keunggulan/data/keunggulanData.ts
+/**
+ * components/section/keunggulan/data/keunggulanData.ts
+ * ----------------------------------------------------------------------
+ * Array data statis berisi daftar aspek keunggulan UTBEX beserta penjelasannya.
+ * Data ini akan dirender secara otomatis (di-map) ke dalam baris-baris tabel 
+ * di komponen KeunggulanTable.tsx.
+ */
 
 export const keunggulanData = [
   {

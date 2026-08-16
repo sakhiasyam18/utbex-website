@@ -1,6 +1,17 @@
 // components/section/timeline/components/TimelineNode.tsx
 "use client";
 
+/**
+ * TimelineNode Component
+ * ----------------------------------------------------------------------
+ * Lingkaran titik (node) yang menandai titik tahun di lintasan timeline.
+ * 
+ * Animasi & Desain:
+ * - Titik ini akan membesar (pop-up) ketika di-scroll ke dalam layar (`isInView`).
+ * - Terdapat efek "Pulse Ring" yang memancar terus menerus ke luar untuk
+ *   menandakan bahwa titik ini aktif/sedang dibaca.
+ * - Dilengkapi dengan label "Tahun" bergaya Frosted Glass Pill di atasnya.
+ */
 import { m as motion } from "framer-motion";
 
 interface TimelineNodeProps {

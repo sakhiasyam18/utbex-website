@@ -1,3 +1,17 @@
+/**
+ * components/section/portfolio/components/PortfolioDesktop.tsx
+ * ----------------------------------------------------------------------
+ * Komponen yang merender daftar kartu Portofolio khusus untuk layar besar (Desktop).
+ * 
+ * Animasi Horizontal (Horizontal Scroll):
+ * Komponen ini menerima props `transformX` (sebuah MotionValue dari Framer Motion).
+ * Nilai ini akan menggeser container secara horizontal (ke kiri) seiring 
+ * bertambahnya nilai scroll vertikal halaman, menciptakan ilusi parallax/carousel.
+ * 
+ * Interaktivitas:
+ * Saat kartu diklik, fungsi `setSelectedProject` akan dipanggil untuk 
+ * membuka modal detail.
+ */
 "use client";
 
 import { m as motion, MotionValue } from "framer-motion";

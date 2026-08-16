@@ -1,3 +1,17 @@
+/**
+ * components/section/breather/EditorialBreather.tsx
+ * ----------------------------------------------------------------------
+ * Komponen jeda visual (Breather) bergaya Editorial / Majalah.
+ * Berfungsi untuk memberikan "ruang nafas" (whitespace) yang estetis 
+ * sebelum pengguna mencapai akhir halaman (CTA / Footer).
+ * 
+ * Elemen Visual:
+ * - Giant Quote: Kutipan inspiratif dengan tanda kutip besar bergaya serif.
+ * - Glassmorphism Card: Kotak transparan dengan efek blur (backdrop-blur-2xl) 
+ *   dan bayangan lembut yang memberikan kesan melayang.
+ * - Parallax Orbs: Lingkaran cahaya (glow) di latar belakang yang bergerak 
+ *   secara vertikal berlawanan arah dengan scroll pengguna (`useTransform`).
+ */
 "use client";
 
 import { m as motion, useScroll, useTransform } from "framer-motion";

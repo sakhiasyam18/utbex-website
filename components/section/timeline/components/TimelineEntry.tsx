@@ -1,6 +1,22 @@
 // components/section/timeline/components/TimelineEntry.tsx
 "use client";
 
+/**
+ * TimelineEntry Component
+ * ----------------------------------------------------------------------
+ * Komponen yang merender satu item pencapaian/milestone di dalam Timeline.
+ * 
+ * Layout Responsif:
+ * - Desktop: 2-Kolom selang-seling (Kiri: Teks, Kanan: Gambar, lalu sebaliknya).
+ *   Dihubungkan oleh garis lintasan meliuk-liuk (SVG kurva Bezier).
+ * - Mobile: 1-Kolom bersusun (Teks atas, Gambar bawah) dengan garis lurus vertikal
+ *   di sisi kiri sebagai penanda timeline.
+ * 
+ * Fitur Spesial:
+ * 1. SVG Path Dinamis: Garis penghubung merah akan digambar (draw) secara 
+ *    perlahan mengikuti scroll pengunjung (menggunakan `useInView` dan SVG clipPath).
+ * 2. Lightbox Terintegrasi: Gambar bisa diklik untuk diperbesar ke layar penuh.
+ */
 import { useRef, useState } from "react";
 import { m as motion, useInView, Variants } from "framer-motion";
 import Image from "next/image";

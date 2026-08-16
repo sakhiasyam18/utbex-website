@@ -1,4 +1,17 @@
-// components/section/hero/components/HeroTopBar.tsx
+"use client";
+
+/**
+ * components/section/hero/components/HeroTopBar.tsx
+ * ----------------------------------------------------------------------
+ * Komponen baris teratas (Top Bar) pada halaman utama.
+ * Memuat:
+ * 1. Label nama perusahaan (PT UTBEX INOVASI INDONESIA) dengan indikator kedip (ping).
+ * 2. Daftar tautan media sosial UTBEX.
+ * 
+ * Responsivitas:
+ * - Desktop: Sosmed rata kanan sejajar dengan Logo.
+ * - Mobile: Sosmed otomatis turun (wrap) ke baris kedua dan diatur rata tengah (center).
+ */
 import Link from "next/link";
 
 const topBarSocials = [

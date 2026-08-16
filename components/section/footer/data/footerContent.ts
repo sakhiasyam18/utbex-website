@@ -1,5 +1,15 @@
-// components/section/footer/data/footerContent.ts
+/**
+ * components/section/footer/data/footerContent.ts
+ * ----------------------------------------------------------------------
+ * File penyimpan *copywriting* (teks utama) untuk berbagai seksi di Footer,
+ * seperti pesan penutup, CTA, detail kontak teks, dan baris hak cipta (copyright).
+ * 
+ * Penggunaan (Usage):
+ * - Memisahkan hard-coded text dari komponen presentasional agar lebih mudah 
+ *   di-edit oleh Content Writer.
+ */
 
+// components/section/footer/data/footerContent.ts
 export interface FooterContent {
   closing: {
     label: string;

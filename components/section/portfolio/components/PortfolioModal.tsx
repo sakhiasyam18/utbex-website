@@ -1,3 +1,18 @@
+/**
+ * components/section/portfolio/components/PortfolioModal.tsx
+ * ----------------------------------------------------------------------
+ * Komponen modal (pop-up) untuk menampilkan detail lengkap dari sebuah proyek.
+ * 
+ * Animasi Keluar-Masuk (AnimatePresence):
+ * - Menggunakan `<AnimatePresence>` dari Framer Motion agar modal bisa 
+ *   di-animasikan saat "dihapus" (unmounted) dari DOM (properti `exit`).
+ * 
+ * Aksesibilitas (A11y):
+ * - Menggunakan atribut `role="dialog"` dan `aria-modal="true"`.
+ * - Latar belakang abu-abu transparan berfungsi ganda: menonjolkan modal
+ *   dan jika diklik akan menutup modal (`setSelectedProject(null)`).
+ * - Mencegah klik tembus menggunakan `e.stopPropagation()` pada container utama modal.
+ */
 "use client";
 
 import { m as motion, AnimatePresence } from "framer-motion";

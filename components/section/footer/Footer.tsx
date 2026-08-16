@@ -1,6 +1,14 @@
 "use client";
-// components/section/footer/Footer.tsx
-// Gen Z Light Glassmorphism Footer — elegant, clean, all-age friendly
+/**
+ * components/section/footer/Footer.tsx
+ * ----------------------------------------------------------------------
+ * Komponen pembungkus (Wrapper) untuk seluruh bagian Footer website.
+ * 
+ * Pola Arsitektur (Component Composition):
+ * Sama seperti seksi Impact, Footer dipecah menjadi beberapa sub-komponen
+ * fungsional (`FooterCTA`, `FooterColumns`, `FooterMap`, `FooterBottom`) 
+ * untuk menjaga kebersihan kode dan kemudahan pemeliharaan (maintainability).
+ */
 
 import { FooterCTA } from "./components/FooterCTA";
 import { FooterColumns } from "./components/FooterColumns";

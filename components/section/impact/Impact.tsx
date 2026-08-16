@@ -1,6 +1,14 @@
 "use client";
-// components/section/impact/Impact.tsx — Refactored using Component Composition & Declarative Patterns
-
+/**
+ * components/section/impact/Impact.tsx
+ * ----------------------------------------------------------------------
+ * Komponen utama (Wrapper) untuk seksi "Dampak & Kolaborasi" (Open Kerjasama).
+ * 
+ * Pola Arsitektur (Component Composition):
+ * Berbeda dengan desain monolitik, seksi ini dipecah (refactored) menjadi 
+ * beberapa sub-komponen kecil (ImpactBackground, ImpactHeader, ImpactPartners, dll) 
+ * agar kode lebih deklaratif, mudah dirawat (maintainable), dan rapi.
+ */
 import { ImpactBackground } from "./components/ImpactBackground";
 import { ImpactHeader } from "./components/ImpactHeader";
 import { ImpactPartners } from "./components/ImpactPartners";

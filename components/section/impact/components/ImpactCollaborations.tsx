@@ -1,4 +1,14 @@
-// components/section/impact/components/ImpactCollaborations.tsx
+/**
+ * components/section/impact/components/ImpactCollaborations.tsx
+ * ----------------------------------------------------------------------
+ * Menampilkan daftar "Bentuk Kerjasama" (Impact Categories) dalam bentuk grid kotak-kotak.
+ * Tiap kotak (Card) berisi ikon SVG, judul kategori (misal: "Bimbingan UMKM"),
+ * dan deskripsinya.
+ * 
+ * Interaktivitas:
+ * - Efek hover: Kotak sedikit terangkat dan bayangan (shadow) merah membesar.
+ * - Mengambil data secara dinamis dari file `impactData.ts` (array `impactCategories`).
+ */
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";
 import { collaborationItemsData } from "../data/impactData";

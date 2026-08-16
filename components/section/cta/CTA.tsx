@@ -1,3 +1,16 @@
+/**
+ * components/section/cta/CTA.tsx
+ * ----------------------------------------------------------------------
+ * Komponen Call to Action (CTA) utama yang mengajak pengguna untuk 
+ * berkolaborasi atau mempelajari lebih lanjut tentang UTBEX.
+ * 
+ * Interaksi CTA:
+ * - Tombol "Mulai Berkolaborasi" mengarah ke link WhatsApp secara eksternal (`target="_blank"`).
+ * - Tombol "Pelajari Perjalanan Kami" mengarah ke anchor link `#about` untuk scroll ke atas.
+ * 
+ * Animasi Masuk:
+ * - Teks dan tombol di-animasikan bertahap (staggered fade up) saat masuk viewport.
+ */
 "use client";
 
 import { m as motion } from "framer-motion";

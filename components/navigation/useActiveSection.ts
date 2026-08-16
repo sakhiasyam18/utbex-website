@@ -1,5 +1,29 @@
 "use client";
 
+/**
+ * components/navigation/useActiveSection.ts
+ * ----------------------------------------------------------------------
+ * Custom React Hook untuk mendeteksi seksi mana yang sedang aktif 
+ * berdasarkan posisi scroll pengunjung.
+ * 
+ * Cara kerjanya:
+ * 1. Hook ini memantau event 'scroll' dan mengecek posisi vertikal 
+ *    setiap elemen <section> terhadap titik 30% dari atas viewport.
+ * 2. Seksi yang "menutupi" titik 30% tersebut dianggap sebagai seksi aktif.
+ * 3. Jika pengunjung sudah berada di paling bawah halaman, secara otomatis
+ *    seksi terakhir (Kontak) akan ditandai sebagai aktif.
+ * 
+ * Fitur Anti-Konflik (ignoreScrollRef):
+ * - Saat pengunjung mengklik menu navigasi, halaman akan di-scroll otomatis
+ *   ke seksi tujuan. Selama proses scroll otomatis ini (1 detik),
+ *   deteksi scroll manual dimatikan sementara agar tidak terjadi "perang"
+ *   antara klik menu dan deteksi scroll (yang bisa menyebabkan loncatan).
+ * 
+ * Optimasi Performa:
+ * - Menggunakan requestAnimationFrame agar pengecekan hanya dilakukan 
+ *   satu kali per frame (60fps), bukan setiap pixel scroll.
+ * - Listener scroll menggunakan opsi `{ passive: true }` untuk performa optimal.
+ */
 import { useEffect, useState, useRef } from "react";
 import { navigationLinks } from "./navigationLinks";
 

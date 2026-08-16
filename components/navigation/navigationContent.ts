@@ -1,5 +1,12 @@
-// components/navigation/navigationContent.ts
-
+/**
+ * components/navigation/navigationContent.ts
+ * ----------------------------------------------------------------------
+ * Data statis yang mengisi elemen-elemen UI di dalam komponen navigasi,
+ * seperti teks tombol CTA dan konfigurasi logo.
+ * 
+ * Jika ingin mengubah teks tombol "Mari Berdiskusi" atau nomor WhatsApp,
+ * cukup edit file ini tanpa perlu menyentuh komponen visual Navigation.tsx.
+ */
 export const navigationContent = {
     cta: {
         label: "Mari Berdiskusi",

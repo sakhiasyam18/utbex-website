@@ -1,3 +1,15 @@
+/**
+ * components/section/footer/components/FooterBottom.tsx
+ * ----------------------------------------------------------------------
+ * Komponen pita penutup (bottom bar) yang posisinya paling bawah.
+ * 
+ * Elemen Visual:
+ * 1. Copyright Bar: Menampilkan teks hak cipta (copyright) dan Nomor SK Kemenkumham.
+ * 2. Giant Wordmark: Tulisan "UTBEX" raksasa berukuran `clamp()` yang responsif.
+ *    Menggunakan teknik CSS canggih (background-clip: text) yang digabungkan
+ *    dengan gradien warna marun dan SVG Base64 (pola lingkaran) untuk 
+ *    menciptakan efek teks bertekstur/watermark.
+ */
 export function FooterBottom() {
   return (
     <>

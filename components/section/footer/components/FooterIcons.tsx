@@ -1,3 +1,13 @@
+/**
+ * components/section/footer/components/FooterIcons.tsx
+ * ----------------------------------------------------------------------
+ * Komponen penyimpan icon SVG (Vector Graphics) khusus untuk Footer.
+ * 
+ * Penggunaan (Usage):
+ * - Memusatkan semua icon di satu file agar mudah dimodifikasi tanpa mengotori file layout.
+ * - Mengekspor objek `ICON_MAP` yang memetakan "Nama Platform" ke Komponen Icon.
+ *   Ini sangat penting agar kita bisa me-render icon secara dinamis hanya dari data array.
+ */
 import React from "react";
 
 export const InstagramIcon = () => (

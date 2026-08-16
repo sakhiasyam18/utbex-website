@@ -1,3 +1,14 @@
+/**
+ * components/section/keunggulan/components/KeunggulanTable.tsx
+ * ----------------------------------------------------------------------
+ * Menampilkan tabel daftar keunggulan UTBEX.
+ * 
+ * Aksesibilitas (A11y) & SEO:
+ * Meskipun secara visual terlihat seperti "tabel", secara kode menggunakan CSS Grid `div`.
+ * Oleh karena itu, kita menambahkan atribut ARIA (role="table", role="row", dll)
+ * agar screen reader (pembaca layar untuk tunanetra) dan bot mesin pencari (SEO)
+ * tetap bisa memahaminya sebagai sebuah tabel struktural.
+ */
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";
 import { keunggulanData } from "../data/keunggulanData";

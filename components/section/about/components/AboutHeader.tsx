@@ -1,3 +1,13 @@
+/**
+ * components/section/about/components/AboutHeader.tsx
+ * ----------------------------------------------------------------------
+ * Komponen pembuka pada seksi "Tentang Kami".
+ * Menampilkan ringkasan eksekutif dan filosofi nama perusahaan 
+ * (Unusually Think, Become Extraordinary) di dalam kartu bergaya frosted glass.
+ * 
+ * Menggunakan animasi `staggerContainer` dari Framer Motion agar elemen 
+ * label dan paragraf muncul satu per satu secara berurutan saat di-scroll.
+ */
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";
 

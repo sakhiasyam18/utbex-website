@@ -1,5 +1,18 @@
+/**
+ * components/section/footer/components/FooterMap.tsx
+ * ----------------------------------------------------------------------
+ * Komponen peta lokasi interaktif menggunakan Google Maps iframe.
+ * 
+ * Layout:
+ * - Kiri: Panel informasi lokasi dan tombol CTA untuk membuka di aplikasi Maps.
+ * - Kanan: Iframe Google Maps yang disematkan (embedded).
+ * 
+ * Efek Visual:
+ * - Dibungkus dalam container "Glass Card" dengan blur tinggi.
+ * - Pinggiran peta memiliki efek fade (gradient to transparent) agar 
+ *   menyatu secara halus dengan container (seamless blend).
+ */
 import { m as motion } from "framer-motion";
-
 export function FooterMap() {
   return (
     <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10">

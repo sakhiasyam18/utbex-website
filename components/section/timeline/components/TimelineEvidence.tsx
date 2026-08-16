@@ -1,6 +1,17 @@
 // components/section/timeline/components/TimelineEvidence.tsx
 "use client";
 
+/**
+ * TimelineEvidence Component
+ * ----------------------------------------------------------------------
+ * Menampilkan barisan tombol kecil (badges) yang berisi bukti nyata (evidence) 
+ * atas pencapaian tertentu, misalnya: "Lihat Sertifikat", "Baca Artikel".
+ * 
+ * Interaktivitas:
+ * - Jika tipe evidence adalah file gambar, klik tombol akan membuka popup Lightbox.
+ * - Jika tipe evidence adalah URL eksternal (media/berita), klik tombol akan membuka 
+ *   tab browser baru.
+ */
 import { useState } from "react";
 import { TimelineEvidence as EvidenceType } from "../data/timelineData";
 import { Lightbox } from "@/components/ui/Lightbox";

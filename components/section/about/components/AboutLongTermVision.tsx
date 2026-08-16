@@ -1,3 +1,18 @@
+/**
+ * components/section/about/components/AboutLongTermVision.tsx
+ * ----------------------------------------------------------------------
+ * Menampilkan visi jangka panjang perusahaan (Dream Board).
+ * 
+ * Layout:
+ * - Menggunakan CSS Grid asimetris.
+ * - Kolom Kiri: Foto "Dream Board" di dalam bingkai bergaya neumorphism putih.
+ * - Kolom Kanan: Daftar fokus utama (diambil dari aboutData.ts) 
+ *   disertai dengan blok kutipan motivasi yang menjorok ke dalam (inset neumorphism).
+ * 
+ * Optimasi Gambar:
+ * - Menggunakan format `.avif` yang jauh lebih ringan daripada PNG/JPEG 
+ *   tetapi tetap menjaga kualitas tinggi.
+ */
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";
 import { visiJangkaPanjangItems } from "../data/aboutData";

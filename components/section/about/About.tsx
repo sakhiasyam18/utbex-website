@@ -1,4 +1,21 @@
 "use client";
+
+/**
+ * components/section/about/About.tsx
+ * ----------------------------------------------------------------------
+ * Komponen pembungkus (Wrapper) untuk seluruh seksi "Tentang UTBEX".
+ * 
+ * Seksi ini dibagi menjadi 4 sub-komponen utama yang di-render berurutan:
+ * 1. AboutHeader       : Paragraf pengantar (Executive Summary) & Sejarah singkat.
+ * 2. AboutVisionMission: Kartu Visi (Kiri) dan Misi (Kanan).
+ * 3. AboutLongTermVision: Papan visi (Dream Board) & rincian target jangka panjang.
+ * 4. AboutQuote        : Kutipan penutup berukuran besar dengan gaya desain mencolok.
+ * 
+ * Latar Belakang (Ambient Background):
+ * Menggunakan dua elemen `div` (.about-orb) yang di-blur secara ekstrem 
+ * untuk menciptakan efek pendaran cahaya (glow) merah marun dan rose 
+ * yang bergerak perlahan di belakang konten.
+ */
 import { AboutHeader } from "./components/AboutHeader";
 import { AboutVisionMission } from "./components/AboutVisionMission";
 import { AboutLongTermVision } from "./components/AboutLongTermVision";

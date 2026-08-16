@@ -1,4 +1,13 @@
-// components/section/impact/components/ImpactStory.tsx
+/**
+ * components/section/impact/components/ImpactStory.tsx
+ * ----------------------------------------------------------------------
+ * Komponen yang menampilkan narasi (Story/Testimonial) di sisi kiri.
+ * Teks dikemas di dalam kotak bergaya Frosted Glass (glassmorphism) dengan 
+ * bayangan dan outline (border) yang sangat tipis agar berkesan mewah.
+ * 
+ * Terdapat ornamen kutipan besar (Giant Quote) di sudut kiri atas 
+ * untuk memberikan kesan editorial / majalah (magazine layout).
+ */
 import Link from "next/link";
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";

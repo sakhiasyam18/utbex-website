@@ -1,3 +1,11 @@
+/**
+ * components/section/breather/data/breatherData.ts
+ * ----------------------------------------------------------------------
+ * File data statis untuk menyimpan informasi profil pendiri pada seksi Breather.
+ * Tujuan pemisahan file ini adalah agar riwayat / pencapaian pendiri dapat 
+ * diubah atau ditambahkan dengan mudah tanpa perlu mengubah komponen UI utama.
+ */
+
 export const founderProfile = [
   "Arik Dwi Asmara — CEO & Founder UTBEX Indonesia Group",
   "Founder BCN (Bantur Creative Network)",

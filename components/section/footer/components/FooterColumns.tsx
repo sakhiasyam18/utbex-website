@@ -1,3 +1,14 @@
+/**
+ * components/section/footer/components/FooterColumns.tsx
+ * ----------------------------------------------------------------------
+ * Komponen utama yang menampilkan informasi footer dalam format grid (4 Kolom).
+ * 
+ * Struktur Kolom:
+ * 1. Brand (Kiri): Logo wordmark dan deskripsi singkat perusahaan.
+ * 2. Navigasi: Tautan anchor (scroll-spy) menuju seksi-seksi di halaman.
+ * 3. Kontak: Kartu Glassmorphism berisi email dan alamat fisik (terhubung ke GMail & Google Maps).
+ * 4. Sosial Media (Kanan): Deretan tombol ikon menuju kanal media sosial resmi.
+ */
 import { m as motion } from "framer-motion";
 import Link from "next/link";
 import { footerSocial } from "../data/footerSocial";

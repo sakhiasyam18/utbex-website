@@ -1,4 +1,13 @@
-// components/section/impact/components/ImpactPhotos.tsx
+/**
+ * components/section/impact/components/ImpactPhotos.tsx
+ * ----------------------------------------------------------------------
+ * Komponen yang menampilkan susunan foto kolase/kegiatan di sisi kanan.
+ * Menggunakan CSS Grid untuk menata posisi 3 foto secara dinamis.
+ * 
+ * Interaktivitas:
+ * - Hover state: Foto akan sedikit membesar (`scale-105`), overlay gradien 
+ *   akan memudar (reveal effect), dan warna bingkai sedikit berubah.
+ */
 import Image from "next/image";
 import { m as motion } from "framer-motion";
 import { staggerContainer, staggerChild } from "@/components/ui/motion";
