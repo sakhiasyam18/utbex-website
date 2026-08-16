@@ -1,9 +1,18 @@
 // app/layout.tsx
-//
-// Root layout — provides html, body, fonts, metadata, and analytics.
-// Navigation and page wrappers are handled by route group layouts:
-//   (main)/layout.tsx  → includes Navigation + <main>
-//
+/**
+ * app/layout.tsx
+ * 
+ * Root Layout Component
+ * ----------------------------------------------------------------------
+ * File ini adalah fondasi utama (Root) dari seluruh struktur HTML website UTBEX.
+ * Di sini kita mengonfigurasi pengaturan global yang akan diwariskan ke seluruh halaman,
+ * termasuk Metadata SEO, Google Fonts (Inter), Google Tag Manager (GTM), 
+ * Vercel Analytics, serta skema JSON-LD untuk optimasi Local SEO.
+ * 
+ * Catatan untuk Developer Selanjutnya:
+ * - Jangan letakkan komponen visual seperti Navbar atau Footer di file ini.
+ * - Untuk komponen UI tingkat halaman, silakan modifikasi file `app/(main)/layout.tsx`.
+ */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -11,6 +20,11 @@ import { GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
+/**
+ * Konfigurasi Metadata Global untuk SEO & Social Media Sharing (OpenGraph, Twitter).
+ * Metadata ini akan menjadi default untuk semua rute. Jika suatu rute/halaman
+ * memiliki spesifikasi khusus, ia dapat melakukan 'override' konfigurasi ini.
+ */
 export const metadata: Metadata = {
   title: {
     default: "UTBEX Indonesia | Pusat Pengembangan Ekonomi Kreatif Desa & Social Enterprise",
@@ -65,6 +79,10 @@ export const metadata: Metadata = {
 
 import { Analytics } from "@vercel/analytics/next";
 
+/**
+ * RootLayout Component
+ * @param children - Komponen anak (halaman atau layout turunan) yang akan di-render di dalam tag <body>.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
