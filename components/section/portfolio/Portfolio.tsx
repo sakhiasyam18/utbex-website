@@ -25,6 +25,9 @@ export default function Portfolio() {
   // Throttle tab updates based on scroll progress
   const lastTabRef = useRef<string>("Bidang Usaha & Produk");
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    // Disable scroll spy on mobile to prevent tab jumping
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) return;
+
     let next: string;
     if (latest < 0.33)       next = "Bidang Usaha & Produk";
     else if (latest < 0.66)  next = "Program Pemberdayaan";
@@ -39,6 +42,9 @@ export default function Portfolio() {
   const scrollToTab = (tab: CategoryTab, index: number) => {
     setActiveTab(tab);
     
+    // On mobile, clicking a tab only filters the list, no scroll jumping
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) return;
+
     // Jump to specific scroll percentage
     const percentages = [0, 0.35, 0.65];
     const targetPercentage = percentages[index];

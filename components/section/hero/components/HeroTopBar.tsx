@@ -67,7 +67,7 @@ export function HeroTopBar() {
       </div>
 
       {/* Social media icons with text labels for comparison */}
-      <nav className="hidden md:flex flex-wrap items-center gap-2" aria-label="Social media links">
+      <nav className="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full xl:w-auto justify-center xl:justify-end mt-1 xl:mt-0" aria-label="Social media links">
         {topBarSocials.map((social) => (
           <Link
             key={social.platform}
@@ -75,10 +75,10 @@ export function HeroTopBar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.platform}
-            className="group/social relative flex items-center gap-2 px-3 py-2 rounded-xl text-utbex-dark/60 hover:text-utbex-maroon transition-all duration-300 hover:bg-utbex-maroon/[0.06]"
+            className="group/social relative flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-utbex-dark/60 hover:text-utbex-maroon transition-all duration-300 hover:bg-utbex-maroon/[0.06]"
           >
             {social.icon}
-            <span className="text-[10px] font-bold tracking-[0.1em] uppercase opacity-80 group-hover/social:opacity-100">
+            <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.1em] uppercase opacity-80 group-hover/social:opacity-100">
               {social.platform}
             </span>
           </Link>
