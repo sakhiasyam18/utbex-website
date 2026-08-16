@@ -14,7 +14,7 @@ export function HeroMobileContent() {
           src="/images/arik.webp"
           alt="Arik Dwi Asmara, Founder UTBEX Indonesia"
           fill
-          sizes="100vw"
+          sizes="(max-width: 1280px) 100vw, 50vw"
           className="object-cover object-[center_15%]"
           priority
           loading="eager"

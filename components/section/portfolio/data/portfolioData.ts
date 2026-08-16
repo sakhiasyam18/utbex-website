@@ -98,7 +98,7 @@ export const portfolioData: ProjectData[] = [
     tab: "Bidang Usaha & Produk",
     categoryTag: "DESAIN",
     title: "Branding & Packaging UMKM Desa",
-    story: "PT UTBEX Inovasi Indonesia (UTINDO), sebuah perusahaan social enterprise asal Bantur, Kabupaten Malang, secara strategis memproduksi dan mendistribusikan kemasan telur (egg packaging) berkualitas tinggi. Melalui kolaborasi strategis dengan PT Jago Ternak, UTBEX menyediakan solusi rantai pasok pangan yang aman bagi para peternak lokal. Layanan ini meliputi penyediaan kemasan telur ayam ras, telur bebek, hingga telur ayam kampung guna menjaga kualitas produk tetap prima hingga ke tangan konsumen.",
+    story: "UTBEX, sebagai social enterprise asal Bantur, Kabupaten Malang, memproduksi dan mendistribusikan kemasan telur (egg packaging) berkualitas tinggi. UTBEX menyediakan rantai pasok pangan yang aman dan terstandarisasi bagi para peternak lokal. Layanan ini meliputi penyediaan kemasan telur ayam ras, telur bebek, hingga telur ayam kampung guna menjaga kualitas produk tetap prima hingga ke tangan konsumen.",
     location: "Jawa Timur",
     year: "Berkelanjutan",
     evidence: "Daya Saing",
